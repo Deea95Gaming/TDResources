@@ -1,0 +1,70 @@
+####################################################################################################
+
+new PlayerText: Text_Player[MAX_PLAYERS][6];
+
+Text_Player[playerid][0] = CreatePlayerTextDraw(playerid, 130.000, 400.000, "22:14");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][0], 0.158, 0.850);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][0], 156.000, 17.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][0], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][0], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][0], 1);
+
+Text_Player[playerid][1] = CreatePlayerTextDraw(playerid, 130.000, 413.000, "100");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][1], 0.303, 1.699);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][1], 156.000, 17.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawColor(playerid, Text_Player[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][1], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][1], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][1], 1);
+
+Text_Player[playerid][2] = CreatePlayerTextDraw(playerid, 151.000, 415.000, "Fuel");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][2], 0.158, 0.850);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][2], 156.000, 17.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][2], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][2], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][2], 1);
+
+Text_Player[playerid][3] = CreatePlayerTextDraw(playerid, 173.000, 413.000, "0");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][3], 0.303, 1.699);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][3], 156.000, 17.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawColor(playerid, Text_Player[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][3], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][3], 1);
+
+Text_Player[playerid][4] = CreatePlayerTextDraw(playerid, 193.000, 415.000, "MPH");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][4], 0.158, 0.850);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][4], 156.000, 17.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][4], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][4], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][4], 1);
+
+Text_Player[playerid][5] = CreatePlayerTextDraw(playerid, 130.000, 432.000, "West I Temple");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][5], 0.170, 1.149);
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][5], 304.000, 47.500);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][5], 0);
+PlayerTextDrawColor(playerid, Text_Player[playerid][5], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][5], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][5], 1);
+

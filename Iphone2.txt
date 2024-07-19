@@ -1,0 +1,1052 @@
+//Variabel
+new Text:IPHONE2[47];
+new Text:CLOSEHP;
+new Text:CLICKGPS;
+new Text:CLICKEBANK;
+new Text:CLICKAPPSTORE;
+new Text:CLICKSETTING;
+new Text:CLICKCAMERA;
+new Text:CLICKMUSIC;
+new Text:CLICKTWITTER;
+new Text:CLICKKOJEK;
+new Text:CLICKEWALLET;
+new Text:CLICKCALL;
+new Text:CLICKSMS;
+new Text:CLICKCONTACT;
+new Pulsa[MAX_PLAYERS];
+
+//Define
+#define DIALOG_TWT 5090
+#define DIALOG_SHARE 5100
+#define DIALOG_SMS 5110
+#define DIALOG_SMS_NGESEND 5120
+#define DIALOG_NGESEND 5130
+#define DIALOG_OALAH 5140
+#define DIALOG_PHONE_DIALUMBER 5150
+#define DIALOG_BELI_PULSA 5160
+
+//public OnGameModeInit()
+IPHONE2[0] = TextDrawCreate(596.000000, 405.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[0], 4);
+	TextDrawLetterSize(IPHONE2[0], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[0], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[0], 1);
+	TextDrawSetShadow(IPHONE2[0], 0);
+	TextDrawAlignment(IPHONE2[0], 1);
+	TextDrawColor(IPHONE2[0], 255);
+	TextDrawBackgroundColor(IPHONE2[0], 255);
+	TextDrawBoxColor(IPHONE2[0], 50);
+	TextDrawUseBox(IPHONE2[0], 0);
+	TextDrawSetProportional(IPHONE2[0], 1);
+	TextDrawSetSelectable(IPHONE2[0], 0);
+
+	IPHONE2[1] = TextDrawCreate(501.000000, 405.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[1], 4);
+	TextDrawLetterSize(IPHONE2[1], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[1], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[1], 1);
+	TextDrawSetShadow(IPHONE2[1], 0);
+	TextDrawAlignment(IPHONE2[1], 1);
+	TextDrawColor(IPHONE2[1], 255);
+	TextDrawBackgroundColor(IPHONE2[1], 255);
+	TextDrawBoxColor(IPHONE2[1], 50);
+	TextDrawUseBox(IPHONE2[1], 0);
+	TextDrawSetProportional(IPHONE2[1], 1);
+	TextDrawSetSelectable(IPHONE2[1], 0);
+
+	IPHONE2[2] = TextDrawCreate(505.000000, 175.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[2], 4);
+	TextDrawLetterSize(IPHONE2[2], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[2], 111.500000, 217.500000);
+	TextDrawSetOutline(IPHONE2[2], 1);
+	TextDrawSetShadow(IPHONE2[2], 0);
+	TextDrawAlignment(IPHONE2[2], 1);
+	TextDrawColor(IPHONE2[2], 255);
+	TextDrawBackgroundColor(IPHONE2[2], 255);
+	TextDrawBoxColor(IPHONE2[2], 50);
+	TextDrawUseBox(IPHONE2[2], 0);
+	TextDrawSetProportional(IPHONE2[2], 1);
+	TextDrawSetSelectable(IPHONE2[2], 0);
+
+	IPHONE2[3] = TextDrawCreate(501.000000, 190.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[3], 4);
+	TextDrawLetterSize(IPHONE2[3], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[3], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[3], 1);
+	TextDrawSetShadow(IPHONE2[3], 0);
+	TextDrawAlignment(IPHONE2[3], 1);
+	TextDrawColor(IPHONE2[3], 255);
+	TextDrawBackgroundColor(IPHONE2[3], 255);
+	TextDrawBoxColor(IPHONE2[3], 50);
+	TextDrawUseBox(IPHONE2[3], 0);
+	TextDrawSetProportional(IPHONE2[3], 1);
+	TextDrawSetSelectable(IPHONE2[3], 0);
+
+	IPHONE2[4] = TextDrawCreate(596.000000, 190.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[4], 4);
+	TextDrawLetterSize(IPHONE2[4], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[4], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[4], 1);
+	TextDrawSetShadow(IPHONE2[4], 0);
+	TextDrawAlignment(IPHONE2[4], 1);
+	TextDrawColor(IPHONE2[4], 255);
+	TextDrawBackgroundColor(IPHONE2[4], 255);
+	TextDrawBoxColor(IPHONE2[4], 50);
+	TextDrawUseBox(IPHONE2[4], 0);
+	TextDrawSetProportional(IPHONE2[4], 1);
+	TextDrawSetSelectable(IPHONE2[4], 0);
+
+	IPHONE2[5] = TextDrawCreate(511.000000, 176.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[5], 4);
+	TextDrawLetterSize(IPHONE2[5], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[5], 99.500000, -8.500000);
+	TextDrawSetOutline(IPHONE2[5], 1);
+	TextDrawSetShadow(IPHONE2[5], 0);
+	TextDrawAlignment(IPHONE2[5], 1);
+	TextDrawColor(IPHONE2[5], 255);
+	TextDrawBackgroundColor(IPHONE2[5], 255);
+	TextDrawBoxColor(IPHONE2[5], 50);
+	TextDrawUseBox(IPHONE2[5], 0);
+	TextDrawSetProportional(IPHONE2[5], 1);
+	TextDrawSetSelectable(IPHONE2[5], 0);
+
+	IPHONE2[6] = TextDrawCreate(511.000000, 401.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[6], 4);
+	TextDrawLetterSize(IPHONE2[6], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[6], 99.500000, -8.500000);
+	TextDrawSetOutline(IPHONE2[6], 1);
+	TextDrawSetShadow(IPHONE2[6], 0);
+	TextDrawAlignment(IPHONE2[6], 1);
+	TextDrawColor(IPHONE2[6], 255);
+	TextDrawBackgroundColor(IPHONE2[6], 255);
+	TextDrawBoxColor(IPHONE2[6], 50);
+	TextDrawUseBox(IPHONE2[6], 0);
+	TextDrawSetProportional(IPHONE2[6], 1);
+	TextDrawSetSelectable(IPHONE2[6], 0);
+
+	IPHONE2[7] = TextDrawCreate(505.000000, 400.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[7], 4);
+	TextDrawLetterSize(IPHONE2[7], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[7], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[7], 1);
+	TextDrawSetShadow(IPHONE2[7], 0);
+	TextDrawAlignment(IPHONE2[7], 1);
+	TextDrawColor(IPHONE2[7], -168436481);
+	TextDrawBackgroundColor(IPHONE2[7], 255);
+	TextDrawBoxColor(IPHONE2[7], 50);
+	TextDrawUseBox(IPHONE2[7], 0);
+	TextDrawSetProportional(IPHONE2[7], 1);
+	TextDrawSetSelectable(IPHONE2[7], 0);
+
+	IPHONE2[8] = TextDrawCreate(591.000000, 400.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[8], 4);
+	TextDrawLetterSize(IPHONE2[8], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[8], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[8], 1);
+	TextDrawSetShadow(IPHONE2[8], 0);
+	TextDrawAlignment(IPHONE2[8], 1);
+	TextDrawColor(IPHONE2[8], -168436481);
+	TextDrawBackgroundColor(IPHONE2[8], 255);
+	TextDrawBoxColor(IPHONE2[8], 50);
+	TextDrawUseBox(IPHONE2[8], 0);
+	TextDrawSetProportional(IPHONE2[8], 1);
+	TextDrawSetSelectable(IPHONE2[8], 0);
+
+	IPHONE2[9] = TextDrawCreate(505.000000, 197.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[9], 4);
+	TextDrawLetterSize(IPHONE2[9], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[9], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[9], 1);
+	TextDrawSetShadow(IPHONE2[9], 0);
+	TextDrawAlignment(IPHONE2[9], 1);
+	TextDrawColor(IPHONE2[9], -168436481);
+	TextDrawBackgroundColor(IPHONE2[9], 255);
+	TextDrawBoxColor(IPHONE2[9], 50);
+	TextDrawUseBox(IPHONE2[9], 0);
+	TextDrawSetProportional(IPHONE2[9], 1);
+	TextDrawSetSelectable(IPHONE2[9], 0);
+
+	IPHONE2[10] = TextDrawCreate(591.000000, 197.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[10], 4);
+	TextDrawLetterSize(IPHONE2[10], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[10], 24.500000, -27.000000);
+	TextDrawSetOutline(IPHONE2[10], 1);
+	TextDrawSetShadow(IPHONE2[10], 0);
+	TextDrawAlignment(IPHONE2[10], 1);
+	TextDrawColor(IPHONE2[10], -168436481);
+	TextDrawBackgroundColor(IPHONE2[10], 255);
+	TextDrawBoxColor(IPHONE2[10], 50);
+	TextDrawUseBox(IPHONE2[10], 0);
+	TextDrawSetProportional(IPHONE2[10], 1);
+	TextDrawSetSelectable(IPHONE2[10], 0);
+
+	IPHONE2[11] = TextDrawCreate(518.000000, 184.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[11], 4);
+	TextDrawLetterSize(IPHONE2[11], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[11], 84.500000, -9.000000);
+	TextDrawSetOutline(IPHONE2[11], 1);
+	TextDrawSetShadow(IPHONE2[11], 0);
+	TextDrawAlignment(IPHONE2[11], 1);
+	TextDrawColor(IPHONE2[11], -168436481);
+	TextDrawBackgroundColor(IPHONE2[11], 255);
+	TextDrawBoxColor(IPHONE2[11], 50);
+	TextDrawUseBox(IPHONE2[11], 0);
+	TextDrawSetProportional(IPHONE2[11], 1);
+	TextDrawSetSelectable(IPHONE2[11], 0);
+
+	IPHONE2[12] = TextDrawCreate(518.000000, 396.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[12], 4);
+	TextDrawLetterSize(IPHONE2[12], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[12], 84.500000, -9.000000);
+	TextDrawSetOutline(IPHONE2[12], 1);
+	TextDrawSetShadow(IPHONE2[12], 0);
+	TextDrawAlignment(IPHONE2[12], 1);
+	TextDrawColor(IPHONE2[12], -168436481);
+	TextDrawBackgroundColor(IPHONE2[12], 255);
+	TextDrawBoxColor(IPHONE2[12], 50);
+	TextDrawUseBox(IPHONE2[12], 0);
+	TextDrawSetProportional(IPHONE2[12], 1);
+	TextDrawSetSelectable(IPHONE2[12], 0);
+
+	IPHONE2[13] = TextDrawCreate(509.000000, 175.000000, "ld_bum:bum2");
+	TextDrawFont(IPHONE2[13], 4);
+	TextDrawLetterSize(IPHONE2[13], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[13], 102.000000, 221.000000);
+	TextDrawSetOutline(IPHONE2[13], 1);
+	TextDrawSetShadow(IPHONE2[13], 0);
+	TextDrawAlignment(IPHONE2[13], 1);
+	TextDrawColor(IPHONE2[13], -168436481);
+	TextDrawBackgroundColor(IPHONE2[13], 255);
+	TextDrawBoxColor(IPHONE2[13], 50);
+	TextDrawUseBox(IPHONE2[13], 0);
+	TextDrawSetProportional(IPHONE2[13], 1);
+	TextDrawSetSelectable(IPHONE2[13], 0);
+
+	IPHONE2[14] = TextDrawCreate(531.000000, 188.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[14], 4);
+	TextDrawLetterSize(IPHONE2[14], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[14], 19.500000, -22.000000);
+	TextDrawSetOutline(IPHONE2[14], 1);
+	TextDrawSetShadow(IPHONE2[14], 0);
+	TextDrawAlignment(IPHONE2[14], 1);
+	TextDrawColor(IPHONE2[14], 255);
+	TextDrawBackgroundColor(IPHONE2[14], 255);
+	TextDrawBoxColor(IPHONE2[14], 50);
+	TextDrawUseBox(IPHONE2[14], 0);
+	TextDrawSetProportional(IPHONE2[14], 1);
+	TextDrawSetSelectable(IPHONE2[14], 0);
+
+	IPHONE2[15] = TextDrawCreate(541.000000, 173.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[15], 4);
+	TextDrawLetterSize(IPHONE2[15], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[15], 44.500000, 11.500000);
+	TextDrawSetOutline(IPHONE2[15], 1);
+	TextDrawSetShadow(IPHONE2[15], 0);
+	TextDrawAlignment(IPHONE2[15], 1);
+	TextDrawColor(IPHONE2[15], 255);
+	TextDrawBackgroundColor(IPHONE2[15], 255);
+	TextDrawBoxColor(IPHONE2[15], 50);
+	TextDrawUseBox(IPHONE2[15], 0);
+	TextDrawSetProportional(IPHONE2[15], 1);
+	TextDrawSetSelectable(IPHONE2[15], 0);
+
+	IPHONE2[16] = TextDrawCreate(543.000000, 177.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[16], 4);
+	TextDrawLetterSize(IPHONE2[16], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[16], 30.000000, 1.000000);
+	TextDrawSetOutline(IPHONE2[16], 1);
+	TextDrawSetShadow(IPHONE2[16], 0);
+	TextDrawAlignment(IPHONE2[16], 1);
+	TextDrawColor(IPHONE2[16], -1094795521);
+	TextDrawBackgroundColor(IPHONE2[16], 255);
+	TextDrawBoxColor(IPHONE2[16], 50);
+	TextDrawUseBox(IPHONE2[16], 0);
+	TextDrawSetProportional(IPHONE2[16], 1);
+	TextDrawSetSelectable(IPHONE2[16], 0);
+
+	IPHONE2[17] = TextDrawCreate(573.000000, 188.000000, "ld_beat:chit");
+	TextDrawFont(IPHONE2[17], 4);
+	TextDrawLetterSize(IPHONE2[17], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[17], 19.500000, -22.000000);
+	TextDrawSetOutline(IPHONE2[17], 1);
+	TextDrawSetShadow(IPHONE2[17], 0);
+	TextDrawAlignment(IPHONE2[17], 1);
+	TextDrawColor(IPHONE2[17], 255);
+	TextDrawBackgroundColor(IPHONE2[17], 255);
+	TextDrawBoxColor(IPHONE2[17], 50);
+	TextDrawUseBox(IPHONE2[17], 0);
+	TextDrawSetProportional(IPHONE2[17], 1);
+	TextDrawSetSelectable(IPHONE2[17], 0);
+
+	IPHONE2[18] = TextDrawCreate(576.000000, 174.000000, "HUD:radar_datedisco");
+	TextDrawFont(IPHONE2[18], 4);
+	TextDrawLetterSize(IPHONE2[18], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[18], 10.000000, 8.000000);
+	TextDrawSetOutline(IPHONE2[18], 0);
+	TextDrawSetShadow(IPHONE2[18], 0);
+	TextDrawAlignment(IPHONE2[18], 1);
+	TextDrawColor(IPHONE2[18], -1);
+	TextDrawBackgroundColor(IPHONE2[18], 255);
+	TextDrawBoxColor(IPHONE2[18], 50);
+	TextDrawUseBox(IPHONE2[18], 0);
+	TextDrawSetProportional(IPHONE2[18], 1);
+	TextDrawSetSelectable(IPHONE2[18], 0);
+
+	CLOSEHP = TextDrawCreate(533.000000, 387.000000, "ld_dual:white");
+	TextDrawFont(CLOSEHP, 4);
+	TextDrawLetterSize(CLOSEHP, 0.600000, 2.000000);
+	TextDrawTextSize(CLOSEHP, 56.500000, 4.500000);
+	TextDrawSetOutline(CLOSEHP, 1);
+	TextDrawSetShadow(CLOSEHP, 0);
+	TextDrawAlignment(CLOSEHP, 1);
+	TextDrawColor(CLOSEHP, 1296911871);
+	TextDrawBackgroundColor(CLOSEHP, 255);
+	TextDrawBoxColor(CLOSEHP, 50);
+	TextDrawUseBox(CLOSEHP, 0);
+	TextDrawSetProportional(CLOSEHP, 1);
+	TextDrawSetSelectable(CLOSEHP, 1);
+
+	CLICKGPS = TextDrawCreate(521.000000, 204.000000, "ld_dual:white");
+	TextDrawFont(CLICKGPS, 4);
+	TextDrawLetterSize(CLICKGPS, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKGPS, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKGPS, 1);
+	TextDrawSetShadow(CLICKGPS, 0);
+	TextDrawAlignment(CLICKGPS, 1);
+	TextDrawColor(CLICKGPS, -1962934017);
+	TextDrawBackgroundColor(CLICKGPS, 255);
+	TextDrawBoxColor(CLICKGPS, 50);
+	TextDrawUseBox(CLICKGPS, 0);
+	TextDrawSetProportional(CLICKGPS, 1);
+	TextDrawSetSelectable(CLICKGPS, 1);
+
+	CLICKEBANK = TextDrawCreate(550.000000, 204.000000, "ld_dual:white");
+	TextDrawFont(CLICKEBANK, 4);
+	TextDrawLetterSize(CLICKEBANK, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKEBANK, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKEBANK, 1);
+	TextDrawSetShadow(CLICKEBANK, 0);
+	TextDrawAlignment(CLICKEBANK, 1);
+	TextDrawColor(CLICKEBANK, 1296911871);
+	TextDrawBackgroundColor(CLICKEBANK, 255);
+	TextDrawBoxColor(CLICKEBANK, 50);
+	TextDrawUseBox(CLICKEBANK, 0);
+	TextDrawSetProportional(CLICKEBANK, 1);
+	TextDrawSetSelectable(CLICKEBANK, 1);
+
+	IPHONE2[19] = TextDrawCreate(561.000000, 372.000000, "SMS");
+	TextDrawFont(IPHONE2[19], 1);
+	TextDrawLetterSize(IPHONE2[19], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[19], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[19], 0);
+	TextDrawSetShadow(IPHONE2[19], 0);
+	TextDrawAlignment(IPHONE2[19], 2);
+	TextDrawColor(IPHONE2[19], 255);
+	TextDrawBackgroundColor(IPHONE2[19], 255);
+	TextDrawBoxColor(IPHONE2[19], 50);
+	TextDrawUseBox(IPHONE2[19], 0);
+	TextDrawSetProportional(IPHONE2[19], 1);
+	TextDrawSetSelectable(IPHONE2[19], 0);
+
+	CLICKAPPSTORE = TextDrawCreate(579.000000, 204.000000, "ld_dual:white");
+	TextDrawFont(CLICKAPPSTORE, 4);
+	TextDrawLetterSize(CLICKAPPSTORE, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKAPPSTORE, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKAPPSTORE, 1);
+	TextDrawSetShadow(CLICKAPPSTORE, 0);
+	TextDrawAlignment(CLICKAPPSTORE, 1);
+	TextDrawColor(CLICKAPPSTORE, 16777215);
+	TextDrawBackgroundColor(CLICKAPPSTORE, 255);
+	TextDrawBoxColor(CLICKAPPSTORE, 50);
+	TextDrawUseBox(CLICKAPPSTORE, 0);
+	TextDrawSetProportional(CLICKAPPSTORE, 1);
+	TextDrawSetSelectable(CLICKAPPSTORE, 1);
+
+	IPHONE2[20] = TextDrawCreate(561.000000, 230.000000, "E-BANK");
+	TextDrawFont(IPHONE2[20], 1);
+	TextDrawLetterSize(IPHONE2[20], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[20], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[20], 0);
+	TextDrawSetShadow(IPHONE2[20], 0);
+	TextDrawAlignment(IPHONE2[20], 2);
+	TextDrawColor(IPHONE2[20], 255);
+	TextDrawBackgroundColor(IPHONE2[20], 255);
+	TextDrawBoxColor(IPHONE2[20], 50);
+	TextDrawUseBox(IPHONE2[20], 0);
+	TextDrawSetProportional(IPHONE2[20], 1);
+	TextDrawSetSelectable(IPHONE2[20], 0);
+
+	CLICKSETTING = TextDrawCreate(521.000000, 240.000000, "ld_dual:white");
+	TextDrawFont(CLICKSETTING, 4);
+	TextDrawLetterSize(CLICKSETTING, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKSETTING, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKSETTING, 1);
+	TextDrawSetShadow(CLICKSETTING, 0);
+	TextDrawAlignment(CLICKSETTING, 1);
+	TextDrawColor(CLICKSETTING, -764862721);
+	TextDrawBackgroundColor(CLICKSETTING, 255);
+	TextDrawBoxColor(CLICKSETTING, 50);
+	TextDrawUseBox(CLICKSETTING, 0);
+	TextDrawSetProportional(CLICKSETTING, 1);
+	TextDrawSetSelectable(CLICKSETTING, 1);
+
+	IPHONE2[21] = TextDrawCreate(614.000000, 212.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[21], 4);
+	TextDrawLetterSize(IPHONE2[21], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[21], 4.500000, 24.000000);
+	TextDrawSetOutline(IPHONE2[21], 1);
+	TextDrawSetShadow(IPHONE2[21], 0);
+	TextDrawAlignment(IPHONE2[21], 1);
+	TextDrawColor(IPHONE2[21], 255);
+	TextDrawBackgroundColor(IPHONE2[21], 255);
+	TextDrawBoxColor(IPHONE2[21], 50);
+	TextDrawUseBox(IPHONE2[21], 0);
+	TextDrawSetProportional(IPHONE2[21], 1);
+	TextDrawSetSelectable(IPHONE2[21], 0);
+
+	IPHONE2[22] = TextDrawCreate(503.000000, 229.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[22], 4);
+	TextDrawLetterSize(IPHONE2[22], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[22], 4.500000, 21.000000);
+	TextDrawSetOutline(IPHONE2[22], 1);
+	TextDrawSetShadow(IPHONE2[22], 0);
+	TextDrawAlignment(IPHONE2[22], 1);
+	TextDrawColor(IPHONE2[22], 255);
+	TextDrawBackgroundColor(IPHONE2[22], 255);
+	TextDrawBoxColor(IPHONE2[22], 50);
+	TextDrawUseBox(IPHONE2[22], 0);
+	TextDrawSetProportional(IPHONE2[22], 1);
+	TextDrawSetSelectable(IPHONE2[22], 0);
+
+	IPHONE2[23] = TextDrawCreate(503.000000, 202.000000, "ld_dual:white");
+	TextDrawFont(IPHONE2[23], 4);
+	TextDrawLetterSize(IPHONE2[23], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[23], 4.500000, 21.000000);
+	TextDrawSetOutline(IPHONE2[23], 1);
+	TextDrawSetShadow(IPHONE2[23], 0);
+	TextDrawAlignment(IPHONE2[23], 1);
+	TextDrawColor(IPHONE2[23], 255);
+	TextDrawBackgroundColor(IPHONE2[23], 255);
+	TextDrawBoxColor(IPHONE2[23], 50);
+	TextDrawUseBox(IPHONE2[23], 0);
+	TextDrawSetProportional(IPHONE2[23], 1);
+	TextDrawSetSelectable(IPHONE2[23], 0);
+
+	CLICKCAMERA = TextDrawCreate(550.000000, 240.000000, "ld_dual:white");
+	TextDrawFont(CLICKCAMERA, 4);
+	TextDrawLetterSize(CLICKCAMERA, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKCAMERA, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKCAMERA, 1);
+	TextDrawSetShadow(CLICKCAMERA, 0);
+	TextDrawAlignment(CLICKCAMERA, 1);
+	TextDrawColor(CLICKCAMERA, 9145343);
+	TextDrawBackgroundColor(CLICKCAMERA, 255);
+	TextDrawBoxColor(CLICKCAMERA, 50);
+	TextDrawUseBox(CLICKCAMERA, 0);
+	TextDrawSetProportional(CLICKCAMERA, 1);
+	TextDrawSetSelectable(CLICKCAMERA, 1);
+
+	CLICKMUSIC = TextDrawCreate(579.000000, 240.000000, "ld_dual:white");
+	TextDrawFont(CLICKMUSIC, 4);
+	TextDrawLetterSize(CLICKMUSIC, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKMUSIC, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKMUSIC, 1);
+	TextDrawSetShadow(CLICKMUSIC, 0);
+	TextDrawAlignment(CLICKMUSIC, 1);
+	TextDrawColor(CLICKMUSIC, 255);
+	TextDrawBackgroundColor(CLICKMUSIC, 255);
+	TextDrawBoxColor(CLICKMUSIC, 50);
+	TextDrawUseBox(CLICKMUSIC, 0);
+	TextDrawSetProportional(CLICKMUSIC, 1);
+	TextDrawSetSelectable(CLICKMUSIC, 1);
+
+	IPHONE2[24] = TextDrawCreate(532.000000, 230.000000, "GPS");
+	TextDrawFont(IPHONE2[24], 1);
+	TextDrawLetterSize(IPHONE2[24], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[24], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[24], 0);
+	TextDrawSetShadow(IPHONE2[24], 0);
+	TextDrawAlignment(IPHONE2[24], 2);
+	TextDrawColor(IPHONE2[24], 255);
+	TextDrawBackgroundColor(IPHONE2[24], 255);
+	TextDrawBoxColor(IPHONE2[24], 50);
+	TextDrawUseBox(IPHONE2[24], 0);
+	TextDrawSetProportional(IPHONE2[24], 1);
+	TextDrawSetSelectable(IPHONE2[24], 0);
+
+	CLICKTWITTER = TextDrawCreate(521.000000, 277.000000, "ld_dual:white");
+	TextDrawFont(CLICKTWITTER, 4);
+	TextDrawLetterSize(CLICKTWITTER, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKTWITTER, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKTWITTER, 1);
+	TextDrawSetShadow(CLICKTWITTER, 0);
+	TextDrawAlignment(CLICKTWITTER, 1);
+	TextDrawColor(CLICKTWITTER, -2016478465);
+	TextDrawBackgroundColor(CLICKTWITTER, 255);
+	TextDrawBoxColor(CLICKTWITTER, 50);
+	TextDrawUseBox(CLICKTWITTER, 0);
+	TextDrawSetProportional(CLICKTWITTER, 1);
+	TextDrawSetSelectable(CLICKTWITTER, 1);
+
+	CLICKKOJEK = TextDrawCreate(550.000000, 277.000000, "ld_dual:white");
+	TextDrawFont(CLICKKOJEK, 4);
+	TextDrawLetterSize(CLICKKOJEK, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKKOJEK, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKKOJEK, 1);
+	TextDrawSetShadow(CLICKKOJEK, 0);
+	TextDrawAlignment(CLICKKOJEK, 1);
+	TextDrawColor(CLICKKOJEK, 852308735);
+	TextDrawBackgroundColor(CLICKKOJEK, 255);
+	TextDrawBoxColor(CLICKKOJEK, 50);
+	TextDrawUseBox(CLICKKOJEK, 0);
+	TextDrawSetProportional(CLICKKOJEK, 1);
+	TextDrawSetSelectable(CLICKKOJEK, 1);
+
+	CLICKEWALLET = TextDrawCreate(579.000000, 277.000000, "ld_dual:white");
+	TextDrawFont(CLICKEWALLET, 4);
+	TextDrawLetterSize(CLICKEWALLET, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKEWALLET, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKEWALLET, 1);
+	TextDrawSetShadow(CLICKEWALLET, 0);
+	TextDrawAlignment(CLICKEWALLET, 1);
+	TextDrawColor(CLICKEWALLET, -1061109505);
+	TextDrawBackgroundColor(CLICKEWALLET, 255);
+	TextDrawBoxColor(CLICKEWALLET, 50);
+	TextDrawUseBox(CLICKEWALLET, 0);
+	TextDrawSetProportional(CLICKEWALLET, 1);
+	TextDrawSetSelectable(CLICKEWALLET, 1);
+
+	IPHONE2[25] = TextDrawCreate(532.000000, 266.000000, "SETTING");
+	TextDrawFont(IPHONE2[25], 1);
+	TextDrawLetterSize(IPHONE2[25], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[25], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[25], 0);
+	TextDrawSetShadow(IPHONE2[25], 0);
+	TextDrawAlignment(IPHONE2[25], 2);
+	TextDrawColor(IPHONE2[25], 255);
+	TextDrawBackgroundColor(IPHONE2[25], 255);
+	TextDrawBoxColor(IPHONE2[25], 50);
+	TextDrawUseBox(IPHONE2[25], 0);
+	TextDrawSetProportional(IPHONE2[25], 1);
+	TextDrawSetSelectable(IPHONE2[25], 0);
+
+	IPHONE2[26] = TextDrawCreate(561.000000, 266.000000, "CAMERA");
+	TextDrawFont(IPHONE2[26], 1);
+	TextDrawLetterSize(IPHONE2[26], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[26], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[26], 0);
+	TextDrawSetShadow(IPHONE2[26], 0);
+	TextDrawAlignment(IPHONE2[26], 2);
+	TextDrawColor(IPHONE2[26], 255);
+	TextDrawBackgroundColor(IPHONE2[26], 255);
+	TextDrawBoxColor(IPHONE2[26], 50);
+	TextDrawUseBox(IPHONE2[26], 0);
+	TextDrawSetProportional(IPHONE2[26], 1);
+	TextDrawSetSelectable(IPHONE2[26], 0);
+
+	CLICKCALL = TextDrawCreate(579.000000, 347.000000, "ld_dual:white");
+	TextDrawFont(CLICKCALL, 4);
+	TextDrawLetterSize(CLICKCALL, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKCALL, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKCALL, 1);
+	TextDrawSetShadow(CLICKCALL, 0);
+	TextDrawAlignment(CLICKCALL, 1);
+	TextDrawColor(CLICKCALL, 852308735);
+	TextDrawBackgroundColor(CLICKCALL, 255);
+	TextDrawBoxColor(CLICKCALL, 50);
+	TextDrawUseBox(CLICKCALL, 0);
+	TextDrawSetProportional(CLICKCALL, 1);
+	TextDrawSetSelectable(CLICKCALL, 1);
+
+	CLICKSMS = TextDrawCreate(550.000000, 347.000000, "ld_dual:white");
+	TextDrawFont(CLICKSMS, 4);
+	TextDrawLetterSize(CLICKSMS, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKSMS, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKSMS, 1);
+	TextDrawSetShadow(CLICKSMS, 0);
+	TextDrawAlignment(CLICKSMS, 1);
+	TextDrawColor(CLICKSMS, 852308735);
+	TextDrawBackgroundColor(CLICKSMS, 255);
+	TextDrawBoxColor(CLICKSMS, 50);
+	TextDrawUseBox(CLICKSMS, 0);
+	TextDrawSetProportional(CLICKSMS, 1);
+	TextDrawSetSelectable(CLICKSMS, 1);
+
+	CLICKCONTACT = TextDrawCreate(521.000000, 347.000000, "ld_dual:white");
+	TextDrawFont(CLICKCONTACT, 4);
+	TextDrawLetterSize(CLICKCONTACT, 0.600000, 2.000000);
+	TextDrawTextSize(CLICKCONTACT, 22.000000, 24.500000);
+	TextDrawSetOutline(CLICKCONTACT, 1);
+	TextDrawSetShadow(CLICKCONTACT, 0);
+	TextDrawAlignment(CLICKCONTACT, 1);
+	TextDrawColor(CLICKCONTACT, 852308735);
+	TextDrawBackgroundColor(CLICKCONTACT, 255);
+	TextDrawBoxColor(CLICKCONTACT, 50);
+	TextDrawUseBox(CLICKCONTACT, 0);
+	TextDrawSetProportional(CLICKCONTACT, 1);
+	TextDrawSetSelectable(CLICKCONTACT, 1);
+
+	IPHONE2[27] = TextDrawCreate(590.000000, 372.000000, "CALL");
+	TextDrawFont(IPHONE2[27], 1);
+	TextDrawLetterSize(IPHONE2[27], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[27], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[27], 0);
+	TextDrawSetShadow(IPHONE2[27], 0);
+	TextDrawAlignment(IPHONE2[27], 2);
+	TextDrawColor(IPHONE2[27], 255);
+	TextDrawBackgroundColor(IPHONE2[27], 255);
+	TextDrawBoxColor(IPHONE2[27], 50);
+	TextDrawUseBox(IPHONE2[27], 0);
+	TextDrawSetProportional(IPHONE2[27], 1);
+	TextDrawSetSelectable(IPHONE2[27], 0);
+
+	IPHONE2[28] = TextDrawCreate(603.000000, 230.000000, "APP STORE");
+	TextDrawFont(IPHONE2[28], 1);
+	TextDrawLetterSize(IPHONE2[28], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[28], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[28], 0);
+	TextDrawSetShadow(IPHONE2[28], 0);
+	TextDrawAlignment(IPHONE2[28], 3);
+	TextDrawColor(IPHONE2[28], 255);
+	TextDrawBackgroundColor(IPHONE2[28], 255);
+	TextDrawBoxColor(IPHONE2[28], 50);
+	TextDrawUseBox(IPHONE2[28], 0);
+	TextDrawSetProportional(IPHONE2[28], 1);
+	TextDrawSetSelectable(IPHONE2[28], 0);
+
+	IPHONE2[29] = TextDrawCreate(532.000000, 372.000000, "CONTACT");
+	TextDrawFont(IPHONE2[29], 1);
+	TextDrawLetterSize(IPHONE2[29], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[29], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[29], 0);
+	TextDrawSetShadow(IPHONE2[29], 0);
+	TextDrawAlignment(IPHONE2[29], 2);
+	TextDrawColor(IPHONE2[29], 255);
+	TextDrawBackgroundColor(IPHONE2[29], 255);
+	TextDrawBoxColor(IPHONE2[29], 50);
+	TextDrawUseBox(IPHONE2[29], 0);
+	TextDrawSetProportional(IPHONE2[29], 1);
+	TextDrawSetSelectable(IPHONE2[29], 0);
+
+	IPHONE2[30] = TextDrawCreate(590.000000, 266.000000, "MUSIC");
+	TextDrawFont(IPHONE2[30], 1);
+	TextDrawLetterSize(IPHONE2[30], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[30], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[30], 0);
+	TextDrawSetShadow(IPHONE2[30], 0);
+	TextDrawAlignment(IPHONE2[30], 2);
+	TextDrawColor(IPHONE2[30], 255);
+	TextDrawBackgroundColor(IPHONE2[30], 255);
+	TextDrawBoxColor(IPHONE2[30], 50);
+	TextDrawUseBox(IPHONE2[30], 0);
+	TextDrawSetProportional(IPHONE2[30], 1);
+	TextDrawSetSelectable(IPHONE2[30], 0);
+
+	IPHONE2[31] = TextDrawCreate(522.000000, 176.000000, "14:35");
+	TextDrawFont(IPHONE2[31], 1);
+	TextDrawLetterSize(IPHONE2[31], 0.187496, 0.800000);
+	TextDrawTextSize(IPHONE2[31], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[31], 0);
+	TextDrawSetShadow(IPHONE2[31], 0);
+	TextDrawAlignment(IPHONE2[31], 2);
+	TextDrawColor(IPHONE2[31], -1);
+	TextDrawBackgroundColor(IPHONE2[31], 255);
+	TextDrawBoxColor(IPHONE2[31], 50);
+	TextDrawUseBox(IPHONE2[31], 0);
+	TextDrawSetProportional(IPHONE2[31], 1);
+	TextDrawSetSelectable(IPHONE2[31], 0);
+
+	IPHONE2[32] = TextDrawCreate(532.000000, 303.000000, "TWITTER");
+	TextDrawFont(IPHONE2[32], 1);
+	TextDrawLetterSize(IPHONE2[32], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[32], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[32], 0);
+	TextDrawSetShadow(IPHONE2[32], 0);
+	TextDrawAlignment(IPHONE2[32], 2);
+	TextDrawColor(IPHONE2[32], 255);
+	TextDrawBackgroundColor(IPHONE2[32], 255);
+	TextDrawBoxColor(IPHONE2[32], 50);
+	TextDrawUseBox(IPHONE2[32], 0);
+	TextDrawSetProportional(IPHONE2[32], 1);
+	TextDrawSetSelectable(IPHONE2[32], 0);
+
+	IPHONE2[33] = TextDrawCreate(561.000000, 303.000000, "KOJEK");
+	TextDrawFont(IPHONE2[33], 1);
+	TextDrawLetterSize(IPHONE2[33], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[33], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[33], 0);
+	TextDrawSetShadow(IPHONE2[33], 0);
+	TextDrawAlignment(IPHONE2[33], 2);
+	TextDrawColor(IPHONE2[33], 255);
+	TextDrawBackgroundColor(IPHONE2[33], 255);
+	TextDrawBoxColor(IPHONE2[33], 50);
+	TextDrawUseBox(IPHONE2[33], 0);
+	TextDrawSetProportional(IPHONE2[33], 1);
+	TextDrawSetSelectable(IPHONE2[33], 0);
+
+	IPHONE2[34] = TextDrawCreate(590.000000, 303.000000, "E-WALLET");
+	TextDrawFont(IPHONE2[34], 1);
+	TextDrawLetterSize(IPHONE2[34], 0.149994, 0.800000);
+	TextDrawTextSize(IPHONE2[34], 400.000000, 17.000000);
+	TextDrawSetOutline(IPHONE2[34], 0);
+	TextDrawSetShadow(IPHONE2[34], 0);
+	TextDrawAlignment(IPHONE2[34], 2);
+	TextDrawColor(IPHONE2[34], 255);
+	TextDrawBackgroundColor(IPHONE2[34], 255);
+	TextDrawBoxColor(IPHONE2[34], 50);
+	TextDrawUseBox(IPHONE2[34], 0);
+	TextDrawSetProportional(IPHONE2[34], 1);
+	TextDrawSetSelectable(IPHONE2[34], 0);
+
+	IPHONE2[35] = TextDrawCreate(555.000000, 211.000000, "HUD:radar_cash");
+	TextDrawFont(IPHONE2[35], 4);
+	TextDrawLetterSize(IPHONE2[35], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[35], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[35], 1);
+	TextDrawSetShadow(IPHONE2[35], 4);
+	TextDrawAlignment(IPHONE2[35], 1);
+	TextDrawColor(IPHONE2[35], -1);
+	TextDrawBackgroundColor(IPHONE2[35], 255);
+	TextDrawBoxColor(IPHONE2[35], 50);
+	TextDrawUseBox(IPHONE2[35], 0);
+	TextDrawSetProportional(IPHONE2[35], 1);
+	TextDrawSetSelectable(IPHONE2[35], 0);
+
+	IPHONE2[36] = TextDrawCreate(526.000000, 211.000000, "HUD:radar_light");
+	TextDrawFont(IPHONE2[36], 4);
+	TextDrawLetterSize(IPHONE2[36], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[36], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[36], 1);
+	TextDrawSetShadow(IPHONE2[36], 4);
+	TextDrawAlignment(IPHONE2[36], 1);
+	TextDrawColor(IPHONE2[36], -1);
+	TextDrawBackgroundColor(IPHONE2[36], 255);
+	TextDrawBoxColor(IPHONE2[36], 50);
+	TextDrawUseBox(IPHONE2[36], 0);
+	TextDrawSetProportional(IPHONE2[36], 1);
+	TextDrawSetSelectable(IPHONE2[36], 0);
+
+	IPHONE2[37] = TextDrawCreate(584.000000, 211.000000, "HUD:radar_airyard");
+	TextDrawFont(IPHONE2[37], 4);
+	TextDrawLetterSize(IPHONE2[37], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[37], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[37], 1);
+	TextDrawSetShadow(IPHONE2[37], 4);
+	TextDrawAlignment(IPHONE2[37], 1);
+	TextDrawColor(IPHONE2[37], -1);
+	TextDrawBackgroundColor(IPHONE2[37], 255);
+	TextDrawBoxColor(IPHONE2[37], 50);
+	TextDrawUseBox(IPHONE2[37], 0);
+	TextDrawSetProportional(IPHONE2[37], 1);
+	TextDrawSetSelectable(IPHONE2[37], 0);
+
+	IPHONE2[38] = TextDrawCreate(584.000000, 247.000000, "HUD:radar_datedisco");
+	TextDrawFont(IPHONE2[38], 4);
+	TextDrawLetterSize(IPHONE2[38], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[38], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[38], 1);
+	TextDrawSetShadow(IPHONE2[38], 4);
+	TextDrawAlignment(IPHONE2[38], 1);
+	TextDrawColor(IPHONE2[38], -1);
+	TextDrawBackgroundColor(IPHONE2[38], 255);
+	TextDrawBoxColor(IPHONE2[38], 50);
+	TextDrawUseBox(IPHONE2[38], 0);
+	TextDrawSetProportional(IPHONE2[38], 1);
+	TextDrawSetSelectable(IPHONE2[38], 0);
+
+	IPHONE2[39] = TextDrawCreate(526.000000, 247.000000, "HUD:radar_waypoint");
+	TextDrawFont(IPHONE2[39], 4);
+	TextDrawLetterSize(IPHONE2[39], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[39], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[39], 1);
+	TextDrawSetShadow(IPHONE2[39], 4);
+	TextDrawAlignment(IPHONE2[39], 1);
+	TextDrawColor(IPHONE2[39], -1);
+	TextDrawBackgroundColor(IPHONE2[39], 255);
+	TextDrawBoxColor(IPHONE2[39], 50);
+	TextDrawUseBox(IPHONE2[39], 0);
+	TextDrawSetProportional(IPHONE2[39], 1);
+	TextDrawSetSelectable(IPHONE2[39], 0);
+
+	IPHONE2[40] = TextDrawCreate(555.000000, 247.000000, "ld_pool:nib");
+	TextDrawFont(IPHONE2[40], 4);
+	TextDrawLetterSize(IPHONE2[40], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[40], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[40], 1);
+	TextDrawSetShadow(IPHONE2[40], 4);
+	TextDrawAlignment(IPHONE2[40], 1);
+	TextDrawColor(IPHONE2[40], -1);
+	TextDrawBackgroundColor(IPHONE2[40], 255);
+	TextDrawBoxColor(IPHONE2[40], 50);
+	TextDrawUseBox(IPHONE2[40], 0);
+	TextDrawSetProportional(IPHONE2[40], 1);
+	TextDrawSetSelectable(IPHONE2[40], 0);
+
+	IPHONE2[41] = TextDrawCreate(584.000000, 283.000000, "HUD:radar_triadscasino");
+	TextDrawFont(IPHONE2[41], 4);
+	TextDrawLetterSize(IPHONE2[41], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[41], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[41], 1);
+	TextDrawSetShadow(IPHONE2[41], 4);
+	TextDrawAlignment(IPHONE2[41], 1);
+	TextDrawColor(IPHONE2[41], -1);
+	TextDrawBackgroundColor(IPHONE2[41], 255);
+	TextDrawBoxColor(IPHONE2[41], 50);
+	TextDrawUseBox(IPHONE2[41], 0);
+	TextDrawSetProportional(IPHONE2[41], 1);
+	TextDrawSetSelectable(IPHONE2[41], 0);
+
+	IPHONE2[42] = TextDrawCreate(555.000000, 283.000000, "HUD:radar_impound");
+	TextDrawFont(IPHONE2[42], 4);
+	TextDrawLetterSize(IPHONE2[42], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[42], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[42], 1);
+	TextDrawSetShadow(IPHONE2[42], 4);
+	TextDrawAlignment(IPHONE2[42], 1);
+	TextDrawColor(IPHONE2[42], -1);
+	TextDrawBackgroundColor(IPHONE2[42], 255);
+	TextDrawBoxColor(IPHONE2[42], 50);
+	TextDrawUseBox(IPHONE2[42], 0);
+	TextDrawSetProportional(IPHONE2[42], 1);
+	TextDrawSetSelectable(IPHONE2[42], 0);
+
+	IPHONE2[43] = TextDrawCreate(526.000000, 283.000000, "HUD:radar_toreno");
+	TextDrawFont(IPHONE2[43], 4);
+	TextDrawLetterSize(IPHONE2[43], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[43], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[43], 1);
+	TextDrawSetShadow(IPHONE2[43], 4);
+	TextDrawAlignment(IPHONE2[43], 1);
+	TextDrawColor(IPHONE2[43], -1);
+	TextDrawBackgroundColor(IPHONE2[43], 255);
+	TextDrawBoxColor(IPHONE2[43], 50);
+	TextDrawUseBox(IPHONE2[43], 0);
+	TextDrawSetProportional(IPHONE2[43], 1);
+	TextDrawSetSelectable(IPHONE2[43], 0);
+
+	IPHONE2[44] = TextDrawCreate(526.000000, 353.000000, "HUD:radar_savegame");
+	TextDrawFont(IPHONE2[44], 4);
+	TextDrawLetterSize(IPHONE2[44], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[44], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[44], 1);
+	TextDrawSetShadow(IPHONE2[44], 4);
+	TextDrawAlignment(IPHONE2[44], 1);
+	TextDrawColor(IPHONE2[44], -1);
+	TextDrawBackgroundColor(IPHONE2[44], 255);
+	TextDrawBoxColor(IPHONE2[44], 50);
+	TextDrawUseBox(IPHONE2[44], 0);
+	TextDrawSetProportional(IPHONE2[44], 1);
+	TextDrawSetSelectable(IPHONE2[44], 0);
+
+	IPHONE2[45] = TextDrawCreate(555.000000, 353.000000, "ld_chat:goodcha");
+	TextDrawFont(IPHONE2[45], 4);
+	TextDrawLetterSize(IPHONE2[45], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[45], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[45], 1);
+	TextDrawSetShadow(IPHONE2[45], 4);
+	TextDrawAlignment(IPHONE2[45], 1);
+	TextDrawColor(IPHONE2[45], -1);
+	TextDrawBackgroundColor(IPHONE2[45], 255);
+	TextDrawBoxColor(IPHONE2[45], 50);
+	TextDrawUseBox(IPHONE2[45], 0);
+	TextDrawSetProportional(IPHONE2[45], 1);
+	TextDrawSetSelectable(IPHONE2[45], 0);
+
+	IPHONE2[46] = TextDrawCreate(584.000000, 353.000000, "ld_chat:thumbup");
+	TextDrawFont(IPHONE2[46], 4);
+	TextDrawLetterSize(IPHONE2[46], 0.600000, 2.000000);
+	TextDrawTextSize(IPHONE2[46], 12.000000, 11.500000);
+	TextDrawSetOutline(IPHONE2[46], 1);
+	TextDrawSetShadow(IPHONE2[46], 4);
+	TextDrawAlignment(IPHONE2[46], 1);
+	TextDrawColor(IPHONE2[46], -1);
+	TextDrawBackgroundColor(IPHONE2[46], 255);
+	TextDrawBoxColor(IPHONE2[46], 50);
+	TextDrawUseBox(IPHONE2[46], 0);
+	TextDrawSetProportional(IPHONE2[46], 1);
+	TextDrawSetSelectable(IPHONE2[46], 0);
+	
+//public OnPlayerClickTextDraw(playerid, Text:clickedid)
+if(clickedid == CLOSEHP)
+		{
+        for(new i = 0; i < 47; i++)
+		{
+			TextDrawHideForPlayer(playerid, IPHONE2[i]);
+		}
+  		TextDrawHideForPlayer(playerid, CLOSEHP);
+  		TextDrawHideForPlayer(playerid, CLICKGPS);
+		TextDrawHideForPlayer(playerid, CLICKEBANK);
+		TextDrawHideForPlayer(playerid, CLICKAPPSTORE);
+		TextDrawHideForPlayer(playerid, CLICKSETTING);
+		TextDrawHideForPlayer(playerid, CLICKCAMERA);
+		TextDrawHideForPlayer(playerid, CLICKMUSIC);
+		TextDrawHideForPlayer(playerid, CLICKTWITTER);
+		TextDrawHideForPlayer(playerid, CLICKKOJEK);
+		TextDrawHideForPlayer(playerid, CLICKEWALLET);
+		TextDrawHideForPlayer(playerid, CLICKCALL);
+		TextDrawHideForPlayer(playerid, CLICKSMS);
+		TextDrawHideForPlayer(playerid, CLICKCONTACT);
+		CancelSelectTextDraw(playerid);
+		
+	}
+	if(clickedid == CLICKGPS)
+ 	{
+		ShowPlayerDialog(playerid, 154, DIALOG_STYLE_LIST, "GPS", "{ffffff}1. Tempat umum\n2. Pekerjaan\n3. Organisasi\n4. Rumah Makan Terdekat\n5. Dealer Kendaraan\n6. Hiburan\n7. Bisnis Terbuka\n8. SPBU Terbuka\n- Tandai Bisnis Terdekat\n- Toko 24/7 Terdekat\n- Bar Terdekat\n- Restoran Kota\n- ATM Terdekat", "Ya", "Tidak");
+	}
+	if(clickedid == CLICKEBANK)
+	{
+
+	  	ShowPlayerDialog(playerid, DIALOG_OALAH, DIALOG_STYLE_INPUT, "Bank", "Masukan ID player yang ingin anda transfer Uang", "Enter", "Quit");
+
+	}
+	if(clickedid == CLICKAPPSTORE)
+	{
+		ShowPlayerDialog(playerid, DIALOG_BELI_PULSA, DIALOG_STYLE_LIST, "Pulsa", "Pulsa Rp.5.000", "Beli", "Batal");
+	}
+	if(clickedid == CLICKSETTING)
+	{
+		ShowPlayerDialog(playerid, DIALOG_SHARE, DIALOG_STYLE_INPUT, "Shareloc", "Masukan ID player yang ingin anda share locasi", "Enter", "Quit");
+	}
+	if(clickedid == CLICKCAMERA)
+	{
+
+	}
+	if(clickedid == CLICKMUSIC)
+	{
+		ShowPlayerDialog(playerid,DIALOG_BOOMBOX1,DIALOG_STYLE_INPUT, "Boombox Input URL", "Please put a Music URL to play the Music", "Play", "Cancel");
+	}
+	if(clickedid == CLICKTWITTER)
+    {
+	    ShowPlayerDialog(playerid, DIALOG_TWT, DIALOG_STYLE_INPUT, "Twitter", "Masukan kata kata yang ingin anda post di twitter", "Enter", "Quit");
+ 	}
+	if(clickedid == CLICKKOJEK)
+	{
+
+	}
+	if(clickedid == CLICKEWALLET)
+	{
+
+	}
+	if(clickedid == CLICKCONTACT)
+	{
+	    if(PlayerInfo[playerid][pProducts][1] == 0) return Send(playerid, COLOR_GREY, "Anda tidak memiliki buku telepon, Anda dapat membelinya di toko 24/7");
+
+        format(MySQLStr, 144, "SELECT `nName`, `nNumber`, `nID`, `plID` FROM `book` WHERE `plID` = %d", PlayerInfo[playerid][pID]);
+	    mysql_tquery(mMysql, MySQLStr, "LoadMyNumber", "d", playerid);
+
+	}
+	if(clickedid == CLICKSMS)
+ 	{
+
+		ShowPlayerDialog(playerid, DIALOG_SMS, DIALOG_STYLE_INPUT, "Send Text Message", "Please enter the number that you wish to send a text message to:", "Dial", "Back");
+
+	}
+	if(clickedid == CLICKCALL)
+ 	{
+		ShowPlayerDialog(playerid, DIALOG_PHONE_DIALUMBER, DIALOG_STYLE_INPUT, "Dial Number", "Please enter the number that you wish to dial below:", "Dial", "Back");
+	}
+	
+//public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
+if(dialogid == DIALOG_TWT)
+	{
+	    if(!response) return 1;
+
+	    new ter[64];
+	    if(sscanf(inputtext, "s[64]", ter)) return 1;
+
+	    new Nama[MAX_PLAYER_NAME];
+		GetPlayerName(playerid, Nama, sizeof(Nama));
+
+        for(new twtcuy; twtcuy < MAX_PLAYERS; twtcuy++)
+        {
+			if(MaxPlayerApkNew[twtcuy] == 4) return 1;
+			MaxPlayerApkNew[twtcuy]++;
+			PlayerPlaySound(twtcuy, 1057 , 0.0, 0.0, 0.0);
+			for(new x=-1; ++x <IndexNotifyApk[twtcuy];)
+			{
+				for(new i=-1;++i<7;) PlayerTextDrawDestroy(twtcuy, TextDrawnApkNew[twtcuy][(x*7) + i]);
+				IndoApkRilis[twtcuy][IndexNotifyApk[twtcuy]-x] = IndoApkRilis[playerid][(IndexNotifyApk[twtcuy]-x)-1];
+			}
+			format(IndoApkRilis[twtcuy][0][NotifyMessage], 320, "Username : %s Post : %s", Nama, ter);
+			IndoApkRilis[twtcuy][0][NotifyIcon] = 2;
+			IndoApkRilis[twtcuy][0][NotifySize] = 4;
+			++IndexNotifyApk[twtcuy];
+			new Float:new_x=0.0;
+			for(new x=-1;++x<IndexNotifyApk[twtcuy];)
+			{
+				CreateNotifyApk(twtcuy, x, x * 7, new_x);
+				new_x += (IndoApkRilis[twtcuy][x][NotifySize]*7.25)+25.0;
+			}
+			SetTimerEx("HideApkNew", 2500, false, "i", twtcuy);
+		}
+	}
+	if(dialogid == DIALOG_SHARE)
+	{
+		if(!response) return 1;
+
+		new orn, Float:x, Float:y, Float:z;
+		if(sscanf(inputtext, "d", orn)) return ShowPlayerDialog(playerid, DIALOG_SHARE, DIALOG_STYLE_INPUT, "Shareloc", "Masukan ID player yang ingin anda share locasi sekarang", "Enter", "Quit");
+
+		GetPlayerPos(playerid, x, y, z);
+		SetPlayerCheckpoint(orn, x, y, z, 7.0);
+	}
+	if(dialogid == DIALOG_SMS)
+	{
+	    if(!response) return 1;
+        new id;
+		if(sscanf(inputtext, "us[128]", id)) return ShowPlayerDialog(playerid, DIALOG_SMS, DIALOG_STYLE_INPUT, "Sms", "Masukan Id player yang ingin anda Kirim Pesan", "Enter", "Quit");
+		if(!IsPlayerConnected(id)) return GameTextForPlayer(playerid, "~n~~n~~n~~n~~n~~n~~n~~n~~n~~w~ERROR: Player Isnt Connected", 3000, 3);
+    	if(playerid == id) return GameTextForPlayer(playerid, "~n~~n~~n~~n~~n~~n~~n~~n~~n~~w~You can't Tidak Bisa Sms ke diri sendiri", 3000, 3);
+		ShowPlayerDialog(playerid, DIALOG_SMS_NGESEND, DIALOG_STYLE_INPUT, "Sms", "Masukan Teks Yg Anda Ingin Kirim", "Enter", "Quit");
+	}
+
+   	if(dialogid == DIALOG_SMS_NGESEND)
+	{
+	    new str2[128], id;
+	    if(!response) return ShowPlayerDialog(playerid, DIALOG_SMS, DIALOG_STYLE_INPUT, "Sms", "Masukan Id player yang ingin anda Kirim Pesan", "Enter", "Quit");
+		if(sscanf(inputtext, "us[128]", id, str2)) return ShowPlayerDialog(playerid, DIALOG_SMS, DIALOG_STYLE_INPUT, "Sms", "Masukan Teks Yg Anda Ingin Kirim", "Enter", "Quit");
+		new Name1[MAX_PLAYER_NAME], Name2[MAX_PLAYER_NAME], str[128];
+	    GetPlayerName(playerid, Name1, sizeof(Name1));
+	    GetPlayerName(id, Name2, sizeof(Name2));
+	    format(str, sizeof(str), "(({00A2D7}[SMS] {FFFFFF}To %s [%d]: %s))", Name2, id, str2);
+	    SendClientMessage(playerid, COLOR_YELLOW, str);
+	    format(str, sizeof(str), "(({00A2D7}[SMS] {FFFFFF}From %s [%d]: %s))", Name1, playerid, str2);
+	    SendClientMessage(id, COLOR_YELLOW, str);
+	}
+	if(dialogid == DIALOG_OALAH)
+	{
+	    if(!response) return 1;
+	    new okk;
+
+		if(sscanf(inputtext, "d", okk)) return ShowPlayerDialog(playerid, DIALOG_OALAH, DIALOG_STYLE_INPUT, "Bank", "Masukan ID player yang ingin anda transfer", "Enter", "Quit");
+
+		ShowPlayerDialog(playerid, DIALOG_NGESEND, DIALOG_STYLE_INPUT, "Bank", "Masukan Jumlah Transfer", "Enter", "Quit");
+	}
+
+	if(dialogid == DIALOG_NGESEND)
+	{
+	    if(!response) return ShowPlayerDialog(playerid, DIALOG_OALAH, DIALOG_STYLE_INPUT, "Transfer", "Masukan ID player yang ingin anda transfer", "Enter", "Quit");
+
+	    new to_player, price;
+		if(sscanf(inputtext, "d", price)) return ShowPlayerDialog(playerid, DIALOG_NGESEND, DIALOG_STYLE_INPUT, "Bank ", "Masukan Jumlah Transfer", "Enter", "Quit");
+		GivePlayerBankEx(playerid, -price, "transfer ke pemain");
+		GivePlayerBankEx(to_player, price, "transfer ke pemain");
+	}
+	if(dialogid == DIALOG_BELI_PULSA)
+    {
+    	if(!response)
+     	{
+            SendClientMessage(playerid, -1, "Batal");
+        	return 1;
+        }
+		switch(listitem)
+  		{
+    		case 0:
+      		{
+      		    Pulsa[playerid] +=5000;
+      		    SendClientMessage(playerid, -1, "Anda Membeli Pulsa Sebesar 5000$");
+      		    GivePlayerMoneyEx(playerid, -5000, "30K");
+            }
+        }
+		return 1;
+	}

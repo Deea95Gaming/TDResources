@@ -1,0 +1,119 @@
+new Text: Text_Global[7];
+
+Text_Global[0] = TextDrawCreate(6.000, 372.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[0], 102.000, 21.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -1327438081);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 4);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(42.000, 357.000, "Stats");
+TextDrawLetterSize(Text_Global[1], 0.409, 1.899);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -1);
+TextDrawSetShadow(Text_Global[1], 1);
+TextDrawSetOutline(Text_Global[1], 1);
+TextDrawBackgroundColor(Text_Global[1], 150);
+TextDrawFont(Text_Global[1], 0);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(6.000, 401.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[2], 102.000, 21.000);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -1327438081);
+TextDrawSetShadow(Text_Global[2], 0);
+TextDrawSetOutline(Text_Global[2], 0);
+TextDrawBackgroundColor(Text_Global[2], 255);
+TextDrawFont(Text_Global[2], 4);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(110.000, 397.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[3], 23.000, 30.000);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], -1);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 255);
+TextDrawFont(Text_Global[3], 4);
+TextDrawSetProportional(Text_Global[3], 1);
+
+Text_Global[4] = TextDrawCreate(117.000, 406.000, "HUD:radar_dateDrink");
+TextDrawTextSize(Text_Global[4], 9.000, 14.000);
+TextDrawAlignment(Text_Global[4], 1);
+TextDrawColor(Text_Global[4], -1);
+TextDrawSetShadow(Text_Global[4], 0);
+TextDrawSetOutline(Text_Global[4], 0);
+TextDrawBackgroundColor(Text_Global[4], 255);
+TextDrawFont(Text_Global[4], 4);
+TextDrawSetProportional(Text_Global[4], 1);
+
+Text_Global[5] = TextDrawCreate(109.000, 368.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[5], 23.000, 30.000);
+TextDrawAlignment(Text_Global[5], 1);
+TextDrawColor(Text_Global[5], -1);
+TextDrawSetShadow(Text_Global[5], 0);
+TextDrawSetOutline(Text_Global[5], 0);
+TextDrawBackgroundColor(Text_Global[5], 255);
+TextDrawFont(Text_Global[5], 4);
+TextDrawSetProportional(Text_Global[5], 1);
+
+Text_Global[6] = TextDrawCreate(114.000, 376.000, "HUD:radar_dateFood");
+TextDrawTextSize(Text_Global[6], 13.000, 14.000);
+TextDrawAlignment(Text_Global[6], 1);
+TextDrawColor(Text_Global[6], -1);
+TextDrawSetShadow(Text_Global[6], 0);
+TextDrawSetOutline(Text_Global[6], 0);
+TextDrawBackgroundColor(Text_Global[6], 255);
+TextDrawFont(Text_Global[6], 4);
+TextDrawSetProportional(Text_Global[6], 1);
+
+####################################################################################################
+
+new Text: BOX_PROGRESS_LAPAR;
+new Text: ANGKA_PROGRESS_LAPAR;
+new Text: BOX_PROGRESS_HAUS;
+new Text: ANGKA_PROGRESS_HAUS;
+
+BOX_PROGRESS_LAPAR = TextDrawCreate(6.000, 372.000, "LD_SPAC:white");
+TextDrawTextSize(BOX_PROGRESS_LAPAR, 102.000, 21.000);
+TextDrawAlignment(BOX_PROGRESS_LAPAR, 1);
+TextDrawColor(BOX_PROGRESS_LAPAR, 512819199);
+TextDrawSetShadow(BOX_PROGRESS_LAPAR, 0);
+TextDrawSetOutline(BOX_PROGRESS_LAPAR, 0);
+TextDrawBackgroundColor(BOX_PROGRESS_LAPAR, 255);
+TextDrawFont(BOX_PROGRESS_LAPAR, 4);
+TextDrawSetProportional(BOX_PROGRESS_LAPAR, 1);
+
+ANGKA_PROGRESS_LAPAR = TextDrawCreate(51.000, 378.000, "100");
+TextDrawLetterSize(ANGKA_PROGRESS_LAPAR, 0.190, 0.999);
+TextDrawAlignment(ANGKA_PROGRESS_LAPAR, 1);
+TextDrawColor(ANGKA_PROGRESS_LAPAR, -1);
+TextDrawSetShadow(ANGKA_PROGRESS_LAPAR, 0);
+TextDrawSetOutline(ANGKA_PROGRESS_LAPAR, 0);
+TextDrawBackgroundColor(ANGKA_PROGRESS_LAPAR, 150);
+TextDrawFont(ANGKA_PROGRESS_LAPAR, 1);
+TextDrawSetProportional(ANGKA_PROGRESS_LAPAR, 1);
+
+BOX_PROGRESS_HAUS = TextDrawCreate(6.000, 401.000, "LD_SPAC:white");
+TextDrawTextSize(BOX_PROGRESS_HAUS, 102.000, 21.000);
+TextDrawAlignment(BOX_PROGRESS_HAUS, 1);
+TextDrawColor(BOX_PROGRESS_HAUS, 512819199);
+TextDrawSetShadow(BOX_PROGRESS_HAUS, 0);
+TextDrawSetOutline(BOX_PROGRESS_HAUS, 0);
+TextDrawBackgroundColor(BOX_PROGRESS_HAUS, 255);
+TextDrawFont(BOX_PROGRESS_HAUS, 4);
+TextDrawSetProportional(BOX_PROGRESS_HAUS, 1);
+
+ANGKA_PROGRESS_HAUS = TextDrawCreate(51.000, 407.000, "100");
+TextDrawLetterSize(ANGKA_PROGRESS_HAUS, 0.189, 0.999);
+TextDrawAlignment(ANGKA_PROGRESS_HAUS, 1);
+TextDrawColor(ANGKA_PROGRESS_HAUS, -1);
+TextDrawSetShadow(ANGKA_PROGRESS_HAUS, 0);
+TextDrawSetOutline(ANGKA_PROGRESS_HAUS, 0);
+TextDrawBackgroundColor(ANGKA_PROGRESS_HAUS, 150);
+TextDrawFont(ANGKA_PROGRESS_HAUS, 1);
+TextDrawSetProportional(ANGKA_PROGRESS_HAUS, 1);
+

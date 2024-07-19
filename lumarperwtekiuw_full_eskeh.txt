@@ -1,0 +1,111 @@
+####################################################################################################
+cr : B4T460R
+Note : Jangan hapus credit ya, hargain saya
+
+//pasang di area new
+new PlayerText: HbeMiripLunar[MAX_PLAYERS][6];
+new PlayerText: HUNGERTD[MAX_PLAYERS];
+new PlayerText: ENERGYTD[MAX_PLAYERS];
+
+//pasang di onplayerconnect, jangan di ongamemodeinit nanti error.
+HbeMiripLunar[playerid][0] = CreatePlayerTextDraw(playerid, 7.000, 255.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HbeMiripLunar[playerid][0], 107.000, 73.000);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][0], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][0], 194);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][0], 255);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][0], 1);
+
+HbeMiripLunar[playerid][1] = CreatePlayerTextDraw(playerid, 13.000, 231.000, "Stats");
+PlayerTextDrawLetterSize(playerid, HbeMiripLunar[playerid][1], 0.549, 3.999);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][1], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][1], 1);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][1], 1);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][1], 150);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][1], 0);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][1], 1);
+
+HbeMiripLunar[playerid][2] = CreatePlayerTextDraw(playerid, 13.000, 272.000, "Hunger");
+PlayerTextDrawLetterSize(playerid, HbeMiripLunar[playerid][2], 0.280, 1.899);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][2], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][2], -1);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][2], 1);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][2], 1);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][2], 150);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][2], 1);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][2], 1);
+
+HbeMiripLunar[playerid][3] = CreatePlayerTextDraw(playerid, 13.000, 298.000, "Energy");
+PlayerTextDrawLetterSize(playerid, HbeMiripLunar[playerid][3], 0.280, 1.899);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][3], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][3], 1);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][3], 1);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][3], 150);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][3], 1);
+
+HbeMiripLunar[playerid][4] = CreatePlayerTextDraw(playerid, 50.000, 279.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HbeMiripLunar[playerid][4], 57.000, 9.000);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][4], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][4], 1887473919);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][4], 255);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][4], 1);
+
+HbeMiripLunar[playerid][5] = CreatePlayerTextDraw(playerid, 50.000, 305.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HbeMiripLunar[playerid][5], 57.000, 9.000);
+PlayerTextDrawAlignment(playerid, HbeMiripLunar[playerid][5], 1);
+PlayerTextDrawColor(playerid, HbeMiripLunar[playerid][5], 1887473919);
+PlayerTextDrawSetShadow(playerid, HbeMiripLunar[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, HbeMiripLunar[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, HbeMiripLunar[playerid][5], 255);
+PlayerTextDrawFont(playerid, HbeMiripLunar[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, HbeMiripLunar[playerid][5], 1);
+
+HUNGERTD[playerid] = CreatePlayerTextDraw(playerid, 50.000, 279.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HUNGERTD[playerid], 57.000, 9.000);
+PlayerTextDrawAlignment(playerid, HUNGERTD[playerid], 1);
+PlayerTextDrawColor(playerid, HUNGERTD[playerid], -1);
+PlayerTextDrawSetShadow(playerid, HUNGERTD[playerid], 0);
+PlayerTextDrawSetOutline(playerid, HUNGERTD[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, HUNGERTD[playerid], 255);
+PlayerTextDrawFont(playerid, HUNGERTD[playerid], 4);
+PlayerTextDrawSetProportional(playerid, HUNGERTD[playerid], 1);
+
+ENERGYTD[playerid] = CreatePlayerTextDraw(playerid, 50.000, 305.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, ENERGYTD[playerid], 57.000, 9.000);
+PlayerTextDrawAlignment(playerid, ENERGYTD[playerid], 1);
+PlayerTextDrawColor(playerid, ENERGYTD[playerid], -1);
+PlayerTextDrawSetShadow(playerid, ENERGYTD[playerid], 0);
+PlayerTextDrawSetOutline(playerid, ENERGYTD[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, ENERGYTD[playerid], 255);
+PlayerTextDrawFont(playerid, ENERGYTD[playerid], 4);
+PlayerTextDrawSetProportional(playerid, ENERGYTD[playerid], 1);
+
+//pasang di public onplayerupdate
+    new Float:Lapar, Float:Haus,
+
+    Lapar = PlayerInfo[playerid][pLapar] * 57.0/100;
+    PlayerTextDrawTextSize(playerid, HUNGERTD[playerid], Lapar, 9.0);
+    PlayerTextDrawShow(playerid, HUNGERTD[playerid]);
+
+    Haus = PlayerInfo[playerid][pHaus] * 57.0/100;
+    PlayerTextDrawTextSize(playerid, ENERGYTD[playerid], Haus, 9.0);
+    PlayerTextDrawShow(playerid, ENERGYTD[playerid]);
+
+//pasang di onplayerspawn
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][0]);
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][1]);
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][2]);
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][3]);
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][4]);
+    PlayerTextDrawShow(playerid, HbeMiripLunar[playerid][5]);
+    PlayerTextDrawShow(playerid, HUNGERTD[playerid]);
+    PlayerTextDrawShow(playerid, ENERGYTD[playerid]);
+

@@ -1,0 +1,42 @@
+new Text: Text_Global[4];
+
+Text_Global[0] = TextDrawCreate(415.000, 27.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[0], 21.000, 13.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -602653441);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 4);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(415.000, 39.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[1], 21.000, 13.000);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -252116993);
+TextDrawSetShadow(Text_Global[1], 0);
+TextDrawSetOutline(Text_Global[1], 0);
+TextDrawBackgroundColor(Text_Global[1], 255);
+TextDrawFont(Text_Global[1], 4);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(442.000, 22.000, "Indonesia");
+TextDrawLetterSize(Text_Global[2], 0.290, 1.899);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -602653441);
+TextDrawSetShadow(Text_Global[2], 0);
+TextDrawSetOutline(Text_Global[2], 0);
+TextDrawBackgroundColor(Text_Global[2], 150);
+TextDrawFont(Text_Global[2], 1);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(443.000, 36.000, "Roleplay");
+TextDrawLetterSize(Text_Global[3], 0.290, 1.899);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], -117899265);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 150);
+TextDrawFont(Text_Global[3], 1);
+TextDrawSetProportional(Text_Global[3], 1);
+

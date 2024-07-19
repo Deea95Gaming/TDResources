@@ -1,0 +1,52 @@
+new Text: Text_Global[5];
+
+Text_Global[0] = TextDrawCreate(493.000, 19.000, ">");
+TextDrawLetterSize(Text_Global[0], 0.429, 3.899);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], 35839);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 150);
+TextDrawFont(Text_Global[0], 1);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(499.000, 13.000, "<");
+TextDrawLetterSize(Text_Global[1], 0.429, 3.899);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -15428609);
+TextDrawSetShadow(Text_Global[1], 0);
+TextDrawSetOutline(Text_Global[1], 0);
+TextDrawBackgroundColor(Text_Global[1], 150);
+TextDrawFont(Text_Global[1], 1);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(514.000, 15.000, "Nama Server");
+TextDrawLetterSize(Text_Global[2], 0.260, 1.999);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -117899265);
+TextDrawSetShadow(Text_Global[2], 0);
+TextDrawSetOutline(Text_Global[2], 0);
+TextDrawBackgroundColor(Text_Global[2], 150);
+TextDrawFont(Text_Global[2], 1);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(513.000, 34.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[3], 50.000, 15.000);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], -602653441);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 255);
+TextDrawFont(Text_Global[3], 4);
+TextDrawSetProportional(Text_Global[3], 1);
+
+Text_Global[4] = TextDrawCreate(522.000, 32.000, "Roleplay");
+TextDrawLetterSize(Text_Global[4], 0.290, 1.699);
+TextDrawAlignment(Text_Global[4], 1);
+TextDrawColor(Text_Global[4], -117899265);
+TextDrawSetShadow(Text_Global[4], 0);
+TextDrawSetOutline(Text_Global[4], 0);
+TextDrawBackgroundColor(Text_Global[4], 150);
+TextDrawFont(Text_Global[4], 1);
+TextDrawSetProportional(Text_Global[4], 1);
+

@@ -1,0 +1,109 @@
+new Text: Text_Global[6];
+
+Text_Global[0] = TextDrawCreate(11.000, 198.000, "LD_SPAC:black");
+TextDrawTextSize(Text_Global[0], 112.000, 63.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -1);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 4);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(14.000, 184.000, "Stats");
+TextDrawLetterSize(Text_Global[1], 0.439, 2.199);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -1);
+TextDrawSetShadow(Text_Global[1], 1);
+TextDrawSetOutline(Text_Global[1], 1);
+TextDrawBackgroundColor(Text_Global[1], 150);
+TextDrawFont(Text_Global[1], 0);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(31.000, 218.000, "Hunger");
+TextDrawLetterSize(Text_Global[2], 0.240, 1.699);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -1);
+TextDrawSetShadow(Text_Global[2], 1);
+TextDrawSetOutline(Text_Global[2], 1);
+TextDrawBackgroundColor(Text_Global[2], 150);
+TextDrawFont(Text_Global[2], 1);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(17.000, 221.000, "HUD:radar_burgerShot");
+TextDrawTextSize(Text_Global[3], 8.000, 13.000);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], -1);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 255);
+TextDrawFont(Text_Global[3], 4);
+TextDrawSetProportional(Text_Global[3], 1);
+
+Text_Global[4] = TextDrawCreate(16.000, 236.000, "HUD:radar_diner");
+TextDrawTextSize(Text_Global[4], 10.000, 16.000);
+TextDrawAlignment(Text_Global[4], 1);
+TextDrawColor(Text_Global[4], -1);
+TextDrawSetShadow(Text_Global[4], 0);
+TextDrawSetOutline(Text_Global[4], 0);
+TextDrawBackgroundColor(Text_Global[4], 255);
+TextDrawFont(Text_Global[4], 4);
+TextDrawSetProportional(Text_Global[4], 1);
+
+Text_Global[5] = TextDrawCreate(31.000, 235.000, "Energy");
+TextDrawLetterSize(Text_Global[5], 0.240, 1.699);
+TextDrawAlignment(Text_Global[5], 1);
+TextDrawColor(Text_Global[5], -1);
+TextDrawSetShadow(Text_Global[5], 1);
+TextDrawSetOutline(Text_Global[5], 1);
+TextDrawBackgroundColor(Text_Global[5], 150);
+TextDrawFont(Text_Global[5], 1);
+TextDrawSetProportional(Text_Global[5], 1);
+
+####################################################################################################
+
+new Text: LAPAR;
+new Text: HAUS;
+new Text: LAPAR_PROG;
+new Text: HAUS_PROG;
+
+LAPAR = TextDrawCreate(64.000, 224.000, "LD_SPAC:white");
+TextDrawTextSize(LAPAR, 49.000, 9.000);
+TextDrawAlignment(LAPAR, 1);
+TextDrawColor(LAPAR, -1);
+TextDrawSetShadow(LAPAR, 0);
+TextDrawSetOutline(LAPAR, 0);
+TextDrawBackgroundColor(LAPAR, 255);
+TextDrawFont(LAPAR, 4);
+TextDrawSetProportional(LAPAR, 1);
+
+HAUS = TextDrawCreate(64.000, 240.000, "LD_SPAC:white");
+TextDrawTextSize(HAUS, 49.000, 9.000);
+TextDrawAlignment(HAUS, 1);
+TextDrawColor(HAUS, -1);
+TextDrawSetShadow(HAUS, 0);
+TextDrawSetOutline(HAUS, 0);
+TextDrawBackgroundColor(HAUS, 255);
+TextDrawFont(HAUS, 4);
+TextDrawSetProportional(HAUS, 1);
+
+LAPAR_PROG = TextDrawCreate(84.000, 225.000, "100");
+TextDrawLetterSize(LAPAR_PROG, 0.119, 0.599);
+TextDrawAlignment(LAPAR_PROG, 1);
+TextDrawColor(LAPAR_PROG, -1);
+TextDrawSetShadow(LAPAR_PROG, 1);
+TextDrawSetOutline(LAPAR_PROG, 1);
+TextDrawBackgroundColor(LAPAR_PROG, 150);
+TextDrawFont(LAPAR_PROG, 1);
+TextDrawSetProportional(LAPAR_PROG, 1);
+
+HAUS_PROG = TextDrawCreate(84.000, 241.000, "100");
+TextDrawLetterSize(HAUS_PROG, 0.119, 0.599);
+TextDrawAlignment(HAUS_PROG, 1);
+TextDrawColor(HAUS_PROG, -1);
+TextDrawSetShadow(HAUS_PROG, 1);
+TextDrawSetOutline(HAUS_PROG, 1);
+TextDrawBackgroundColor(HAUS_PROG, 150);
+TextDrawFont(HAUS_PROG, 1);
+TextDrawSetProportional(HAUS_PROG, 1);
+

@@ -1,0 +1,184 @@
+####################################################################################################
+
+new PlayerText: radialTD[MAX_PLAYERS][11];
+
+radialTD[playerid][0] = CreatePlayerTextDraw(playerid, 345.000, 211.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][0], 36.000, 36.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][0], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][0], 1887473919);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][0], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][0], 1);
+
+radialTD[playerid][1] = CreatePlayerTextDraw(playerid, 372.000, 156.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][1], 8.000, 14.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][1], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][1], 12582911);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][1], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][1], 1);
+
+radialTD[playerid][2] = CreatePlayerTextDraw(playerid, 394.000, 189.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][2], 8.000, 14.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][2], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][2], 16423679);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][2], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][2], 1);
+
+radialTD[playerid][3] = CreatePlayerTextDraw(playerid, 420.000, 224.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][3], 8.000, 14.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][3], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][3], -65281);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][3], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][3], 1);
+
+radialTD[playerid][4] = CreatePlayerTextDraw(playerid, 398.000, 259.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][4], 8.000, 14.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][4], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][4], -602653441);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][4], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][4], 1);
+
+radialTD[playerid][5] = CreatePlayerTextDraw(playerid, 377.000, 288.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, radialTD[playerid][5], 8.000, 14.000);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][5], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][5], -1811885057);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][5], 255);
+PlayerTextDrawFont(playerid, radialTD[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][5], 1);
+
+radialTD[playerid][6] = CreatePlayerTextDraw(playerid, 421.000, 157.000, "Vehicle");
+PlayerTextDrawLetterSize(playerid, radialTD[playerid][6], 0.359, 1.199);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][6], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][6], -1);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][6], 150);
+PlayerTextDrawFont(playerid, radialTD[playerid][6], 1);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][6], 1);
+
+radialTD[playerid][7] = CreatePlayerTextDraw(playerid, 435.000, 190.000, "Inventory");
+PlayerTextDrawLetterSize(playerid, radialTD[playerid][7], 0.359, 1.199);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][7], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][7], -1);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][7], 150);
+PlayerTextDrawFont(playerid, radialTD[playerid][7], 1);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][7], 1);
+
+radialTD[playerid][8] = CreatePlayerTextDraw(playerid, 453.000, 225.000, "Accesories");
+PlayerTextDrawLetterSize(playerid, radialTD[playerid][8], 0.359, 1.199);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][8], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][8], -1);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][8], 150);
+PlayerTextDrawFont(playerid, radialTD[playerid][8], 1);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][8], 1);
+
+radialTD[playerid][9] = CreatePlayerTextDraw(playerid, 451.000, 259.000, "Phone");
+PlayerTextDrawLetterSize(playerid, radialTD[playerid][9], 0.359, 1.199);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][9], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][9], -1);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][9], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][9], 150);
+PlayerTextDrawFont(playerid, radialTD[playerid][9], 1);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][9], 1);
+
+radialTD[playerid][10] = CreatePlayerTextDraw(playerid, 416.000, 289.000, "Document");
+PlayerTextDrawLetterSize(playerid, radialTD[playerid][10], 0.359, 1.199);
+PlayerTextDrawAlignment(playerid, radialTD[playerid][10], 1);
+PlayerTextDrawColor(playerid, radialTD[playerid][10], -1);
+PlayerTextDrawSetShadow(playerid, radialTD[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, radialTD[playerid][10], 0);
+PlayerTextDrawBackgroundColor(playerid, radialTD[playerid][10], 150);
+PlayerTextDrawFont(playerid, radialTD[playerid][10], 1);
+PlayerTextDrawSetProportional(playerid, radialTD[playerid][10], 1);
+
+####################################################################################################
+
+new PlayerText: VehicleRadial[MAX_PLAYERS];
+new PlayerText: InvRadial[MAX_PLAYERS];
+new PlayerText: AccsRadial[MAX_PLAYERS];
+new PlayerText: PhoneRadial[MAX_PLAYERS];
+new PlayerText: DocRadial[MAX_PLAYERS];
+new PlayerText: CloseRadial[MAX_PLAYERS];
+
+VehicleRadial[playerid] = CreatePlayerTextDraw(playerid, 370.000, 153.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, VehicleRadial[playerid], 84.000, 20.000);
+PlayerTextDrawAlignment(playerid, VehicleRadial[playerid], 1);
+PlayerTextDrawColor(playerid, VehicleRadial[playerid], 1887473919);
+PlayerTextDrawSetShadow(playerid, VehicleRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, VehicleRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, VehicleRadial[playerid], 255);
+PlayerTextDrawFont(playerid, VehicleRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, VehicleRadial[playerid], 1);
+
+InvRadial[playerid] = CreatePlayerTextDraw(playerid, 392.000, 186.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, InvRadial[playerid], 84.000, 20.000);
+PlayerTextDrawAlignment(playerid, InvRadial[playerid], 1);
+PlayerTextDrawColor(playerid, InvRadial[playerid], 1887473919);
+PlayerTextDrawSetShadow(playerid, InvRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, InvRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, InvRadial[playerid], 255);
+PlayerTextDrawFont(playerid, InvRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, InvRadial[playerid], 1);
+
+AccsRadial[playerid] = CreatePlayerTextDraw(playerid, 417.000, 221.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, AccsRadial[playerid], 84.000, 20.000);
+PlayerTextDrawAlignment(playerid, AccsRadial[playerid], 1);
+PlayerTextDrawColor(playerid, AccsRadial[playerid], 1887473919);
+PlayerTextDrawSetShadow(playerid, AccsRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, AccsRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, AccsRadial[playerid], 255);
+PlayerTextDrawFont(playerid, AccsRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, AccsRadial[playerid], 1);
+
+PhoneRadial[playerid] = CreatePlayerTextDraw(playerid, 395.000, 256.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, PhoneRadial[playerid], 84.000, 20.000);
+PlayerTextDrawAlignment(playerid, PhoneRadial[playerid], 1);
+PlayerTextDrawColor(playerid, PhoneRadial[playerid], 1887473919);
+PlayerTextDrawSetShadow(playerid, PhoneRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, PhoneRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, PhoneRadial[playerid], 255);
+PlayerTextDrawFont(playerid, PhoneRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, PhoneRadial[playerid], 1);
+
+DocRadial[playerid] = CreatePlayerTextDraw(playerid, 375.000, 285.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, DocRadial[playerid], 84.000, 20.000);
+PlayerTextDrawAlignment(playerid, DocRadial[playerid], 1);
+PlayerTextDrawColor(playerid, DocRadial[playerid], 1887473919);
+PlayerTextDrawSetShadow(playerid, DocRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, DocRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, DocRadial[playerid], 255);
+PlayerTextDrawFont(playerid, DocRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, DocRadial[playerid], 1);
+
+CloseRadial[playerid] = CreatePlayerTextDraw(playerid, 347.000, 214.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, CloseRadial[playerid], 32.000, 31.000);
+PlayerTextDrawAlignment(playerid, CloseRadial[playerid], 1);
+PlayerTextDrawColor(playerid, CloseRadial[playerid], -12254977);
+PlayerTextDrawSetShadow(playerid, CloseRadial[playerid], 0);
+PlayerTextDrawSetOutline(playerid, CloseRadial[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, CloseRadial[playerid], 255);
+PlayerTextDrawFont(playerid, CloseRadial[playerid], 4);
+PlayerTextDrawSetProportional(playerid, CloseRadial[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, CloseRadial[playerid], 1);
+

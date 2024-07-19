@@ -1,0 +1,860 @@
+//Taroh di atas #define GetPlayerOfferInfo(%0,%1) 		g_player_offer[%0][%1]
+enum eNotify
+{
+	NotifyIcon,
+	NotifyMessage[320],
+	NotifySize
+}
+enum E_NOTIFYDATA
+{
+	NotifyIcon,
+	NotifyMessage[320],
+	NotifySize
+}
+new InfoNotify[MAX_PLAYERS][4][eNotify];
+new IndoApkRilis[MAX_PLAYERS][4][E_NOTIFYDATA];
+new MaxPlayerNotify[MAX_PLAYERS];
+new MaxPlayerApkNew[MAX_PLAYERS];
+new PlayerText:TextDrawNotifikasi[MAX_PLAYERS][4*7];
+new PlayerText:TextDrawnApkNew[MAX_PLAYERS][4*7];
+new IndexNotify[MAX_PLAYERS];
+new IndexNotifyApk[MAX_PLAYERS];
+
+forward HideNotify(playerid);
+public HideNotify(playerid)
+{
+	if(!IndexNotify[playerid]) return 1;
+	--IndexNotify[playerid];
+	MaxPlayerNotify[playerid]--;
+	for(new i=-1;++i<7;) PlayerTextDrawDestroy(playerid, TextDrawNotifikasi[playerid][(IndexNotify[playerid]*7)+i]);
+	return 1;
+}
+stock ShowInfo(playerid, pesan[])
+{
+	ShowNotify(playerid, pesan, 1);
+ 	return 1;
+}
+stock ShowError(playerid, pesan[])
+{
+	ShowNotify(playerid, pesan, 2);
+ 	return 1;
+}
+stock ShowSucces(playerid, pesan[])
+{
+	ShowNotify(playerid, pesan, 3);
+ 	return 1;
+}
+stock ShowSyntax(playerid, pesan[])
+{
+	ShowNotify(playerid, pesan, 4);
+ 	return 1;
+}
+
+stock ShowWarning(playerid, pesan[])
+{
+	ShowNotify(playerid, pesan, 5);
+	return 1;
+}
+
+stock PermissionError(playerid)
+{
+	ShowError(playerid, "Anda tidak berhak menggunakan CMD ini!");
+	return 1;
+}
+stock ShowNotify(const playerid, const string:message[], const icon)
+{
+	if(MaxPlayerNotify[playerid] == 4) return 1;
+	MaxPlayerNotify[playerid]++;
+	PlayerPlaySound(playerid, 1057 , 0.0, 0.0, 0.0);
+	for(new x=-1; ++x <IndexNotify[playerid];)
+	{
+		for(new i=-1;++i<7;) PlayerTextDrawDestroy(playerid, TextDrawNotifikasi[playerid][(x*7) + i]);
+		InfoNotify[playerid][IndexNotify[playerid]-x] = InfoNotify[playerid][(IndexNotify[playerid]-x)-1];
+	}
+	format(InfoNotify[playerid][0][NotifyMessage], 320, "%s", message);
+	InfoNotify[playerid][0][NotifyIcon] = icon;
+	InfoNotify[playerid][0][NotifySize] = 4;
+	++IndexNotify[playerid];
+	new Float:new_x=0.0;
+	for(new x=-1;++x<IndexNotify[playerid];)
+	{
+		CreateNotify(playerid, x, x * 7, new_x);
+		new_x += (InfoNotify[playerid][x][NotifySize]*7.25)+25.0;
+	}
+	SetTimerEx("HideNotify", 2500, false, "d", playerid);
+	return 1;
+}
+stock CreateNotify(const playerid, index, i, const Float:new_x)
+{
+	new lines = InfoNotify[playerid][index][NotifySize];
+	new Float:x = (lines * 10) + new_x;
+	new Float:posisibaru = x+30.0;
+	if(InfoNotify[playerid][index][NotifyIcon] == 1)
+	{
+		TextDrawNotifikasi[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 65535);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "I");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "Info");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, InfoNotify[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+	}
+	if(InfoNotify[playerid][index][NotifyIcon] == 2)
+	{
+	    TextDrawNotifikasi[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -16776961);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "E");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "ERROR");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, InfoNotify[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+	}
+	if(InfoNotify[playerid][index][NotifyIcon] == 3)
+	{
+	    TextDrawNotifikasi[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -65281);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "S");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "SUCCES");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, InfoNotify[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+	}
+	if(InfoNotify[playerid][index][NotifyIcon] == 4)
+	{
+	    TextDrawNotifikasi[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 1687547391);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "C");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "SYNTAX");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, InfoNotify[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+	}
+	if(InfoNotify[playerid][index][NotifyIcon] == 5)
+	{
+	    TextDrawNotifikasi[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 16711935);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "W");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "WARNING");
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+
+		TextDrawNotifikasi[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, InfoNotify[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawNotifikasi[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawNotifikasi[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawNotifikasi[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawNotifikasi[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawNotifikasi[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawNotifikasi[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawNotifikasi[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawNotifikasi[playerid][i]);
+	}
+	return true;
+}
+stock CreateNotifyApk(const playerid, index, i, const Float:new_x)
+{
+	new lines = IndoApkRilis[playerid][index][NotifySize];
+	new Float:x = (lines * 10) + new_x;
+	new Float:posisibaru = x+30.0;
+	if(IndoApkRilis[playerid][index][NotifyIcon] == 1)
+	{
+		TextDrawnApkNew[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], 65535);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "A");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "ADMIN_DUTY");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, IndoApkRilis[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+	}
+	if(IndoApkRilis[playerid][index][NotifyIcon] == 2)
+	{
+	    TextDrawnApkNew[playerid][i] = CreatePlayerTextDraw(playerid, 503.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 486.000000, 122.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 487.000000, 121.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 15.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -16776961);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 504.000000, 120.000000+posisibaru, "ld_bum:blkdot");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 4);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.600000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 102.000000, 36.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 490.000000, 119.000000+posisibaru, "T");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.550000, 2.000000);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 507.000000, 121.000000+posisibaru, "TWIITER");
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.304165, 1.399999);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 400.000000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+
+		TextDrawnApkNew[playerid][++i] = CreatePlayerTextDraw(playerid, 508.000000, 133.000000+posisibaru, IndoApkRilis[playerid][index][NotifyMessage]);
+		PlayerTextDrawFont(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawLetterSize(playerid, TextDrawnApkNew[playerid][i], 0.166666, 1.149999);
+		PlayerTextDrawTextSize(playerid, TextDrawnApkNew[playerid][i], 603.500000, 17.000000);
+		PlayerTextDrawSetOutline(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetShadow(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawAlignment(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawColor(playerid, TextDrawnApkNew[playerid][i], -1);
+		PlayerTextDrawBackgroundColor(playerid, TextDrawnApkNew[playerid][i], 255);
+		PlayerTextDrawBoxColor(playerid, TextDrawnApkNew[playerid][i], 50);
+		PlayerTextDrawUseBox(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawSetProportional(playerid, TextDrawnApkNew[playerid][i], 1);
+		PlayerTextDrawSetSelectable(playerid, TextDrawnApkNew[playerid][i], 0);
+		PlayerTextDrawShow(playerid, TextDrawnApkNew[playerid][i]);
+	}
+	return true;
+}
+
+//Taroh Di Paling Bawah
+forward HideApkNew(playerid);
+public HideApkNew(playerid)
+{
+	if(!IndexNotifyApk[playerid]) return 1;
+	--IndexNotifyApk[playerid];
+	MaxPlayerApkNew[playerid]--;
+	for(new i=-1;++i<7;) PlayerTextDrawDestroy(playerid, TextDrawnApkNew[playerid][(IndexNotifyApk[playerid]*7)+i]);
+	return 1;
+}

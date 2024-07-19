@@ -1,0 +1,539 @@
+new Text: TUTORPUH[27];
+
+TUTORPUH[0] = TextDrawCreate(315.000, 223.000, "X");
+TextDrawLetterSize(TUTORPUH[0], 0.727, 3.098);
+TextDrawAlignment(TUTORPUH[0], 1);
+TextDrawColor(TUTORPUH[0], -1);
+TextDrawSetShadow(TUTORPUH[0], 1);
+TextDrawSetOutline(TUTORPUH[0], 1);
+TextDrawBackgroundColor(TUTORPUH[0], 0);
+TextDrawFont(TUTORPUH[0], 1);
+TextDrawSetProportional(TUTORPUH[0], 1);
+
+TUTORPUH[1] = TextDrawCreate(292.000, 165.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[1], 15.000, 25.000);
+TextDrawAlignment(TUTORPUH[1], 1);
+TextDrawColor(TUTORPUH[1], -1);
+TextDrawSetShadow(TUTORPUH[1], 0);
+TextDrawSetOutline(TUTORPUH[1], 0);
+TextDrawBackgroundColor(TUTORPUH[1], 255);
+TextDrawFont(TUTORPUH[1], 4);
+TextDrawSetProportional(TUTORPUH[1], 1);
+
+TUTORPUH[2] = TextDrawCreate(293.000, 167.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[2], 13.000, 20.000);
+TextDrawAlignment(TUTORPUH[2], 1);
+TextDrawColor(TUTORPUH[2], 255);
+TextDrawSetShadow(TUTORPUH[2], 0);
+TextDrawSetOutline(TUTORPUH[2], 0);
+TextDrawBackgroundColor(TUTORPUH[2], 255);
+TextDrawFont(TUTORPUH[2], 4);
+TextDrawSetProportional(TUTORPUH[2], 1);
+
+TUTORPUH[3] = TextDrawCreate(297.000, 186.000, "LD_BEAT:chit");
+TextDrawTextSize(TUTORPUH[3], 5.000, 5.000);
+TextDrawAlignment(TUTORPUH[3], 1);
+TextDrawColor(TUTORPUH[3], 255);
+TextDrawSetShadow(TUTORPUH[3], 0);
+TextDrawSetOutline(TUTORPUH[3], 0);
+TextDrawBackgroundColor(TUTORPUH[3], 255);
+TextDrawFont(TUTORPUH[3], 4);
+TextDrawSetProportional(TUTORPUH[3], 1);
+
+TUTORPUH[4] = TextDrawCreate(345.000, 173.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[4], 19.000, 15.000);
+TextDrawAlignment(TUTORPUH[4], 1);
+TextDrawColor(TUTORPUH[4], -1);
+TextDrawSetShadow(TUTORPUH[4], 0);
+TextDrawSetOutline(TUTORPUH[4], 0);
+TextDrawBackgroundColor(TUTORPUH[4], 255);
+TextDrawFont(TUTORPUH[4], 4);
+TextDrawSetProportional(TUTORPUH[4], 1);
+
+TUTORPUH[5] = TextDrawCreate(346.000, 175.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[5], 8.000, 9.000);
+TextDrawAlignment(TUTORPUH[5], 1);
+TextDrawColor(TUTORPUH[5], 255);
+TextDrawSetShadow(TUTORPUH[5], 0);
+TextDrawSetOutline(TUTORPUH[5], 0);
+TextDrawBackgroundColor(TUTORPUH[5], 255);
+TextDrawFont(TUTORPUH[5], 4);
+TextDrawSetProportional(TUTORPUH[5], 1);
+
+TUTORPUH[6] = TextDrawCreate(355.000, 175.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[6], 8.000, 2.000);
+TextDrawAlignment(TUTORPUH[6], 1);
+TextDrawColor(TUTORPUH[6], 255);
+TextDrawSetShadow(TUTORPUH[6], 0);
+TextDrawSetOutline(TUTORPUH[6], 0);
+TextDrawBackgroundColor(TUTORPUH[6], 255);
+TextDrawFont(TUTORPUH[6], 4);
+TextDrawSetProportional(TUTORPUH[6], 1);
+
+TUTORPUH[7] = TextDrawCreate(355.000, 179.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[7], 8.000, 2.000);
+TextDrawAlignment(TUTORPUH[7], 1);
+TextDrawColor(TUTORPUH[7], 255);
+TextDrawSetShadow(TUTORPUH[7], 0);
+TextDrawSetOutline(TUTORPUH[7], 0);
+TextDrawBackgroundColor(TUTORPUH[7], 255);
+TextDrawFont(TUTORPUH[7], 4);
+TextDrawSetProportional(TUTORPUH[7], 1);
+
+TUTORPUH[8] = TextDrawCreate(355.000, 183.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[8], 8.000, 2.000);
+TextDrawAlignment(TUTORPUH[8], 1);
+TextDrawColor(TUTORPUH[8], 255);
+TextDrawSetShadow(TUTORPUH[8], 0);
+TextDrawSetOutline(TUTORPUH[8], 0);
+TextDrawBackgroundColor(TUTORPUH[8], 255);
+TextDrawFont(TUTORPUH[8], 4);
+TextDrawSetProportional(TUTORPUH[8], 1);
+
+TUTORPUH[9] = TextDrawCreate(371.000, 226.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[9], 19.000, 15.000);
+TextDrawAlignment(TUTORPUH[9], 1);
+TextDrawColor(TUTORPUH[9], -1);
+TextDrawSetShadow(TUTORPUH[9], 0);
+TextDrawSetOutline(TUTORPUH[9], 0);
+TextDrawBackgroundColor(TUTORPUH[9], 255);
+TextDrawFont(TUTORPUH[9], 4);
+TextDrawSetProportional(TUTORPUH[9], 1);
+
+TUTORPUH[10] = TextDrawCreate(375.000, 232.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[10], 11.000, 9.000);
+TextDrawAlignment(TUTORPUH[10], 1);
+TextDrawColor(TUTORPUH[10], 255);
+TextDrawSetShadow(TUTORPUH[10], 0);
+TextDrawSetOutline(TUTORPUH[10], 0);
+TextDrawBackgroundColor(TUTORPUH[10], 255);
+TextDrawFont(TUTORPUH[10], 4);
+TextDrawSetProportional(TUTORPUH[10], 1);
+
+TUTORPUH[11] = TextDrawCreate(377.000, 235.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[11], 8.000, 6.000);
+TextDrawAlignment(TUTORPUH[11], 1);
+TextDrawColor(TUTORPUH[11], -1);
+TextDrawSetShadow(TUTORPUH[11], 0);
+TextDrawSetOutline(TUTORPUH[11], 0);
+TextDrawBackgroundColor(TUTORPUH[11], 255);
+TextDrawFont(TUTORPUH[11], 4);
+TextDrawSetProportional(TUTORPUH[11], 1);
+
+TUTORPUH[12] = TextDrawCreate(360.000, 282.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[12], 12.000, 12.000);
+TextDrawAlignment(TUTORPUH[12], 1);
+TextDrawColor(TUTORPUH[12], -1);
+TextDrawSetShadow(TUTORPUH[12], 0);
+TextDrawSetOutline(TUTORPUH[12], 0);
+TextDrawBackgroundColor(TUTORPUH[12], 255);
+TextDrawFont(TUTORPUH[12], 4);
+TextDrawSetProportional(TUTORPUH[12], 1);
+
+TUTORPUH[13] = TextDrawCreate(357.000, 279.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[13], 18.000, 7.000);
+TextDrawAlignment(TUTORPUH[13], 1);
+TextDrawColor(TUTORPUH[13], -1);
+TextDrawSetShadow(TUTORPUH[13], 0);
+TextDrawSetOutline(TUTORPUH[13], 0);
+TextDrawBackgroundColor(TUTORPUH[13], 255);
+TextDrawFont(TUTORPUH[13], 4);
+TextDrawSetProportional(TUTORPUH[13], 1);
+
+TUTORPUH[14] = TextDrawCreate(361.000, 279.000, "\");
+TextDrawLetterSize(TUTORPUH[14], 0.280, 0.499);
+TextDrawAlignment(TUTORPUH[14], 1);
+TextDrawColor(TUTORPUH[14], 255);
+TextDrawSetShadow(TUTORPUH[14], 1);
+TextDrawSetOutline(TUTORPUH[14], 1);
+TextDrawBackgroundColor(TUTORPUH[14], 150);
+TextDrawFont(TUTORPUH[14], 1);
+TextDrawSetProportional(TUTORPUH[14], 1);
+
+TUTORPUH[15] = TextDrawCreate(365.000, 279.000, "/");
+TextDrawLetterSize(TUTORPUH[15], 0.280, 0.499);
+TextDrawAlignment(TUTORPUH[15], 1);
+TextDrawColor(TUTORPUH[15], 255);
+TextDrawSetShadow(TUTORPUH[15], 1);
+TextDrawSetOutline(TUTORPUH[15], 1);
+TextDrawBackgroundColor(TUTORPUH[15], 150);
+TextDrawFont(TUTORPUH[15], 1);
+TextDrawSetProportional(TUTORPUH[15], 1);
+
+TUTORPUH[16] = TextDrawCreate(307.000, 296.000, "LD_BEAT:chit");
+TextDrawTextSize(TUTORPUH[16], 22.000, 19.000);
+TextDrawAlignment(TUTORPUH[16], 1);
+TextDrawColor(TUTORPUH[16], -1);
+TextDrawSetShadow(TUTORPUH[16], 0);
+TextDrawSetOutline(TUTORPUH[16], 0);
+TextDrawBackgroundColor(TUTORPUH[16], 255);
+TextDrawFont(TUTORPUH[16], 4);
+TextDrawSetProportional(TUTORPUH[16], 1);
+
+TUTORPUH[17] = TextDrawCreate(316.000, 305.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[17], 12.000, 11.000);
+TextDrawAlignment(TUTORPUH[17], 1);
+TextDrawColor(TUTORPUH[17], -1);
+TextDrawSetShadow(TUTORPUH[17], 0);
+TextDrawSetOutline(TUTORPUH[17], 0);
+TextDrawBackgroundColor(TUTORPUH[17], 255);
+TextDrawFont(TUTORPUH[17], 4);
+TextDrawSetProportional(TUTORPUH[17], 1);
+
+TUTORPUH[18] = TextDrawCreate(317.000, 306.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[18], 10.000, 9.000);
+TextDrawAlignment(TUTORPUH[18], 1);
+TextDrawColor(TUTORPUH[18], 255);
+TextDrawSetShadow(TUTORPUH[18], 0);
+TextDrawSetOutline(TUTORPUH[18], 0);
+TextDrawBackgroundColor(TUTORPUH[18], 255);
+TextDrawFont(TUTORPUH[18], 4);
+TextDrawSetProportional(TUTORPUH[18], 1);
+
+TUTORPUH[19] = TextDrawCreate(311.000, 306.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[19], 14.000, 12.000);
+TextDrawAlignment(TUTORPUH[19], 1);
+TextDrawColor(TUTORPUH[19], -1);
+TextDrawSetShadow(TUTORPUH[19], 0);
+TextDrawSetOutline(TUTORPUH[19], 0);
+TextDrawBackgroundColor(TUTORPUH[19], 255);
+TextDrawFont(TUTORPUH[19], 4);
+TextDrawSetProportional(TUTORPUH[19], 1);
+
+TUTORPUH[20] = TextDrawCreate(258.000, 219.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[20], 16.000, 20.000);
+TextDrawAlignment(TUTORPUH[20], 1);
+TextDrawColor(TUTORPUH[20], -1);
+TextDrawSetShadow(TUTORPUH[20], 0);
+TextDrawSetOutline(TUTORPUH[20], 0);
+TextDrawBackgroundColor(TUTORPUH[20], 255);
+TextDrawFont(TUTORPUH[20], 4);
+TextDrawSetProportional(TUTORPUH[20], 1);
+
+TUTORPUH[21] = TextDrawCreate(261.000, 216.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[21], 10.000, 15.000);
+TextDrawAlignment(TUTORPUH[21], 1);
+TextDrawColor(TUTORPUH[21], -1);
+TextDrawSetShadow(TUTORPUH[21], 0);
+TextDrawSetOutline(TUTORPUH[21], 0);
+TextDrawBackgroundColor(TUTORPUH[21], 255);
+TextDrawFont(TUTORPUH[21], 4);
+TextDrawSetProportional(TUTORPUH[21], 1);
+
+TUTORPUH[22] = TextDrawCreate(260.000, 223.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[22], 11.000, 2.000);
+TextDrawAlignment(TUTORPUH[22], 1);
+TextDrawColor(TUTORPUH[22], 255);
+TextDrawSetShadow(TUTORPUH[22], 0);
+TextDrawSetOutline(TUTORPUH[22], 0);
+TextDrawBackgroundColor(TUTORPUH[22], 255);
+TextDrawFont(TUTORPUH[22], 4);
+TextDrawSetProportional(TUTORPUH[22], 1);
+
+TUTORPUH[23] = TextDrawCreate(260.000, 226.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[23], 11.000, 2.000);
+TextDrawAlignment(TUTORPUH[23], 1);
+TextDrawColor(TUTORPUH[23], 255);
+TextDrawSetShadow(TUTORPUH[23], 0);
+TextDrawSetOutline(TUTORPUH[23], 0);
+TextDrawBackgroundColor(TUTORPUH[23], 255);
+TextDrawFont(TUTORPUH[23], 4);
+TextDrawSetProportional(TUTORPUH[23], 1);
+
+TUTORPUH[24] = TextDrawCreate(260.000, 230.000, "LD_SPAC:white");
+TextDrawTextSize(TUTORPUH[24], 11.000, 2.000);
+TextDrawAlignment(TUTORPUH[24], 1);
+TextDrawColor(TUTORPUH[24], 255);
+TextDrawSetShadow(TUTORPUH[24], 0);
+TextDrawSetOutline(TUTORPUH[24], 0);
+TextDrawBackgroundColor(TUTORPUH[24], 255);
+TextDrawFont(TUTORPUH[24], 4);
+TextDrawSetProportional(TUTORPUH[24], 1);
+
+TUTORPUH[25] = TextDrawCreate(264.000, 232.000, "S");
+TextDrawLetterSize(TUTORPUH[25], 0.230, 0.799);
+TextDrawAlignment(TUTORPUH[25], 1);
+TextDrawColor(TUTORPUH[25], 255);
+TextDrawSetShadow(TUTORPUH[25], 1);
+TextDrawSetOutline(TUTORPUH[25], 1);
+TextDrawBackgroundColor(TUTORPUH[25], 3);
+TextDrawFont(TUTORPUH[25], 1);
+TextDrawSetProportional(TUTORPUH[25], 1);
+
+TUTORPUH[26] = TextDrawCreate(265.000, 231.000, "I");
+TextDrawLetterSize(TUTORPUH[26], 0.230, 0.799);
+TextDrawAlignment(TUTORPUH[26], 1);
+TextDrawColor(TUTORPUH[26], 255);
+TextDrawSetShadow(TUTORPUH[26], 1);
+TextDrawSetOutline(TUTORPUH[26], 1);
+TextDrawBackgroundColor(TUTORPUH[26], 3);
+TextDrawFont(TUTORPUH[26], 1);
+TextDrawSetProportional(TUTORPUH[26], 1);
+
+####################################################################################################
+
+new PlayerText: TUTORPUH[MAX_PLAYERS][13];
+
+TUTORPUH[playerid][0] = CreatePlayerTextDraw(playerid, 279.000, 271.000, "\");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][0], 0.208, 0.550);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][0], 400.000, 17.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][0], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][0], 255);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][0], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][0], 1);
+
+TUTORPUH[playerid][1] = CreatePlayerTextDraw(playerid, 313.000, 306.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][1], 10.000, 11.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][1], 1);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][1], 255);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][1], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][1], 1);
+
+TUTORPUH[playerid][2] = CreatePlayerTextDraw(playerid, 272.000, 272.000, "ld_bum:blkdot");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][2], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][2], 6.500, 1.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][2], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][2], 255);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][2], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][2], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][2], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][2], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][2], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][2], 1);
+
+TUTORPUH[playerid][3] = CreatePlayerTextDraw(playerid, 267.000, 276.000, "ld_bum:blkdot");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][3], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][3], 16.500, 5.500);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][3], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][3], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][3], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][3], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][3], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][3], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][3], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][3], 1);
+
+TUTORPUH[playerid][4] = CreatePlayerTextDraw(playerid, 264.000, 275.000, "ld_beat:chit");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][4], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][4], 22.500, 11.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][4], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][4], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][4], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][4], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][4], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][4], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][4], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][4], 1);
+
+TUTORPUH[playerid][5] = CreatePlayerTextDraw(playerid, 267.000, 279.000, "ld_bum:blkdot");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][5], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][5], 16.500, 6.500);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][5], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][5], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][5], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][5], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][5], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][5], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][5], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][5], 1);
+
+TUTORPUH[playerid][6] = CreatePlayerTextDraw(playerid, 270.000, 279.000, "ld_bum:blkdot");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][6], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][6], 3.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][6], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][6], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][6], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][6], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][6], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][6], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][6], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][6], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][6], 1);
+
+TUTORPUH[playerid][7] = CreatePlayerTextDraw(playerid, 277.000, 279.000, "ld_bum:blkdot");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][7], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][7], 3.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][7], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][7], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][7], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][7], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][7], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][7], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][7], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][7], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][7], 1);
+
+TUTORPUH[playerid][8] = CreatePlayerTextDraw(playerid, 271.000, 271.000, "/");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][8], 0.208, 0.550);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][8], 400.000, 17.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][8], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][8], 255);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][8], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][8], 1);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][8], 1);
+
+TUTORPUH[playerid][9] = CreatePlayerTextDraw(playerid, 267.000, 278.000, "ld_beat:chit");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][9], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][9], 9.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][9], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][9], 323848959);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][9], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][9], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][9], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][9], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][9], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][9], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][9], 1);
+
+TUTORPUH[playerid][10] = CreatePlayerTextDraw(playerid, 274.000, 278.000, "ld_beat:chit");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][10], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][10], 9.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][10], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][10], 323848959);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][10], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][10], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][10], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][10], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][10], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][10], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][10], 1);
+
+TUTORPUH[playerid][11] = CreatePlayerTextDraw(playerid, 279.000, 271.000, "ld_beat:chit");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][11], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][11], 9.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][11], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][11], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][11], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][11], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][11], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][11], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][11], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][11], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][11], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][11], 1);
+
+TUTORPUH[playerid][12] = CreatePlayerTextDraw(playerid, 262.000, 272.000, "ld_beat:chit");
+PlayerTextDrawLetterSize(playerid, TUTORPUH[playerid][12], 0.600, 2.000);
+PlayerTextDrawTextSize(playerid, TUTORPUH[playerid][12], 9.500, 8.000);
+PlayerTextDrawAlignment(playerid, TUTORPUH[playerid][12], 2);
+PlayerTextDrawColor(playerid, TUTORPUH[playerid][12], -1);
+PlayerTextDrawUseBox(playerid, TUTORPUH[playerid][12], 1);
+PlayerTextDrawBoxColor(playerid, TUTORPUH[playerid][12], 50);
+PlayerTextDrawSetShadow(playerid, TUTORPUH[playerid][12], 0);
+PlayerTextDrawSetOutline(playerid, TUTORPUH[playerid][12], 1);
+PlayerTextDrawBackgroundColor(playerid, TUTORPUH[playerid][12], 255);
+PlayerTextDrawFont(playerid, TUTORPUH[playerid][12], 4);
+PlayerTextDrawSetProportional(playerid, TUTORPUH[playerid][12], 1);
+PlayerTextDrawSetSelectable(playerid, TUTORPUH[playerid][12], 1);
+
+####################################################################################################
+
+new Text: KTP;
+new Text: SHOWIDENT;
+new Text: BAJU;
+new Text: INVOICE;
+new Text: HP;
+new Text: INVENTORY;
+new Text: CAR;
+new Text: CLOSE;
+
+KTP = TextDrawCreate(326.000, 153.000, "LD_BEAT:chit");
+TextDrawTextSize(KTP, 57.000, 57.000);
+TextDrawAlignment(KTP, 1);
+TextDrawColor(KTP, -5963521);
+TextDrawSetShadow(KTP, 0);
+TextDrawSetOutline(KTP, 0);
+TextDrawBackgroundColor(KTP, 255);
+TextDrawFont(KTP, 4);
+TextDrawSetProportional(KTP, 1);
+
+SHOWIDENT = TextDrawCreate(351.000, 204.000, "LD_BEAT:chit");
+TextDrawTextSize(SHOWIDENT, 57.000, 57.000);
+TextDrawAlignment(SHOWIDENT, 1);
+TextDrawColor(SHOWIDENT, -5963521);
+TextDrawSetShadow(SHOWIDENT, 0);
+TextDrawSetOutline(SHOWIDENT, 0);
+TextDrawBackgroundColor(SHOWIDENT, 255);
+TextDrawFont(SHOWIDENT, 4);
+TextDrawSetProportional(SHOWIDENT, 1);
+
+BAJU = TextDrawCreate(337.000, 258.000, "LD_BEAT:chit");
+TextDrawTextSize(BAJU, 57.000, 57.000);
+TextDrawAlignment(BAJU, 1);
+TextDrawColor(BAJU, -5963521);
+TextDrawSetShadow(BAJU, 0);
+TextDrawSetOutline(BAJU, 0);
+TextDrawBackgroundColor(BAJU, 255);
+TextDrawFont(BAJU, 4);
+TextDrawSetProportional(BAJU, 1);
+
+INVOICE = TextDrawCreate(238.000, 198.000, "LD_BEAT:chit");
+TextDrawTextSize(INVOICE, 57.000, 57.000);
+TextDrawAlignment(INVOICE, 1);
+TextDrawColor(INVOICE, -5963521);
+TextDrawSetShadow(INVOICE, 0);
+TextDrawSetOutline(INVOICE, 0);
+TextDrawBackgroundColor(INVOICE, 255);
+TextDrawFont(INVOICE, 4);
+TextDrawSetProportional(INVOICE, 1);
+
+HP = TextDrawCreate(271.000, 149.000, "LD_BEAT:chit");
+TextDrawTextSize(HP, 57.000, 57.000);
+TextDrawAlignment(HP, 1);
+TextDrawColor(HP, -5963521);
+TextDrawSetShadow(HP, 0);
+TextDrawSetOutline(HP, 0);
+TextDrawBackgroundColor(HP, 255);
+TextDrawFont(HP, 4);
+TextDrawSetProportional(HP, 1);
+
+INVENTORY = TextDrawCreate(291.000, 281.000, "LD_BEAT:chit");
+TextDrawTextSize(INVENTORY, 57.000, 57.000);
+TextDrawAlignment(INVENTORY, 1);
+TextDrawColor(INVENTORY, -5963521);
+TextDrawSetShadow(INVENTORY, 0);
+TextDrawSetOutline(INVENTORY, 0);
+TextDrawBackgroundColor(INVENTORY, 255);
+TextDrawFont(INVENTORY, 4);
+TextDrawSetProportional(INVENTORY, 1);
+
+CAR = TextDrawCreate(247.000, 251.000, "LD_BEAT:chit");
+TextDrawTextSize(CAR, 57.000, 57.000);
+TextDrawAlignment(CAR, 1);
+TextDrawColor(CAR, -5963521);
+TextDrawSetShadow(CAR, 0);
+TextDrawSetOutline(CAR, 0);
+TextDrawBackgroundColor(CAR, 255);
+TextDrawFont(CAR, 4);
+TextDrawSetProportional(CAR, 1);
+
+CLOSE = TextDrawCreate(294.000, 210.000, "LD_BEAT:chit");
+TextDrawTextSize(CLOSE, 57.000, 57.000);
+TextDrawAlignment(CLOSE, 1);
+TextDrawColor(CLOSE, -16776961);
+TextDrawSetShadow(CLOSE, 0);
+TextDrawSetOutline(CLOSE, 0);
+TextDrawBackgroundColor(CLOSE, 255);
+TextDrawFont(CLOSE, 4);
+TextDrawSetProportional(CLOSE, 1);
+

@@ -1,0 +1,74 @@
+CREDIT BY AEROLTZZ
+NOTE ; MAAP SCRIPT NYA JELEK
+
+Taro Dimana Aja Asalkan Di Bagian Cmd
+
+CMD:givelic(playerid, params[]) //Ubah Cmd nya disini misal Dari /givelic jadi /kasihlic
+{
+	if(!IsACop(playerid)) return SendClientMessage(playerid, COLOR_RED, "anda bukan anggota polisi"); //untuk memastikan apakah dia polisi atau bukan, kalo bukan ngk bisa
+
+	if(PlayerInfo[playerid][pRank] < 3) return Send(playerid, COLOR_GREY, "Dimungkinkan untuk memilih lisensi/item hanya dari peringkat 3."); //Ubah Rank Polisi Jadi kalo Kalian Ada Rank khusus buat pd yng tugasnya kasih lic, ubah disini
+	if(sscanf(params, "u", params[0])) return Send(playerid, -1,"Enter: /givelic [id pemain]"); //buat misal /givelic doang kaga ada id jadi harus masukin id
+	if(!IsPlayerConnected(params[0])) return Send(playerid, -1,"Player is offline!"); //buat pastiin kalo yang mau dikasih itu online
+	if(PlayerInfo[params[0]][pLogin] == 0) return Send(playerid, -1,"Pemain tidak login!"); //buat pastiin ngk salah id kalo id nya offline kaga bisa
+	if(afk_time[params[0]] > 2) return Send(playerid, -1,"Seorang pemain di AFK."); // buat pastiin kalo dia kaga afk
+	if(!ProxDetectorS(3.0, playerid, params[0])) return Send(playerid, COLOR_GREY,"Pemain harus berada di dekat Anda."); //buat pastiin kalo yang mau dikasih lic itu deket kita
+
+    SetPVarInt(playerid, "GiveLicenses", params[0]); //variable jadi id player yg dimasukan disini akan di simpan disini
+	return SPD(playerid, 618,DIALOG_STYLE_LIST, "Perizinan", ""W"1. SIM\n2. Lisensi Penerbangan\n3. Izin Transportasi Air\n4. Lisensi senjata\n5. Set lisensi", "Berikan", "Tutup"); //Dialog Nya, case nya juga bisa diubah
+}
+
+cari dlu case 182 terus scrool ke bawah sampe ketemu case 183 disitu kalian paste kode ini
+    case 618:
+		{
+			if(!response) return 1;
+
+			new useplayers = GetPVarInt(playerid, "GiveLicenses");
+
+		 	switch(listitem) {
+				case 0:
+				{
+					if(PlayerInfo[useplayers][pLicenses][0] == 1) return Send(playerid, COLOR_GREY, "Pemain ini sudah memiliki SIM!");
+
+					SCMF(playerid, -1, "Anda telah memberikan SIM untuk pemain tersebut %s.", Name(useplayers));
+					SCMF(useplayers, -1, "%s memberi Anda SIM.", Name(useplayers));
+   					PlayerInfo[useplayers][pLicenses][0] = 1;
+      			}
+				case 1:
+ 				{
+					if(PlayerInfo[useplayers][pLicenses][1] == 1) return Send(playerid, COLOR_GREY, "Pemain ini memiliki lisensi untuk transportasi udara!");
+
+                    SCMF(playerid, -1, "Anda telah memberikan lisensi untuk transportasi udara ke pemain %s[%d].", Name(useplayers), useplayers);
+					SCMF(useplayers, -1, "%s[%d] memberi Anda lisensi untuk transportasi udara.", Name(playerid), playerid);
+   					PlayerInfo[useplayers][pLicenses][1] = 1;
+      			}
+				case 2:
+ 				{
+   					if(PlayerInfo[useplayers][pLicenses][2] == 1) return Send(playerid, COLOR_GREY, "Pemain ini memiliki lisensi air!");
+
+                    SCMF(playerid, -1,"Anda telah memberi izin transportasi air ke pemain %s[%d].", Name(useplayers), useplayers);
+					SCMF(useplayers, -1, "%s[%d] memberimu izin transportasi air.", Name(playerid), playerid);
+   					PlayerInfo[useplayers][pLicenses][2] = 1;
+      			}
+				case 3:
+ 				{
+ 					if(PlayerInfo[useplayers][pLicenses][3] == 1) return Send(playerid, COLOR_GREY, "Pemain ini memiliki lisensi senjata!");
+
+    				SCMF(playerid, -1,"Anda memberi lisensi senjata kepada pemain %s[%d].", Name(useplayers), useplayers);
+					SCMF(useplayers, -1, "%s[%d] memberi Anda lisensi senjata.", Name(playerid), playerid);
+   					PlayerInfo[useplayers][pLicenses][3] = 1;
+      			}
+				case 4:
+ 				{
+ 				    SCMF(playerid, -1, "Anda memberi semua lisensi ke %s[%d].", Name(useplayers), useplayers);
+					SCMF(useplayers, -1, "%s[%d] memberi Anda semua lisensi, gunakan /lic.", Name(playerid), playerid);
+
+					PlayerInfo[useplayers][pLicenses][0] = 1;
+	                PlayerInfo[useplayers][pLicenses][1] = 1;
+	                PlayerInfo[useplayers][pLicenses][2] = 1;
+	                PlayerInfo[useplayers][pLicenses][3] = 1;
+	    		}
+	    	}
+
+	    	SavePlayerLicenses(useplayers);
+	    }

@@ -1,0 +1,13 @@
+	PlayerTextdraws[playerid][textdraw_spectate] = CreatePlayerTextDraw(playerid, 328.000000, 327.000000, "~g~Ananta Wiguna (0)~n~Cash: ~y~$500.0~n~~w~HP: ~y~100~n~~w~AP: ~y~100~n~~w~Int: ~y~0~n~~w~World: ~y~0~n~~w~FPS: ~y~100 ~w~Ping:");
+	PlayerTextDrawFont(playerid, PlayerTextdraws[playerid][textdraw_spectate], 1);
+	PlayerTextDrawLetterSize(playerid, PlayerTextdraws[playerid][textdraw_spectate], 0.516666, 1.400001);
+	PlayerTextDrawTextSize(playerid, PlayerTextdraws[playerid][textdraw_spectate], 400.000000, 192.000000);
+	PlayerTextDrawSetOutline(playerid, PlayerTextdraws[playerid][textdraw_spectate], 0);
+	PlayerTextDrawSetShadow(playerid, PlayerTextdraws[playerid][textdraw_spectate], 1);
+	PlayerTextDrawAlignment(playerid, PlayerTextdraws[playerid][textdraw_spectate], 2);
+	PlayerTextDrawColor(playerid, PlayerTextdraws[playerid][textdraw_spectate], -1);
+	PlayerTextDrawBackgroundColor(playerid, PlayerTextdraws[playerid][textdraw_spectate], 255);
+	PlayerTextDrawBoxColor(playerid, PlayerTextdraws[playerid][textdraw_spectate], 100);
+	PlayerTextDrawUseBox(playerid, PlayerTextdraws[playerid][textdraw_spectate], 1);
+	PlayerTextDrawSetProportional(playerid, PlayerTextdraws[playerid][textdraw_spectate], 1);
+	PlayerTextDrawSetSelectable(playerid, PlayerTextdraws[playerid][textdraw_spectate], 0);

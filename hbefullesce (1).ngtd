@@ -1,0 +1,73 @@
+//HBE
+new PlayerText: ardhbe[MAX_PLAYERS][5];
+
+	//ONPLAYERCONNECT 
+	ardhbe[playerid][0] = CreatePlayerTextDraw(playerid, 719.000, 350.000, "_");
+	PlayerTextDrawLetterSize(playerid, ardhbe[playerid][0], 0.910, 6.299);
+	PlayerTextDrawTextSize(playerid, ardhbe[playerid][0], 570.000, -5.000);
+	PlayerTextDrawAlignment(playerid, ardhbe[playerid][0], 1);
+	PlayerTextDrawColor(playerid, ardhbe[playerid][0], -1);
+	PlayerTextDrawUseBox(playerid, ardhbe[playerid][0], 1);
+	PlayerTextDrawBoxColor(playerid, ardhbe[playerid][0], 150);
+	PlayerTextDrawSetShadow(playerid, ardhbe[playerid][0], 1);
+	PlayerTextDrawSetOutline(playerid, ardhbe[playerid][0], 1);
+	PlayerTextDrawBackgroundColor(playerid, ardhbe[playerid][0], 150);
+	PlayerTextDrawFont(playerid, ardhbe[playerid][0], 1);
+	PlayerTextDrawSetProportional(playerid, ardhbe[playerid][0], 1);
+	
+	ardhbe[playerid][1] = CreatePlayerTextDraw(playerid, 576.000, 381.000, "HUD:radar_diner");
+	PlayerTextDrawTextSize(playerid, ardhbe[playerid][1], 18.000, 22.000);
+	PlayerTextDrawAlignment(playerid, ardhbe[playerid][1], 1);
+	PlayerTextDrawColor(playerid, ardhbe[playerid][1], -1);
+	PlayerTextDrawSetShadow(playerid, ardhbe[playerid][1], 0);
+	PlayerTextDrawSetOutline(playerid, ardhbe[playerid][1], 0);
+	PlayerTextDrawBackgroundColor(playerid, ardhbe[playerid][1], 255);
+	PlayerTextDrawFont(playerid, ardhbe[playerid][1], 4);
+	PlayerTextDrawSetProportional(playerid, ardhbe[playerid][1], 1);
+	
+	ardhbe[playerid][2] = CreatePlayerTextDraw(playerid, 576.000, 353.000, "HUD:radar_dateFood");
+	PlayerTextDrawTextSize(playerid, ardhbe[playerid][2], 18.000, 22.000);
+	PlayerTextDrawAlignment(playerid, ardhbe[playerid][2], 1);
+	PlayerTextDrawColor(playerid, ardhbe[playerid][2], -1);
+	PlayerTextDrawSetShadow(playerid, ardhbe[playerid][2], 0);
+	PlayerTextDrawSetOutline(playerid, ardhbe[playerid][2], 0);
+	PlayerTextDrawBackgroundColor(playerid, ardhbe[playerid][2], 255);
+	PlayerTextDrawFont(playerid, ardhbe[playerid][2], 4);
+	PlayerTextDrawSetProportional(playerid, ardhbe[playerid][2], 1);
+	
+	ardhbe[playerid][3] = CreatePlayerTextDraw(playerid, 605.000, 356.000, "100");
+	PlayerTextDrawLetterSize(playerid, ardhbe[playerid][3], 0.399, 1.699);
+	PlayerTextDrawAlignment(playerid, ardhbe[playerid][3], 1);
+	PlayerTextDrawColor(playerid, ardhbe[playerid][3], 579543807);
+	PlayerTextDrawSetShadow(playerid, ardhbe[playerid][3], 1);
+	PlayerTextDrawSetOutline(playerid, ardhbe[playerid][3], 1);
+	PlayerTextDrawBackgroundColor(playerid, ardhbe[playerid][3], 150);
+	PlayerTextDrawFont(playerid, ardhbe[playerid][3], 3);
+	PlayerTextDrawSetProportional(playerid, ardhbe[playerid][3], 1);
+	
+	ardhbe[playerid][4] = CreatePlayerTextDraw(playerid, 605.000, 385.000, "100");
+	PlayerTextDrawLetterSize(playerid, ardhbe[playerid][4], 0.399, 1.699);
+	PlayerTextDrawAlignment(playerid, ardhbe[playerid][4], 1);
+	PlayerTextDrawColor(playerid, ardhbe[playerid][4], 579543807);
+	PlayerTextDrawSetShadow(playerid, ardhbe[playerid][4], 1);
+	PlayerTextDrawSetOutline(playerid, ardhbe[playerid][4], 1);
+	PlayerTextDrawBackgroundColor(playerid, ardhbe[playerid][4], 150);
+	PlayerTextDrawFont(playerid, ardhbe[playerid][4], 3);
+	PlayerTextDrawSetProportional(playerid, ardhbe[playerid][4], 1);
+	
+	//ONPLAYERSPAWN
+    PlayerTextDrawShow(playerid, ardhbe[playerid][0]);
+	PlayerTextDrawShow(playerid, ardhbe[playerid][1]);
+	PlayerTextDrawShow(playerid, ardhbe[playerid][2]);
+	PlayerTextDrawShow(playerid, ardhbe[playerid][3]);
+	PlayerTextDrawShow(playerid, ardhbe[playerid][4]);
+   
+  //ONPLAYERUPDATE
+ new ardlapar[256];
+
+	format(ardlapar, sizeof(ardlapar), "%0.0f%", PlayerInfo[playerid][pSatiety]);
+	PlayerTextDrawSetString(playerid, ardhbe[playerid][3], ardlapar);
+
+	format(ardlapar, sizeof(ardlapar), "%0.0f%", PlayerInfo[playerid][pThirst]);
+	PlayerTextDrawSetString(playerid, ardhbe[playerid][4], ardlapar);
+	

@@ -1,0 +1,22 @@
+new Text: Text_Global[2];
+
+Text_Global[0] = TextDrawCreate(395.000, 17.000, "LunarPride");
+TextDrawLetterSize(Text_Global[0], 0.300, 1.500);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -16776961);
+TextDrawSetShadow(Text_Global[0], 1);
+TextDrawSetOutline(Text_Global[0], 1);
+TextDrawBackgroundColor(Text_Global[0], 150);
+TextDrawFont(Text_Global[0], 1);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(443.000, 17.000, "Roleplay");
+TextDrawLetterSize(Text_Global[1], 0.300, 1.500);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -252116993);
+TextDrawSetShadow(Text_Global[1], 1);
+TextDrawSetOutline(Text_Global[1], 1);
+TextDrawBackgroundColor(Text_Global[1], 150);
+TextDrawFont(Text_Global[1], 1);
+TextDrawSetProportional(Text_Global[1], 1);
+

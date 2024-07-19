@@ -1,0 +1,86 @@
+new Text: Text_Global[1];
+
+Text_Global[0] = TextDrawCreate(321.000, 390.000, "HUD:radar_diner");
+TextDrawTextSize(Text_Global[0], 20.000, 25.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -1);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 4);
+TextDrawSetProportional(Text_Global[0], 1);
+
+####################################################################################################
+
+new PlayerText: Text_Player[MAX_PLAYERS][7];
+
+Text_Player[playerid][0] = CreatePlayerTextDraw(playerid, 260.000, 380.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][0], 48.000, 60.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][0], -764862721);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][0], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][0], 1);
+
+Text_Player[playerid][1] = CreatePlayerTextDraw(playerid, 274.000, 390.000, "HUD:radar_burgerShot");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][1], 20.000, 25.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][1], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][1], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][1], 1);
+
+Text_Player[playerid][2] = CreatePlayerTextDraw(playerid, 276.000, 413.000, "100");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][2], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][2], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][2], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][2], 1);
+
+Text_Player[playerid][3] = CreatePlayerTextDraw(playerid, 307.000, 380.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][3], 48.000, 60.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][3], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][3], 512819199);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][3], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][3], 1);
+
+Text_Player[playerid][4] = CreatePlayerTextDraw(playerid, 323.000, 413.000, "100");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][4], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][4], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][4], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][4], 1);
+
+Text_Player[playerid][5] = CreatePlayerTextDraw(playerid, 360.000, 413.000, "ID: (ID PLAYER)");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][5], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][5], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][5], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][5], 1);
+
+Text_Player[playerid][6] = CreatePlayerTextDraw(playerid, 150.000, 413.000, "LOCATION: (lokasi player)");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][6], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][6], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][6], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][6], 1);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][6], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][6], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][6], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][6], 1);
+

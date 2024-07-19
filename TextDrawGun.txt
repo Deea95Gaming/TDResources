@@ -1,0 +1,52 @@
+new Text: SenjataTD[5];
+
+SenjataTD[0] = TextDrawCreate(5.000, 50.000, "8");
+TextDrawLetterSize(SenjataTD[0], 1.390, 5.900);
+TextDrawAlignment(SenjataTD[0], 1);
+TextDrawColor(SenjataTD[0], -849584897);
+TextDrawSetShadow(SenjataTD[0], 0);
+TextDrawSetOutline(SenjataTD[0], 0);
+TextDrawBackgroundColor(SenjataTD[0], 150);
+TextDrawFont(SenjataTD[0], 1);
+TextDrawSetProportional(SenjataTD[0], 1);
+
+SenjataTD[1] = TextDrawCreate(76.000, 64.000, "LD_BEAT:chit");
+TextDrawTextSize(SenjataTD[1], 23.000, 25.000);
+TextDrawAlignment(SenjataTD[1], 1);
+TextDrawColor(SenjataTD[1], -260013825);
+TextDrawSetShadow(SenjataTD[1], 0);
+TextDrawSetOutline(SenjataTD[1], 0);
+TextDrawBackgroundColor(SenjataTD[1], 255);
+TextDrawFont(SenjataTD[1], 4);
+TextDrawSetProportional(SenjataTD[1], 1);
+
+SenjataTD[2] = TextDrawCreate(23.000, 68.000, "LD_BUM:blkdot");
+TextDrawTextSize(SenjataTD[2], 64.000, 17.000);
+TextDrawAlignment(SenjataTD[2], 1);
+TextDrawColor(SenjataTD[2], -849584897);
+TextDrawSetShadow(SenjataTD[2], 0);
+TextDrawSetOutline(SenjataTD[2], 0);
+TextDrawBackgroundColor(SenjataTD[2], 255);
+TextDrawFont(SenjataTD[2], 4);
+TextDrawSetProportional(SenjataTD[2], 1);
+
+SenjataTD[3] = TextDrawCreate(9.000, 61.000, "LD_BEAT:chit");
+TextDrawTextSize(SenjataTD[3], 19.000, 34.000);
+TextDrawAlignment(SenjataTD[3], 1);
+TextDrawColor(SenjataTD[3], -849584897);
+TextDrawSetShadow(SenjataTD[3], 0);
+TextDrawSetOutline(SenjataTD[3], 0);
+TextDrawBackgroundColor(SenjataTD[3], 255);
+TextDrawFont(SenjataTD[3], 4);
+TextDrawSetProportional(SenjataTD[3], 1);
+
+SenjataTD[4] = TextDrawCreate(92.000, 76.000, "LD_BUM:blkdot");
+TextDrawTextSize(SenjataTD[4], 3.000, 1.000);
+TextDrawAlignment(SenjataTD[4], 1);
+TextDrawColor(SenjataTD[4], -10270721);
+TextDrawSetShadow(SenjataTD[4], 0);
+TextDrawSetOutline(SenjataTD[4], 0);
+TextDrawBackgroundColor(SenjataTD[4], 255);
+TextDrawFont(SenjataTD[4], 4);
+TextDrawSetProportional(SenjataTD[4], 1);
+
