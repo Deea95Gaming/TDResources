@@ -1,0 +1,114 @@
+####################################################################################################
+
+new PlayerText: WaveNotify[MAX_PLAYERS][11];
+
+WaveNotify[playerid][0] = CreatePlayerTextDraw(playerid, 525.000, 88.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][0], 97.000, 42.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][0], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][0], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][0], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][0], 1);
+
+WaveNotify[playerid][1] = CreatePlayerTextDraw(playerid, 529.000, 84.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][1], 90.000, 50.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][1], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][1], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][1], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][1], 1);
+
+WaveNotify[playerid][2] = CreatePlayerTextDraw(playerid, 523.000, 82.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][2], 11.000, 14.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][2], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][2], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][2], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][2], 1);
+
+WaveNotify[playerid][3] = CreatePlayerTextDraw(playerid, 523.000, 122.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][3], 11.000, 14.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][3], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][3], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][3], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][3], 1);
+
+WaveNotify[playerid][4] = CreatePlayerTextDraw(playerid, 613.000, 122.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][4], 10.500, 14.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][4], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][4], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][4], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][4], 1);
+
+WaveNotify[playerid][5] = CreatePlayerTextDraw(playerid, 613.000, 82.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][5], 10.500, 14.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][5], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][5], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][5], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][5], 1);
+
+WaveNotify[playerid][6] = CreatePlayerTextDraw(playerid, 538.000, 87.000, "SUCCES");
+PlayerTextDrawLetterSize(playerid, WaveNotify[playerid][6], 0.150, 0.799);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][6], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][6], -1);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][6], 150);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][6], 1);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][6], 1);
+
+WaveNotify[playerid][7] = CreatePlayerTextDraw(playerid, 532.000, 87.000, "i");
+PlayerTextDrawLetterSize(playerid, WaveNotify[playerid][7], 0.150, 0.799);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][7], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][7], 446372607);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][7], 150);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][7], 1);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][7], 1);
+
+WaveNotify[playerid][8] = CreatePlayerTextDraw(playerid, 528.000, 86.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, WaveNotify[playerid][8], 9.000, 10.000);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][8], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][8], -1);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][8], 255);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][8], 4);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][8], 1);
+
+WaveNotify[playerid][9] = CreatePlayerTextDraw(playerid, 529.000, 97.000, "Miner Job");
+PlayerTextDrawLetterSize(playerid, WaveNotify[playerid][9], 0.200, 0.999);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][9], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][9], -1);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][9], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][9], 150);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][9], 1);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][9], 1);
+
+WaveNotify[playerid][10] = CreatePlayerTextDraw(playerid, 529.000, 108.000, "Kamu telah berhasil menjual 10 ore seharga $100");
+PlayerTextDrawLetterSize(playerid, WaveNotify[playerid][10], 0.109, 0.699);
+PlayerTextDrawAlignment(playerid, WaveNotify[playerid][10], 1);
+PlayerTextDrawColor(playerid, WaveNotify[playerid][10], -16);
+PlayerTextDrawSetShadow(playerid, WaveNotify[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, WaveNotify[playerid][10], 0);
+PlayerTextDrawBackgroundColor(playerid, WaveNotify[playerid][10], 150);
+PlayerTextDrawFont(playerid, WaveNotify[playerid][10], 1);
+PlayerTextDrawSetProportional(playerid, WaveNotify[playerid][10], 1);
+

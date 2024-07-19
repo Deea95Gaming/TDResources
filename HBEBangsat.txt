@@ -1,0 +1,164 @@
+####################################################################################################
+
+new PlayerText: HBEBangsat[MAX_PLAYERS][16];
+
+HBEBangsat[playerid][0] = CreatePlayerTextDraw(playerid, 121.000, 415.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][0], 17.000, 19.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][0], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][0], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][0], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][0], 1);
+
+HBEBangsat[playerid][1] = CreatePlayerTextDraw(playerid, 122.000, 416.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][1], 15.000, 16.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][1], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][1], 1768516095);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][1], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][1], 1);
+
+HBEBangsat[playerid][2] = CreatePlayerTextDraw(playerid, 126.000, 418.000, "HUD:radar_dateFood");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][2], 7.000, 7.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][2], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][2], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][2], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][2], 1);
+
+HBEBangsat[playerid][3] = CreatePlayerTextDraw(playerid, 123.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][3], 12.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][3], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][3], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][3], 1);
+
+HBEBangsat[playerid][4] = CreatePlayerTextDraw(playerid, 123.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][4], 13.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][4], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][4], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][4], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][4], 1);
+
+HBEBangsat[playerid][5] = CreatePlayerTextDraw(playerid, 123.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][5], 13.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][5], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][5], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][5], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][5], 1);
+
+HBEBangsat[playerid][6] = CreatePlayerTextDraw(playerid, 142.000, 415.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][6], 17.000, 19.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][6], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][6], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][6], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][6], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][6], 1);
+
+HBEBangsat[playerid][7] = CreatePlayerTextDraw(playerid, 143.000, 416.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][7], 15.000, 16.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][7], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][7], 1768516095);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][7], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][7], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][7], 1);
+
+HBEBangsat[playerid][8] = CreatePlayerTextDraw(playerid, 144.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][8], 12.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][8], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][8], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][8], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][8], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][8], 1);
+
+HBEBangsat[playerid][9] = CreatePlayerTextDraw(playerid, 144.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][9], 13.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][9], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][9], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][9], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][9], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][9], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][9], 1);
+
+HBEBangsat[playerid][10] = CreatePlayerTextDraw(playerid, 163.000, 415.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][10], 17.000, 19.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][10], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][10], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][10], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][10], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][10], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][10], 1);
+
+HBEBangsat[playerid][11] = CreatePlayerTextDraw(playerid, 148.000, 418.000, "HUD:radar_diner");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][11], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][11], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][11], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][11], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][11], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][11], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][11], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][11], 1);
+
+HBEBangsat[playerid][12] = CreatePlayerTextDraw(playerid, 164.000, 416.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][12], 15.000, 16.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][12], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][12], 1768516095);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][12], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][12], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][12], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][12], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][12], 1);
+
+HBEBangsat[playerid][13] = CreatePlayerTextDraw(playerid, 165.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][13], 13.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][13], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][13], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][13], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][13], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][13], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][13], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][13], 1);
+
+HBEBangsat[playerid][14] = CreatePlayerTextDraw(playerid, 165.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][14], 13.000, 3.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][14], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][14], -1168780289);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][14], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][14], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][14], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][14], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][14], 1);
+
+HBEBangsat[playerid][15] = CreatePlayerTextDraw(playerid, 169.000, 418.000, "HUD:radar_girlfriend");
+PlayerTextDrawTextSize(playerid, HBEBangsat[playerid][15], 5.000, 7.000);
+PlayerTextDrawAlignment(playerid, HBEBangsat[playerid][15], 1);
+PlayerTextDrawColor(playerid, HBEBangsat[playerid][15], -1);
+PlayerTextDrawSetShadow(playerid, HBEBangsat[playerid][15], 0);
+PlayerTextDrawSetOutline(playerid, HBEBangsat[playerid][15], 0);
+PlayerTextDrawBackgroundColor(playerid, HBEBangsat[playerid][15], 255);
+PlayerTextDrawFont(playerid, HBEBangsat[playerid][15], 4);
+PlayerTextDrawSetProportional(playerid, HBEBangsat[playerid][15], 1);
+

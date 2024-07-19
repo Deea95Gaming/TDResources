@@ -1,0 +1,131 @@
+####################################################################################################
+
+new PlayerText: Text_Player[MAX_PLAYERS][8];
+
+Text_Player[playerid][0] = CreatePlayerTextDraw(playerid, 2.000, 258.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][0], 19.000, 20.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][0], 370741759);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][0], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][0], 1);
+
+Text_Player[playerid][1] = CreatePlayerTextDraw(playerid, 6.500, 264.000, "HUD:radar_girlFriend");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][1], 10.000, 9.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][1], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][1], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][1], 1);
+
+Text_Player[playerid][2] = CreatePlayerTextDraw(playerid, 2.000, 324.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][2], 19.000, 20.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][2], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][2], 370741759);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][2], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][2], 1);
+
+Text_Player[playerid][3] = CreatePlayerTextDraw(playerid, 6.500, 330.000, "HUD:radar_gym");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][3], 10.000, 9.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][3], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][3], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][3], 1);
+
+Text_Player[playerid][4] = CreatePlayerTextDraw(playerid, 2.000, 302.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][4], 19.000, 20.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][4], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][4], 370741759);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][4], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][4], 1);
+
+Text_Player[playerid][5] = CreatePlayerTextDraw(playerid, 6.500, 308.000, "HUD:radar_diner");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][5], 10.000, 9.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][5], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][5], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][5], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][5], 1);
+
+Text_Player[playerid][6] = CreatePlayerTextDraw(playerid, 2.000, 280.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][6], 19.000, 20.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][6], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][6], 370741759);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][6], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][6], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][6], 1);
+
+Text_Player[playerid][7] = CreatePlayerTextDraw(playerid, 6.500, 286.000, "HUD:radar_dateFood");
+PlayerTextDrawTextSize(playerid, Text_Player[playerid][7], 10.000, 9.000);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][7], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][7], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][7], 255);
+PlayerTextDrawFont(playerid, Text_Player[playerid][7], 4);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][7], 1);
+
+####################################################################################################
+
+new PlayerText: health_bar[MAX_PLAYERS];
+new PlayerText: mood_bar[MAX_PLAYERS];
+new PlayerText: thirst_bar[MAX_PLAYERS];
+new PlayerText: hunger_bar[MAX_PLAYERS];
+
+health_bar[playerid] = CreatePlayerTextDraw(playerid, 3.000, 259.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, health_bar[playerid], 17.000, 18.000);
+PlayerTextDrawAlignment(playerid, health_bar[playerid], 1);
+PlayerTextDrawColor(playerid, health_bar[playerid], 1013665791);
+PlayerTextDrawSetShadow(playerid, health_bar[playerid], 0);
+PlayerTextDrawSetOutline(playerid, health_bar[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, health_bar[playerid], 255);
+PlayerTextDrawFont(playerid, health_bar[playerid], 4);
+PlayerTextDrawSetProportional(playerid, health_bar[playerid], 1);
+
+mood_bar[playerid] = CreatePlayerTextDraw(playerid, 3.000, 325.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, mood_bar[playerid], 17.000, 18.000);
+PlayerTextDrawAlignment(playerid, mood_bar[playerid], 1);
+PlayerTextDrawColor(playerid, mood_bar[playerid], -1453243137);
+PlayerTextDrawSetShadow(playerid, mood_bar[playerid], 0);
+PlayerTextDrawSetOutline(playerid, mood_bar[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, mood_bar[playerid], 255);
+PlayerTextDrawFont(playerid, mood_bar[playerid], 4);
+PlayerTextDrawSetProportional(playerid, mood_bar[playerid], 1);
+
+thirst_bar[playerid] = CreatePlayerTextDraw(playerid, 3.000, 303.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, thirst_bar[playerid], 17.000, 18.000);
+PlayerTextDrawAlignment(playerid, thirst_bar[playerid], 1);
+PlayerTextDrawColor(playerid, thirst_bar[playerid], 1351591679);
+PlayerTextDrawSetShadow(playerid, thirst_bar[playerid], 0);
+PlayerTextDrawSetOutline(playerid, thirst_bar[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, thirst_bar[playerid], 255);
+PlayerTextDrawFont(playerid, thirst_bar[playerid], 4);
+PlayerTextDrawSetProportional(playerid, thirst_bar[playerid], 1);
+
+hunger_bar[playerid] = CreatePlayerTextDraw(playerid, 3.000, 281.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, hunger_bar[playerid], 17.000, 18.000);
+PlayerTextDrawAlignment(playerid, hunger_bar[playerid], 1);
+PlayerTextDrawColor(playerid, hunger_bar[playerid], -1114221569);
+PlayerTextDrawSetShadow(playerid, hunger_bar[playerid], 0);
+PlayerTextDrawSetOutline(playerid, hunger_bar[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, hunger_bar[playerid], 255);
+PlayerTextDrawFont(playerid, hunger_bar[playerid], 4);
+PlayerTextDrawSetProportional(playerid, hunger_bar[playerid], 1);
+

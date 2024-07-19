@@ -1,0 +1,541 @@
+####################################################################################################
+
+new PlayerText: HandphoneTD[MAX_PLAYERS][29];
+new PlayerText: pmyv[MAX_PLAYERS];
+new PlayerText: psms[MAX_PLAYERS];
+new PlayerText: pmaps[MAX_PLAYERS];
+new PlayerText: pairdrop[MAX_PLAYERS];
+new PlayerText: pkontak[MAX_PLAYERS];
+new PlayerText: pbank[MAX_PLAYERS];
+new PlayerText: pclose[MAX_PLAYERS];
+new PlayerText: pcall[MAX_PLAYERS];
+new PlayerText: pfaction[MAX_PLAYERS];
+new PlayerText: psetting[MAX_PLAYERS];
+new PlayerText: ptwitter[MAX_PLAYERS];
+
+public OnPlayerConnect(playerid)
+{
+	HandphoneTD[playerid][0] = CreatePlayerTextDraw(playerid, 522.000, 171.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][0], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][0], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][0], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][0], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][0], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][0], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][0], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][0], 1);
+	
+	HandphoneTD[playerid][1] = CreatePlayerTextDraw(playerid, 601.000, 171.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][1], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][1], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][1], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][1], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][1], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][1], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][1], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][1], 1);
+	
+	HandphoneTD[playerid][2] = CreatePlayerTextDraw(playerid, 522.000, 393.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][2], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][2], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][2], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][2], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][2], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][2], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][2], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][2], 1);
+	
+	HandphoneTD[playerid][3] = CreatePlayerTextDraw(playerid, 601.000, 393.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][3], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][3], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][3], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][3], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][3], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][3], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][3], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][3], 1);
+	
+	HandphoneTD[playerid][4] = CreatePlayerTextDraw(playerid, 526.000, 192.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][4], 95.000, 215.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][4], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][4], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][4], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][4], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][4], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][4], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][4], 1);
+	
+	HandphoneTD[playerid][5] = CreatePlayerTextDraw(playerid, 532.000, 177.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][5], 79.000, 245.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][5], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][5], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][5], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][5], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][5], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][5], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][5], 1);
+	
+	HandphoneTD[playerid][6] = CreatePlayerTextDraw(playerid, 523.000, 173.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][6], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][6], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][6], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][6], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][6], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][6], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][6], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][6], 1);
+	
+	HandphoneTD[playerid][7] = CreatePlayerTextDraw(playerid, 599.000, 173.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][7], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][7], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][7], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][7], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][7], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][7], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][7], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][7], 1);
+	
+	HandphoneTD[playerid][8] = CreatePlayerTextDraw(playerid, 523.000, 392.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][8], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][8], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][8], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][8], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][8], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][8], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][8], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][8], 1);
+	
+	HandphoneTD[playerid][9] = CreatePlayerTextDraw(playerid, 600.000, 391.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][9], 24.000, 35.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][9], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][9], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][9], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][9], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][9], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][9], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][9], 1);
+	
+	HandphoneTD[playerid][10] = CreatePlayerTextDraw(playerid, 527.000, 194.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][10], 92.500, 210.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][10], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][10], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][10], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][10], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][10], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][10], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][10], 1);
+	
+	HandphoneTD[playerid][11] = CreatePlayerTextDraw(playerid, 533.000, 179.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][11], 79.000, 241.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][11], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][11], 808464639);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][11], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][11], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][11], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][11], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][11], 1);
+	
+	HandphoneTD[playerid][12] = CreatePlayerTextDraw(playerid, 605.000, 183.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][12], 13.000, 21.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][12], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][12], 255);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][12], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][12], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][12], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][12], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][12], 1);
+	
+	HandphoneTD[playerid][13] = CreatePlayerTextDraw(playerid, 591.000, 183.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][13], 11.000, 21.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][13], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][13], 255);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][13], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][13], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][13], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][13], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][13], 1);
+	
+	HandphoneTD[playerid][14] = CreatePlayerTextDraw(playerid, 597.000, 186.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][14], 16.000, 15.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][14], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][14], 255);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][14], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][14], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][14], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][14], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][14], 1);
+	
+	HandphoneTD[playerid][15] = CreatePlayerTextDraw(playerid, 575.000, 215.000, "12:00");
+	PlayerTextDrawLetterSize(playerid, HandphoneTD[playerid][15], 0.418, 2.197);
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][15], -32.000, -32.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][15], 2);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][15], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][15], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][15], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][15], 150);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][15], 1);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][15], 1);
+	
+	HandphoneTD[playerid][16] = CreatePlayerTextDraw(playerid, 576.000, 236.000, "17_Desember_2023");
+	PlayerTextDrawLetterSize(playerid, HandphoneTD[playerid][16], 0.148, 0.796);
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][16], 73.000, -194.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][16], 2);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][16], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][16], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][16], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][16], 150);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][16], 1);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][16], 1);
+	
+	pmyv[playerid] = CreatePlayerTextDraw(playerid, 531.000, 250.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pmyv[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pmyv[playerid], 1);
+	PlayerTextDrawColor(playerid, pmyv[playerid], -1523963137);
+	PlayerTextDrawSetShadow(playerid, pmyv[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pmyv[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pmyv[playerid], 255);
+	PlayerTextDrawFont(playerid, pmyv[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pmyv[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pmyv[playerid], 1);
+	
+	psms[playerid] = CreatePlayerTextDraw(playerid, 551.000, 250.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, psms[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, psms[playerid], 1);
+	PlayerTextDrawColor(playerid, psms[playerid], -1962934017);
+	PlayerTextDrawSetShadow(playerid, psms[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, psms[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, psms[playerid], 255);
+	PlayerTextDrawFont(playerid, psms[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, psms[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, psms[playerid], 1);
+	
+	pmaps[playerid] = CreatePlayerTextDraw(playerid, 571.000, 250.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pmaps[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pmaps[playerid], 1);
+	PlayerTextDrawColor(playerid, pmaps[playerid], 16711935);
+	PlayerTextDrawSetShadow(playerid, pmaps[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pmaps[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pmaps[playerid], 255);
+	PlayerTextDrawFont(playerid, pmaps[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pmaps[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pmaps[playerid], 1);
+	
+	pairdrop[playerid] = CreatePlayerTextDraw(playerid, 591.000, 250.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pairdrop[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pairdrop[playerid], 1);
+	PlayerTextDrawColor(playerid, pairdrop[playerid], 13554175);
+	PlayerTextDrawSetShadow(playerid, pairdrop[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pairdrop[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pairdrop[playerid], 255);
+	PlayerTextDrawFont(playerid, pairdrop[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pairdrop[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pairdrop[playerid], 1);
+	
+	pkontak[playerid] = CreatePlayerTextDraw(playerid, 531.000, 280.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pkontak[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pkontak[playerid], 1);
+	PlayerTextDrawColor(playerid, pkontak[playerid], 52735);
+	PlayerTextDrawSetShadow(playerid, pkontak[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pkontak[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pkontak[playerid], 255);
+	PlayerTextDrawFont(playerid, pkontak[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pkontak[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pkontak[playerid], 1);
+	
+	pbank[playerid] = CreatePlayerTextDraw(playerid, 551.000, 280.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pbank[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pbank[playerid], 1);
+	PlayerTextDrawColor(playerid, pbank[playerid], 579543807);
+	PlayerTextDrawSetShadow(playerid, pbank[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pbank[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pbank[playerid], 255);
+	PlayerTextDrawFont(playerid, pbank[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pbank[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pbank[playerid], 1);
+	
+	pclose[playerid] = CreatePlayerTextDraw(playerid, 557.000, 409.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, pclose[playerid], 33.000, 7.000);
+	PlayerTextDrawAlignment(playerid, pclose[playerid], 1);
+	PlayerTextDrawColor(playerid, pclose[playerid], -1);
+	PlayerTextDrawSetShadow(playerid, pclose[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pclose[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pclose[playerid], 255);
+	PlayerTextDrawFont(playerid, pclose[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pclose[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pclose[playerid], 1);
+	
+	pcall[playerid] = CreatePlayerTextDraw(playerid, 531.000, 368.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pcall[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pcall[playerid], 1);
+	PlayerTextDrawColor(playerid, pcall[playerid], 1804477439);
+	PlayerTextDrawSetShadow(playerid, pcall[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pcall[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pcall[playerid], 255);
+	PlayerTextDrawFont(playerid, pcall[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pcall[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pcall[playerid], 1);
+	
+	pfaction[playerid] = CreatePlayerTextDraw(playerid, 551.000, 368.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, pfaction[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, pfaction[playerid], 1);
+	PlayerTextDrawColor(playerid, pfaction[playerid], -1962934017);
+	PlayerTextDrawSetShadow(playerid, pfaction[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, pfaction[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, pfaction[playerid], 255);
+	PlayerTextDrawFont(playerid, pfaction[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, pfaction[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, pfaction[playerid], 1);
+	
+	psetting[playerid] = CreatePlayerTextDraw(playerid, 571.000, 368.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, psetting[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, psetting[playerid], 1);
+	PlayerTextDrawColor(playerid, psetting[playerid], 16711935);
+	PlayerTextDrawSetShadow(playerid, psetting[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, psetting[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, psetting[playerid], 255);
+	PlayerTextDrawFont(playerid, psetting[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, psetting[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, psetting[playerid], 1);
+	
+	ptwitter[playerid] = CreatePlayerTextDraw(playerid, 591.000, 368.000, "LD_BEAT:chit");
+	PlayerTextDrawTextSize(playerid, ptwitter[playerid], 27.000, 39.000);
+	PlayerTextDrawAlignment(playerid, ptwitter[playerid], 1);
+	PlayerTextDrawColor(playerid, ptwitter[playerid], 1687547391);
+	PlayerTextDrawSetShadow(playerid, ptwitter[playerid], 0);
+	PlayerTextDrawSetOutline(playerid, ptwitter[playerid], 0);
+	PlayerTextDrawBackgroundColor(playerid, ptwitter[playerid], 255);
+	PlayerTextDrawFont(playerid, ptwitter[playerid], 4);
+	PlayerTextDrawSetProportional(playerid, ptwitter[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, ptwitter[playerid], 1);
+	
+	HandphoneTD[playerid][17] = CreatePlayerTextDraw(playerid, 536.000, 259.000, "HUD:radar_impound");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][17], 18.000, 21.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][17], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][17], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][17], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][17], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][17], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][17], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][17], 1);
+	
+	HandphoneTD[playerid][18] = CreatePlayerTextDraw(playerid, 560.000, 264.000, "LD_CHAT:goodcha");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][18], 11.000, 12.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][18], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][18], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][18], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][18], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][18], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][18], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][18], 1);
+	
+	HandphoneTD[playerid][19] = CreatePlayerTextDraw(playerid, 578.000, 260.000, "HUD:radar_waypoint");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][19], 13.000, 19.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][19], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][19], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][19], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][19], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][19], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][19], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][19], 1);
+	
+	HandphoneTD[playerid][20] = CreatePlayerTextDraw(playerid, 596.000, 261.000, "HUD:radar_light");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][20], 18.000, 18.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][20], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][20], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][20], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][20], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][20], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][20], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][20], 1);
+	
+	HandphoneTD[playerid][21] = CreatePlayerTextDraw(playerid, 537.000, 293.000, "HUD:radar_saveGame");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][21], 14.000, 15.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][21], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][21], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][21], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][21], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][21], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][21], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][21], 1);
+	
+	HandphoneTD[playerid][22] = CreatePlayerTextDraw(playerid, 556.000, 290.000, "HUD:radar_cash");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][22], 16.000, 21.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][22], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][22], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][22], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][22], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][22], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][22], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][22], 1);
+	
+	HandphoneTD[playerid][23] = CreatePlayerTextDraw(playerid, 536.000, 378.000, "HUD:radar_CRASH1");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][23], 20.000, 20.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][23], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][23], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][23], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][23], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][23], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][23], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][23], 1);
+	
+	HandphoneTD[playerid][24] = CreatePlayerTextDraw(playerid, 557.000, 379.000, "HUD:radar_hostpital");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][24], 16.000, 18.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][24], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][24], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][24], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][24], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][24], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][24], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][24], 1);
+	
+	HandphoneTD[playerid][25] = CreatePlayerTextDraw(playerid, 578.000, 380.000, "HUD:radar_qmark");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][25], 14.000, 16.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][25], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][25], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][25], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][25], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][25], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][25], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][25], 1);
+	
+	HandphoneTD[playerid][26] = CreatePlayerTextDraw(playerid, 596.000, 380.000, "HUD:radar_TORENO");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][26], 17.000, 17.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][26], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][26], -1);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][26], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][26], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][26], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][26], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][26], 1);
+	
+	HandphoneTD[playerid][27] = CreatePlayerTextDraw(playerid, 620.000, 214.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][27], 3.000, 54.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][27], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][27], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][27], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][27], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][27], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][27], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][27], 1);
+	
+	HandphoneTD[playerid][28] = CreatePlayerTextDraw(playerid, 620.000, 271.000, "LD_SPAC:white");
+	PlayerTextDrawTextSize(playerid, HandphoneTD[playerid][28], 3.000, 30.000);
+	PlayerTextDrawAlignment(playerid, HandphoneTD[playerid][28], 1);
+	PlayerTextDrawColor(playerid, HandphoneTD[playerid][28], 286398463);
+	PlayerTextDrawSetShadow(playerid, HandphoneTD[playerid][28], 0);
+	PlayerTextDrawSetOutline(playerid, HandphoneTD[playerid][28], 0);
+	PlayerTextDrawBackgroundColor(playerid, HandphoneTD[playerid][28], 255);
+	PlayerTextDrawFont(playerid, HandphoneTD[playerid][28], 4);
+	PlayerTextDrawSetProportional(playerid, HandphoneTD[playerid][28], 1);
+	return 1;
+}
+
+public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
+{
+	if(playertextid == pclose[playerid])
+	{
+		for(new i = 0; i < 29; i++)
+		{
+			PlayerTextDrawHide(playerid, HandphoneTD[playerid][i]);
+		}
+		PlayerTextDrawHide(playerid, pclose[playerid]);
+		PlayerTextDrawHide(playerid, pmyv[playerid]);
+		PlayerTextDrawHide(playerid, pkontak[playerid]);
+		PlayerTextDrawHide(playerid, psms[playerid]);
+		PlayerTextDrawHide(playerid, pclose[playerid]);
+		PlayerTextDrawHide(playerid, ptwitter[playerid]);
+		PlayerTextDrawHide(playerid, pfaction[playerid]);
+		PlayerTextDrawHide(playerid, pairdrop[playerid]);
+		PlayerTextDrawHide(playerid, pcall[playerid]);
+		PlayerTextDrawHide(playerid, pbank[playerid]);
+		PlayerTextDrawHide(playerid, psetting[playerid]);
+		PlayerTextDrawHide(playerid, pmaps[playerid]);
+		StopAnimLooping(playerid);
+		CancelSelectTextDraw(playerid);
+	}
+	if(playertextid == pkontak[playerid])
+	{
+		ShowContacts(playerid);
+	}
+	if(playertextid == pmyv[playerid])
+	{
+		callcmd::myv(playerid, "");
+	}
+	if(playertextid == ptwitter[playerid])
+	{
+		new string[555];
+		format(string, sizeof(string), "Post Twitter\nUbah Twitter({0099ff}%s{ffffff})", pData[playerid][pTwittername]);
+		ShowPlayerDialog(playerid, DIALOG_TWITTER, DIALOG_STYLE_LIST, "LocalPride - Twitter", string, "Pilih", "Tutup");
+	}
+	if(playertextid == psms[playerid])
+	{
+		ShowPlayerDialog(playerid, DIALOG_WASSAP, DIALOG_STYLE_LIST, "Local Pride - WhatsApp", "Kontak\nShareloc\nWhatsapp", "Pilih", "Kembali");
+	}
+	if(playertextid == pcall[playerid])
+	{
+		ErrorMsg(playerid, "Fitur akan segera hadir");
+	}
+	if(playertextid == pbank[playerid])
+	{
+		ErrorMsg(playerid, "Fitur akan segera hadir");
+	}
+	if(playertextid == psetting[playerid])
+	{
+		ShowPlayerDialog(playerid, DIALOG_TOGGLEPHONE, DIALOG_STYLE_LIST, "Local Pride - Pengaturan", "Tentang Ponsel\nLayanan", "Pilih", "Kembali");
+	}
+	if(playertextid == pmaps[playerid])
+	{
+		ShowPlayerDialog(playerid, DIALOG_GPS, DIALOG_STYLE_LIST, "{FF0000}Local Pride {ffffff}- GPS", "Lokasi Pekerjaan\nLokasi Umum\nToko Di Kota\nGarasi Kota\n"RED_E"(Hapus Checkpoint GPS)", "Pilih", "Batal");
+	}
+	if(playertextid == pfaction[playerid])
+	{
+		callcmd::mybill(playerid, "");
+	}
+	if(playertextid == pairdrop[playerid])
+	{
+		new str[500], count = 0,String[500];
+		String="";
+		foreach(new i : Player) if(IsPlayerConnected(i) && NearPlayer(playerid, i, 5) &&i!= playerid)
+   	{
+			format(str, sizeof(str), "Kantong - %s (%d)\n", pData[i][pName], i);
+			strcat(String, str);
+   		 SetPlayerListitemValue(playerid, count++, i);
+       }
+       if(!count) ErrorMsg(playerid, "Tidak ada player lain didekat mu!");
+        else ShowPlayerDialog(playerid, DIALOG_AIRDROP, DIALOG_STYLE_LIST, "Local Pride - AirDrop", String, "Pilih", "Tutup");
+	}
+	return 1;
+}
+
+CMD:h(playerid)
+{
+	new str[500];
+	format(str, sizeof(str), "%02d:%02d", JamFivEm, DetikFivEm);
+	PlayerTextDrawSetString(playerid, HandphoneTD[playerid][15], str);
+	PlayerTextDrawShow(playerid, HandphoneTD[playerid][15]);
+	
+	for(new i = 0; i < 29; i++)
+	{
+			PlayerTextDrawShow(playerid, HandphoneTD[playerid][i]);
+	}
+	PlayerTextDrawShow(playerid, pclose[playerid]);
+	PlayerTextDrawShow(playerid, pmyv[playerid]);
+	PlayerTextDrawShow(playerid, pkontak[playerid]);
+	PlayerTextDrawShow(playerid, psms[playerid]);
+	PlayerTextDrawShow(playerid, pclose[playerid]);
+	PlayerTextDrawShow(playerid, ptwitter[playerid]);
+	PlayerTextDrawShow(playerid, pfaction[playerid]);
+	PlayerTextDrawShow(playerid, pairdrop[playerid]);
+	PlayerTextDrawShow(playerid, pcall[playerid]);
+	PlayerTextDrawShow(playerid, pbank[playerid]);
+	PlayerTextDrawShow(playerid, psetting[playerid]);
+	PlayerTextDrawShow(playerid, pmaps[playerid]);
+	SelectTextDraw(playerid, COLOR_WHITE);
+	
+	PlayerPlaySound(playerid, 3600, 0,0,0);
+	
+	// -------- ATTACHMENT & ANIM -------- //
+	SetPlayerAttachedObject(playerid, 9, 18871, 5, 0.056, 0.039, -0.015, -18.100, -108.600, 93.000, 1,1,1);
+	ApplyAnimation(playerid,"ped","Jetpack_Idle",4.0, 1, 0, 0, 0, 0, 1); // Not looping 
+	return 1;
+}

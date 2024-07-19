@@ -1,0 +1,74 @@
+####################################################################################################
+
+new PlayerText: JobDisplay[MAX_PLAYERS][7];
+
+JobDisplay[playerid][0] = CreatePlayerTextDraw(playerid, 516.000, 427.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, JobDisplay[playerid][0], 104.000, 17.000);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][0], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][0], 522334975);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][0], 255);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][0], 1);
+
+JobDisplay[playerid][1] = CreatePlayerTextDraw(playerid, 519.700, 430.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, JobDisplay[playerid][1], 7.000, 8.000);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][1], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][1], 255);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][1], 1);
+
+JobDisplay[playerid][2] = CreatePlayerTextDraw(playerid, 520.700, 431.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, JobDisplay[playerid][2], 5.000, 7.000);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][2], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][2], 522334975);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][2], 255);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][2], 1);
+
+JobDisplay[playerid][3] = CreatePlayerTextDraw(playerid, 519.000, 435.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, JobDisplay[playerid][3], 9.000, 5.099);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][3], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][3], 255);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][3], 4);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][3], 1);
+
+JobDisplay[playerid][4] = CreatePlayerTextDraw(playerid, 558.000, 432.500, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, JobDisplay[playerid][4], 0.500, 7.000);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][4], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][4], -1);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][4], 255);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][4], 1);
+
+JobDisplay[playerid][5] = CreatePlayerTextDraw(playerid, 532.000, 432.500, "ID: 123");
+PlayerTextDrawLetterSize(playerid, JobDisplay[playerid][5], 0.170, 0.799);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][5], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][5], -1);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][5], 150);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][5], 1);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][5], 1);
+
+JobDisplay[playerid][6] = CreatePlayerTextDraw(playerid, 562.000, 432.500, "Pemotong Ayam");
+PlayerTextDrawLetterSize(playerid, JobDisplay[playerid][6], 0.160, 0.799);
+PlayerTextDrawAlignment(playerid, JobDisplay[playerid][6], 1);
+PlayerTextDrawColor(playerid, JobDisplay[playerid][6], -1);
+PlayerTextDrawSetShadow(playerid, JobDisplay[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, JobDisplay[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, JobDisplay[playerid][6], 150);
+PlayerTextDrawFont(playerid, JobDisplay[playerid][6], 1);
+PlayerTextDrawSetProportional(playerid, JobDisplay[playerid][6], 1);
+

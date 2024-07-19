@@ -1,0 +1,62 @@
+new Text: BySyaa[6];
+
+BySyaa[0] = TextDrawCreate(303.000, 0.000, "/");
+TextDrawLetterSize(BySyaa[0], 1.199, 3.399);
+TextDrawAlignment(BySyaa[0], 1);
+TextDrawColor(BySyaa[0], -658515713);
+TextDrawSetShadow(BySyaa[0], 0);
+TextDrawSetOutline(BySyaa[0], 0);
+TextDrawBackgroundColor(BySyaa[0], 150);
+TextDrawFont(BySyaa[0], 1);
+TextDrawSetProportional(BySyaa[0], 1);
+
+BySyaa[1] = TextDrawCreate(298.000, 0.000, "/");
+TextDrawLetterSize(BySyaa[1], 1.199, 3.399);
+TextDrawAlignment(BySyaa[1], 1);
+TextDrawColor(BySyaa[1], -658515713);
+TextDrawSetShadow(BySyaa[1], 0);
+TextDrawSetOutline(BySyaa[1], 0);
+TextDrawBackgroundColor(BySyaa[1], 150);
+TextDrawFont(BySyaa[1], 1);
+TextDrawSetProportional(BySyaa[1], 1);
+
+BySyaa[2] = TextDrawCreate(300.000, 33.000, "LD_SPAC:white");
+TextDrawTextSize(BySyaa[2], 29.000, 5.000);
+TextDrawAlignment(BySyaa[2], 1);
+TextDrawColor(BySyaa[2], -658515713);
+TextDrawSetShadow(BySyaa[2], 0);
+TextDrawSetOutline(BySyaa[2], 0);
+TextDrawBackgroundColor(BySyaa[2], 255);
+TextDrawFont(BySyaa[2], 4);
+TextDrawSetProportional(BySyaa[2], 1);
+
+BySyaa[3] = TextDrawCreate(307.000, 26.000, "LD_SPAC:white");
+TextDrawTextSize(BySyaa[3], 22.000, 5.000);
+TextDrawAlignment(BySyaa[3], 1);
+TextDrawColor(BySyaa[3], -658515713);
+TextDrawSetShadow(BySyaa[3], 0);
+TextDrawSetOutline(BySyaa[3], 0);
+TextDrawBackgroundColor(BySyaa[3], 255);
+TextDrawFont(BySyaa[3], 4);
+TextDrawSetProportional(BySyaa[3], 1);
+
+BySyaa[4] = TextDrawCreate(319.000, 9.000, "NAMASERVER");
+TextDrawLetterSize(BySyaa[4], 0.180, 0.899);
+TextDrawAlignment(BySyaa[4], 1);
+TextDrawColor(BySyaa[4], -1);
+TextDrawSetShadow(BySyaa[4], 0);
+TextDrawSetOutline(BySyaa[4], 0);
+TextDrawBackgroundColor(BySyaa[4], 150);
+TextDrawFont(BySyaa[4], 1);
+TextDrawSetProportional(BySyaa[4], 1);
+
+BySyaa[5] = TextDrawCreate(317.000, 16.000, "ROLEPLAY");
+TextDrawLetterSize(BySyaa[5], 0.180, 0.899);
+TextDrawAlignment(BySyaa[5], 1);
+TextDrawColor(BySyaa[5], -1);
+TextDrawSetShadow(BySyaa[5], 0);
+TextDrawSetOutline(BySyaa[5], 0);
+TextDrawBackgroundColor(BySyaa[5], 150);
+TextDrawFont(BySyaa[5], 1);
+TextDrawSetProportional(BySyaa[5], 1);
+

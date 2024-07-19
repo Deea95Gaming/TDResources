@@ -1,0 +1,130 @@
+####################################################################################################
+
+new PlayerText: NotifTD[MAX_PLAYERS][9];
+
+public OnPlayerConnect(playerid)
+{
+    NotifTD[playerid][0] = CreatePlayerTextDraw(playerid, 5.000, 219.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][0], 111.000, 19.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][0], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][0], 544918783);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][0], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][0], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][0], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][0], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][0], 1);
+
+    NotifTD[playerid][1] = CreatePlayerTextDraw(playerid, 20.000, 225.000, "Gunakan ALT untuk mengambil Ayam");
+    PlayerTextDrawLetterSize(playerid, NotifTD[playerid][1], 0.140, 0.799);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][1], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][1], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][1], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][1], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][1], 150);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][1], 1);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][1], 1);
+
+    NotifTD[playerid][2] = CreatePlayerTextDraw(playerid, 8.000, 223.000, "LD_BEAT:chit");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][2], 9.000, 13.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][2], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][2], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][2], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][2], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][2], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][2], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][2], 1);
+
+    NotifTD[playerid][3] = CreatePlayerTextDraw(playerid, 7.000, 231.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][3], 14.000, 7.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][3], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][3], 544918783);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][3], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][3], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][3], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][3], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][3], 1);
+
+    NotifTD[playerid][4] = CreatePlayerTextDraw(playerid, 10.500, 230.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][4], 5.000, 1.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][4], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][4], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][4], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][4], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][4], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][4], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][4], 1);
+
+    NotifTD[playerid][5] = CreatePlayerTextDraw(playerid, 13.500, 226.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][5], -2.000, -2.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][5], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][5], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][5], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][5], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][5], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][5], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][5], 1);
+
+    NotifTD[playerid][6] = CreatePlayerTextDraw(playerid, 11.000, 230.000, "LD_BEAT:chit");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][6], 3.000, 3.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][6], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][6], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][6], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][6], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][6], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][6], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][6], 1);
+
+    NotifTD[playerid][7] = CreatePlayerTextDraw(playerid, 10.699, 230.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][7], -2.000, 1.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][7], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][7], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][7], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][7], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][7], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][7], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][7], 1);
+
+    NotifTD[playerid][8] = CreatePlayerTextDraw(playerid, 16.100, 230.000, "LD_BUM:blkdot");
+    PlayerTextDrawTextSize(playerid, NotifTD[playerid][8], -2.000, 1.000);
+    PlayerTextDrawAlignment(playerid, NotifTD[playerid][8], 1);
+    PlayerTextDrawColor(playerid, NotifTD[playerid][8], -1);
+    PlayerTextDrawSetShadow(playerid, NotifTD[playerid][8], 0);
+    PlayerTextDrawSetOutline(playerid, NotifTD[playerid][8], 0);
+    PlayerTextDrawBackgroundColor(playerid, NotifTD[playerid][8], 255);
+    PlayerTextDrawFont(playerid, NotifTD[playerid][8], 4);
+    PlayerTextDrawSetProportional(playerid, NotifTD[playerid][8], 1);
+
+    return 1;
+}
+
+stock Notif(playerid, message[], timer)
+{
+	new time=timer*1000;
+	
+	for(new i; i < 9; i++)
+	{
+		PlayerTextDrawShow(playerid, NotifTD[playerid][i]);
+	}
+	PlayerTextDrawSetString(playerid, NotifTD[playerid][1], message);
+	SetTimerEx("HideNotif", time, false, "i", playerid);
+	return 1;
+}
+
+forward HideNotif(playerid);
+public HideNotif(playerid)
+{
+	for(new i; i < 9; i++)
+	{
+		PlayerTextDrawHide(playerid, NotifTD[playerid][i]);
+	}
+}
+
+CMD:notifme(playerid, params[])
+{
+	new message[100], time;
+	if(sscanf(params, "ds[100]", time, message))
+		return SendClientMessage(playerid, -1, "[Usage] /notifme [duration on second] [message/text]");
+
+	Notif(playerid, message, time);
+	return 1;
+}

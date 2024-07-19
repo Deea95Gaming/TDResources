@@ -1,0 +1,194 @@
+new Text: AufaTD[17];
+
+AufaTD[0] = TextDrawCreate(270.000, 1.000, "/");
+TextDrawLetterSize(AufaTD[0], 1.500, 5.000);
+TextDrawAlignment(AufaTD[0], 1);
+TextDrawColor(AufaTD[0], -12254977);
+TextDrawSetShadow(AufaTD[0], 0);
+TextDrawSetOutline(AufaTD[0], 0);
+TextDrawBackgroundColor(AufaTD[0], 150);
+TextDrawFont(AufaTD[0], 3);
+TextDrawSetProportional(AufaTD[0], 1);
+
+AufaTD[1] = TextDrawCreate(272.000, 15.000, "-");
+TextDrawLetterSize(AufaTD[1], 1.500, 5.000);
+TextDrawAlignment(AufaTD[1], 1);
+TextDrawColor(AufaTD[1], -12254977);
+TextDrawSetShadow(AufaTD[1], 0);
+TextDrawSetOutline(AufaTD[1], 0);
+TextDrawBackgroundColor(AufaTD[1], 150);
+TextDrawFont(AufaTD[1], 3);
+TextDrawSetProportional(AufaTD[1], 1);
+
+AufaTD[2] = TextDrawCreate(285.000, 15.000, "-");
+TextDrawLetterSize(AufaTD[2], 1.500, 5.000);
+TextDrawAlignment(AufaTD[2], 1);
+TextDrawColor(AufaTD[2], -12254977);
+TextDrawSetShadow(AufaTD[2], 0);
+TextDrawSetOutline(AufaTD[2], 0);
+TextDrawBackgroundColor(AufaTD[2], 150);
+TextDrawFont(AufaTD[2], 3);
+TextDrawSetProportional(AufaTD[2], 1);
+
+AufaTD[3] = TextDrawCreate(272.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[3], 1.500, 5.000);
+TextDrawAlignment(AufaTD[3], 1);
+TextDrawColor(AufaTD[3], -12254977);
+TextDrawSetShadow(AufaTD[3], 0);
+TextDrawSetOutline(AufaTD[3], 0);
+TextDrawBackgroundColor(AufaTD[3], 150);
+TextDrawFont(AufaTD[3], 3);
+TextDrawSetProportional(AufaTD[3], 1);
+
+AufaTD[4] = TextDrawCreate(284.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[4], 1.500, 5.000);
+TextDrawAlignment(AufaTD[4], 1);
+TextDrawColor(AufaTD[4], -12254977);
+TextDrawSetShadow(AufaTD[4], 0);
+TextDrawSetOutline(AufaTD[4], 0);
+TextDrawBackgroundColor(AufaTD[4], 150);
+TextDrawFont(AufaTD[4], 3);
+TextDrawSetProportional(AufaTD[4], 1);
+
+AufaTD[5] = TextDrawCreate(263.000, 1.000, "/");
+TextDrawLetterSize(AufaTD[5], 1.500, 5.000);
+TextDrawAlignment(AufaTD[5], 1);
+TextDrawColor(AufaTD[5], -12254977);
+TextDrawSetShadow(AufaTD[5], 0);
+TextDrawSetOutline(AufaTD[5], 0);
+TextDrawBackgroundColor(AufaTD[5], 150);
+TextDrawFont(AufaTD[5], 3);
+TextDrawSetProportional(AufaTD[5], 1);
+
+AufaTD[6] = TextDrawCreate(263.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[6], 1.500, 5.000);
+TextDrawAlignment(AufaTD[6], 1);
+TextDrawColor(AufaTD[6], -12254977);
+TextDrawSetShadow(AufaTD[6], 0);
+TextDrawSetOutline(AufaTD[6], 0);
+TextDrawBackgroundColor(AufaTD[6], 150);
+TextDrawFont(AufaTD[6], 3);
+TextDrawSetProportional(AufaTD[6], 1);
+
+AufaTD[7] = TextDrawCreate(290.000, 15.000, "CORELIFE");
+TextDrawLetterSize(AufaTD[7], 0.300, 1.500);
+TextDrawAlignment(AufaTD[7], 1);
+TextDrawColor(AufaTD[7], -1);
+TextDrawSetShadow(AufaTD[7], 0);
+TextDrawSetOutline(AufaTD[7], 0);
+TextDrawBackgroundColor(AufaTD[7], 150);
+TextDrawFont(AufaTD[7], 2);
+TextDrawSetProportional(AufaTD[7], 1);
+
+AufaTD[8] = TextDrawCreate(298.000, 26.000, "ROLEPLAY");
+TextDrawLetterSize(AufaTD[8], 0.300, 1.500);
+TextDrawAlignment(AufaTD[8], 1);
+TextDrawColor(AufaTD[8], -1);
+TextDrawSetShadow(AufaTD[8], 0);
+TextDrawSetOutline(AufaTD[8], 0);
+TextDrawBackgroundColor(AufaTD[8], 150);
+TextDrawFont(AufaTD[8], 1);
+TextDrawSetProportional(AufaTD[8], 1);
+
+AufaTD[9] = TextDrawCreate(345.000, 1.000, "\");
+TextDrawLetterSize(AufaTD[9], 1.500, 5.000);
+TextDrawAlignment(AufaTD[9], 1);
+TextDrawColor(AufaTD[9], -12254977);
+TextDrawSetShadow(AufaTD[9], 0);
+TextDrawSetOutline(AufaTD[9], 0);
+TextDrawBackgroundColor(AufaTD[9], 150);
+TextDrawFont(AufaTD[9], 3);
+TextDrawSetProportional(AufaTD[9], 1);
+
+AufaTD[10] = TextDrawCreate(352.000, 1.000, "\");
+TextDrawLetterSize(AufaTD[10], 1.500, 5.000);
+TextDrawAlignment(AufaTD[10], 1);
+TextDrawColor(AufaTD[10], -12254977);
+TextDrawSetShadow(AufaTD[10], 0);
+TextDrawSetOutline(AufaTD[10], 0);
+TextDrawBackgroundColor(AufaTD[10], 150);
+TextDrawFont(AufaTD[10], 3);
+TextDrawSetProportional(AufaTD[10], 1);
+
+AufaTD[11] = TextDrawCreate(345.000, 15.000, "-");
+TextDrawLetterSize(AufaTD[11], 1.500, 5.000);
+TextDrawAlignment(AufaTD[11], 1);
+TextDrawColor(AufaTD[11], -12254977);
+TextDrawSetShadow(AufaTD[11], 0);
+TextDrawSetOutline(AufaTD[11], 0);
+TextDrawBackgroundColor(AufaTD[11], 150);
+TextDrawFont(AufaTD[11], 3);
+TextDrawSetProportional(AufaTD[11], 1);
+
+AufaTD[12] = TextDrawCreate(335.000, 15.000, "-");
+TextDrawLetterSize(AufaTD[12], 1.500, 5.000);
+TextDrawAlignment(AufaTD[12], 1);
+TextDrawColor(AufaTD[12], -12254977);
+TextDrawSetShadow(AufaTD[12], 0);
+TextDrawSetOutline(AufaTD[12], 0);
+TextDrawBackgroundColor(AufaTD[12], 150);
+TextDrawFont(AufaTD[12], 3);
+TextDrawSetProportional(AufaTD[12], 1);
+
+AufaTD[13] = TextDrawCreate(335.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[13], 1.500, 5.000);
+TextDrawAlignment(AufaTD[13], 1);
+TextDrawColor(AufaTD[13], -12254977);
+TextDrawSetShadow(AufaTD[13], 0);
+TextDrawSetOutline(AufaTD[13], 0);
+TextDrawBackgroundColor(AufaTD[13], 150);
+TextDrawFont(AufaTD[13], 3);
+TextDrawSetProportional(AufaTD[13], 1);
+
+AufaTD[14] = TextDrawCreate(345.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[14], 1.500, 5.000);
+TextDrawAlignment(AufaTD[14], 1);
+TextDrawColor(AufaTD[14], -12254977);
+TextDrawSetShadow(AufaTD[14], 0);
+TextDrawSetOutline(AufaTD[14], 0);
+TextDrawBackgroundColor(AufaTD[14], 150);
+TextDrawFont(AufaTD[14], 3);
+TextDrawSetProportional(AufaTD[14], 1);
+
+AufaTD[15] = TextDrawCreate(355.000, 22.000, "-");
+TextDrawLetterSize(AufaTD[15], 1.500, 5.000);
+TextDrawAlignment(AufaTD[15], 1);
+TextDrawColor(AufaTD[15], -12254977);
+TextDrawSetShadow(AufaTD[15], 0);
+TextDrawSetOutline(AufaTD[15], 0);
+TextDrawBackgroundColor(AufaTD[15], 150);
+TextDrawFont(AufaTD[15], 3);
+TextDrawSetProportional(AufaTD[15], 1);
+
+AufaTD[16] = TextDrawCreate(302.000, 40.000, "v0.0.1b");
+TextDrawLetterSize(AufaTD[16], 0.300, 1.500);
+TextDrawAlignment(AufaTD[16], 1);
+TextDrawColor(AufaTD[16], -1);
+TextDrawSetShadow(AufaTD[16], 0);
+TextDrawSetOutline(AufaTD[16], 0);
+TextDrawBackgroundColor(AufaTD[16], 150);
+TextDrawFont(AufaTD[16], 1);
+TextDrawSetProportional(AufaTD[16], 1);
+
+
+
+
+TextDrawShowForPlayer(playerid, AufaTD[0]);
+TextDrawShowForPlayer(playerid, AufaTD[1]);
+TextDrawShowForPlayer(playerid, AufaTD[2]);
+TextDrawShowForPlayer(playerid, AufaTD[3]);
+TextDrawShowForPlayer(playerid, AufaTD[4]);
+TextDrawShowForPlayer(playerid, AufaTD[5]);
+TextDrawShowForPlayer(playerid, AufaTD[6]);
+TextDrawShowForPlayer(playerid, AufaTD[7]);
+TextDrawShowForPlayer(playerid, AufaTD[8]);
+TextDrawShowForPlayer(playerid, AufaTD[9]);
+TextDrawShowForPlayer(playerid, AufaTD[10]);
+TextDrawShowForPlayer(playerid, AufaTD[11]);
+TextDrawShowForPlayer(playerid, AufaTD[12]);
+TextDrawShowForPlayer(playerid, AufaTD[13]);
+TextDrawShowForPlayer(playerid, AufaTD[14]);
+TextDrawShowForPlayer(playerid, AufaTD[15]);
+TextDrawShowForPlayer(playerid, AufaTD[16]);
+
+

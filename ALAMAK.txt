@@ -1,0 +1,54 @@
+####################################################################################################
+
+new PlayerText: AETERNANOTIP[MAX_PLAYERS][5];
+
+AETERNANOTIP[playerid][0] = CreatePlayerTextDraw(playerid, 6.000, 207.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, AETERNANOTIP[playerid][0], 8.000, 31.000);
+PlayerTextDrawAlignment(playerid, AETERNANOTIP[playerid][0], 1);
+PlayerTextDrawColor(playerid, AETERNANOTIP[playerid][0], -6710529);
+PlayerTextDrawSetShadow(playerid, AETERNANOTIP[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, AETERNANOTIP[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, AETERNANOTIP[playerid][0], 255);
+PlayerTextDrawFont(playerid, AETERNANOTIP[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, AETERNANOTIP[playerid][0], 1);
+
+AETERNANOTIP[playerid][1] = CreatePlayerTextDraw(playerid, 14.000, 207.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, AETERNANOTIP[playerid][1], 99.000, 31.000);
+PlayerTextDrawAlignment(playerid, AETERNANOTIP[playerid][1], 1);
+PlayerTextDrawColor(playerid, AETERNANOTIP[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, AETERNANOTIP[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, AETERNANOTIP[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, AETERNANOTIP[playerid][1], 255);
+PlayerTextDrawFont(playerid, AETERNANOTIP[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, AETERNANOTIP[playerid][1], 1);
+
+AETERNANOTIP[playerid][2] = CreatePlayerTextDraw(playerid, 17.000, 216.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, AETERNANOTIP[playerid][2], 9.000, 13.000);
+PlayerTextDrawAlignment(playerid, AETERNANOTIP[playerid][2], 1);
+PlayerTextDrawColor(playerid, AETERNANOTIP[playerid][2], 255);
+PlayerTextDrawSetShadow(playerid, AETERNANOTIP[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, AETERNANOTIP[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, AETERNANOTIP[playerid][2], 255);
+PlayerTextDrawFont(playerid, AETERNANOTIP[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, AETERNANOTIP[playerid][2], 1);
+
+AETERNANOTIP[playerid][3] = CreatePlayerTextDraw(playerid, 30.000, 215.000, "[Y]");
+PlayerTextDrawLetterSize(playerid, AETERNANOTIP[playerid][3], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, AETERNANOTIP[playerid][3], 1);
+PlayerTextDrawColor(playerid, AETERNANOTIP[playerid][3], 255);
+PlayerTextDrawSetShadow(playerid, AETERNANOTIP[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, AETERNANOTIP[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, AETERNANOTIP[playerid][3], 255);
+PlayerTextDrawFont(playerid, AETERNANOTIP[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, AETERNANOTIP[playerid][3], 1);
+
+AETERNANOTIP[playerid][4] = CreatePlayerTextDraw(playerid, 50.000, 214.000, "- Take Uranium");
+PlayerTextDrawLetterSize(playerid, AETERNANOTIP[playerid][4], 0.240, 1.600);
+PlayerTextDrawAlignment(playerid, AETERNANOTIP[playerid][4], 1);
+PlayerTextDrawColor(playerid, AETERNANOTIP[playerid][4], 255);
+PlayerTextDrawSetShadow(playerid, AETERNANOTIP[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, AETERNANOTIP[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, AETERNANOTIP[playerid][4], 255);
+PlayerTextDrawFont(playerid, AETERNANOTIP[playerid][4], 1);
+PlayerTextDrawSetProportional(playerid, AETERNANOTIP[playerid][4], 1);
+
