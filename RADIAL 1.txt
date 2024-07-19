@@ -1,0 +1,337 @@
+new Text: RadialTD[33];
+
+RadialTD[0] = TextDrawCreate(237.000, 147.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[0], 160.000, 204.000);
+TextDrawAlignment(RadialTD[0], 1);
+TextDrawColor(RadialTD[0], 572732546);
+TextDrawSetShadow(RadialTD[0], 0);
+TextDrawSetOutline(RadialTD[0], 0);
+TextDrawBackgroundColor(RadialTD[0], 255);
+TextDrawFont(RadialTD[0], 4);
+TextDrawSetProportional(RadialTD[0], 1);
+
+RadialTD[1] = TextDrawCreate(296.000, 151.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[1], 48.000, 60.000);
+TextDrawAlignment(RadialTD[1], 1);
+TextDrawColor(RadialTD[1], 139827);
+TextDrawSetShadow(RadialTD[1], 0);
+TextDrawSetOutline(RadialTD[1], 0);
+TextDrawBackgroundColor(RadialTD[1], 255);
+TextDrawFont(RadialTD[1], 4);
+TextDrawSetProportional(RadialTD[1], 1);
+TextDrawSetSelectable(RadialTD[1], 1);
+
+RadialTD[2] = TextDrawCreate(342.000, 217.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[2], 48.000, 60.000);
+TextDrawAlignment(RadialTD[2], 1);
+TextDrawColor(RadialTD[2], 139827);
+TextDrawSetShadow(RadialTD[2], 0);
+TextDrawSetOutline(RadialTD[2], 0);
+TextDrawBackgroundColor(RadialTD[2], 255);
+TextDrawFont(RadialTD[2], 4);
+TextDrawSetProportional(RadialTD[2], 1);
+TextDrawSetSelectable(RadialTD[2], 1);
+
+RadialTD[3] = TextDrawCreate(295.000, 275.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[3], 48.000, 60.000);
+TextDrawAlignment(RadialTD[3], 1);
+TextDrawColor(RadialTD[3], 139827);
+TextDrawSetShadow(RadialTD[3], 0);
+TextDrawSetOutline(RadialTD[3], 0);
+TextDrawBackgroundColor(RadialTD[3], 255);
+TextDrawFont(RadialTD[3], 4);
+TextDrawSetProportional(RadialTD[3], 1);
+TextDrawSetSelectable(RadialTD[3], 1);
+
+RadialTD[4] = TextDrawCreate(245.000, 216.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[4], 48.000, 60.000);
+TextDrawAlignment(RadialTD[4], 1);
+TextDrawColor(RadialTD[4], 139827);
+TextDrawSetShadow(RadialTD[4], 0);
+TextDrawSetOutline(RadialTD[4], 0);
+TextDrawBackgroundColor(RadialTD[4], 255);
+TextDrawFont(RadialTD[4], 4);
+TextDrawSetProportional(RadialTD[4], 1);
+TextDrawSetSelectable(RadialTD[4], 1);
+
+RadialTD[5] = TextDrawCreate(300.000, 224.000, "LD_POOL:ball");
+TextDrawTextSize(RadialTD[5], 37.000, 45.000);
+TextDrawAlignment(RadialTD[5], 1);
+TextDrawColor(RadialTD[5], 100);
+TextDrawSetShadow(RadialTD[5], 0);
+TextDrawSetOutline(RadialTD[5], 0);
+TextDrawBackgroundColor(RadialTD[5], 255);
+TextDrawFont(RadialTD[5], 4);
+TextDrawSetProportional(RadialTD[5], 1);
+TextDrawSetSelectable(RadialTD[5], 1);
+
+RadialTD[6] = TextDrawCreate(320.000, 211.000, "Vehicle");
+TextDrawLetterSize(RadialTD[6], 0.158, 0.800);
+TextDrawAlignment(RadialTD[6], 2);
+TextDrawColor(RadialTD[6], -1);
+TextDrawSetShadow(RadialTD[6], 0);
+TextDrawSetOutline(RadialTD[6], 0);
+TextDrawBackgroundColor(RadialTD[6], 150);
+TextDrawFont(RadialTD[6], 1);
+TextDrawSetProportional(RadialTD[6], 1);
+
+RadialTD[7] = TextDrawCreate(366.000, 277.000, "General");
+TextDrawLetterSize(RadialTD[7], 0.158, 0.800);
+TextDrawAlignment(RadialTD[7], 2);
+TextDrawColor(RadialTD[7], -1);
+TextDrawSetShadow(RadialTD[7], 0);
+TextDrawSetOutline(RadialTD[7], 0);
+TextDrawBackgroundColor(RadialTD[7], 150);
+TextDrawFont(RadialTD[7], 1);
+TextDrawSetProportional(RadialTD[7], 1);
+
+RadialTD[8] = TextDrawCreate(318.000, 334.000, "Action");
+TextDrawLetterSize(RadialTD[8], 0.158, 0.800);
+TextDrawAlignment(RadialTD[8], 2);
+TextDrawColor(RadialTD[8], -1);
+TextDrawSetShadow(RadialTD[8], 0);
+TextDrawSetOutline(RadialTD[8], 0);
+TextDrawBackgroundColor(RadialTD[8], 150);
+TextDrawFont(RadialTD[8], 1);
+TextDrawSetProportional(RadialTD[8], 1);
+
+RadialTD[9] = TextDrawCreate(269.000, 277.000, "Document");
+TextDrawLetterSize(RadialTD[9], 0.158, 0.800);
+TextDrawAlignment(RadialTD[9], 2);
+TextDrawColor(RadialTD[9], -1);
+TextDrawSetShadow(RadialTD[9], 0);
+TextDrawSetOutline(RadialTD[9], 0);
+TextDrawBackgroundColor(RadialTD[9], 150);
+TextDrawFont(RadialTD[9], 1);
+TextDrawSetProportional(RadialTD[9], 1);
+
+RadialTD[10] = TextDrawCreate(319.000, 236.000, "X");
+TextDrawLetterSize(RadialTD[10], 0.437, 2.100);
+TextDrawAlignment(RadialTD[10], 2);
+TextDrawColor(RadialTD[10], -1);
+TextDrawSetShadow(RadialTD[10], 0);
+TextDrawSetOutline(RadialTD[10], 0);
+TextDrawBackgroundColor(RadialTD[10], 150);
+TextDrawFont(RadialTD[10], 1);
+TextDrawSetProportional(RadialTD[10], 1);
+
+RadialTD[11] = TextDrawCreate(313.000, 172.000, "/");
+TextDrawLetterSize(RadialTD[11], 0.158, 0.800);
+TextDrawAlignment(RadialTD[11], 2);
+TextDrawColor(RadialTD[11], -1);
+TextDrawSetShadow(RadialTD[11], 0);
+TextDrawSetOutline(RadialTD[11], 0);
+TextDrawBackgroundColor(RadialTD[11], 150);
+TextDrawFont(RadialTD[11], 1);
+TextDrawSetProportional(RadialTD[11], 1);
+
+RadialTD[12] = TextDrawCreate(327.000, 172.000, "/");
+TextDrawLetterSize(RadialTD[12], -0.150, 0.800);
+TextDrawAlignment(RadialTD[12], 2);
+TextDrawColor(RadialTD[12], -1);
+TextDrawSetShadow(RadialTD[12], 0);
+TextDrawSetOutline(RadialTD[12], 0);
+TextDrawBackgroundColor(RadialTD[12], 150);
+TextDrawFont(RadialTD[12], 1);
+TextDrawSetProportional(RadialTD[12], 1);
+
+RadialTD[13] = TextDrawCreate(314.000, 173.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[13], 13.000, 1.000);
+TextDrawAlignment(RadialTD[13], 1);
+TextDrawColor(RadialTD[13], -1);
+TextDrawSetShadow(RadialTD[13], 0);
+TextDrawSetOutline(RadialTD[13], 0);
+TextDrawBackgroundColor(RadialTD[13], 255);
+TextDrawFont(RadialTD[13], 4);
+TextDrawSetProportional(RadialTD[13], 1);
+
+RadialTD[14] = TextDrawCreate(312.000, 179.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[14], 16.000, 8.000);
+TextDrawAlignment(RadialTD[14], 1);
+TextDrawColor(RadialTD[14], -1);
+TextDrawSetShadow(RadialTD[14], 0);
+TextDrawSetOutline(RadialTD[14], 0);
+TextDrawBackgroundColor(RadialTD[14], 255);
+TextDrawFont(RadialTD[14], 4);
+TextDrawSetProportional(RadialTD[14], 1);
+
+RadialTD[15] = TextDrawCreate(312.000, 179.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[15], 3.000, 10.000);
+TextDrawAlignment(RadialTD[15], 1);
+TextDrawColor(RadialTD[15], -1);
+TextDrawSetShadow(RadialTD[15], 0);
+TextDrawSetOutline(RadialTD[15], 0);
+TextDrawBackgroundColor(RadialTD[15], 255);
+TextDrawFont(RadialTD[15], 4);
+TextDrawSetProportional(RadialTD[15], 1);
+
+RadialTD[16] = TextDrawCreate(325.000, 179.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[16], 3.000, 10.000);
+TextDrawAlignment(RadialTD[16], 1);
+TextDrawColor(RadialTD[16], -1);
+TextDrawSetShadow(RadialTD[16], 0);
+TextDrawSetOutline(RadialTD[16], 0);
+TextDrawBackgroundColor(RadialTD[16], 255);
+TextDrawFont(RadialTD[16], 4);
+TextDrawSetProportional(RadialTD[16], 1);
+
+RadialTD[17] = TextDrawCreate(326.000, 181.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[17], 2.000, 2.000);
+TextDrawAlignment(RadialTD[17], 1);
+TextDrawColor(RadialTD[17], 1768516095);
+TextDrawSetShadow(RadialTD[17], 0);
+TextDrawSetOutline(RadialTD[17], 0);
+TextDrawBackgroundColor(RadialTD[17], 255);
+TextDrawFont(RadialTD[17], 4);
+TextDrawSetProportional(RadialTD[17], 1);
+
+RadialTD[18] = TextDrawCreate(312.000, 181.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[18], 2.000, 2.000);
+TextDrawAlignment(RadialTD[18], 1);
+TextDrawColor(RadialTD[18], 1768516095);
+TextDrawSetShadow(RadialTD[18], 0);
+TextDrawSetOutline(RadialTD[18], 0);
+TextDrawBackgroundColor(RadialTD[18], 255);
+TextDrawFont(RadialTD[18], 4);
+TextDrawSetProportional(RadialTD[18], 1);
+
+RadialTD[19] = TextDrawCreate(310.000, 178.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[19], 2.000, 2.000);
+TextDrawAlignment(RadialTD[19], 1);
+TextDrawColor(RadialTD[19], -1);
+TextDrawSetShadow(RadialTD[19], 0);
+TextDrawSetOutline(RadialTD[19], 0);
+TextDrawBackgroundColor(RadialTD[19], 255);
+TextDrawFont(RadialTD[19], 4);
+TextDrawSetProportional(RadialTD[19], 1);
+
+RadialTD[20] = TextDrawCreate(328.000, 178.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[20], 2.000, 2.000);
+TextDrawAlignment(RadialTD[20], 1);
+TextDrawColor(RadialTD[20], -1);
+TextDrawSetShadow(RadialTD[20], 0);
+TextDrawSetOutline(RadialTD[20], 0);
+TextDrawBackgroundColor(RadialTD[20], 255);
+TextDrawFont(RadialTD[20], 4);
+TextDrawSetProportional(RadialTD[20], 1);
+
+RadialTD[21] = TextDrawCreate(355.000, 246.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[21], 23.000, 19.000);
+TextDrawAlignment(RadialTD[21], 1);
+TextDrawColor(RadialTD[21], -1);
+TextDrawSetShadow(RadialTD[21], 0);
+TextDrawSetOutline(RadialTD[21], 0);
+TextDrawBackgroundColor(RadialTD[21], 255);
+TextDrawFont(RadialTD[21], 4);
+TextDrawSetProportional(RadialTD[21], 1);
+
+RadialTD[22] = TextDrawCreate(358.500, 230.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[22], 16.000, 19.000);
+TextDrawAlignment(RadialTD[22], 1);
+TextDrawColor(RadialTD[22], -1);
+TextDrawSetShadow(RadialTD[22], 0);
+TextDrawSetOutline(RadialTD[22], 0);
+TextDrawBackgroundColor(RadialTD[22], 255);
+TextDrawFont(RadialTD[22], 4);
+TextDrawSetProportional(RadialTD[22], 1);
+
+RadialTD[23] = TextDrawCreate(315.500, 286.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[23], 16.000, 19.000);
+TextDrawAlignment(RadialTD[23], 1);
+TextDrawColor(RadialTD[23], -156);
+TextDrawSetShadow(RadialTD[23], 0);
+TextDrawSetOutline(RadialTD[23], 0);
+TextDrawBackgroundColor(RadialTD[23], 255);
+TextDrawFont(RadialTD[23], 4);
+TextDrawSetProportional(RadialTD[23], 1);
+
+RadialTD[24] = TextDrawCreate(313.000, 302.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[24], 23.000, 19.000);
+TextDrawAlignment(RadialTD[24], 1);
+TextDrawColor(RadialTD[24], -156);
+TextDrawSetShadow(RadialTD[24], 0);
+TextDrawSetOutline(RadialTD[24], 0);
+TextDrawBackgroundColor(RadialTD[24], 255);
+TextDrawFont(RadialTD[24], 4);
+TextDrawSetProportional(RadialTD[24], 1);
+
+RadialTD[25] = TextDrawCreate(307.500, 292.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[25], 16.000, 19.000);
+TextDrawAlignment(RadialTD[25], 1);
+TextDrawColor(RadialTD[25], -1);
+TextDrawSetShadow(RadialTD[25], 0);
+TextDrawSetOutline(RadialTD[25], 0);
+TextDrawBackgroundColor(RadialTD[25], 255);
+TextDrawFont(RadialTD[25], 4);
+TextDrawSetProportional(RadialTD[25], 1);
+
+RadialTD[26] = TextDrawCreate(305.000, 308.000, "LD_BEAT:chit");
+TextDrawTextSize(RadialTD[26], 23.000, 19.000);
+TextDrawAlignment(RadialTD[26], 1);
+TextDrawColor(RadialTD[26], -1);
+TextDrawSetShadow(RadialTD[26], 0);
+TextDrawSetOutline(RadialTD[26], 0);
+TextDrawBackgroundColor(RadialTD[26], 255);
+TextDrawFont(RadialTD[26], 4);
+TextDrawSetProportional(RadialTD[26], 1);
+
+RadialTD[27] = TextDrawCreate(257.000, 231.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[27], 22.000, 30.000);
+TextDrawAlignment(RadialTD[27], 1);
+TextDrawColor(RadialTD[27], -1061109505);
+TextDrawSetShadow(RadialTD[27], 0);
+TextDrawSetOutline(RadialTD[27], 0);
+TextDrawBackgroundColor(RadialTD[27], 255);
+TextDrawFont(RadialTD[27], 4);
+TextDrawSetProportional(RadialTD[27], 1);
+
+RadialTD[28] = TextDrawCreate(259.000, 235.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[28], 22.000, 30.000);
+TextDrawAlignment(RadialTD[28], 1);
+TextDrawColor(RadialTD[28], -1);
+TextDrawSetShadow(RadialTD[28], 0);
+TextDrawSetOutline(RadialTD[28], 0);
+TextDrawBackgroundColor(RadialTD[28], 255);
+TextDrawFont(RadialTD[28], 4);
+TextDrawSetProportional(RadialTD[28], 1);
+
+RadialTD[29] = TextDrawCreate(262.000, 246.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[29], 15.000, 1.000);
+TextDrawAlignment(RadialTD[29], 1);
+TextDrawColor(RadialTD[29], 572732671);
+TextDrawSetShadow(RadialTD[29], 0);
+TextDrawSetOutline(RadialTD[29], 0);
+TextDrawBackgroundColor(RadialTD[29], 255);
+TextDrawFont(RadialTD[29], 4);
+TextDrawSetProportional(RadialTD[29], 1);
+
+RadialTD[30] = TextDrawCreate(262.000, 249.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[30], 15.000, 1.000);
+TextDrawAlignment(RadialTD[30], 1);
+TextDrawColor(RadialTD[30], 572732671);
+TextDrawSetShadow(RadialTD[30], 0);
+TextDrawSetOutline(RadialTD[30], 0);
+TextDrawBackgroundColor(RadialTD[30], 255);
+TextDrawFont(RadialTD[30], 4);
+TextDrawSetProportional(RadialTD[30], 1);
+
+RadialTD[31] = TextDrawCreate(262.000, 252.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[31], 15.000, 1.000);
+TextDrawAlignment(RadialTD[31], 1);
+TextDrawColor(RadialTD[31], 572732671);
+TextDrawSetShadow(RadialTD[31], 0);
+TextDrawSetOutline(RadialTD[31], 0);
+TextDrawBackgroundColor(RadialTD[31], 255);
+TextDrawFont(RadialTD[31], 4);
+TextDrawSetProportional(RadialTD[31], 1);
+
+RadialTD[32] = TextDrawCreate(262.000, 255.000, "LD_BUM:blkdot");
+TextDrawTextSize(RadialTD[32], 15.000, 1.000);
+TextDrawAlignment(RadialTD[32], 1);
+TextDrawColor(RadialTD[32], 572732671);
+TextDrawSetShadow(RadialTD[32], 0);
+TextDrawSetOutline(RadialTD[32], 0);
+TextDrawBackgroundColor(RadialTD[32], 255);
+TextDrawFont(RadialTD[32], 4);
+TextDrawSetProportional(RadialTD[32], 1);
+

@@ -1,0 +1,134 @@
+####################################################################################################
+
+new PlayerText: warn_fivem_anjirlah[MAX_PLAYERS][13];
+
+warn_fivem_anjirlah[playerid][0] = CreatePlayerTextDraw(playerid, -43.000, -26.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][0], 682.000, 520.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][0], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][0], -16776961);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][0], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][0], 1);
+
+warn_fivem_anjirlah[playerid][1] = CreatePlayerTextDraw(playerid, 226.000, 144.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][1], 197.000, 108.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][1], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][1], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][1], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][1], 1);
+
+warn_fivem_anjirlah[playerid][2] = CreatePlayerTextDraw(playerid, 227.000, 146.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][2], 195.000, 105.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][2], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][2], -16776961);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][2], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][2], 1);
+
+warn_fivem_anjirlah[playerid][3] = CreatePlayerTextDraw(playerid, 285.000, 154.000, "WARNING");
+PlayerTextDrawLetterSize(playerid, warn_fivem_anjirlah[playerid][3], 0.550, 1.499);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][3], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][3], 150);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][3], 1);
+
+warn_fivem_anjirlah[playerid][4] = CreatePlayerTextDraw(playerid, 229.000, 148.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][4], 9.000, 9.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][4], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][4], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][4], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][4], 1);
+
+warn_fivem_anjirlah[playerid][5] = CreatePlayerTextDraw(playerid, 250.000, 171.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][5], 154.000, -1.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][5], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][5], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][5], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][5], 1);
+
+warn_fivem_anjirlah[playerid][6] = CreatePlayerTextDraw(playerid, 378.000, 156.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][6], 3.000, 5.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][6], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][6], -16776961);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][6], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][6], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][6], 1);
+
+warn_fivem_anjirlah[playerid][7] = CreatePlayerTextDraw(playerid, 238.000, 148.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][7], 9.000, 9.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][7], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][7], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][7], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][7], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][7], 1);
+
+warn_fivem_anjirlah[playerid][8] = CreatePlayerTextDraw(playerid, 247.000, 148.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, warn_fivem_anjirlah[playerid][8], 9.000, 9.000);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][8], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][8], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][8], 255);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][8], 4);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][8], 1);
+
+warn_fivem_anjirlah[playerid][9] = CreatePlayerTextDraw(playerid, 248.000, 190.000, "Reason:");
+PlayerTextDrawLetterSize(playerid, warn_fivem_anjirlah[playerid][9], 0.260, 1.199);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][9], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][9], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][9], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][9], 150);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][9], 1);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][9], 1);
+
+warn_fivem_anjirlah[playerid][10] = CreatePlayerTextDraw(playerid, 284.000, 190.000, "ini reason");
+PlayerTextDrawLetterSize(playerid, warn_fivem_anjirlah[playerid][10], 0.260, 1.199);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][10], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][10], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][10], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][10], 150);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][10], 1);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][10], 1);
+
+warn_fivem_anjirlah[playerid][11] = CreatePlayerTextDraw(playerid, 248.000, 211.000, "Reason:");
+PlayerTextDrawLetterSize(playerid, warn_fivem_anjirlah[playerid][11], 0.260, 1.199);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][11], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][11], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][11], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][11], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][11], 150);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][11], 1);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][11], 1);
+
+warn_fivem_anjirlah[playerid][12] = CreatePlayerTextDraw(playerid, 284.000, 211.000, "ini admin");
+PlayerTextDrawLetterSize(playerid, warn_fivem_anjirlah[playerid][12], 0.260, 1.199);
+PlayerTextDrawAlignment(playerid, warn_fivem_anjirlah[playerid][12], 1);
+PlayerTextDrawColor(playerid, warn_fivem_anjirlah[playerid][12], -1);
+PlayerTextDrawSetShadow(playerid, warn_fivem_anjirlah[playerid][12], 0);
+PlayerTextDrawSetOutline(playerid, warn_fivem_anjirlah[playerid][12], 0);
+PlayerTextDrawBackgroundColor(playerid, warn_fivem_anjirlah[playerid][12], 150);
+PlayerTextDrawFont(playerid, warn_fivem_anjirlah[playerid][12], 1);
+PlayerTextDrawSetProportional(playerid, warn_fivem_anjirlah[playerid][12], 1);
+

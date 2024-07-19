@@ -1,0 +1,281 @@
+new Text: tdMahal[27];
+
+tdMahal[0] = TextDrawCreate(396.000, 148.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[0], 90.000, 169.000);
+TextDrawAlignment(tdMahal[0], 1);
+TextDrawColor(tdMahal[0], -1);
+TextDrawSetShadow(tdMahal[0], 0);
+TextDrawSetOutline(tdMahal[0], 0);
+TextDrawBackgroundColor(tdMahal[0], 255);
+TextDrawFont(tdMahal[0], 4);
+TextDrawSetProportional(tdMahal[0], 1);
+
+tdMahal[1] = TextDrawCreate(397.000, 149.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[1], 88.000, 167.000);
+TextDrawAlignment(tdMahal[1], 1);
+TextDrawColor(tdMahal[1], 1887473919);
+TextDrawSetShadow(tdMahal[1], 0);
+TextDrawSetOutline(tdMahal[1], 0);
+TextDrawBackgroundColor(tdMahal[1], 255);
+TextDrawFont(tdMahal[1], 4);
+TextDrawSetProportional(tdMahal[1], 1);
+
+tdMahal[2] = TextDrawCreate(420.000, 153.000, "RESTAURANT");
+TextDrawLetterSize(tdMahal[2], 0.230, 0.999);
+TextDrawAlignment(tdMahal[2], 1);
+TextDrawColor(tdMahal[2], -1);
+TextDrawSetShadow(tdMahal[2], 0);
+TextDrawSetOutline(tdMahal[2], 0);
+TextDrawBackgroundColor(tdMahal[2], 150);
+TextDrawFont(tdMahal[2], 1);
+TextDrawSetProportional(tdMahal[2], 1);
+
+tdMahal[3] = TextDrawCreate(434.000, 163.000, "MENU");
+TextDrawLetterSize(tdMahal[3], 0.230, 0.999);
+TextDrawAlignment(tdMahal[3], 1);
+TextDrawColor(tdMahal[3], -1);
+TextDrawSetShadow(tdMahal[3], 0);
+TextDrawSetOutline(tdMahal[3], 0);
+TextDrawBackgroundColor(tdMahal[3], 150);
+TextDrawFont(tdMahal[3], 1);
+TextDrawSetProportional(tdMahal[3], 1);
+
+tdMahal[4] = TextDrawCreate(397.000, 149.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[4], 88.000, 27.000);
+TextDrawAlignment(tdMahal[4], 1);
+TextDrawColor(tdMahal[4], -1329275137);
+TextDrawSetShadow(tdMahal[4], 0);
+TextDrawSetOutline(tdMahal[4], 0);
+TextDrawBackgroundColor(tdMahal[4], 255);
+TextDrawFont(tdMahal[4], 4);
+TextDrawSetProportional(tdMahal[4], 1);
+
+tdMahal[5] = TextDrawCreate(399.000, 202.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[5], 84.000, 27.000);
+TextDrawAlignment(tdMahal[5], 1);
+TextDrawColor(tdMahal[5], -1329275137);
+TextDrawSetShadow(tdMahal[5], 0);
+TextDrawSetOutline(tdMahal[5], 0);
+TextDrawBackgroundColor(tdMahal[5], 255);
+TextDrawFont(tdMahal[5], 4);
+TextDrawSetProportional(tdMahal[5], 1);
+
+tdMahal[6] = TextDrawCreate(399.000, 235.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[6], 84.000, 27.000);
+TextDrawAlignment(tdMahal[6], 1);
+TextDrawColor(tdMahal[6], -1329275137);
+TextDrawSetShadow(tdMahal[6], 0);
+TextDrawSetOutline(tdMahal[6], 0);
+TextDrawBackgroundColor(tdMahal[6], 255);
+TextDrawFont(tdMahal[6], 4);
+TextDrawSetProportional(tdMahal[6], 1);
+
+tdMahal[7] = TextDrawCreate(399.000, 267.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[7], 84.000, 27.000);
+TextDrawAlignment(tdMahal[7], 1);
+TextDrawColor(tdMahal[7], -1329275137);
+TextDrawSetShadow(tdMahal[7], 0);
+TextDrawSetOutline(tdMahal[7], 0);
+TextDrawBackgroundColor(tdMahal[7], 255);
+TextDrawFont(tdMahal[7], 4);
+TextDrawSetProportional(tdMahal[7], 1);
+
+tdMahal[8] = TextDrawCreate(400.000, 202.000, "_");
+TextDrawTextSize(tdMahal[8], 34.000, 25.000);
+TextDrawAlignment(tdMahal[8], 1);
+TextDrawColor(tdMahal[8], -1);
+TextDrawSetShadow(tdMahal[8], 0);
+TextDrawSetOutline(tdMahal[8], 0);
+TextDrawBackgroundColor(tdMahal[8], -1329275137);
+TextDrawFont(tdMahal[8], 5);
+TextDrawSetProportional(tdMahal[8], 0);
+TextDrawSetPreviewModel(tdMahal[8], 0);
+TextDrawSetPreviewRot(tdMahal[8], 0.000, 0.000, 0.000, 1.000);
+TextDrawSetPreviewVehCol(tdMahal[8], 0, 0);
+
+tdMahal[9] = TextDrawCreate(433.000, 201.000, "Burger");
+TextDrawLetterSize(tdMahal[9], 0.240, 1.099);
+TextDrawAlignment(tdMahal[9], 1);
+TextDrawColor(tdMahal[9], -1);
+TextDrawSetShadow(tdMahal[9], 0);
+TextDrawSetOutline(tdMahal[9], 0);
+TextDrawBackgroundColor(tdMahal[9], 150);
+TextDrawFont(tdMahal[9], 1);
+TextDrawSetProportional(tdMahal[9], 1);
+
+tdMahal[10] = TextDrawCreate(430.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[10], 30.000, 11.000);
+TextDrawAlignment(tdMahal[10], 1);
+TextDrawColor(tdMahal[10], 1887473919);
+TextDrawSetShadow(tdMahal[10], 0);
+TextDrawSetOutline(tdMahal[10], 0);
+TextDrawBackgroundColor(tdMahal[10], 255);
+TextDrawFont(tdMahal[10], 4);
+TextDrawSetProportional(tdMahal[10], 1);
+
+tdMahal[11] = TextDrawCreate(455.000, 220.000, "100.0$");
+TextDrawLetterSize(tdMahal[11], 0.200, 1.099);
+TextDrawAlignment(tdMahal[11], 1);
+TextDrawColor(tdMahal[11], -1);
+TextDrawSetShadow(tdMahal[11], 0);
+TextDrawSetOutline(tdMahal[11], 0);
+TextDrawBackgroundColor(tdMahal[11], 150);
+TextDrawFont(tdMahal[11], 1);
+TextDrawSetProportional(tdMahal[11], 1);
+
+tdMahal[12] = TextDrawCreate(453.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[12], 30.000, 11.000);
+TextDrawAlignment(tdMahal[12], 1);
+TextDrawColor(tdMahal[12], 1887473919);
+TextDrawSetShadow(tdMahal[12], 0);
+TextDrawSetOutline(tdMahal[12], 0);
+TextDrawBackgroundColor(tdMahal[12], 255);
+TextDrawFont(tdMahal[12], 4);
+TextDrawSetProportional(tdMahal[12], 1);
+
+tdMahal[13] = TextDrawCreate(453.000, 220.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[13], 30.000, 11.000);
+TextDrawAlignment(tdMahal[13], 1);
+TextDrawColor(tdMahal[13], 1887473919);
+TextDrawSetShadow(tdMahal[13], 0);
+TextDrawSetOutline(tdMahal[13], 0);
+TextDrawBackgroundColor(tdMahal[13], 255);
+TextDrawFont(tdMahal[13], 4);
+TextDrawSetProportional(tdMahal[13], 1);
+
+tdMahal[14] = TextDrawCreate(400.000, 235.000, "_");
+TextDrawTextSize(tdMahal[14], 34.000, 25.000);
+TextDrawAlignment(tdMahal[14], 1);
+TextDrawColor(tdMahal[14], -1);
+TextDrawSetShadow(tdMahal[14], 0);
+TextDrawSetOutline(tdMahal[14], 0);
+TextDrawBackgroundColor(tdMahal[14], -1329275137);
+TextDrawFont(tdMahal[14], 5);
+TextDrawSetProportional(tdMahal[14], 0);
+TextDrawSetPreviewModel(tdMahal[14], 0);
+TextDrawSetPreviewRot(tdMahal[14], 0.000, 0.000, 0.000, 1.000);
+TextDrawSetPreviewVehCol(tdMahal[14], 0, 0);
+
+tdMahal[15] = TextDrawCreate(430.000, 234.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[15], 53.000, 11.000);
+TextDrawAlignment(tdMahal[15], 1);
+TextDrawColor(tdMahal[15], 1887473919);
+TextDrawSetShadow(tdMahal[15], 0);
+TextDrawSetOutline(tdMahal[15], 0);
+TextDrawBackgroundColor(tdMahal[15], 255);
+TextDrawFont(tdMahal[15], 4);
+TextDrawSetProportional(tdMahal[15], 1);
+
+tdMahal[16] = TextDrawCreate(433.000, 233.000, "Susu");
+TextDrawLetterSize(tdMahal[16], 0.240, 1.099);
+TextDrawAlignment(tdMahal[16], 1);
+TextDrawColor(tdMahal[16], -1);
+TextDrawSetShadow(tdMahal[16], 0);
+TextDrawSetOutline(tdMahal[16], 0);
+TextDrawBackgroundColor(tdMahal[16], 150);
+TextDrawFont(tdMahal[16], 1);
+TextDrawSetProportional(tdMahal[16], 1);
+
+tdMahal[17] = TextDrawCreate(453.000, 253.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[17], 30.000, 11.000);
+TextDrawAlignment(tdMahal[17], 1);
+TextDrawColor(tdMahal[17], 1887473919);
+TextDrawSetShadow(tdMahal[17], 0);
+TextDrawSetOutline(tdMahal[17], 0);
+TextDrawBackgroundColor(tdMahal[17], 255);
+TextDrawFont(tdMahal[17], 4);
+TextDrawSetProportional(tdMahal[17], 1);
+
+tdMahal[18] = TextDrawCreate(455.000, 253.000, "100.0$");
+TextDrawLetterSize(tdMahal[18], 0.200, 1.099);
+TextDrawAlignment(tdMahal[18], 1);
+TextDrawColor(tdMahal[18], -1);
+TextDrawSetShadow(tdMahal[18], 0);
+TextDrawSetOutline(tdMahal[18], 0);
+TextDrawBackgroundColor(tdMahal[18], 150);
+TextDrawFont(tdMahal[18], 1);
+TextDrawSetProportional(tdMahal[18], 1);
+
+tdMahal[19] = TextDrawCreate(430.000, 265.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[19], 53.000, 11.000);
+TextDrawAlignment(tdMahal[19], 1);
+TextDrawColor(tdMahal[19], 1887473919);
+TextDrawSetShadow(tdMahal[19], 0);
+TextDrawSetOutline(tdMahal[19], 0);
+TextDrawBackgroundColor(tdMahal[19], 255);
+TextDrawFont(tdMahal[19], 4);
+TextDrawSetProportional(tdMahal[19], 1);
+
+tdMahal[20] = TextDrawCreate(433.000, 264.000, "Ayam goreng");
+TextDrawLetterSize(tdMahal[20], 0.220, 1.099);
+TextDrawAlignment(tdMahal[20], 1);
+TextDrawColor(tdMahal[20], -1);
+TextDrawSetShadow(tdMahal[20], 0);
+TextDrawSetOutline(tdMahal[20], 0);
+TextDrawBackgroundColor(tdMahal[20], 150);
+TextDrawFont(tdMahal[20], 1);
+TextDrawSetProportional(tdMahal[20], 1);
+
+tdMahal[21] = TextDrawCreate(453.000, 285.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[21], 30.000, 11.000);
+TextDrawAlignment(tdMahal[21], 1);
+TextDrawColor(tdMahal[21], 1887473919);
+TextDrawSetShadow(tdMahal[21], 0);
+TextDrawSetOutline(tdMahal[21], 0);
+TextDrawBackgroundColor(tdMahal[21], 255);
+TextDrawFont(tdMahal[21], 4);
+TextDrawSetProportional(tdMahal[21], 1);
+
+tdMahal[22] = TextDrawCreate(455.000, 285.000, "100.0$");
+TextDrawLetterSize(tdMahal[22], 0.200, 1.099);
+TextDrawAlignment(tdMahal[22], 1);
+TextDrawColor(tdMahal[22], -1);
+TextDrawSetShadow(tdMahal[22], 0);
+TextDrawSetOutline(tdMahal[22], 0);
+TextDrawBackgroundColor(tdMahal[22], 150);
+TextDrawFont(tdMahal[22], 1);
+TextDrawSetProportional(tdMahal[22], 1);
+
+tdMahal[23] = TextDrawCreate(408.000, 321.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[23], 66.000, 25.000);
+TextDrawAlignment(tdMahal[23], 1);
+TextDrawColor(tdMahal[23], -1);
+TextDrawSetShadow(tdMahal[23], 0);
+TextDrawSetOutline(tdMahal[23], 0);
+TextDrawBackgroundColor(tdMahal[23], 255);
+TextDrawFont(tdMahal[23], 4);
+TextDrawSetProportional(tdMahal[23], 1);
+
+tdMahal[24] = TextDrawCreate(409.000, 322.000, "LD_BUM:blkdot");
+TextDrawTextSize(tdMahal[24], 64.000, 23.000);
+TextDrawAlignment(tdMahal[24], 1);
+TextDrawColor(tdMahal[24], 1887473919);
+TextDrawSetShadow(tdMahal[24], 0);
+TextDrawSetOutline(tdMahal[24], 0);
+TextDrawBackgroundColor(tdMahal[24], 255);
+TextDrawFont(tdMahal[24], 4);
+TextDrawSetProportional(tdMahal[24], 1);
+
+tdMahal[25] = TextDrawCreate(399.000, 267.000, "_");
+TextDrawTextSize(tdMahal[25], 34.000, 25.000);
+TextDrawAlignment(tdMahal[25], 1);
+TextDrawColor(tdMahal[25], -1);
+TextDrawSetShadow(tdMahal[25], 0);
+TextDrawSetOutline(tdMahal[25], 0);
+TextDrawBackgroundColor(tdMahal[25], -1329275137);
+TextDrawFont(tdMahal[25], 5);
+TextDrawSetProportional(tdMahal[25], 0);
+TextDrawSetPreviewModel(tdMahal[25], 0);
+TextDrawSetPreviewRot(tdMahal[25], 0.000, 0.000, 0.000, 1.000);
+TextDrawSetPreviewVehCol(tdMahal[25], 0, 0);
+
+tdMahal[26] = TextDrawCreate(435.000, 326.000, "buy");
+TextDrawLetterSize(tdMahal[26], 0.300, 1.399);
+TextDrawAlignment(tdMahal[26], 1);
+TextDrawColor(tdMahal[26], -1);
+TextDrawSetShadow(tdMahal[26], 0);
+TextDrawSetOutline(tdMahal[26], 0);
+TextDrawBackgroundColor(tdMahal[26], 150);
+TextDrawFont(tdMahal[26], 1);
+TextDrawSetProportional(tdMahal[26], 1);
+

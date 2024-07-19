@@ -1,0 +1,183 @@
+//CREDITS: YO NDAK TAU KO TANYA SAYA
+//EROR: PM
+//NOTE: JANGAN LUPA BERNAFAS
+
+//VARIABEL NEW
+new Text: ChocoSpawn[12];
+
+//TARUH DI ONGAMEMODEINIT
+ChocoSpawn[0] = TextDrawCreate(120.000, 139.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[0], 90.000, 17.000);
+	TextDrawAlignment(ChocoSpawn[0], 1);
+	TextDrawColor(ChocoSpawn[0], -251662081);
+	TextDrawSetShadow(ChocoSpawn[0], 0);
+	TextDrawSetOutline(ChocoSpawn[0], 0);
+	TextDrawBackgroundColor(ChocoSpawn[0], 255);
+	TextDrawFont(ChocoSpawn[0], 4);
+	TextDrawSetProportional(ChocoSpawn[0], 1);
+
+	ChocoSpawn[1] = TextDrawCreate(120.000, 157.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[1], 90.000, 19.000);
+	TextDrawAlignment(ChocoSpawn[1], 1);
+	TextDrawColor(ChocoSpawn[1], -2139062017);
+	TextDrawSetShadow(ChocoSpawn[1], 0);
+	TextDrawSetOutline(ChocoSpawn[1], 0);
+	TextDrawBackgroundColor(ChocoSpawn[1], 255);
+	TextDrawFont(ChocoSpawn[1], 4);
+	TextDrawSetProportional(ChocoSpawn[1], 1);
+	TextDrawSetSelectable(ChocoSpawn[1], 1);
+
+	ChocoSpawn[2] = TextDrawCreate(120.000, 177.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[2], 90.000, 19.000);
+	TextDrawAlignment(ChocoSpawn[2], 1);
+	TextDrawColor(ChocoSpawn[2], -2139062017);
+	TextDrawSetShadow(ChocoSpawn[2], 0);
+	TextDrawSetOutline(ChocoSpawn[2], 0);
+	TextDrawBackgroundColor(ChocoSpawn[2], 255);
+	TextDrawFont(ChocoSpawn[2], 4);
+	TextDrawSetProportional(ChocoSpawn[2], 1);
+	TextDrawSetSelectable(ChocoSpawn[2], 1);
+
+	ChocoSpawn[3] = TextDrawCreate(120.000, 197.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[3], 90.000, 19.000);
+	TextDrawAlignment(ChocoSpawn[3], 1);
+	TextDrawColor(ChocoSpawn[3], -2139062017);
+	TextDrawSetShadow(ChocoSpawn[3], 0);
+	TextDrawSetOutline(ChocoSpawn[3], 0);
+	TextDrawBackgroundColor(ChocoSpawn[3], 255);
+	TextDrawFont(ChocoSpawn[3], 4);
+	TextDrawSetProportional(ChocoSpawn[3], 1);
+	TextDrawSetSelectable(ChocoSpawn[3], 1);
+
+	ChocoSpawn[4] = TextDrawCreate(120.000, 217.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[4], 90.000, 19.000);
+	TextDrawAlignment(ChocoSpawn[4], 1);
+	TextDrawColor(ChocoSpawn[4], -2139062017);
+	TextDrawSetShadow(ChocoSpawn[4], 0);
+	TextDrawSetOutline(ChocoSpawn[4], 0);
+	TextDrawBackgroundColor(ChocoSpawn[4], 255);
+	TextDrawFont(ChocoSpawn[4], 4);
+	TextDrawSetProportional(ChocoSpawn[4], 1);
+	TextDrawSetSelectable(ChocoSpawn[4], 1);
+
+	ChocoSpawn[5] = TextDrawCreate(120.000, 237.000, "LD_SPAC:white");
+	TextDrawTextSize(ChocoSpawn[5], 90.000, 19.000);
+	TextDrawAlignment(ChocoSpawn[5], 1);
+	TextDrawColor(ChocoSpawn[5], 16423679);
+	TextDrawSetShadow(ChocoSpawn[5], 0);
+	TextDrawSetOutline(ChocoSpawn[5], 0);
+	TextDrawBackgroundColor(ChocoSpawn[5], 255);
+	TextDrawFont(ChocoSpawn[5], 4);
+	TextDrawSetProportional(ChocoSpawn[5], 1);
+	TextDrawSetSelectable(ChocoSpawn[5], 1);
+
+	ChocoSpawn[6] = TextDrawCreate(130.000, 143.000, "Choose Your Spawn Location");
+	TextDrawLetterSize(ChocoSpawn[6], 0.150, 0.999);
+	TextDrawAlignment(ChocoSpawn[6], 1);
+	TextDrawColor(ChocoSpawn[6], 255);
+	TextDrawSetShadow(ChocoSpawn[6], 0);
+	TextDrawSetOutline(ChocoSpawn[6], 0);
+	TextDrawBackgroundColor(ChocoSpawn[6], 150);
+	TextDrawFont(ChocoSpawn[6], 1);
+	TextDrawSetProportional(ChocoSpawn[6], 1);
+
+	ChocoSpawn[7] = TextDrawCreate(165.000, 161.000, "Pasbek");
+	TextDrawLetterSize(ChocoSpawn[7], 0.260, 0.999);
+	TextDrawAlignment(ChocoSpawn[7], 2);
+	TextDrawColor(ChocoSpawn[7], -1);
+	TextDrawSetShadow(ChocoSpawn[7], 0);
+	TextDrawSetOutline(ChocoSpawn[7], 0);
+	TextDrawBackgroundColor(ChocoSpawn[7], 150);
+	TextDrawFont(ChocoSpawn[7], 1);
+	TextDrawSetProportional(ChocoSpawn[7], 1);
+
+	ChocoSpawn[8] = TextDrawCreate(165.000, 181.000, "Bus Station");
+	TextDrawLetterSize(ChocoSpawn[8], 0.260, 0.999);
+	TextDrawAlignment(ChocoSpawn[8], 2);
+	TextDrawColor(ChocoSpawn[8], -1);
+	TextDrawSetShadow(ChocoSpawn[8], 0);
+	TextDrawSetOutline(ChocoSpawn[8], 0);
+	TextDrawBackgroundColor(ChocoSpawn[8], 150);
+	TextDrawFont(ChocoSpawn[8], 1);
+	TextDrawSetProportional(ChocoSpawn[8], 1);
+
+	ChocoSpawn[9] = TextDrawCreate(165.000, 201.000, "Lokasi Terakhir");
+	TextDrawLetterSize(ChocoSpawn[9], 0.260, 0.999);
+	TextDrawAlignment(ChocoSpawn[9], 2);
+	TextDrawColor(ChocoSpawn[9], -1);
+	TextDrawSetShadow(ChocoSpawn[9], 0);
+	TextDrawSetOutline(ChocoSpawn[9], 0);
+	TextDrawBackgroundColor(ChocoSpawn[9], 150);
+	TextDrawFont(ChocoSpawn[9], 1);
+	TextDrawSetProportional(ChocoSpawn[9], 1);
+
+	ChocoSpawn[10] = TextDrawCreate(165.000, 221.000, "Stasiun");
+	TextDrawLetterSize(ChocoSpawn[10], 0.260, 0.999);
+	TextDrawAlignment(ChocoSpawn[10], 2);
+	TextDrawColor(ChocoSpawn[10], -1);
+	TextDrawSetShadow(ChocoSpawn[10], 0);
+	TextDrawSetOutline(ChocoSpawn[10], 0);
+	TextDrawBackgroundColor(ChocoSpawn[10], 150);
+	TextDrawFont(ChocoSpawn[10], 1);
+	TextDrawSetProportional(ChocoSpawn[10], 1);
+
+	ChocoSpawn[11] = TextDrawCreate(165.000, 241.000, "Confirm");
+	TextDrawLetterSize(ChocoSpawn[11], 0.260, 0.999);
+	TextDrawAlignment(ChocoSpawn[11], 2);
+	TextDrawColor(ChocoSpawn[11], -1);
+	TextDrawSetShadow(ChocoSpawn[11], 0);
+	TextDrawSetOutline(ChocoSpawn[11], 0);
+	TextDrawBackgroundColor(ChocoSpawn[11], 150);
+	TextDrawFont(ChocoSpawn[11], 1);
+	TextDrawSetProportional(ChocoSpawn[11], 1);
+
+//PASANG DI STOCK SETPLAYERSPAWN
+for(new i = 0; i < 12; i++)
+	{
+		TextDrawShowForPlayer(playerid, ChocoSpawn[i]);
+		SelectTextDraw(playerid, 0xFF0000FF);
+	}
+
+//TARUH DI public OnPlayerClickTextDraw(playerid, Text:clickedid)
+if(clickedid == ChocoSpawn[1]) // PASBEK
+	{
+		entertimer[playerid] = SetTimerEx("enter",3000,false,"i",playerid);
+        TogglePlayerControllable(playerid,0);
+        SetPlayerPos(playerid, 403.2688,-1799.0973,7.8281);
+		SetPlayerFacingAngle(playerid, 337.3065);
+		SetPlayerInterior(playerid, 0);
+		SetPlayerVirtualWorld(playerid, 0);
+		SetCameraBehindPlayer(playerid);
+	}
+	if(clickedid == ChocoSpawn[2]) // BUS STASIUN
+	{
+		entertimer[playerid] = SetTimerEx("enter",3000,false,"i",playerid);
+        TogglePlayerControllable(playerid,0);
+        SetPlayerPos(playerid, 1348.3868,-1759.8583,13.6328);
+		SetPlayerFacingAngle(playerid, 356.2592);
+		SetPlayerInterior(playerid, 0);
+		SetPlayerVirtualWorld(playerid, 0);
+		SetCameraBehindPlayer(playerid);
+	}
+	if(clickedid == ChocoSpawn[3]) // LOKASI TERAKHIR
+	{
+		//PASANG SCRIPT LAST EXIT KALIAN
+	}
+	if(clickedid == ChocoSpawn[4]) // STASIUN
+	{
+		entertimer[playerid] = SetTimerEx("enter",3000,false,"i",playerid);
+        TogglePlayerControllable(playerid,0);
+        SetPlayerPos(playerid, 1776.2063,-1888.8843,13.4555);
+		SetPlayerFacingAngle(playerid, 272.1858);
+		SetPlayerInterior(playerid, 0);
+		SetPlayerVirtualWorld(playerid, 0);
+		SetCameraBehindPlayer(playerid);
+	}
+	if(clickedid == ChocoSpawn[5]) // KONFIRMASI
+	{
+		for(new i = 0; i < 12; i++)
+		{
+			TextDrawHideForPlayer(playerid, ChocoSpawn[i]);
+		}
+		CancelSelectTextDraw(playerid);
+	}

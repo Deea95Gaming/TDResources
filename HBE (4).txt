@@ -1,0 +1,212 @@
+new Text: HBE[14];
+
+HBE[0] = TextDrawCreate(3.000, 335.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[0], 19.000, 29.000);
+TextDrawAlignment(HBE[0], 1);
+TextDrawColor(HBE[0], 512819199);
+TextDrawSetShadow(HBE[0], 0);
+TextDrawSetOutline(HBE[0], 0);
+TextDrawBackgroundColor(HBE[0], 255);
+TextDrawFont(HBE[0], 4);
+TextDrawSetProportional(HBE[0], 1);
+
+HBE[1] = TextDrawCreate(96.000, 335.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[1], 19.000, 29.000);
+TextDrawAlignment(HBE[1], 1);
+TextDrawColor(HBE[1], 512819199);
+TextDrawSetShadow(HBE[1], 0);
+TextDrawSetOutline(HBE[1], 0);
+TextDrawBackgroundColor(HBE[1], 255);
+TextDrawFont(HBE[1], 4);
+TextDrawSetProportional(HBE[1], 1);
+
+HBE[2] = TextDrawCreate(3.000, 368.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[2], 19.000, 29.000);
+TextDrawAlignment(HBE[2], 1);
+TextDrawColor(HBE[2], 512819199);
+TextDrawSetShadow(HBE[2], 0);
+TextDrawSetOutline(HBE[2], 0);
+TextDrawBackgroundColor(HBE[2], 255);
+TextDrawFont(HBE[2], 4);
+TextDrawSetProportional(HBE[2], 1);
+
+HBE[3] = TextDrawCreate(96.000, 368.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[3], 19.000, 29.000);
+TextDrawAlignment(HBE[3], 1);
+TextDrawColor(HBE[3], 512819199);
+TextDrawSetShadow(HBE[3], 0);
+TextDrawSetOutline(HBE[3], 0);
+TextDrawBackgroundColor(HBE[3], 255);
+TextDrawFont(HBE[3], 4);
+TextDrawSetProportional(HBE[3], 1);
+
+HBE[4] = TextDrawCreate(2.000, 401.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[4], 19.000, 29.000);
+TextDrawAlignment(HBE[4], 1);
+TextDrawColor(HBE[4], 512819199);
+TextDrawSetShadow(HBE[4], 0);
+TextDrawSetOutline(HBE[4], 0);
+TextDrawBackgroundColor(HBE[4], 255);
+TextDrawFont(HBE[4], 4);
+TextDrawSetProportional(HBE[4], 1);
+
+HBE[5] = TextDrawCreate(95.000, 401.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[5], 19.000, 29.000);
+TextDrawAlignment(HBE[5], 1);
+TextDrawColor(HBE[5], 512819199);
+TextDrawSetShadow(HBE[5], 0);
+TextDrawSetOutline(HBE[5], 0);
+TextDrawBackgroundColor(HBE[5], 255);
+TextDrawFont(HBE[5], 4);
+TextDrawSetProportional(HBE[5], 1);
+
+HBE[6] = TextDrawCreate(143.000, 322.000, ".");
+TextDrawTextSize(HBE[6], 10.000, 10.000);
+TextDrawAlignment(HBE[6], 1);
+TextDrawColor(HBE[6], -1);
+TextDrawSetShadow(HBE[6], 0);
+TextDrawSetOutline(HBE[6], 0);
+TextDrawBackgroundColor(HBE[6], 255);
+TextDrawFont(HBE[6], 4);
+TextDrawSetProportional(HBE[6], 1);
+
+HBE[7] = TextDrawCreate(118.000, 334.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[7], 19.000, 29.000);
+TextDrawAlignment(HBE[7], 1);
+TextDrawColor(HBE[7], 512819199);
+TextDrawSetShadow(HBE[7], 0);
+TextDrawSetOutline(HBE[7], 0);
+TextDrawBackgroundColor(HBE[7], 255);
+TextDrawFont(HBE[7], 4);
+TextDrawSetProportional(HBE[7], 1);
+
+HBE[8] = TextDrawCreate(119.000, 368.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[8], 19.000, 29.000);
+TextDrawAlignment(HBE[8], 1);
+TextDrawColor(HBE[8], 512819199);
+TextDrawSetShadow(HBE[8], 0);
+TextDrawSetOutline(HBE[8], 0);
+TextDrawBackgroundColor(HBE[8], 255);
+TextDrawFont(HBE[8], 4);
+TextDrawSetProportional(HBE[8], 1);
+
+HBE[9] = TextDrawCreate(119.000, 402.000, "LD_BEAT:chit");
+TextDrawTextSize(HBE[9], 19.000, 29.000);
+TextDrawAlignment(HBE[9], 1);
+TextDrawColor(HBE[9], 512819199);
+TextDrawSetShadow(HBE[9], 0);
+TextDrawSetOutline(HBE[9], 0);
+TextDrawBackgroundColor(HBE[9], 255);
+TextDrawFont(HBE[9], 4);
+TextDrawSetProportional(HBE[9], 1);
+
+HBE[10] = TextDrawCreate(123.000, 344.000, "HUD:radar_dateFood");
+TextDrawTextSize(HBE[10], 10.000, 10.000);
+TextDrawAlignment(HBE[10], 1);
+TextDrawColor(HBE[10], -1);
+TextDrawSetShadow(HBE[10], 0);
+TextDrawSetOutline(HBE[10], 0);
+TextDrawBackgroundColor(HBE[10], 255);
+TextDrawFont(HBE[10], 4);
+TextDrawSetProportional(HBE[10], 1);
+
+HBE[11] = TextDrawCreate(124.000, 378.000, "HUD:radar_dateDrink");
+TextDrawTextSize(HBE[11], 10.000, 10.000);
+TextDrawAlignment(HBE[11], 1);
+TextDrawColor(HBE[11], -1);
+TextDrawSetShadow(HBE[11], 0);
+TextDrawSetOutline(HBE[11], 0);
+TextDrawBackgroundColor(HBE[11], 255);
+TextDrawFont(HBE[11], 4);
+TextDrawSetProportional(HBE[11], 1);
+
+HBE[12] = TextDrawCreate(124.000, 411.000, "HUD:radar_centre");
+TextDrawTextSize(HBE[12], 10.000, 10.000);
+TextDrawAlignment(HBE[12], 1);
+TextDrawColor(HBE[12], -1);
+TextDrawSetShadow(HBE[12], 0);
+TextDrawSetOutline(HBE[12], 0);
+TextDrawBackgroundColor(HBE[12], 255);
+TextDrawFont(HBE[12], 4);
+TextDrawSetProportional(HBE[12], 1);
+
+HBE[13] = TextDrawCreate(42.000, 316.000, "Stats");
+TextDrawLetterSize(HBE[13], 0.429, 2.799);
+TextDrawAlignment(HBE[13], 1);
+TextDrawColor(HBE[13], -1);
+TextDrawSetShadow(HBE[13], 1);
+TextDrawSetOutline(HBE[13], 1);
+TextDrawBackgroundColor(HBE[13], 150);
+TextDrawFont(HBE[13], 0);
+TextDrawSetProportional(HBE[13], 1);
+
+####################################################################################################
+
+new PlayerText: HBE[MAX_PLAYERS][3];
+
+HBE[playerid][0] = CreatePlayerTextDraw(playerid, 12.000, 339.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HBE[playerid][0], 94.000, 21.000);
+PlayerTextDrawAlignment(playerid, HBE[playerid][0], 1);
+PlayerTextDrawColor(playerid, HBE[playerid][0], 512819199);
+PlayerTextDrawSetShadow(playerid, HBE[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, HBE[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, HBE[playerid][0], 255);
+PlayerTextDrawFont(playerid, HBE[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, HBE[playerid][0], 1);
+
+HBE[playerid][1] = CreatePlayerTextDraw(playerid, 12.000, 372.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HBE[playerid][1], 94.000, 21.000);
+PlayerTextDrawAlignment(playerid, HBE[playerid][1], 1);
+PlayerTextDrawColor(playerid, HBE[playerid][1], 512819199);
+PlayerTextDrawSetShadow(playerid, HBE[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, HBE[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, HBE[playerid][1], 255);
+PlayerTextDrawFont(playerid, HBE[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, HBE[playerid][1], 1);
+
+HBE[playerid][2] = CreatePlayerTextDraw(playerid, 11.000, 405.000, "LD_SPAC:white");
+PlayerTextDrawTextSize(playerid, HBE[playerid][2], 94.000, 21.000);
+PlayerTextDrawAlignment(playerid, HBE[playerid][2], 1);
+PlayerTextDrawColor(playerid, HBE[playerid][2], 512819199);
+PlayerTextDrawSetShadow(playerid, HBE[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, HBE[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, HBE[playerid][2], 255);
+PlayerTextDrawFont(playerid, HBE[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, HBE[playerid][2], 1);
+
+####################################################################################################
+
+new Text: makan;
+new Text: minum;
+new Text: kencing;
+
+makan = TextDrawCreate(53.000, 345.000, "100");
+TextDrawLetterSize(makan, 0.170, 0.899);
+TextDrawAlignment(makan, 1);
+TextDrawColor(makan, -1);
+TextDrawSetShadow(makan, 0);
+TextDrawSetOutline(makan, 0);
+TextDrawBackgroundColor(makan, 255);
+TextDrawFont(makan, 1);
+TextDrawSetProportional(makan, 1);
+
+minum = TextDrawCreate(53.000, 377.000, "100");
+TextDrawLetterSize(minum, 0.170, 0.899);
+TextDrawAlignment(minum, 1);
+TextDrawColor(minum, -1);
+TextDrawSetShadow(minum, 0);
+TextDrawSetOutline(minum, 0);
+TextDrawBackgroundColor(minum, 150);
+TextDrawFont(minum, 1);
+TextDrawSetProportional(minum, 1);
+
+kencing = TextDrawCreate(53.000, 412.000, "100");
+TextDrawLetterSize(kencing, 0.170, 0.899);
+TextDrawAlignment(kencing, 1);
+TextDrawColor(kencing, -1);
+TextDrawSetShadow(kencing, 0);
+TextDrawSetOutline(kencing, 0);
+TextDrawBackgroundColor(kencing, 150);
+TextDrawFont(kencing, 1);
+TextDrawSetProportional(kencing, 1);
+

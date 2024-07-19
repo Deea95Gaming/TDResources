@@ -1,0 +1,52 @@
+new Text: Text_Global[5];
+
+Text_Global[0] = TextDrawCreate(275.000, 10.000, "/");
+TextDrawLetterSize(Text_Global[0], 1.200, 4.500);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -260013825);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 150);
+TextDrawFont(Text_Global[0], 1);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(288.000, 10.000, "\");
+TextDrawLetterSize(Text_Global[1], 1.200, 4.500);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], -260013825);
+TextDrawSetShadow(Text_Global[1], 0);
+TextDrawSetOutline(Text_Global[1], 0);
+TextDrawBackgroundColor(Text_Global[1], 150);
+TextDrawFont(Text_Global[1], 1);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(279.450, 28.000, "V");
+TextDrawLetterSize(Text_Global[2], 0.959, 3.000);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -260013825);
+TextDrawSetShadow(Text_Global[2], 0);
+TextDrawSetOutline(Text_Global[2], 0);
+TextDrawBackgroundColor(Text_Global[2], 150);
+TextDrawFont(Text_Global[2], 1);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(305.000, 20.000, "ATEPIXEL");
+TextDrawLetterSize(Text_Global[3], 0.400, 1.899);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], -260013825);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 150);
+TextDrawFont(Text_Global[3], 1);
+TextDrawSetProportional(Text_Global[3], 1);
+
+Text_Global[4] = TextDrawCreate(305.000, 32.000, "ROLEPLAY");
+TextDrawLetterSize(Text_Global[4], 0.400, 1.899);
+TextDrawAlignment(Text_Global[4], 1);
+TextDrawColor(Text_Global[4], -260013825);
+TextDrawSetShadow(Text_Global[4], 0);
+TextDrawSetOutline(Text_Global[4], 0);
+TextDrawBackgroundColor(Text_Global[4], 150);
+TextDrawFont(Text_Global[4], 1);
+TextDrawSetProportional(Text_Global[4], 1);
+

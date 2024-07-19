@@ -1,0 +1,167 @@
+
+pProgressBar,
+
+new Text:PROGRESSBAR[7];
+new LoadingPlayerBar[MAX_PLAYERS];
+new TimerLoading[MAX_PLAYERS];
+new ProgressTimer[MAX_PLAYERS][128];
+
+SERCH: ANN[
+
+//proggresbar
+    PROGRESSBAR[0] = TextDrawCreate(273.000000, 364.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[0], 4);
+	TextDrawLetterSize(PROGRESSBAR[0], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[0], 101.000000, 23.500000);
+	TextDrawSetOutline(PROGRESSBAR[0], 1);
+	TextDrawSetShadow(PROGRESSBAR[0], 0);
+	TextDrawAlignment(PROGRESSBAR[0], 1);
+	TextDrawColor(PROGRESSBAR[0], 144);
+	TextDrawBackgroundColor(PROGRESSBAR[0], 255);
+	TextDrawBoxColor(PROGRESSBAR[0], 50);
+	TextDrawUseBox(PROGRESSBAR[0], 1);
+	TextDrawSetProportional(PROGRESSBAR[0], 1);
+	TextDrawSetSelectable(PROGRESSBAR[0], 0);
+
+	PROGRESSBAR[1] = TextDrawCreate(273.000000, 364.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[1], 4);
+	TextDrawLetterSize(PROGRESSBAR[1], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[1], 101.000000, 23.500000);
+	TextDrawSetOutline(PROGRESSBAR[1], 1);
+	TextDrawSetShadow(PROGRESSBAR[1], 0);
+	TextDrawAlignment(PROGRESSBAR[1], 1);
+	TextDrawColor(PROGRESSBAR[1], 60486911);
+	TextDrawBackgroundColor(PROGRESSBAR[1], 255);
+	TextDrawBoxColor(PROGRESSBAR[1], 50);
+	TextDrawUseBox(PROGRESSBAR[1], 1);
+	TextDrawSetProportional(PROGRESSBAR[1], 1);
+	TextDrawSetSelectable(PROGRESSBAR[1], 0);
+
+	PROGRESSBAR[2] = TextDrawCreate(323.000000, 370.000000, "MINUM");
+	TextDrawFont(PROGRESSBAR[2], 1);
+	TextDrawLetterSize(PROGRESSBAR[2], 0.216664, 1.200000);
+	TextDrawTextSize(PROGRESSBAR[2], 406.500000, 98.000000);
+	TextDrawSetOutline(PROGRESSBAR[2], 0);
+	TextDrawSetShadow(PROGRESSBAR[2], 0);
+	TextDrawAlignment(PROGRESSBAR[2], 2);
+	TextDrawColor(PROGRESSBAR[2], -1);
+	TextDrawBackgroundColor(PROGRESSBAR[2], 255);
+	TextDrawBoxColor(PROGRESSBAR[2], 0);
+	TextDrawUseBox(PROGRESSBAR[2], 1);
+	TextDrawSetProportional(PROGRESSBAR[2], 1);
+	TextDrawSetSelectable(PROGRESSBAR[2], 0);
+
+	PROGRESSBAR[3] = TextDrawCreate(273.000000, 363.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[3], 4);
+	TextDrawLetterSize(PROGRESSBAR[3], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[3], 101.000000, 1.000000);
+	TextDrawSetOutline(PROGRESSBAR[3], 1);
+	TextDrawSetShadow(PROGRESSBAR[3], 0);
+	TextDrawAlignment(PROGRESSBAR[3], 1);
+	TextDrawColor(PROGRESSBAR[3], -162);
+	TextDrawBackgroundColor(PROGRESSBAR[3], 255);
+	TextDrawBoxColor(PROGRESSBAR[3], 50);
+	TextDrawUseBox(PROGRESSBAR[3], 1);
+	TextDrawSetProportional(PROGRESSBAR[3], 1);
+	TextDrawSetSelectable(PROGRESSBAR[3], 0);
+
+	PROGRESSBAR[4] = TextDrawCreate(272.000000, 363.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[4], 4);
+	TextDrawLetterSize(PROGRESSBAR[4], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[4], 1.000000, 24.500000);
+	TextDrawSetOutline(PROGRESSBAR[4], 1);
+	TextDrawSetShadow(PROGRESSBAR[4], 0);
+	TextDrawAlignment(PROGRESSBAR[4], 1);
+	TextDrawColor(PROGRESSBAR[4], -162);
+	TextDrawBackgroundColor(PROGRESSBAR[4], 255);
+	TextDrawBoxColor(PROGRESSBAR[4], 50);
+	TextDrawUseBox(PROGRESSBAR[4], 1);
+	TextDrawSetProportional(PROGRESSBAR[4], 1);
+	TextDrawSetSelectable(PROGRESSBAR[4], 0);
+
+	PROGRESSBAR[5] = TextDrawCreate(272.000000, 387.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[5], 4);
+	TextDrawLetterSize(PROGRESSBAR[5], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[5], 102.000000, 1.000000);
+	TextDrawSetOutline(PROGRESSBAR[5], 1);
+	TextDrawSetShadow(PROGRESSBAR[5], 0);
+	TextDrawAlignment(PROGRESSBAR[5], 1);
+	TextDrawColor(PROGRESSBAR[5], -162);
+	TextDrawBackgroundColor(PROGRESSBAR[5], 255);
+	TextDrawBoxColor(PROGRESSBAR[5], 50);
+	TextDrawUseBox(PROGRESSBAR[5], 1);
+	TextDrawSetProportional(PROGRESSBAR[5], 1);
+	TextDrawSetSelectable(PROGRESSBAR[5], 0);
+
+	PROGRESSBAR[6] = TextDrawCreate(374.000000, 363.000000, "ld_bum:blkdot");
+	TextDrawFont(PROGRESSBAR[6], 4);
+	TextDrawLetterSize(PROGRESSBAR[6], 0.600000, 2.000000);
+	TextDrawTextSize(PROGRESSBAR[6], 1.000000, 24.500000);
+	TextDrawSetOutline(PROGRESSBAR[6], 1);
+	TextDrawSetShadow(PROGRESSBAR[6], 0);
+	TextDrawAlignment(PROGRESSBAR[6], 1);
+	TextDrawColor(PROGRESSBAR[6], -162);
+	TextDrawBackgroundColor(PROGRESSBAR[6], 255);
+	TextDrawBoxColor(PROGRESSBAR[6], 50);
+	TextDrawUseBox(PROGRESSBAR[6], 1);
+	TextDrawSetProportional(PROGRESSBAR[6], 1);
+	TextDrawSetSelectable(PROGRESSBAR[6], 0);
+
+
+ShowProgressbar(playerid, text[] = "", Times)
+{
+    if(pData[playerid][pProgressBar] == 1) return SCM(playerid, COLOR_RED, "ERROR: {FFFFFF}ERROR");
+
+    pData[playerid][pProgressBar] = 1;
+   /* OnPlayerUpdateAccountsPer(playerid, "pProgressBar", 1);*/
+	LoadingPlayerBar[playerid] = 0;
+	new Float:Value = LoadingPlayerBar[playerid]*101/100;
+	new Timeron = Times*1000/100;
+	TextDrawTextSize(PROGRESSBAR[1], Value, 23.5);
+	TextDrawSetString(PROGRESSBAR[2], text);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[0]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[1]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[2]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[3]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[4]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[5]);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[6]);
+	TogglePlayerControllable(playerid, 0);
+	TimerLoading[playerid] = SetTimerEx("UpdtLoading", Timeron, true, "d", playerid);
+	return 1;
+}
+
+forward UpdtLoading(playerid);
+public UpdtLoading(playerid)
+{
+	LoadingPlayerBar[playerid] += 1;
+	UpdateLoading(playerid);
+	if(LoadingPlayerBar[playerid] >= 100)
+	{
+	    pData[playerid][pProgressBar] = 0;
+		KillTimer(TimerLoading[playerid]);
+		LoadingPlayerBar[playerid] = 0;
+		HideProgressBar(playerid);
+		TogglePlayerControllable(playerid, 1);
+	}
+	return 1;
+}
+
+stock UpdateLoading(playerid)
+{
+	new Float:Value = LoadingPlayerBar[playerid]*101.0/100;
+	TextDrawTextSize(PROGRESSBAR[1], Value, 23.4);
+	TextDrawShowForPlayer(playerid, PROGRESSBAR[1]);
+	return 1;
+}
+HideProgressBar(playerid)
+{
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[0]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[1]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[2]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[3]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[4]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[5]);
+	TextDrawHideForPlayer(playerid, PROGRESSBAR[6]);
+	return 1;
+}

@@ -1,0 +1,22 @@
+new Text: Text_Global[2];
+
+Text_Global[0] = TextDrawCreate(280.000, 1.000, "NAMA SERVER");
+TextDrawLetterSize(Text_Global[0], 0.400, 3.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -1);
+TextDrawSetShadow(Text_Global[0], 1);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 3);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(285.500, 15.000, "Roleplay");
+TextDrawLetterSize(Text_Global[1], 0.699, 3.000);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], 255);
+TextDrawSetShadow(Text_Global[1], 1);
+TextDrawSetOutline(Text_Global[1], 0);
+TextDrawBackgroundColor(Text_Global[1], -1);
+TextDrawFont(Text_Global[1], 0);
+TextDrawSetProportional(Text_Global[1], 1);
+

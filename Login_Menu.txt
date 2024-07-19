@@ -1,0 +1,318 @@
+####################################################################################################
+
+new PlayerText: Login_Menu[MAX_PLAYERS][26];
+
+Login_Menu[playerid][0] = CreatePlayerTextDraw(playerid, 380.000, 257.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][0], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][0], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][0], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][0], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][0], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][0], 1);
+
+Login_Menu[playerid][1] = CreatePlayerTextDraw(playerid, 260.000, 198.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][1], 126.000, 1.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][1], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][1], -2686721);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][1], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][1], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][1], 1);
+
+Login_Menu[playerid][2] = CreatePlayerTextDraw(playerid, 263.000, 237.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][2], 120.000, 26.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][2], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][2], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][2], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][2], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][2], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Menu[playerid][2], 1);
+
+Login_Menu[playerid][3] = CreatePlayerTextDraw(playerid, 313.000, 271.000, "Login");
+PlayerTextDrawLetterSize(playerid, Login_Menu[playerid][3], 0.210, 0.999);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][3], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][3], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][3], 150);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][3], 1);
+
+Login_Menu[playerid][4] = CreatePlayerTextDraw(playerid, 380.000, 236.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][4], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][4], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][4], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][4], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][4], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][4], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][4], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][4], 1);
+
+Login_Menu[playerid][5] = CreatePlayerTextDraw(playerid, 261.000, 210.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][5], 124.000, 22.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][5], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][5], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][5], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][5], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][5], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][5], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][5], 1);
+
+Login_Menu[playerid][6] = CreatePlayerTextDraw(playerid, 263.000, 208.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][6], 120.000, 26.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][6], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][6], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][6], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][6], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][6], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][6], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][6], 1);
+
+Login_Menu[playerid][7] = CreatePlayerTextDraw(playerid, 260.000, 207.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][7], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][7], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][7], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][7], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][7], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][7], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][7], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][7], 1);
+
+Login_Menu[playerid][8] = CreatePlayerTextDraw(playerid, 260.000, 228.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][8], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][8], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][8], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][8], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][8], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][8], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][8], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][8], 1);
+
+Login_Menu[playerid][9] = CreatePlayerTextDraw(playerid, 380.000, 228.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][9], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][9], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][9], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][9], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][9], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][9], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][9], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][9], 1);
+
+Login_Menu[playerid][10] = CreatePlayerTextDraw(playerid, 263.000, 220.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][10], 16.000, 12.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][10], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][10], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][10], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][10], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][10], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][10], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][10], 1);
+
+Login_Menu[playerid][11] = CreatePlayerTextDraw(playerid, 380.000, 207.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][11], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][11], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][11], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][11], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][11], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][11], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][11], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][11], 1);
+
+Login_Menu[playerid][12] = CreatePlayerTextDraw(playerid, 266.500, 212.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][12], 9.000, 10.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][12], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][12], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][12], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][12], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][12], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][12], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][12], 1);
+
+Login_Menu[playerid][13] = CreatePlayerTextDraw(playerid, 261.000, 225.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][13], 124.000, 5.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][13], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][13], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][13], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][13], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][13], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][13], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][13], 1);
+
+Login_Menu[playerid][14] = CreatePlayerTextDraw(playerid, 260.000, 257.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][14], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][14], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][14], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][14], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][14], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][14], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][14], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][14], 1);
+
+Login_Menu[playerid][15] = CreatePlayerTextDraw(playerid, 260.000, 236.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][15], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][15], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][15], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][15], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][15], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][15], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][15], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][15], 1);
+
+Login_Menu[playerid][16] = CreatePlayerTextDraw(playerid, 268.000, 249.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][16], 2.000, -5.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][16], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][16], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][16], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][16], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][16], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][16], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][16], 1);
+
+Login_Menu[playerid][17] = CreatePlayerTextDraw(playerid, 267.000, 248.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][17], 8.000, 6.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][17], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][17], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][17], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][17], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][17], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][17], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][17], 1);
+
+Login_Menu[playerid][18] = CreatePlayerTextDraw(playerid, 272.000, 249.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][18], 2.000, -5.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][18], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][18], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][18], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][18], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][18], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][18], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][18], 1);
+
+Login_Menu[playerid][19] = CreatePlayerTextDraw(playerid, 272.000, 244.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][19], -2.000, 2.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][19], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][19], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][19], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][19], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][19], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][19], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][19], 1);
+
+Login_Menu[playerid][20] = CreatePlayerTextDraw(playerid, 261.000, 269.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][20], 125.000, 15.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][20], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][20], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][20], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][20], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][20], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][20], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][20], 1);
+
+Login_Menu[playerid][21] = CreatePlayerTextDraw(playerid, 260.000, 266.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][21], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][21], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][21], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][21], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][21], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][21], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][21], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][21], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Menu[playerid][21], 1);
+
+Login_Menu[playerid][22] = CreatePlayerTextDraw(playerid, 260.000, 280.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][22], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][22], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][22], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][22], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][22], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][22], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][22], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][22], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Menu[playerid][22], 1);
+
+Login_Menu[playerid][23] = CreatePlayerTextDraw(playerid, 381.000, 280.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][23], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][23], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][23], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][23], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][23], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][23], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][23], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][23], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Menu[playerid][23], 1);
+
+Login_Menu[playerid][24] = CreatePlayerTextDraw(playerid, 381.000, 266.000, "LD_BEAT:chit");
+PlayerTextDrawTextSize(playerid, Login_Menu[playerid][24], 6.000, 7.000);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][24], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][24], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][24], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][24], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][24], 255);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][24], 4);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][24], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Menu[playerid][24], 1);
+
+Login_Menu[playerid][25] = CreatePlayerTextDraw(playerid, 260.000, 179.000, "Login");
+PlayerTextDrawLetterSize(playerid, Login_Menu[playerid][25], 0.300, 1.399);
+PlayerTextDrawAlignment(playerid, Login_Menu[playerid][25], 1);
+PlayerTextDrawColor(playerid, Login_Menu[playerid][25], -1);
+PlayerTextDrawSetShadow(playerid, Login_Menu[playerid][25], 0);
+PlayerTextDrawSetOutline(playerid, Login_Menu[playerid][25], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Menu[playerid][25], 150);
+PlayerTextDrawFont(playerid, Login_Menu[playerid][25], 1);
+PlayerTextDrawSetProportional(playerid, Login_Menu[playerid][25], 1);
+
+####################################################################################################
+
+new PlayerText: Login_Password[MAX_PLAYERS];
+new PlayerText: Login_Password[MAX_PLAYERS];
+new PlayerText: Login_Name[MAX_PLAYERS];
+new PlayerText: Login_Enter[MAX_PLAYERS];
+
+Login_Password[playerid] = CreatePlayerTextDraw(playerid, 261.000, 239.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Password[playerid], 124.000, 22.000);
+PlayerTextDrawAlignment(playerid, Login_Password[playerid], 1);
+PlayerTextDrawColor(playerid, Login_Password[playerid], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Password[playerid], 0);
+PlayerTextDrawSetOutline(playerid, Login_Password[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Password[playerid], 255);
+PlayerTextDrawFont(playerid, Login_Password[playerid], 4);
+PlayerTextDrawSetProportional(playerid, Login_Password[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Password[playerid], 1);
+
+Login_Password[playerid] = CreatePlayerTextDraw(playerid, 280.000, 240.000, ".........");
+PlayerTextDrawLetterSize(playerid, Login_Password[playerid], 0.300, 1.500);
+PlayerTextDrawAlignment(playerid, Login_Password[playerid], 1);
+PlayerTextDrawColor(playerid, Login_Password[playerid], -1);
+PlayerTextDrawSetShadow(playerid, Login_Password[playerid], 0);
+PlayerTextDrawSetOutline(playerid, Login_Password[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Password[playerid], 150);
+PlayerTextDrawFont(playerid, Login_Password[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Login_Password[playerid], 1);
+
+Login_Name[playerid] = CreatePlayerTextDraw(playerid, 279.000, 215.000, "Tyrone_Leak");
+PlayerTextDrawLetterSize(playerid, Login_Name[playerid], 0.250, 1.299);
+PlayerTextDrawAlignment(playerid, Login_Name[playerid], 1);
+PlayerTextDrawColor(playerid, Login_Name[playerid], -1);
+PlayerTextDrawSetShadow(playerid, Login_Name[playerid], 0);
+PlayerTextDrawSetOutline(playerid, Login_Name[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Name[playerid], 150);
+PlayerTextDrawFont(playerid, Login_Name[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Login_Name[playerid], 1);
+
+Login_Enter[playerid] = CreatePlayerTextDraw(playerid, 263.000, 267.000, "LD_BUM:blkdot");
+PlayerTextDrawTextSize(playerid, Login_Enter[playerid], 121.000, 19.000);
+PlayerTextDrawAlignment(playerid, Login_Enter[playerid], 1);
+PlayerTextDrawColor(playerid, Login_Enter[playerid], 993342463);
+PlayerTextDrawSetShadow(playerid, Login_Enter[playerid], 0);
+PlayerTextDrawSetOutline(playerid, Login_Enter[playerid], 0);
+PlayerTextDrawBackgroundColor(playerid, Login_Enter[playerid], 255);
+PlayerTextDrawFont(playerid, Login_Enter[playerid], 4);
+PlayerTextDrawSetProportional(playerid, Login_Enter[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Login_Enter[playerid], 1);
+

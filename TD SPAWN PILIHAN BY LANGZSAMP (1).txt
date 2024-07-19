@@ -1,0 +1,225 @@
+new Text: LangzSpawn[11];
+
+//taruh di enum pinfo kalo [inferno]
+SPAWNMENU,pPosA, pInt, pWorld, pPosX, pPosY, pPosZ,
+
+//taruh di public OnGameModeInt.
+LangzSpawn[0] = TextDrawCreate(167.000, 124.000, "LD_SPAC:white");
+TextDrawTextSize(LangzSpawn[0], 80.000, 25.000);
+TextDrawAlignment(LangzSpawn[0], 1);
+TextDrawColor(LangzSpawn[0], 16777215);
+TextDrawSetShadow(LangzSpawn[0], 0);
+TextDrawSetOutline(LangzSpawn[0], 0);
+TextDrawBackgroundColor(LangzSpawn[0], 255);
+TextDrawFont(LangzSpawn[0], 4);
+TextDrawSetProportional(LangzSpawn[0], 1);
+TextDrawSetSelectable(LangzSpawn[0], 1);
+
+LangzSpawn[1] = TextDrawCreate(185.000, 129.000, ">SPAWN<");
+TextDrawLetterSize(LangzSpawn[1], 0.300, 1.500);
+TextDrawAlignment(LangzSpawn[1], 1);
+TextDrawColor(LangzSpawn[1], -1);
+TextDrawSetShadow(LangzSpawn[1], 1);
+TextDrawSetOutline(LangzSpawn[1], 1);
+TextDrawBackgroundColor(LangzSpawn[1], 150);
+TextDrawFont(LangzSpawn[1], 1);
+TextDrawSetProportional(LangzSpawn[1], 1);
+TextDrawSetSelectable(LangzSpawn[1], 1);
+
+LangzSpawn[2] = TextDrawCreate(167.000, 165.000, "LD_SPAC:white");
+TextDrawTextSize(LangzSpawn[2], 80.000, 25.000);
+TextDrawAlignment(LangzSpawn[2], 1);
+TextDrawColor(LangzSpawn[2], 548580095);
+TextDrawSetShadow(LangzSpawn[2], 0);
+TextDrawSetOutline(LangzSpawn[2], 0);
+TextDrawBackgroundColor(LangzSpawn[2], 255);
+TextDrawFont(LangzSpawn[2], 4);
+TextDrawSetProportional(LangzSpawn[2], 1);
+TextDrawSetSelectable(LangzSpawn[2], 1);
+
+LangzSpawn[3] = TextDrawCreate(188.000, 166.000, "Bandara");
+TextDrawLetterSize(LangzSpawn[3], 0.339, 2.199);
+TextDrawAlignment(LangzSpawn[3], 1);
+TextDrawColor(LangzSpawn[3], -1);
+TextDrawSetShadow(LangzSpawn[3], 1);
+TextDrawSetOutline(LangzSpawn[3], 1);
+TextDrawBackgroundColor(LangzSpawn[3], 150);
+TextDrawFont(LangzSpawn[3], 1);
+TextDrawSetProportional(LangzSpawn[3], 1);
+TextDrawSetSelectable(LangzSpawn[3], 1);
+
+LangzSpawn[4] = TextDrawCreate(167.000, 206.000, "LD_SPAC:white");
+TextDrawTextSize(LangzSpawn[4], 80.000, 25.000);
+TextDrawAlignment(LangzSpawn[4], 1);
+TextDrawColor(LangzSpawn[4], 548580095);
+TextDrawSetShadow(LangzSpawn[4], 0);
+TextDrawSetOutline(LangzSpawn[4], 0);
+TextDrawBackgroundColor(LangzSpawn[4], 255);
+TextDrawFont(LangzSpawn[4], 4);
+TextDrawSetProportional(LangzSpawn[4], 1);
+TextDrawSetSelectable(LangzSpawn[4], 1);
+
+LangzSpawn[5] = TextDrawCreate(183.000, 207.000, "Pelabuhan");
+TextDrawLetterSize(LangzSpawn[5], 0.339, 2.199);
+TextDrawAlignment(LangzSpawn[5], 1);
+TextDrawColor(LangzSpawn[5], -1);
+TextDrawSetShadow(LangzSpawn[5], 1);
+TextDrawSetOutline(LangzSpawn[5], 1);
+TextDrawBackgroundColor(LangzSpawn[5], 150);
+TextDrawFont(LangzSpawn[5], 1);
+TextDrawSetProportional(LangzSpawn[5], 1);
+TextDrawSetSelectable(LangzSpawn[5], 1);
+
+LangzSpawn[6] = TextDrawCreate(167.000, 247.000, "LD_SPAC:white");
+TextDrawTextSize(LangzSpawn[6], 80.000, 25.000);
+TextDrawAlignment(LangzSpawn[6], 1);
+TextDrawColor(LangzSpawn[6], 548580095);
+TextDrawSetShadow(LangzSpawn[6], 0);
+TextDrawSetOutline(LangzSpawn[6], 0);
+TextDrawBackgroundColor(LangzSpawn[6], 255);
+TextDrawFont(LangzSpawn[6], 4);
+TextDrawSetProportional(LangzSpawn[6], 1);
+TextDrawSetSelectable(LangzSpawn[6], 1);
+
+LangzSpawn[7] = TextDrawCreate(187.000, 248.000, "Fraction");
+TextDrawLetterSize(LangzSpawn[7], 0.339, 2.199);
+TextDrawAlignment(LangzSpawn[7], 1);
+TextDrawColor(LangzSpawn[7], -1);
+TextDrawSetShadow(LangzSpawn[7], 1);
+TextDrawSetOutline(LangzSpawn[7], 1);
+TextDrawBackgroundColor(LangzSpawn[7], 150);
+TextDrawFont(LangzSpawn[7], 1);
+TextDrawSetProportional(LangzSpawn[7], 1);
+TextDrawSetSelectable(LangzSpawn[7], 1);
+
+LangzSpawn[8] = TextDrawCreate(167.000, 287.000, "LD_SPAC:white");
+TextDrawTextSize(LangzSpawn[8], 80.000, 25.000);
+TextDrawAlignment(LangzSpawn[8], 1);
+TextDrawColor(LangzSpawn[8], 548580095);
+TextDrawSetShadow(LangzSpawn[8], 0);
+TextDrawSetOutline(LangzSpawn[8], 0);
+TextDrawBackgroundColor(LangzSpawn[8], 255);
+TextDrawFont(LangzSpawn[8], 4);
+TextDrawSetProportional(LangzSpawn[8], 1);
+TextDrawSetSelectable(LangzSpawn[8], 1);
+
+LangzSpawn[9] = TextDrawCreate(187.000, 287.000, "LastExit");
+TextDrawLetterSize(LangzSpawn[9], 0.339, 2.199);
+TextDrawAlignment(LangzSpawn[9], 1);
+TextDrawColor(LangzSpawn[9], -1);
+TextDrawSetShadow(LangzSpawn[9], 1);
+TextDrawSetOutline(LangzSpawn[9], 1);
+TextDrawBackgroundColor(LangzSpawn[9], 150);
+TextDrawFont(LangzSpawn[9], 1);
+TextDrawSetProportional(LangzSpawn[9], 1);
+TextDrawSetSelectable(LangzSpawn[9], 1);
+
+LangzSpawn[10] = TextDrawCreate(190.000, 115.000, "NamaServer");
+TextDrawLetterSize(LangzSpawn[10], 0.300, 1.500);
+TextDrawAlignment(LangzSpawn[10], 1);
+TextDrawColor(LangzSpawn[10], -16776961);
+TextDrawSetShadow(LangzSpawn[10], 1);
+TextDrawSetOutline(LangzSpawn[10], 1);
+TextDrawBackgroundColor(LangzSpawn[10], 150);
+TextDrawFont(LangzSpawn[10], 1);
+TextDrawSetProportional(LangzSpawn[10], 1);
+TextDrawSetSelectable(LangzSpawn[10], 1);
+
+//TARUH DI ON public OnPlayerSpawn
+    TextDrawShowForPlayer(playerid, LangzSpawn[0]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[1]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[2]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[3]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[4]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[5]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[6]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[7]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[8]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[9]);
+	TextDrawShowForPlayer(playerid, LangzSpawn[10]);
+	SelectTextDraw(playerid, 0xFF0000FF);
+	
+//BARENGIN SAMA if(clickedid == sama yang lain
+	if(clickedid == LangzSpawn[4]) // PELABUHAN
+	{
+		pData[playerid][SPAWNMENU] = 2;
+        InterpolateCameraPos(playerid, 2710.07,-2378.50,145.47,2746.96,-2416.59,45.71, 3000);
+		InterpolateCameraLookAt(playerid, 2710.07,-2378.50,145.47,2746.96,-2416.59,45.71, 3000);
+        SelectTextDraw(playerid, 0xFF0000FF);
+	}
+	if(clickedid == LangzSpawn[2]) // BANDARA
+	{
+		pData[playerid][SPAWNMENU] = 1;
+        InterpolateCameraPos(playerid, 1735.29, -2226.49, 131.22, 1723.28, -2251.33, 23.26, 3000);
+		InterpolateCameraLookAt(playerid, 1735.29, -2226.49, 131.22, 1723.28, -2251.33, 23.26, 3000);
+        SelectTextDraw(playerid, 0xFF0000FF);
+	}
+	if(clickedid == LangzSpawn[8]) // LOKASI TERAKHIR
+	{
+		pData[playerid][SPAWNMENU] = 5;
+        SelectTextDraw(playerid, 0xFF0000FF);
+	}
+	if(clickedid == LangzSpawn[6]) // FRACTION
+	{
+		pData[playerid][SPAWNMENU] = 6;
+        if(PlayerInfo[playerid][pMember] == 0) return SCM(playerid, -1, "Anda bukan anggota dari fraksi mana pun.");
+    	//PlayerInfo[playerid][pSetSpawn] = 4, SCM(playerid, -1, "Lokasi spawn berhasil berubah! Sekarang kamu akan muncul di fraksi.");
+        SelectTextDraw(playerid, 0xFF0000FF);
+	}
+
+	if(clickedid == LangzSpawn[0]) // MENDARAT
+	{
+		if(pData[playerid][SPAWNMENU] == 0) // GAK MILIH
+		return SCM(playerid, COLOR_GREY, "Kamu belum memilih tempat mendarat");
+
+   		if(pData[playerid][SPAWNMENU] == 1) // BANDARA
+   		{
+			pData[playerid][SPAWNMENU] = 0;
+			SetPlayerPos(playerid, 1642.21, -2334.82, 13.54);
+			SetPlayerFacingAngle(playerid, pData[playerid][pPosA]);
+			SetCameraBehindPlayer(playerid);
+			TogglePlayerControllable(playerid, 1);
+		}
+		if(pData[playerid][SPAWNMENU] == 4) // PELABUHAN
+		{
+		    pData[playerid][SPAWNMENU] = 0;
+		    SetPlayerPos(playerid, 2820.453613,-2437.255126,12.125095);
+		    SetPlayerFacingAngle(playerid, pData[playerid][pPosA]);
+			SetCameraBehindPlayer(playerid);
+			TogglePlayerControllable(playerid, 1);
+		}
+		if(pData[playerid][SPAWNMENU] == 2) // BANDARA
+   		{
+			pData[playerid][SPAWNMENU] = 0;
+			SetPlayerPos(playerid, 1642.21, -2334.82, 13.54);
+			SetPlayerFacingAngle(playerid, pData[playerid][pPosA]);
+			SetCameraBehindPlayer(playerid);
+			TogglePlayerControllable(playerid, 1);
+		}
+			if(pData[playerid][SPAWNMENU] == 6) // fraksi
+   		{
+			if(PlayerInfo[playerid][pMember] == 0) return SCM(playerid, -1, "Anda bukan anggota dari fraksi mana pun.");
+    	PlayerInfo[playerid][pSetSpawn] = 4, SCM(playerid, -1, "Lokasi spawn berhasil berubah! Sekarang kamu akan muncul di fraksi.");
+		    SetPlayerFacingAngle(playerid, pData[playerid][pPosA]);
+			SetCameraBehindPlayer(playerid);
+			TogglePlayerControllable(playerid, 1);
+		}
+	    if(pData[playerid][SPAWNMENU] == 8) // LOKASI TERAKHIR
+		{
+		    pData[playerid][SPAWNMENU] = 0;
+		    StopAudioStreamForPlayer(playerid);
+			SetPlayerInterior(playerid, pData[playerid][pInt]);
+			SetPlayerVirtualWorld(playerid, pData[playerid][pWorld]);
+			SetPlayerPos(playerid, pData[playerid][pPosX], pData[playerid][pPosY], pData[playerid][pPosZ]);
+			SetPlayerFacingAngle(playerid, pData[playerid][pPosA]);
+			SetCameraBehindPlayer(playerid);
+			TogglePlayerControllable(playerid, 1);
+			SetPlayerSpawn(playerid);
+		}
+        //SelectTextDraw(playerid, 0xFFA500FF);
+        for(new i = 0; i < 17; i++)
+		{
+			TextDrawHideForPlayer(playerid, LangzSpawn[i]);
+			CancelSelectTextDraw(playerid);
+		}
+	}

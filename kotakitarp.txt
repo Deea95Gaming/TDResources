@@ -1,0 +1,11 @@
+new Text: Text_Global[1];
+
+Text_Global[0] = TextDrawCreate(220.000, 1.000, "KOTAKITA ROLEPLAY INDONESIA");
+TextDrawLetterSize(Text_Global[0], 0.400, 4.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -1);
+TextDrawSetShadow(Text_Global[0], 1);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 150);
+TextDrawFont(Text_Global[0], 1);
+TextDrawSetProportional(Text_Global[0], 1);

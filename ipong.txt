@@ -1,0 +1,328 @@
+new Text: iphone_player[28];
+
+iphone_player[0] = TextDrawCreate(521.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[0], 7.000, 214.000);
+TextDrawAlignment(iphone_player[0], 1);
+TextDrawColor(iphone_player[0], 255);
+TextDrawSetShadow(iphone_player[0], 0);
+TextDrawSetOutline(iphone_player[0], 0);
+TextDrawBackgroundColor(iphone_player[0], 255);
+TextDrawFont(iphone_player[0], 4);
+TextDrawSetProportional(iphone_player[0], 1);
+
+iphone_player[1] = TextDrawCreate(515.000, 181.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[1], 35.000, 43.000);
+TextDrawAlignment(iphone_player[1], 1);
+TextDrawColor(iphone_player[1], 255);
+TextDrawSetShadow(iphone_player[1], 0);
+TextDrawSetOutline(iphone_player[1], 0);
+TextDrawBackgroundColor(iphone_player[1], 255);
+TextDrawFont(iphone_player[1], 4);
+TextDrawSetProportional(iphone_player[1], 1);
+
+iphone_player[2] = TextDrawCreate(515.000, 391.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[2], 35.000, 43.000);
+TextDrawAlignment(iphone_player[2], 1);
+TextDrawColor(iphone_player[2], 255);
+TextDrawSetShadow(iphone_player[2], 0);
+TextDrawSetOutline(iphone_player[2], 0);
+TextDrawBackgroundColor(iphone_player[2], 255);
+TextDrawFont(iphone_player[2], 4);
+TextDrawSetProportional(iphone_player[2], 1);
+
+iphone_player[3] = TextDrawCreate(624.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[3], 7.000, 214.000);
+TextDrawAlignment(iphone_player[3], 1);
+TextDrawColor(iphone_player[3], 255);
+TextDrawSetShadow(iphone_player[3], 0);
+TextDrawSetOutline(iphone_player[3], 0);
+TextDrawBackgroundColor(iphone_player[3], 255);
+TextDrawFont(iphone_player[3], 4);
+TextDrawSetProportional(iphone_player[3], 1);
+
+iphone_player[4] = TextDrawCreate(602.000, 181.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[4], 35.000, 43.000);
+TextDrawAlignment(iphone_player[4], 1);
+TextDrawColor(iphone_player[4], 255);
+TextDrawSetShadow(iphone_player[4], 0);
+TextDrawSetOutline(iphone_player[4], 0);
+TextDrawBackgroundColor(iphone_player[4], 255);
+TextDrawFont(iphone_player[4], 4);
+TextDrawSetProportional(iphone_player[4], 1);
+
+iphone_player[5] = TextDrawCreate(602.000, 391.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[5], 35.000, 43.000);
+TextDrawAlignment(iphone_player[5], 1);
+TextDrawColor(iphone_player[5], 255);
+TextDrawSetShadow(iphone_player[5], 0);
+TextDrawSetOutline(iphone_player[5], 0);
+TextDrawBackgroundColor(iphone_player[5], 255);
+TextDrawFont(iphone_player[5], 4);
+TextDrawSetProportional(iphone_player[5], 1);
+
+iphone_player[6] = TextDrawCreate(533.000, 188.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[6], 87.000, 29.000);
+TextDrawAlignment(iphone_player[6], 1);
+TextDrawColor(iphone_player[6], 255);
+TextDrawSetShadow(iphone_player[6], 0);
+TextDrawSetOutline(iphone_player[6], 0);
+TextDrawBackgroundColor(iphone_player[6], 255);
+TextDrawFont(iphone_player[6], 4);
+TextDrawSetProportional(iphone_player[6], 1);
+
+iphone_player[7] = TextDrawCreate(533.000, 398.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[7], 87.000, 29.000);
+TextDrawAlignment(iphone_player[7], 1);
+TextDrawColor(iphone_player[7], 255);
+TextDrawSetShadow(iphone_player[7], 0);
+TextDrawSetOutline(iphone_player[7], 0);
+TextDrawBackgroundColor(iphone_player[7], 255);
+TextDrawFont(iphone_player[7], 4);
+TextDrawSetProportional(iphone_player[7], 1);
+
+iphone_player[8] = TextDrawCreate(527.000, 214.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[8], 99.000, 199.000);
+TextDrawAlignment(iphone_player[8], 1);
+TextDrawColor(iphone_player[8], -1);
+TextDrawSetShadow(iphone_player[8], 0);
+TextDrawSetOutline(iphone_player[8], 0);
+TextDrawBackgroundColor(iphone_player[8], 255);
+TextDrawFont(iphone_player[8], 4);
+TextDrawSetProportional(iphone_player[8], 1);
+
+iphone_player[9] = TextDrawCreate(517.000, 183.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[9], 35.000, 43.000);
+TextDrawAlignment(iphone_player[9], 1);
+TextDrawColor(iphone_player[9], -1);
+TextDrawSetShadow(iphone_player[9], 0);
+TextDrawSetOutline(iphone_player[9], 0);
+TextDrawBackgroundColor(iphone_player[9], 255);
+TextDrawFont(iphone_player[9], 4);
+TextDrawSetProportional(iphone_player[9], 1);
+
+iphone_player[10] = TextDrawCreate(523.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[10], 7.000, 209.000);
+TextDrawAlignment(iphone_player[10], 1);
+TextDrawColor(iphone_player[10], -1);
+TextDrawSetShadow(iphone_player[10], 0);
+TextDrawSetOutline(iphone_player[10], 0);
+TextDrawBackgroundColor(iphone_player[10], 255);
+TextDrawFont(iphone_player[10], 4);
+TextDrawSetProportional(iphone_player[10], 1);
+
+iphone_player[11] = TextDrawCreate(517.000, 389.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[11], 35.000, 43.000);
+TextDrawAlignment(iphone_player[11], 1);
+TextDrawColor(iphone_player[11], -1);
+TextDrawSetShadow(iphone_player[11], 0);
+TextDrawSetOutline(iphone_player[11], 0);
+TextDrawBackgroundColor(iphone_player[11], 255);
+TextDrawFont(iphone_player[11], 4);
+TextDrawSetProportional(iphone_player[11], 1);
+
+iphone_player[12] = TextDrawCreate(622.000, 201.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[12], 7.000, 209.000);
+TextDrawAlignment(iphone_player[12], 1);
+TextDrawColor(iphone_player[12], -1);
+TextDrawSetShadow(iphone_player[12], 0);
+TextDrawSetOutline(iphone_player[12], 0);
+TextDrawBackgroundColor(iphone_player[12], 255);
+TextDrawFont(iphone_player[12], 4);
+TextDrawSetProportional(iphone_player[12], 1);
+
+iphone_player[13] = TextDrawCreate(600.000, 183.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[13], 35.000, 43.000);
+TextDrawAlignment(iphone_player[13], 1);
+TextDrawColor(iphone_player[13], -1);
+TextDrawSetShadow(iphone_player[13], 0);
+TextDrawSetOutline(iphone_player[13], 0);
+TextDrawBackgroundColor(iphone_player[13], 255);
+TextDrawFont(iphone_player[13], 4);
+TextDrawSetProportional(iphone_player[13], 1);
+
+iphone_player[14] = TextDrawCreate(600.000, 389.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[14], 35.000, 43.000);
+TextDrawAlignment(iphone_player[14], 1);
+TextDrawColor(iphone_player[14], -1);
+TextDrawSetShadow(iphone_player[14], 0);
+TextDrawSetOutline(iphone_player[14], 0);
+TextDrawBackgroundColor(iphone_player[14], 255);
+TextDrawFont(iphone_player[14], 4);
+TextDrawSetProportional(iphone_player[14], 1);
+
+iphone_player[15] = TextDrawCreate(536.000, 190.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[15], 81.000, 19.000);
+TextDrawAlignment(iphone_player[15], 1);
+TextDrawColor(iphone_player[15], -1);
+TextDrawSetShadow(iphone_player[15], 0);
+TextDrawSetOutline(iphone_player[15], 0);
+TextDrawBackgroundColor(iphone_player[15], 255);
+TextDrawFont(iphone_player[15], 4);
+TextDrawSetProportional(iphone_player[15], 1);
+
+iphone_player[16] = TextDrawCreate(534.000, 405.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[16], 84.000, 20.000);
+TextDrawAlignment(iphone_player[16], 1);
+TextDrawColor(iphone_player[16], -1);
+TextDrawSetShadow(iphone_player[16], 0);
+TextDrawSetOutline(iphone_player[16], 0);
+TextDrawBackgroundColor(iphone_player[16], 255);
+TextDrawFont(iphone_player[16], 4);
+TextDrawSetProportional(iphone_player[16], 1);
+
+iphone_player[17] = TextDrawCreate(529.000, 209.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[17], 96.000, 207.000);
+TextDrawAlignment(iphone_player[17], 1);
+TextDrawColor(iphone_player[17], -1);
+TextDrawSetShadow(iphone_player[17], 0);
+TextDrawSetOutline(iphone_player[17], 0);
+TextDrawBackgroundColor(iphone_player[17], 255);
+TextDrawFont(iphone_player[17], 4);
+TextDrawSetProportional(iphone_player[17], 1);
+
+iphone_player[18] = TextDrawCreate(554.000, 190.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[18], 47.000, 9.000);
+TextDrawAlignment(iphone_player[18], 1);
+TextDrawColor(iphone_player[18], 255);
+TextDrawSetShadow(iphone_player[18], 0);
+TextDrawSetOutline(iphone_player[18], 0);
+TextDrawBackgroundColor(iphone_player[18], 255);
+TextDrawFont(iphone_player[18], 4);
+TextDrawSetProportional(iphone_player[18], 1);
+
+iphone_player[19] = TextDrawCreate(548.000, 186.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[19], 12.000, 15.000);
+TextDrawAlignment(iphone_player[19], 1);
+TextDrawColor(iphone_player[19], 255);
+TextDrawSetShadow(iphone_player[19], 0);
+TextDrawSetOutline(iphone_player[19], 0);
+TextDrawBackgroundColor(iphone_player[19], 255);
+TextDrawFont(iphone_player[19], 4);
+TextDrawSetProportional(iphone_player[19], 1);
+
+iphone_player[20] = TextDrawCreate(595.000, 186.000, "LD_BEAT:chit");
+TextDrawTextSize(iphone_player[20], 12.000, 15.000);
+TextDrawAlignment(iphone_player[20], 1);
+TextDrawColor(iphone_player[20], 255);
+TextDrawSetShadow(iphone_player[20], 0);
+TextDrawSetOutline(iphone_player[20], 0);
+TextDrawBackgroundColor(iphone_player[20], 255);
+TextDrawFont(iphone_player[20], 4);
+TextDrawSetProportional(iphone_player[20], 1);
+
+iphone_player[21] = TextDrawCreate(558.000, 419.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[21], 46.000, 3.000);
+TextDrawAlignment(iphone_player[21], 1);
+TextDrawColor(iphone_player[21], 255);
+TextDrawSetShadow(iphone_player[21], 0);
+TextDrawSetOutline(iphone_player[21], 0);
+TextDrawBackgroundColor(iphone_player[21], 255);
+TextDrawFont(iphone_player[21], 4);
+TextDrawSetProportional(iphone_player[21], 1);
+TextDrawSetSelectable(iphone_player[21], 1);
+
+iphone_player[22] = TextDrawCreate(609.000, 195.000, "LD_SPAC:white");
+TextDrawTextSize(iphone_player[22], 2.000, 3.000);
+TextDrawAlignment(iphone_player[22], 1);
+TextDrawColor(iphone_player[22], 255);
+TextDrawSetShadow(iphone_player[22], 0);
+TextDrawSetOutline(iphone_player[22], 0);
+TextDrawBackgroundColor(iphone_player[22], 255);
+TextDrawFont(iphone_player[22], 4);
+TextDrawSetProportional(iphone_player[22], 1);
+
+iphone_player[23] = TextDrawCreate(612.000, 192.000, "LD_SPAC:white");
+TextDrawTextSize(iphone_player[23], 2.000, 6.000);
+TextDrawAlignment(iphone_player[23], 1);
+TextDrawColor(iphone_player[23], 255);
+TextDrawSetShadow(iphone_player[23], 0);
+TextDrawSetOutline(iphone_player[23], 0);
+TextDrawBackgroundColor(iphone_player[23], 255);
+TextDrawFont(iphone_player[23], 4);
+TextDrawSetProportional(iphone_player[23], 1);
+
+iphone_player[24] = TextDrawCreate(615.000, 191.000, "LD_SPAC:white");
+TextDrawTextSize(iphone_player[24], 2.000, 7.000);
+TextDrawAlignment(iphone_player[24], 1);
+TextDrawColor(iphone_player[24], 255);
+TextDrawSetShadow(iphone_player[24], 0);
+TextDrawSetOutline(iphone_player[24], 0);
+TextDrawBackgroundColor(iphone_player[24], 255);
+TextDrawFont(iphone_player[24], 4);
+TextDrawSetProportional(iphone_player[24], 1);
+
+iphone_player[25] = TextDrawCreate(518.000, 257.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[25], 4.000, 42.000);
+TextDrawAlignment(iphone_player[25], 1);
+TextDrawColor(iphone_player[25], 255);
+TextDrawSetShadow(iphone_player[25], 0);
+TextDrawSetOutline(iphone_player[25], 0);
+TextDrawBackgroundColor(iphone_player[25], 255);
+TextDrawFont(iphone_player[25], 4);
+TextDrawSetProportional(iphone_player[25], 1);
+TextDrawSetSelectable(iphone_player[25], 1);
+
+iphone_player[26] = TextDrawCreate(629.000, 232.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[26], 4.000, 42.000);
+TextDrawAlignment(iphone_player[26], 1);
+TextDrawColor(iphone_player[26], 255);
+TextDrawSetShadow(iphone_player[26], 0);
+TextDrawSetOutline(iphone_player[26], 0);
+TextDrawBackgroundColor(iphone_player[26], 255);
+TextDrawFont(iphone_player[26], 4);
+TextDrawSetProportional(iphone_player[26], 1);
+
+iphone_player[27] = TextDrawCreate(629.000, 280.000, "LD_BUM:blkdot");
+TextDrawTextSize(iphone_player[27], 4.000, 42.000);
+TextDrawAlignment(iphone_player[27], 1);
+TextDrawColor(iphone_player[27], 255);
+TextDrawSetShadow(iphone_player[27], 0);
+TextDrawSetOutline(iphone_player[27], 0);
+TextDrawBackgroundColor(iphone_player[27], 255);
+TextDrawFont(iphone_player[27], 4);
+TextDrawSetProportional(iphone_player[27], 1);
+
+####################################################################################################
+
+new PlayerText: iphone_global[MAX_PLAYERS][4];
+
+iphone_global[playerid][0] = CreatePlayerTextDraw(playerid, 562.000, 238.000, "20");
+PlayerTextDrawLetterSize(playerid, iphone_global[playerid][0], 0.739, 3.799);
+PlayerTextDrawAlignment(playerid, iphone_global[playerid][0], 1);
+PlayerTextDrawColor(playerid, iphone_global[playerid][0], 255);
+PlayerTextDrawSetShadow(playerid, iphone_global[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, iphone_global[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, iphone_global[playerid][0], 150);
+PlayerTextDrawFont(playerid, iphone_global[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, iphone_global[playerid][0], 1);
+
+iphone_global[playerid][1] = CreatePlayerTextDraw(playerid, 562.000, 269.000, "43");
+PlayerTextDrawLetterSize(playerid, iphone_global[playerid][1], 0.739, 3.799);
+PlayerTextDrawAlignment(playerid, iphone_global[playerid][1], 1);
+PlayerTextDrawColor(playerid, iphone_global[playerid][1], 255);
+PlayerTextDrawSetShadow(playerid, iphone_global[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, iphone_global[playerid][1], 0);
+PlayerTextDrawBackgroundColor(playerid, iphone_global[playerid][1], 150);
+PlayerTextDrawFont(playerid, iphone_global[playerid][1], 1);
+PlayerTextDrawSetProportional(playerid, iphone_global[playerid][1], 1);
+
+iphone_global[playerid][2] = CreatePlayerTextDraw(playerid, 552.000, 304.000, "12 March 2024");
+PlayerTextDrawLetterSize(playerid, iphone_global[playerid][2], 0.210, 1.199);
+PlayerTextDrawAlignment(playerid, iphone_global[playerid][2], 1);
+PlayerTextDrawColor(playerid, iphone_global[playerid][2], 255);
+PlayerTextDrawSetShadow(playerid, iphone_global[playerid][2], 0);
+PlayerTextDrawSetOutline(playerid, iphone_global[playerid][2], 0);
+PlayerTextDrawBackgroundColor(playerid, iphone_global[playerid][2], 150);
+PlayerTextDrawFont(playerid, iphone_global[playerid][2], 1);
+PlayerTextDrawSetProportional(playerid, iphone_global[playerid][2], 1);
+
+iphone_global[playerid][3] = CreatePlayerTextDraw(playerid, 529.000, 191.000, "20:43");
+PlayerTextDrawLetterSize(playerid, iphone_global[playerid][3], 0.190, 0.999);
+PlayerTextDrawAlignment(playerid, iphone_global[playerid][3], 1);
+PlayerTextDrawColor(playerid, iphone_global[playerid][3], 255);
+PlayerTextDrawSetShadow(playerid, iphone_global[playerid][3], 0);
+PlayerTextDrawSetOutline(playerid, iphone_global[playerid][3], 0);
+PlayerTextDrawBackgroundColor(playerid, iphone_global[playerid][3], 150);
+PlayerTextDrawFont(playerid, iphone_global[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, iphone_global[playerid][3], 1);
+
