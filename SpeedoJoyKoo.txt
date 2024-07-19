@@ -1,0 +1,260 @@
+//Variabel
+//Spedo
+new Text:UPSPEEDO[3];
+new PlayerText:SPEEDVEH[MAX_PLAYERS];
+new PlayerText:HEALTHVEH[MAX_PLAYERS];
+new PlayerText:FUELVEH[MAX_PLAYERS];
+new PlayerText:SPEEDVEH1[MAX_PLAYERS];
+new PlayerText:HEALTHVEH2[MAX_PLAYERS];
+new PlayerText:FUELVEH2[MAX_PLAYERS];
+
+//public OnGameModeInit()
+	//Speedo
+	UPSPEEDO[0] = TextDrawCreate(561.000000, 381.000000, "ld_dual:white");
+	TextDrawFont(UPSPEEDO[0], 4);
+	TextDrawLetterSize(UPSPEEDO[0], 0.600000, 2.000000);
+	TextDrawTextSize(UPSPEEDO[0], 78.500000, 17.000000);
+	TextDrawSetOutline(UPSPEEDO[0], 1);
+	TextDrawSetShadow(UPSPEEDO[0], 0);
+	TextDrawAlignment(UPSPEEDO[0], 1);
+	TextDrawColor(UPSPEEDO[0], 1296911871);
+	TextDrawBackgroundColor(UPSPEEDO[0], 255);
+	TextDrawBoxColor(UPSPEEDO[0], 50);
+	TextDrawUseBox(UPSPEEDO[0], 1);
+	TextDrawSetProportional(UPSPEEDO[0], 1);
+	TextDrawSetSelectable(UPSPEEDO[0], 0);
+
+	UPSPEEDO[1] = TextDrawCreate(561.000000, 401.000000, "ld_dual:white");
+	TextDrawFont(UPSPEEDO[1], 4);
+	TextDrawLetterSize(UPSPEEDO[1], 0.600000, 2.000000);
+	TextDrawTextSize(UPSPEEDO[1], 78.500000, 17.000000);
+	TextDrawSetOutline(UPSPEEDO[1], 1);
+	TextDrawSetShadow(UPSPEEDO[1], 0);
+	TextDrawAlignment(UPSPEEDO[1], 1);
+	TextDrawColor(UPSPEEDO[1], 1296911871);
+	TextDrawBackgroundColor(UPSPEEDO[1], 255);
+	TextDrawBoxColor(UPSPEEDO[1], 50);
+	TextDrawUseBox(UPSPEEDO[1], 1);
+	TextDrawSetProportional(UPSPEEDO[1], 1);
+	TextDrawSetSelectable(UPSPEEDO[1], 0);
+
+	UPSPEEDO[2] = TextDrawCreate(561.000000, 421.000000, "ld_dual:white");
+	TextDrawFont(UPSPEEDO[2], 4);
+	TextDrawLetterSize(UPSPEEDO[2], 0.600000, 2.000000);
+	TextDrawTextSize(UPSPEEDO[2], 78.500000, 17.000000);
+	TextDrawSetOutline(UPSPEEDO[2], 1);
+	TextDrawSetShadow(UPSPEEDO[2], 0);
+	TextDrawAlignment(UPSPEEDO[2], 1);
+	TextDrawColor(UPSPEEDO[2], 1296911871);
+	TextDrawBackgroundColor(UPSPEEDO[2], 255);
+	TextDrawBoxColor(UPSPEEDO[2], 50);
+	TextDrawUseBox(UPSPEEDO[2], 1);
+	TextDrawSetProportional(UPSPEEDO[2], 1);
+	TextDrawSetSelectable(UPSPEEDO[2], 0);
+	
+//public OnPlayerConnect(playerid)
+	//Speedo
+	SPEEDVEH[playerid] = CreatePlayerTextDraw(playerid, 561.000000, 395.000000, "ld_dual:white");
+	PlayerTextDrawFont(playerid, SPEEDVEH[playerid], 4);
+	PlayerTextDrawLetterSize(playerid, SPEEDVEH[playerid], 0.600000, 2.000000);
+	PlayerTextDrawTextSize(playerid, SPEEDVEH[playerid], 78.500000, 3.000000);
+	PlayerTextDrawSetOutline(playerid, SPEEDVEH[playerid], 1);
+	PlayerTextDrawSetShadow(playerid, SPEEDVEH[playerid], 0);
+	PlayerTextDrawAlignment(playerid, SPEEDVEH[playerid], 1);
+	PlayerTextDrawColor(playerid, SPEEDVEH[playerid], -2686721);
+	PlayerTextDrawBackgroundColor(playerid, SPEEDVEH[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, SPEEDVEH[playerid], 50);
+	PlayerTextDrawUseBox(playerid, SPEEDVEH[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, SPEEDVEH[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, SPEEDVEH[playerid], 0);
+
+	HEALTHVEH[playerid] = CreatePlayerTextDraw(playerid, 561.000000, 415.000000, "ld_dual:white");
+	PlayerTextDrawFont(playerid, HEALTHVEH[playerid], 4);
+	PlayerTextDrawLetterSize(playerid, HEALTHVEH[playerid], 0.600000, 2.000000);
+	PlayerTextDrawTextSize(playerid, HEALTHVEH[playerid], 78.500000, 3.000000);
+	PlayerTextDrawSetOutline(playerid, HEALTHVEH[playerid], 1);
+	PlayerTextDrawSetShadow(playerid, HEALTHVEH[playerid], 0);
+	PlayerTextDrawAlignment(playerid, HEALTHVEH[playerid], 1);
+	PlayerTextDrawColor(playerid, HEALTHVEH[playerid], -16776961);
+	PlayerTextDrawBackgroundColor(playerid, HEALTHVEH[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, HEALTHVEH[playerid], 50);
+	PlayerTextDrawUseBox(playerid, HEALTHVEH[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, HEALTHVEH[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, HEALTHVEH[playerid], 0);
+
+	FUELVEH[playerid] = CreatePlayerTextDraw(playerid, 561.000000, 435.000000, "ld_dual:white");
+	PlayerTextDrawFont(playerid, FUELVEH[playerid], 4);
+	PlayerTextDrawLetterSize(playerid, FUELVEH[playerid], 0.600000, 2.000000);
+	PlayerTextDrawTextSize(playerid, FUELVEH[playerid], 78.500000, 3.000000);
+	PlayerTextDrawSetOutline(playerid, FUELVEH[playerid], 1);
+	PlayerTextDrawSetShadow(playerid, FUELVEH[playerid], 0);
+	PlayerTextDrawAlignment(playerid, FUELVEH[playerid], 1);
+	PlayerTextDrawColor(playerid, FUELVEH[playerid], -741092353);
+	PlayerTextDrawBackgroundColor(playerid, FUELVEH[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, FUELVEH[playerid], 50);
+	PlayerTextDrawUseBox(playerid, FUELVEH[playerid], 1);
+	PlayerTextDrawSetProportional(playerid, FUELVEH[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, FUELVEH[playerid], 0);
+
+	SPEEDVEH1[playerid] = CreatePlayerTextDraw(playerid, 564.000000, 384.000000, "20__KMH");
+	PlayerTextDrawFont(playerid, SPEEDVEH1[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, SPEEDVEH1[playerid], 0.191666, 0.899999);
+	PlayerTextDrawTextSize(playerid, SPEEDVEH1[playerid], 400.000000, 17.000000);
+	PlayerTextDrawSetOutline(playerid, SPEEDVEH1[playerid], 0);
+	PlayerTextDrawSetShadow(playerid, SPEEDVEH1[playerid], 0);
+	PlayerTextDrawAlignment(playerid, SPEEDVEH1[playerid], 1);
+	PlayerTextDrawColor(playerid, SPEEDVEH1[playerid], -1);
+	PlayerTextDrawBackgroundColor(playerid, SPEEDVEH1[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, SPEEDVEH1[playerid], 50);
+	PlayerTextDrawUseBox(playerid, SPEEDVEH1[playerid], 0);
+	PlayerTextDrawSetProportional(playerid, SPEEDVEH1[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, SPEEDVEH1[playerid], 0);
+
+	HEALTHVEH2[playerid] = CreatePlayerTextDraw(playerid, 564.000000, 404.000000, "200__HEALTH");
+	PlayerTextDrawFont(playerid, HEALTHVEH2[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, HEALTHVEH2[playerid], 0.191666, 0.899999);
+	PlayerTextDrawTextSize(playerid, HEALTHVEH2[playerid], 400.000000, 17.000000);
+	PlayerTextDrawSetOutline(playerid, HEALTHVEH2[playerid], 0);
+	PlayerTextDrawSetShadow(playerid, HEALTHVEH2[playerid], 0);
+	PlayerTextDrawAlignment(playerid, HEALTHVEH2[playerid], 1);
+	PlayerTextDrawColor(playerid, HEALTHVEH2[playerid], -1);
+	PlayerTextDrawBackgroundColor(playerid, HEALTHVEH2[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, HEALTHVEH2[playerid], 50);
+	PlayerTextDrawUseBox(playerid, HEALTHVEH2[playerid], 0);
+	PlayerTextDrawSetProportional(playerid, HEALTHVEH2[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, HEALTHVEH2[playerid], 0);
+
+	FUELVEH2[playerid] = CreatePlayerTextDraw(playerid, 564.000000, 424.000000, "100__FUEL");
+	PlayerTextDrawFont(playerid, FUELVEH2[playerid], 1);
+	PlayerTextDrawLetterSize(playerid, FUELVEH2[playerid], 0.191666, 0.899999);
+	PlayerTextDrawTextSize(playerid, FUELVEH2[playerid], 400.000000, 17.000000);
+	PlayerTextDrawSetOutline(playerid, FUELVEH2[playerid], 0);
+	PlayerTextDrawSetShadow(playerid, FUELVEH2[playerid], 0);
+	PlayerTextDrawAlignment(playerid, FUELVEH2[playerid], 1);
+	PlayerTextDrawColor(playerid, FUELVEH2[playerid], -1);
+	PlayerTextDrawBackgroundColor(playerid, FUELVEH2[playerid], 255);
+	PlayerTextDrawBoxColor(playerid, FUELVEH2[playerid], 50);
+	PlayerTextDrawUseBox(playerid, FUELVEH2[playerid], 0);
+	PlayerTextDrawSetProportional(playerid, FUELVEH2[playerid], 1);
+	PlayerTextDrawSetSelectable(playerid, FUELVEH2[playerid], 0);
+	
+//epublic:UpdateSpeedometr(playerid)
+//Hapus ganti ini
+epublic:UpdateSpeedometr(playerid)
+{
+    if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
+    {
+        TextDrawHideForPlayer(playerid, UPSPEEDO[0]);
+		TextDrawHideForPlayer(playerid, UPSPEEDO[1]);
+		TextDrawHideForPlayer(playerid, UPSPEEDO[2]);
+		PlayerTextDrawHide(playerid, SPEEDVEH[playerid]);
+		PlayerTextDrawHide(playerid, HEALTHVEH[playerid]);
+		PlayerTextDrawHide(playerid, FUELVEH[playerid]);
+		PlayerTextDrawHide(playerid, SPEEDVEH1[playerid]);
+		PlayerTextDrawHide(playerid, HEALTHVEH2[playerid]);
+		PlayerTextDrawHide(playerid, FUELVEH2[playerid]);
+    }
+	new vehicleid = GetPlayerVehicleID(playerid);
+	new model = GetVehicleModel(vehicleid);
+	if(model)
+	{
+		new str[250], Float: fuel = Fuell[vehicleid], speed = SpeedVehicle(playerid);
+		new Float: SPEEDVEHBAR, Float: FUELVEHBAR, Float: fDamage;
+
+		/*format(str, sizeof(str), "%.1fL_Fuel___%d_KMH_~r~<!>_~R~=F=", fuel, speed);
+		PlayerTextDrawSetString(playerid, KMHVEH[playerid][0], str);*/
+		
+		GetVehicleHealth(vehicleid, fDamage);
+		if(fDamage <= 350.0) fDamage = 0.0;
+		else if(fDamage > 1000.0) fDamage = 1000.0;
+
+		SPEEDVEHBAR = SpeedVehicle(playerid) * 78.5/100;
+		PlayerTextDrawTextSize(playerid, SPEEDVEH[playerid], SPEEDVEHBAR, 3.0);
+		PlayerTextDrawShow(playerid, SPEEDVEH[playerid]);
+		
+		format(str, sizeof(str), "%d__KMH", speed);
+		PlayerTextDrawSetString(playerid, SPEEDVEH1[playerid], str);
+		
+		FUELVEHBAR = Fuell[vehicleid] * 78.5/100;
+		PlayerTextDrawTextSize(playerid, FUELVEH[playerid], FUELVEHBAR, 3.0);
+		PlayerTextDrawShow(playerid, FUELVEH[playerid]);
+		
+		format(str, sizeof(str), "%.1fL__FUEL", fuel);
+		PlayerTextDrawSetString(playerid, FUELVEH2[playerid], str);
+		
+		new Float:HEALTHVEHBAR = fDamage * 78.5/1000;
+		PlayerTextDrawTextSize(playerid, HEALTHVEH[playerid], HEALTHVEHBAR, 3.0);
+		PlayerTextDrawShow(playerid, HEALTHVEH[playerid]);
+
+		format(str, sizeof(str), "%.1f__HEALTH", fDamage);
+		PlayerTextDrawSetString(playerid, HEALTHVEH2[playerid], str);
+
+		// Perfomance Tuning
+
+		#define _TDW_BOOSTER_INACCURACY (0.15)
+		#define _TDW_BOOSTER_BOOST_SPEED (2.5)
+		#define _TDW_BOOSTER_MIN_SPEED (5.0)
+
+		static Float:z_angle_old[MAX_VEHICLES],
+			Float:z_angle,
+			Float:angle_tmp,
+			Float:tmp;
+
+		new Keys,ud,lr;
+		GetPlayerKeys(playerid,Keys,ud,lr);
+
+		GetVehicleZAngle(vehicleid, z_angle);
+
+		new engine_level;
+
+		for(new i; i < 5; i++) if(VehInfo[vehicleid][vEngineTune][i]) engine_level++;
+
+		new max_speed = VehStats[model - 400][vMaxSpeed] + (VehStats[model - 400][vMaxSpeed] / 10) * engine_level;
+
+		if(engine_level != 0 && Keys == KEY_SPRINT && (30 <= speed <= max_speed))
+		{
+			tmp = z_angle_old[vehicleid] = floatround(floatabs(floatadd(z_angle_old[vehicleid], _TDW_BOOSTER_INACCURACY)));
+			angle_tmp = floatround(floatabs(z_angle));
+
+			if (_:(tmp > angle_tmp || tmp < angle_tmp) == 0)
+			{
+				if (_:(speed < _TDW_BOOSTER_MIN_SPEED || IsVehicleBackwordsDirection(vehicleid)) == 0)
+					SetVehicleSpeed(vehicleid, speed + (_TDW_BOOSTER_BOOST_SPEED * engine_level));
+			}
+		}
+
+		new brake_level;
+
+		for(new i; i < 5; i++) if(VehInfo[vehicleid][vBrakeTune][i]) brake_level++;
+
+		if(brake_level != 0 && (Keys == KEY_HANDBRAKE || Keys == KEY_JUMP) && speed > 30)
+		{
+			SetVehicleSpeed(vehicleid, speed - (_TDW_BOOSTER_BOOST_SPEED * brake_level));
+		}
+
+		z_angle_old[vehicleid] = z_angle;
+	}
+	return SetTimerEx("UpdateSpeedometr", 250, false, "d", playerid);
+}
+
+//stock ShowPlayerSpeed(playerid)
+//Hapus Ganti Ini
+stock ShowPlayerSpeed(playerid)
+{
+	if(!IsVehicleHaveFuel(GetPlayerVehicleID(playerid))) return 0;
+
+    TextDrawShowForPlayer(playerid, UPSPEEDO[0]);
+	TextDrawShowForPlayer(playerid, UPSPEEDO[1]);
+	TextDrawShowForPlayer(playerid, UPSPEEDO[2]);
+	PlayerTextDrawShow(playerid, SPEEDVEH[playerid]);
+	PlayerTextDrawShow(playerid, HEALTHVEH[playerid]);
+	PlayerTextDrawShow(playerid, FUELVEH[playerid]);
+	PlayerTextDrawShow(playerid, SPEEDVEH1[playerid]);
+	PlayerTextDrawShow(playerid, HEALTHVEH2[playerid]);
+	PlayerTextDrawShow(playerid, FUELVEH2[playerid]);
+    
+    if(player_jobvehicle_time[playerid] != 0) player_jobvehicle_time[playerid] = 0; // hapus timer, pemain keluar dari mobil
+    SetTimerEx("UpdateSpeedometr", 250, false, "d", playerid);
+
+    return 1;
+}

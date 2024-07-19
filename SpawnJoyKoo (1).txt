@@ -1,0 +1,271 @@
+//Variabel
+//Spawn
+new Text:Mspawn[6];
+new Text:Klikstasiunkereta;
+new Text:klikpasbek;
+new Text:klikbandara;
+new Text:klikspawn;
+
+//public OnGameModeInit()
+//Spawn
+	Mspawn[0] = TextDrawCreate(103.000000, 51.000000, "_");
+	TextDrawFont(Mspawn[0], 1);
+	TextDrawLetterSize(Mspawn[0], 1.083333, 2.300001);
+	TextDrawTextSize(Mspawn[0], 294.000000, 122.000000);
+	TextDrawSetOutline(Mspawn[0], 1);
+	TextDrawSetShadow(Mspawn[0], 0);
+	TextDrawAlignment(Mspawn[0], 2);
+	TextDrawColor(Mspawn[0], -1);
+	TextDrawBackgroundColor(Mspawn[0], 255);
+	TextDrawBoxColor(Mspawn[0], -207);
+	TextDrawUseBox(Mspawn[0], 1);
+	TextDrawSetProportional(Mspawn[0], 1);
+	TextDrawSetSelectable(Mspawn[0], 0);
+
+	Mspawn[1] = TextDrawCreate(103.000000, 76.000000, "_");
+	TextDrawFont(Mspawn[1], 1);
+	TextDrawLetterSize(Mspawn[1], 1.083333, 2.300001);
+	TextDrawTextSize(Mspawn[1], 294.000000, 122.000000);
+	TextDrawSetOutline(Mspawn[1], 1);
+	TextDrawSetShadow(Mspawn[1], 0);
+	TextDrawAlignment(Mspawn[1], 2);
+	TextDrawColor(Mspawn[1], 255);
+	TextDrawBackgroundColor(Mspawn[1], 255);
+	TextDrawBoxColor(Mspawn[1], 49);
+	TextDrawUseBox(Mspawn[1], 1);
+	TextDrawSetProportional(Mspawn[1], 1);
+	TextDrawSetSelectable(Mspawn[1], 0);
+
+	Mspawn[2] = TextDrawCreate(103.000000, 101.000000, "_");
+	TextDrawFont(Mspawn[2], 1);
+	TextDrawLetterSize(Mspawn[2], 1.083333, 2.300001);
+	TextDrawTextSize(Mspawn[2], 294.000000, 122.000000);
+	TextDrawSetOutline(Mspawn[2], 1);
+	TextDrawSetShadow(Mspawn[2], 0);
+	TextDrawAlignment(Mspawn[2], 2);
+	TextDrawColor(Mspawn[2], 255);
+	TextDrawBackgroundColor(Mspawn[2], 255);
+	TextDrawBoxColor(Mspawn[2], 49);
+	TextDrawUseBox(Mspawn[2], 1);
+	TextDrawSetProportional(Mspawn[2], 1);
+	TextDrawSetSelectable(Mspawn[2], 0);
+
+	Mspawn[3] = TextDrawCreate(103.000000, 126.000000, "_");
+	TextDrawFont(Mspawn[3], 1);
+	TextDrawLetterSize(Mspawn[3], 1.083333, 2.300001);
+	TextDrawTextSize(Mspawn[3], 294.000000, 122.000000);
+	TextDrawSetOutline(Mspawn[3], 1);
+	TextDrawSetShadow(Mspawn[3], 0);
+	TextDrawAlignment(Mspawn[3], 2);
+	TextDrawColor(Mspawn[3], 255);
+	TextDrawBackgroundColor(Mspawn[3], 255);
+	TextDrawBoxColor(Mspawn[3], 49);
+	TextDrawUseBox(Mspawn[3], 1);
+	TextDrawSetProportional(Mspawn[3], 1);
+	TextDrawSetSelectable(Mspawn[3], 0);
+
+	Mspawn[4] = TextDrawCreate(103.000000, 151.000000, "_");
+	TextDrawFont(Mspawn[4], 1);
+	TextDrawLetterSize(Mspawn[4], 1.083333, 2.300001);
+	TextDrawTextSize(Mspawn[4], 294.000000, 122.000000);
+	TextDrawSetOutline(Mspawn[4], 1);
+	TextDrawSetShadow(Mspawn[4], 0);
+	TextDrawAlignment(Mspawn[4], 2);
+	TextDrawColor(Mspawn[4], 852308735);
+	TextDrawBackgroundColor(Mspawn[4], 255);
+	TextDrawBoxColor(Mspawn[4], 16711729);
+	TextDrawUseBox(Mspawn[4], 1);
+	TextDrawSetProportional(Mspawn[4], 1);
+	TextDrawSetSelectable(Mspawn[4], 0);
+
+	Mspawn[5] = TextDrawCreate(103.000000, 57.000000, "Pilih Lokasi");
+	TextDrawFont(Mspawn[5], 1);
+	TextDrawLetterSize(Mspawn[5], 0.216667, 1.050000);
+	TextDrawTextSize(Mspawn[5], 15.000000, 79.000000);
+	TextDrawSetOutline(Mspawn[5], 0);
+	TextDrawSetShadow(Mspawn[5], 0);
+	TextDrawAlignment(Mspawn[5], 2);
+	TextDrawColor(Mspawn[5], 255);
+	TextDrawBackgroundColor(Mspawn[5], 255);
+	TextDrawBoxColor(Mspawn[5], 50);
+	TextDrawUseBox(Mspawn[5], 0);
+	TextDrawSetProportional(Mspawn[5], 1);
+	TextDrawSetSelectable(Mspawn[5], 0);
+
+	Klikstasiunkereta = TextDrawCreate(103.000000, 81.000000, "Stasiun Kereta");
+	TextDrawFont(Klikstasiunkereta, 1);
+	TextDrawLetterSize(Klikstasiunkereta, 0.216667, 1.050000);
+	TextDrawTextSize(Klikstasiunkereta, 15.000000, 79.000000);
+	TextDrawSetOutline(Klikstasiunkereta, 0);
+	TextDrawSetShadow(Klikstasiunkereta, 0);
+	TextDrawAlignment(Klikstasiunkereta, 2);
+	TextDrawColor(Klikstasiunkereta, -1);
+	TextDrawBackgroundColor(Klikstasiunkereta, 255);
+	TextDrawBoxColor(Klikstasiunkereta, 50);
+	TextDrawUseBox(Klikstasiunkereta, 0);
+	TextDrawSetProportional(Klikstasiunkereta, 1);
+	TextDrawSetSelectable(Klikstasiunkereta, 1);
+
+	klikpasbek = TextDrawCreate(103.000000, 106.000000, "Pasbek");
+	TextDrawFont(klikpasbek, 1);
+	TextDrawLetterSize(klikpasbek, 0.216667, 1.050000);
+	TextDrawTextSize(klikpasbek, 15.000000, 79.000000);
+	TextDrawSetOutline(klikpasbek, 0);
+	TextDrawSetShadow(klikpasbek, 0);
+	TextDrawAlignment(klikpasbek, 2);
+	TextDrawColor(klikpasbek, -1);
+	TextDrawBackgroundColor(klikpasbek, 255);
+	TextDrawBoxColor(klikpasbek, 50);
+	TextDrawUseBox(klikpasbek, 0);
+	TextDrawSetProportional(klikpasbek, 1);
+	TextDrawSetSelectable(klikpasbek, 1);
+
+	klikbandara = TextDrawCreate(103.000000, 131.000000, "Bandara");
+	TextDrawFont(klikbandara, 1);
+	TextDrawLetterSize(klikbandara, 0.216667, 1.050000);
+	TextDrawTextSize(klikbandara, 15.000000, 79.000000);
+	TextDrawSetOutline(klikbandara, 0);
+	TextDrawSetShadow(klikbandara, 0);
+	TextDrawAlignment(klikbandara, 2);
+	TextDrawColor(klikbandara, -1);
+	TextDrawBackgroundColor(klikbandara, 255);
+	TextDrawBoxColor(klikbandara, 50);
+	TextDrawUseBox(klikbandara, 0);
+	TextDrawSetProportional(klikbandara, 1);
+	TextDrawSetSelectable(klikbandara, 1);
+
+	klikspawn = TextDrawCreate(103.000000, 155.000000, "Spawn");
+	TextDrawFont(klikspawn, 1);
+	TextDrawLetterSize(klikspawn, 0.216667, 1.050000);
+	TextDrawTextSize(klikspawn, 15.000000, 79.000000);
+	TextDrawSetOutline(klikspawn, 0);
+	TextDrawSetShadow(klikspawn, 0);
+	TextDrawAlignment(klikspawn, 2);
+	TextDrawColor(klikspawn, -1);
+	TextDrawBackgroundColor(klikspawn, 255);
+	TextDrawBoxColor(klikspawn, 50);
+	TextDrawUseBox(klikspawn, 0);
+	TextDrawSetProportional(klikspawn, 1);
+	TextDrawSetSelectable(klikspawn, 1);
+	
+//public OnPlayerClickTextDraw(playerid, Text:clickedid)
+	//Spawn
+	if(clickedid == Klikstasiunkereta) //tdnyapa
+	{
+        new Float: x = 1773.364501,
+			Float: y = -1900.621337;
+
+	    GetXYInFront(x, y, 94.360778, 2.0);
+
+		SetPlayerCameraPos(playerid, x, y, 76.416320 + 1.0);
+		SetPlayerCameraLookAt(playerid, 1773.364501,-1900.621337,13.551023);
+		
+        TogglePlayerControllable(playerid,0);
+        
+        SetPlayerPos(playerid, 1776.2063,-1888.8843,13.4555);
+        
+		SetPlayerFacingAngle(playerid, 272.1858);
+		
+		SetPlayerInterior(playerid, 0);
+		
+		SetPlayerVirtualWorld(playerid, 0);
+	}
+	
+	if(clickedid == klikpasbek) //tdnyapa
+	{
+     	new Float: x = 402.107452,
+			Float: y = -1749.719116;
+
+	    GetXYInFront(x, y, 40.937259, 2.0);
+
+		SetPlayerCameraPos(playerid, x, y, 40.937259 + 1.0);
+		
+		SetPlayerCameraLookAt(playerid, 402.107452, -1749.719116, 40.937259);
+		
+        TogglePlayerControllable(playerid,0);
+        
+        SetPlayerPos(playerid, 397.790740, -1802.927734, 7.828368);
+        
+		SetPlayerFacingAngle(playerid, 2.815707);
+		
+		SetPlayerInterior(playerid, 0);
+		
+		SetPlayerVirtualWorld(playerid, 0);
+	}
+	
+	if(clickedid == klikbandara) //tdnyapa
+	{
+     	new Float: x = 1637.397338,
+			Float: y = -2287.019531;
+
+	    GetXYInFront(x, y, 86.362777, 2.0);
+
+		SetPlayerCameraPos(playerid, x, y, 86.362777 + 1.0);
+		SetPlayerCameraLookAt(playerid, 1637.397338, -2287.019531, 86.362777);
+		
+        TogglePlayerControllable(playerid,0);
+        
+        SetPlayerPos(playerid, 1685.8220,-2240.1902,-2.7000);
+        
+		SetPlayerFacingAngle(playerid, 182.7612);
+		
+		SetPlayerInterior(playerid, 0);
+		
+		SetPlayerVirtualWorld(playerid, 0);
+	}
+	
+	if(clickedid == klikspawn) //tdnyapa
+	{
+	    hidespawn(playerid);
+		SetCameraBehindPlayer(playerid);
+		CancelSelectTextDraw(playerid);
+	}
+	
+//stock SetPlayerSpawn(playerid)
+	showspawn(playerid);
+
+//Paling Bawah
+stock showspawn(playerid)
+{
+	//iniscriptnya
+	SetPlayerPos(playerid, 397.016540,-2053.985351,7.835937);
+    SetPlayerFacingAngle(playerid, 349.776580);
+    SetPlayerCameraPos(playerid, -1817.0808, 1112.9937, 235.4244);
+    SetPlayerCameraLookAt(playerid, -1816.5471, 949.6590, 235.4244);
+    callcmd::cc(playerid);
+    Inchat[playerid] = 0;
+    
+    //ini textdrawnya
+    TextDrawShowForPlayer(playerid, Mspawn[0]);
+	TextDrawShowForPlayer(playerid, Mspawn[1]);
+	TextDrawShowForPlayer(playerid, Mspawn[2]);
+	TextDrawShowForPlayer(playerid, Mspawn[3]);
+	TextDrawShowForPlayer(playerid, Mspawn[4]);
+	TextDrawShowForPlayer(playerid, Mspawn[5]);
+	TextDrawShowForPlayer(playerid, Klikstasiunkereta);
+	TextDrawShowForPlayer(playerid, klikpasbek);
+	TextDrawShowForPlayer(playerid, klikbandara);
+	TextDrawShowForPlayer(playerid, klikspawn);
+	TogglePlayerControllableEx(playerid, 0);
+ 	SelectTextDraw(playerid, 0xFF0000FF);
+ 	unspawntdlog(playerid);
+ 	unspawntdreg(playerid);
+	return 1;
+}
+
+stock hidespawn(playerid)
+{
+    TextDrawHideForPlayer(playerid, Mspawn[0]);
+	TextDrawHideForPlayer(playerid, Mspawn[1]);
+	TextDrawHideForPlayer(playerid, Mspawn[2]);
+	TextDrawHideForPlayer(playerid, Mspawn[3]);
+	TextDrawHideForPlayer(playerid, Mspawn[4]);
+	TextDrawHideForPlayer(playerid, Mspawn[5]);
+	TextDrawHideForPlayer(playerid, Klikstasiunkereta);
+	TextDrawHideForPlayer(playerid, klikpasbek);
+	TextDrawHideForPlayer(playerid, klikbandara);
+	TextDrawHideForPlayer(playerid, klikspawn);
+	TogglePlayerControllableEx(playerid, 1);
+	CancelSelectTextDraw(playerid);
+	return 1;
+}

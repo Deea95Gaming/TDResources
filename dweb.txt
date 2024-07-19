@@ -1,0 +1,9 @@
+CMD:dweb(playerid, params[])
+{
+    if(!IsAGang(playerid) && !IsAMafia(playerid && !PlayerInfo[playerid][pFamily])) return SCM(playerid, COLOR_GREY, "{FF0000}Lu Gak Masuk Fraksi Gang Kontol.");
+
+    if(sscanf(params, "s[128]",params[0])) return Send(playerid, -1, "Masuk: /dweb [teks]");
+    format(format_string, sizeof(format_string), "DARKWEB: << %s[%d]: %s >>", Name(playerid), playerid, params[0]);
+    SendClientMessageToAll(-1, format_string);
+    return true;
+}

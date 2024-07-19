@@ -1,0 +1,24 @@
+####################################################################################################
+
+new PlayerText: Text_Player[MAX_PLAYERS][2];
+
+Text_Player[playerid][0] = CreatePlayerTextDraw(playerid, 334.000, 1.000, "~r~OPM");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][0], 0.509, 2.099);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][0], 2);
+PlayerTextDrawColor(playerid, Text_Player[playerid][0], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][0], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][0], 2);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][0], 1);
+
+Text_Player[playerid][1] = CreatePlayerTextDraw(playerid, 334.000, 20.000, "~r~O~w~rang ~r~P~w~ecinta ~r~M~w~ancing");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][1], 0.509, 2.099);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][1], 2);
+PlayerTextDrawColor(playerid, Text_Player[playerid][1], -16776961);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][1], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][1], 1);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][1], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][1], 2);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][1], 1);
+

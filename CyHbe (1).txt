@@ -1,0 +1,185 @@
+
+//Variables
+new PlayerText:CyHbe[MAX_PLAYERS][8];
+new PlayerText:Health[MAX_PLAYERS];
+new PlayerText:Armor[MAX_PLAYERS];
+new PlayerText:Hunger[MAX_PLAYERS];
+new PlayerText:Thirsty[MAX_PLAYERS];
+
+//Player Textdraws
+CyHbe[playerid][0] = CreatePlayerTextDraw(playerid, 5.000000, 428.000000, "id_dual:white");
+PlayerTextDrawFont(playerid, CyHbe[playerid][0], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][0], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][0], 40.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][0], 0);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][0], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][0], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][0], 200);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][0], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][0], -1);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][0], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][0], 0);
+
+CyHbe[playerid][1] = CreatePlayerTextDraw(playerid, 47.000000, 428.000000, "id_dual:white");
+PlayerTextDrawFont(playerid, CyHbe[playerid][1], 5);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][1], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][1], 35.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][1], 2);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][1], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][1], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][1], 200);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][1], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][1], -1);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][1], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][1], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][1], 0);
+PlayerTextDrawSetPreviewModel(playerid, CyHbe[playerid][1], 0);
+PlayerTextDrawSetPreviewRot(playerid, CyHbe[playerid][1], -10.000000, 0.000000, -20.000000, 1.000000);
+PlayerTextDrawSetPreviewVehCol(playerid, CyHbe[playerid][1], 1, 1);
+
+CyHbe[playerid][2] = CreatePlayerTextDraw(playerid, 84.000000, 428.000000, "id_dual:white");
+PlayerTextDrawFont(playerid, CyHbe[playerid][2], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][2], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][2], 19.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][2], 2);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][2], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][2], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][2], 200);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][2], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][2], -1);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][2], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][2], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][2], 0);
+
+CyHbe[playerid][3] = CreatePlayerTextDraw(playerid, 105.000000, 428.000000, "id_dual:white");
+PlayerTextDrawFont(playerid, CyHbe[playerid][3], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][3], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][3], 19.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][3], 2);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][3], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][3], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][3], -926365496);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][3], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][3], -1);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][3], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][3], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][3], 0);
+
+CyHbe[playerid][4] = CreatePlayerTextDraw(playerid, 21.000000, 432.000000, "hud:radar_girlfriend");
+PlayerTextDrawFont(playerid, CyHbe[playerid][4], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][4], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][4], 10.000000, 10.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][4], 0);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][4], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][4], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][4], -1);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][4], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][4], 50);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][4], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][4], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][4], 0);
+
+CyHbe[playerid][5] = CreatePlayerTextDraw(playerid, 60.000000, 432.000000, "hud:radar_tshirt");
+PlayerTextDrawFont(playerid, CyHbe[playerid][5], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][5], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][5], 10.000000, 10.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][5], 1);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][5], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][5], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][5], -1);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][5], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][5], 50);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][5], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][5], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][5], 0);
+
+CyHbe[playerid][6] = CreatePlayerTextDraw(playerid, 89.000000, 432.000000, "hud:radar_burgerShot");
+PlayerTextDrawFont(playerid, CyHbe[playerid][6], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][6], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][6], 10.000000, 10.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][6], 1);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][6], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][6], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][6], -1);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][6], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][6], 50);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][6], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][6], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][6], 0);
+
+CyHbe[playerid][7] = CreatePlayerTextDraw(playerid, 110.000000, 432.000000, "hud:radar_diner");
+PlayerTextDrawFont(playerid, CyHbe[playerid][7], 4);
+PlayerTextDrawLetterSize(playerid, CyHbe[playerid][7], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, CyHbe[playerid][7], 10.000000, 10.000000);
+PlayerTextDrawSetOutline(playerid, CyHbe[playerid][7], 1);
+PlayerTextDrawSetShadow(playerid, CyHbe[playerid][7], 0);
+PlayerTextDrawAlignment(playerid, CyHbe[playerid][7], 1);
+PlayerTextDrawColor(playerid, CyHbe[playerid][7], -1);
+PlayerTextDrawBackgroundColor(playerid, CyHbe[playerid][7], 255);
+PlayerTextDrawBoxColor(playerid, CyHbe[playerid][7], 50);
+PlayerTextDrawUseBox(playerid, CyHbe[playerid][7], 1);
+PlayerTextDrawSetProportional(playerid, CyHbe[playerid][7], 1);
+PlayerTextDrawSetSelectable(playerid, CyHbe[playerid][7], 0);
+
+Health[playerid] = CreatePlayerTextDraw(playerid, 5.000000, 428.000000, "id_dual:white");//Darah
+PlayerTextDrawFont(playerid, Health[playerid], 4);
+PlayerTextDrawLetterSize(playerid, Health[playerid], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, Health[playerid], 40.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, Health[playerid], 3);
+PlayerTextDrawSetShadow(playerid, Health[playerid], 0);
+PlayerTextDrawAlignment(playerid, Health[playerid], 1);
+PlayerTextDrawColor(playerid, Health[playerid], 9109759);
+PlayerTextDrawBackgroundColor(playerid, Health[playerid], 255);
+PlayerTextDrawBoxColor(playerid, Health[playerid], -1);
+PlayerTextDrawUseBox(playerid, Health[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Health[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Health[playerid], 0);
+
+Armor[playerid] = CreatePlayerTextDraw(playerid, 47.000000, 428.000000, "id_dual:white");//Armor
+PlayerTextDrawFont(playerid, Armor[playerid], 4);
+PlayerTextDrawLetterSize(playerid, Armor[playerid], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, Armor[playerid], 35.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, Armor[playerid], 2);
+PlayerTextDrawSetShadow(playerid, Armor[playerid], 0);
+PlayerTextDrawAlignment(playerid, Armor[playerid], 1);
+PlayerTextDrawColor(playerid, Armor[playerid], 1296911871);
+PlayerTextDrawBackgroundColor(playerid, Armor[playerid], 255);
+PlayerTextDrawBoxColor(playerid, Armor[playerid], -1);
+PlayerTextDrawUseBox(playerid, Armor[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Armor[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Armor[playerid], 0);
+
+Hunger[playerid] = CreatePlayerTextDraw(playerid, 84.000000, 428.000000, "id_dual:white");//Lapar
+PlayerTextDrawFont(playerid, Hunger[playerid], 4);
+PlayerTextDrawLetterSize(playerid, Hunger[playerid], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, Hunger[playerid], 19.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, Hunger[playerid], 2);
+PlayerTextDrawSetShadow(playerid, Hunger[playerid], 0);
+PlayerTextDrawAlignment(playerid, Hunger[playerid], 1);
+PlayerTextDrawColor(playerid, Hunger[playerid], -2686721);
+PlayerTextDrawBackgroundColor(playerid, Hunger[playerid], 255);
+PlayerTextDrawBoxColor(playerid, Hunger[playerid], -1);
+PlayerTextDrawUseBox(playerid, Hunger[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Hunger[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Hunger[playerid], 0);
+
+Thirsty[playerid] = CreatePlayerTextDraw(playerid, 105.000000, 428.000000, "id_dual:white");//Haus
+PlayerTextDrawFont(playerid, Thirsty[playerid], 4);
+PlayerTextDrawLetterSize(playerid, Thirsty[playerid], 0.600000, 2.000000);
+PlayerTextDrawTextSize(playerid, Thirsty[playerid], 19.000000, 17.000000);
+PlayerTextDrawSetOutline(playerid, Thirsty[playerid], 2);
+PlayerTextDrawSetShadow(playerid, Thirsty[playerid], 0);
+PlayerTextDrawAlignment(playerid, Thirsty[playerid], 1);
+PlayerTextDrawColor(playerid, Thirsty[playerid], 1687547391);
+PlayerTextDrawBackgroundColor(playerid, Thirsty[playerid], 255);
+PlayerTextDrawBoxColor(playerid, Thirsty[playerid], -1);
+PlayerTextDrawUseBox(playerid, Thirsty[playerid], 1);
+PlayerTextDrawSetProportional(playerid, Thirsty[playerid], 1);
+PlayerTextDrawSetSelectable(playerid, Thirsty[playerid], 0);
+
+
+
+/*Player Progress Bars
+Requires "progress2" include by Southclaws
+Download: https://github.com/Southclaws/progress2/releases */

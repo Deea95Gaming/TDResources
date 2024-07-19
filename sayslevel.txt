@@ -1,0 +1,42 @@
+// variabel
+new saymode[MAX_PLAYERS] = 1;
+// taruh sesuai tempatnya
+public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+{
+	if(PRESSED(KEY_NO)){
+		if(saymode[playerid] == 1)
+		{
+		    saymode[playerid] = 2;
+		    SendClientMessage(playerid, -1, "SAYS MODE : {ff0000}TERIAK");
+		}
+		else if(saymode[playerid] == 2){
+		    saymode[playerid] = 3;
+		    SendClientMessage(playerid, -1, "SAYS MODE : {FFFF00}BERBISIK");
+		}
+		else if(saymode[playerid] == 3){
+            saymode[playerid] = 1;
+		    SendClientMessage(playerid, -1, "SAYS MODE : {0000FF}NORMAL");
+		}
+	}
+}
+
+public OnPlayerText(playerid, text[])
+{
+    // SAYS LEVEL
+    if(saymode[playerid] == 2){ // Teriak
+        if(PlayerInfo[playerid][pMuted] > 0) return PlayerMuted(playerid);
+	format(String, 188, "%s[%d] Teriak: %s", Name(playerid), playerid, text);
+	ProxDetector(40.0,playerid, String,-1,-1,-1,-1,-1);
+	if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT) ApplyAnimation(playerid, "ON_LOOKERS", "shout_01",1000.0,0,0,0,0,0,1);
+	SetPlayerChatBubble(playerid, text,-1,40.0,10000);
+	return 0;
+     }
+     else if(saymode[playerid] == 3){//Berbisik
+              if(PlayerInfo[playerid][pMuted] > 0) return PlayerMuted(playerid);
+
+	      format(String, 188, "%s[%d] berbisik: %s", Name(playerid), playerid, text);
+	      ProxDetector(5.0, playerid, String, 0xACCE90FF,0xACCE90FF,0xACCE90FF,0xACCE90FF,0xACCE90FF);
+	      SetPlayerChatBubble(playerid, text, 0xACCE90FF, 5.0, 10000);
+	      return 0;
+     }
+}

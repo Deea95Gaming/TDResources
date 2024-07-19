@@ -1,0 +1,900 @@
+/*CREDITS: AGUS SAMP
+DI REKAP OLEH CHOCO
+NOTE: KOK DI SHARE?!, GM NYA AJA UDAH DI SHARE
+YAUDAH GW SHARE.
+
+______________________________________________________________________________________________
+
+//PASANG DI DEFINE
+#define MAX_RENTCAR 500
+
+______________________________________________________________________________________________
+
+//PASANG DI VARIABEL NEW
+//RENTTD
+new Text:RENTCARTD[31];
+new Text:SEWAFAGGIO;
+new Text:SEWANRG;
+new Text:BATALSEWAKEN;
+new PlayerTekanYCar[MAX_PLAYERS];
+
+______________________________________________________________________________________________
+
+//PASANG DI ATAS ENUM PINFO
+enum E_RENTCAR
+{
+	RC_NAME[512],
+	Float:RC_POS_X,
+	Float:RC_POS_Y,
+	Float:RC_POS_Z,
+    RC_ID
+}
+new RentCarData[MAX_RENTCAR][E_RENTCAR];
+new Text3D:RC_LABELS[MAX_RENTCAR],
+	RC_PICKUP[MAX_RENTCAR];
+
+stock LoadMyRentCar()
+{
+	new file[128];
+	for(new i=0; i < MAX_RENTCAR; i++)
+	{
+	    format(file,sizeof(file),"Database/RentCar/[%d].ini",i);
+	    if(dini_Exists(file))
+	    {
+			format(RentCarData[i][RC_NAME],24,"%s",dini_Get(file,"Nama"));
+		    RentCarData[i][RC_POS_X] = dini_Float(file,"PosX");
+		    RentCarData[i][RC_POS_Y] = dini_Float(file,"PosY");
+		    RentCarData[i][RC_POS_Z] = dini_Float(file,"PosZ");
+		    RentCarData[i][RC_ID] = dini_Int(file,"UID");
+		    UpdateRentCar(i);
+		}
+	}
+}
+
+stock SaveMyRentCar()
+{
+	new file[128];
+	for(new i=0; i < MAX_RENTCAR; i++)
+	{
+	    format(file,sizeof(file),"Database/RentCar/[%d].ini",i);
+	    if(dini_Exists(file))
+	    {
+			dini_Set(file,"Nama",RentCarData[i][RC_NAME]);
+			dini_FloatSet(file,"PosX",RentCarData[i][RC_POS_X]);
+			dini_FloatSet(file,"PosY",RentCarData[i][RC_POS_Y]);
+			dini_FloatSet(file,"PosZ",RentCarData[i][RC_POS_Z]);
+			dini_IntSet(file,"UID",RentCarData[i][RC_ID]);
+		}
+	}
+}
+
+stock SaveMyCarRent(RC_IDD)
+{
+	new file[128];
+	format(file,sizeof(file),"Database/RentCar/[%d].ini", RC_IDD);
+	if(dini_Exists(file))
+    {
+        dini_Set(file,"Nama",RentCarData[RC_IDD][RC_NAME]);
+		dini_FloatSet(file,"PosX",RentCarData[RC_IDD][RC_POS_X]);
+		dini_FloatSet(file,"PosY",RentCarData[RC_IDD][RC_POS_Y]);
+		dini_FloatSet(file,"PosZ",RentCarData[RC_IDD][RC_POS_Z]);
+		dini_IntSet(file,"UID",RentCarData[RC_IDD][RC_ID]);
+	}
+}
+
+stock UpdateRentCar(RC_IDD)
+{
+	DestroyDynamic3DTextLabel(RC_LABELS[RC_IDD]);
+	DestroyDynamicPickup(RC_PICKUP[RC_IDD]);
+
+	new string[2048];
+	format(string, sizeof(string), "PEYEWAHAN KENDARAAN \n ID [%d]\n TEKAN [Y] \n >> UNTUK MEYEWA KENDARAAN", RC_IDD);
+	RC_LABELS[RC_IDD] = CreateDynamic3DTextLabel(string, -1, RentCarData[RC_IDD][RC_POS_X],RentCarData[RC_IDD][RC_POS_Y],RentCarData[RC_IDD][RC_POS_Z]+0.1, 10.0);
+	RC_PICKUP[RC_IDD] = CreateDynamicPickup(19134, 1,RentCarData[RC_IDD][RC_POS_X],RentCarData[RC_IDD][RC_POS_Y],RentCarData[RC_IDD][RC_POS_Z]);
+}
+
+______________________________________________________________________________________________
+
+//PASANG DI ONGAMEMODEINIT
+RENTCARTD[0] = TextDrawCreate(217.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[0], 4);
+	TextDrawLetterSize(RENTCARTD[0], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[0], 70.000000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[0], 1);
+	TextDrawSetShadow(RENTCARTD[0], 0);
+	TextDrawAlignment(RENTCARTD[0], 1);
+	TextDrawColor(RENTCARTD[0], -1);
+	TextDrawBackgroundColor(RENTCARTD[0], 255);
+	TextDrawBoxColor(RENTCARTD[0], 50);
+	TextDrawUseBox(RENTCARTD[0], 1);
+	TextDrawSetProportional(RENTCARTD[0], 1);
+	TextDrawSetSelectable(RENTCARTD[0], 0);
+
+	RENTCARTD[1] = TextDrawCreate(350.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[1], 4);
+	TextDrawLetterSize(RENTCARTD[1], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[1], 70.000000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[1], 1);
+	TextDrawSetShadow(RENTCARTD[1], 0);
+	TextDrawAlignment(RENTCARTD[1], 1);
+	TextDrawColor(RENTCARTD[1], -1);
+	TextDrawBackgroundColor(RENTCARTD[1], 255);
+	TextDrawBoxColor(RENTCARTD[1], 50);
+	TextDrawUseBox(RENTCARTD[1], 1);
+	TextDrawSetProportional(RENTCARTD[1], 1);
+	TextDrawSetSelectable(RENTCARTD[1], 0);
+
+	RENTCARTD[2] = TextDrawCreate(207.000000, 151.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[2], 4);
+	TextDrawLetterSize(RENTCARTD[2], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[2], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[2], 1);
+	TextDrawSetShadow(RENTCARTD[2], 0);
+	TextDrawAlignment(RENTCARTD[2], 1);
+	TextDrawColor(RENTCARTD[2], -1);
+	TextDrawBackgroundColor(RENTCARTD[2], 255);
+	TextDrawBoxColor(RENTCARTD[2], 50);
+	TextDrawUseBox(RENTCARTD[2], 1);
+	TextDrawSetProportional(RENTCARTD[2], 1);
+	TextDrawSetSelectable(RENTCARTD[2], 0);
+
+	RENTCARTD[3] = TextDrawCreate(339.000000, 151.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[3], 4);
+	TextDrawLetterSize(RENTCARTD[3], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[3], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[3], 1);
+	TextDrawSetShadow(RENTCARTD[3], 0);
+	TextDrawAlignment(RENTCARTD[3], 1);
+	TextDrawColor(RENTCARTD[3], -1);
+	TextDrawBackgroundColor(RENTCARTD[3], 255);
+	TextDrawBoxColor(RENTCARTD[3], 50);
+	TextDrawUseBox(RENTCARTD[3], 1);
+	TextDrawSetProportional(RENTCARTD[3], 1);
+	TextDrawSetSelectable(RENTCARTD[3], 0);
+
+	RENTCARTD[4] = TextDrawCreate(275.000000, 151.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[4], 4);
+	TextDrawLetterSize(RENTCARTD[4], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[4], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[4], 1);
+	TextDrawSetShadow(RENTCARTD[4], 0);
+	TextDrawAlignment(RENTCARTD[4], 1);
+	TextDrawColor(RENTCARTD[4], -1);
+	TextDrawBackgroundColor(RENTCARTD[4], 255);
+	TextDrawBoxColor(RENTCARTD[4], 50);
+	TextDrawUseBox(RENTCARTD[4], 1);
+	TextDrawSetProportional(RENTCARTD[4], 1);
+	TextDrawSetSelectable(RENTCARTD[4], 0);
+
+	RENTCARTD[5] = TextDrawCreate(410.000000, 151.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[5], 4);
+	TextDrawLetterSize(RENTCARTD[5], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[5], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[5], 1);
+	TextDrawSetShadow(RENTCARTD[5], 0);
+	TextDrawAlignment(RENTCARTD[5], 1);
+	TextDrawColor(RENTCARTD[5], -1);
+	TextDrawBackgroundColor(RENTCARTD[5], 255);
+	TextDrawBoxColor(RENTCARTD[5], 50);
+	TextDrawUseBox(RENTCARTD[5], 1);
+	TextDrawSetProportional(RENTCARTD[5], 1);
+	TextDrawSetSelectable(RENTCARTD[5], 0);
+
+	RENTCARTD[6] = TextDrawCreate(207.000000, 250.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[6], 4);
+	TextDrawLetterSize(RENTCARTD[6], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[6], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[6], 1);
+	TextDrawSetShadow(RENTCARTD[6], 0);
+	TextDrawAlignment(RENTCARTD[6], 1);
+	TextDrawColor(RENTCARTD[6], -1);
+	TextDrawBackgroundColor(RENTCARTD[6], 255);
+	TextDrawBoxColor(RENTCARTD[6], 50);
+	TextDrawUseBox(RENTCARTD[6], 1);
+	TextDrawSetProportional(RENTCARTD[6], 1);
+	TextDrawSetSelectable(RENTCARTD[6], 0);
+
+	RENTCARTD[7] = TextDrawCreate(275.000000, 250.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[7], 4);
+	TextDrawLetterSize(RENTCARTD[7], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[7], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[7], 1);
+	TextDrawSetShadow(RENTCARTD[7], 0);
+	TextDrawAlignment(RENTCARTD[7], 1);
+	TextDrawColor(RENTCARTD[7], -1);
+	TextDrawBackgroundColor(RENTCARTD[7], 255);
+	TextDrawBoxColor(RENTCARTD[7], 50);
+	TextDrawUseBox(RENTCARTD[7], 1);
+	TextDrawSetProportional(RENTCARTD[7], 1);
+	TextDrawSetSelectable(RENTCARTD[7], 0);
+
+	RENTCARTD[8] = TextDrawCreate(339.000000, 250.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[8], 4);
+	TextDrawLetterSize(RENTCARTD[8], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[8], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[8], 1);
+	TextDrawSetShadow(RENTCARTD[8], 0);
+	TextDrawAlignment(RENTCARTD[8], 1);
+	TextDrawColor(RENTCARTD[8], -1);
+	TextDrawBackgroundColor(RENTCARTD[8], 255);
+	TextDrawBoxColor(RENTCARTD[8], 50);
+	TextDrawUseBox(RENTCARTD[8], 1);
+	TextDrawSetProportional(RENTCARTD[8], 1);
+	TextDrawSetSelectable(RENTCARTD[8], 0);
+
+	RENTCARTD[9] = TextDrawCreate(410.000000, 250.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[9], 4);
+	TextDrawLetterSize(RENTCARTD[9], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[9], 21.000000, 23.000000);
+	TextDrawSetOutline(RENTCARTD[9], 1);
+	TextDrawSetShadow(RENTCARTD[9], 0);
+	TextDrawAlignment(RENTCARTD[9], 1);
+	TextDrawColor(RENTCARTD[9], -1);
+	TextDrawBackgroundColor(RENTCARTD[9], 255);
+	TextDrawBoxColor(RENTCARTD[9], 50);
+	TextDrawUseBox(RENTCARTD[9], 1);
+	TextDrawSetProportional(RENTCARTD[9], 1);
+	TextDrawSetSelectable(RENTCARTD[9], 0);
+
+	RENTCARTD[10] = TextDrawCreate(217.000000, 155.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[10], 4);
+	TextDrawLetterSize(RENTCARTD[10], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[10], 70.000000, 8.500000);
+	TextDrawSetOutline(RENTCARTD[10], 1);
+	TextDrawSetShadow(RENTCARTD[10], 0);
+	TextDrawAlignment(RENTCARTD[10], 1);
+	TextDrawColor(RENTCARTD[10], -1);
+	TextDrawBackgroundColor(RENTCARTD[10], 255);
+	TextDrawBoxColor(RENTCARTD[10], 50);
+	TextDrawUseBox(RENTCARTD[10], 1);
+	TextDrawSetProportional(RENTCARTD[10], 1);
+	TextDrawSetSelectable(RENTCARTD[10], 0);
+
+	RENTCARTD[11] = TextDrawCreate(349.000000, 155.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[11], 4);
+	TextDrawLetterSize(RENTCARTD[11], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[11], 70.000000, 8.500000);
+	TextDrawSetOutline(RENTCARTD[11], 1);
+	TextDrawSetShadow(RENTCARTD[11], 0);
+	TextDrawAlignment(RENTCARTD[11], 1);
+	TextDrawColor(RENTCARTD[11], -1);
+	TextDrawBackgroundColor(RENTCARTD[11], 255);
+	TextDrawBoxColor(RENTCARTD[11], 50);
+	TextDrawUseBox(RENTCARTD[11], 1);
+	TextDrawSetProportional(RENTCARTD[11], 1);
+	TextDrawSetSelectable(RENTCARTD[11], 0);
+
+	RENTCARTD[12] = TextDrawCreate(210.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[12], 4);
+	TextDrawLetterSize(RENTCARTD[12], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[12], 8.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[12], 1);
+	TextDrawSetShadow(RENTCARTD[12], 0);
+	TextDrawAlignment(RENTCARTD[12], 1);
+	TextDrawColor(RENTCARTD[12], -1);
+	TextDrawBackgroundColor(RENTCARTD[12], 255);
+	TextDrawBoxColor(RENTCARTD[12], 50);
+	TextDrawUseBox(RENTCARTD[12], 1);
+	TextDrawSetProportional(RENTCARTD[12], 1);
+	TextDrawSetSelectable(RENTCARTD[12], 0);
+
+	RENTCARTD[13] = TextDrawCreate(343.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[13], 4);
+	TextDrawLetterSize(RENTCARTD[13], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[13], 8.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[13], 1);
+	TextDrawSetShadow(RENTCARTD[13], 0);
+	TextDrawAlignment(RENTCARTD[13], 1);
+	TextDrawColor(RENTCARTD[13], -1);
+	TextDrawBackgroundColor(RENTCARTD[13], 255);
+	TextDrawBoxColor(RENTCARTD[13], 50);
+	TextDrawUseBox(RENTCARTD[13], 1);
+	TextDrawSetProportional(RENTCARTD[13], 1);
+	TextDrawSetSelectable(RENTCARTD[13], 0);
+
+	RENTCARTD[14] = TextDrawCreate(284.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[14], 4);
+	TextDrawLetterSize(RENTCARTD[14], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[14], 8.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[14], 1);
+	TextDrawSetShadow(RENTCARTD[14], 0);
+	TextDrawAlignment(RENTCARTD[14], 1);
+	TextDrawColor(RENTCARTD[14], -1);
+	TextDrawBackgroundColor(RENTCARTD[14], 255);
+	TextDrawBoxColor(RENTCARTD[14], 50);
+	TextDrawUseBox(RENTCARTD[14], 1);
+	TextDrawSetProportional(RENTCARTD[14], 1);
+	TextDrawSetSelectable(RENTCARTD[14], 0);
+
+	RENTCARTD[15] = TextDrawCreate(419.000000, 163.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[15], 4);
+	TextDrawLetterSize(RENTCARTD[15], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[15], 8.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[15], 1);
+	TextDrawSetShadow(RENTCARTD[15], 0);
+	TextDrawAlignment(RENTCARTD[15], 1);
+	TextDrawColor(RENTCARTD[15], -1);
+	TextDrawBackgroundColor(RENTCARTD[15], 255);
+	TextDrawBoxColor(RENTCARTD[15], 50);
+	TextDrawUseBox(RENTCARTD[15], 1);
+	TextDrawSetProportional(RENTCARTD[15], 1);
+	TextDrawSetSelectable(RENTCARTD[15], 0);
+
+	RENTCARTD[16] = TextDrawCreate(349.000000, 261.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[16], 4);
+	TextDrawLetterSize(RENTCARTD[16], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[16], 70.000000, 8.500000);
+	TextDrawSetOutline(RENTCARTD[16], 1);
+	TextDrawSetShadow(RENTCARTD[16], 0);
+	TextDrawAlignment(RENTCARTD[16], 1);
+	TextDrawColor(RENTCARTD[16], -1);
+	TextDrawBackgroundColor(RENTCARTD[16], 255);
+	TextDrawBoxColor(RENTCARTD[16], 50);
+	TextDrawUseBox(RENTCARTD[16], 1);
+	TextDrawSetProportional(RENTCARTD[16], 1);
+	TextDrawSetSelectable(RENTCARTD[16], 0);
+
+	RENTCARTD[17] = TextDrawCreate(217.000000, 261.000000, "ld_dual:white");
+	TextDrawFont(RENTCARTD[17], 4);
+	TextDrawLetterSize(RENTCARTD[17], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[17], 70.000000, 8.500000);
+	TextDrawSetOutline(RENTCARTD[17], 1);
+	TextDrawSetShadow(RENTCARTD[17], 0);
+	TextDrawAlignment(RENTCARTD[17], 1);
+	TextDrawColor(RENTCARTD[17], -1);
+	TextDrawBackgroundColor(RENTCARTD[17], 255);
+	TextDrawBoxColor(RENTCARTD[17], 50);
+	TextDrawUseBox(RENTCARTD[17], 1);
+	TextDrawSetProportional(RENTCARTD[17], 1);
+	TextDrawSetSelectable(RENTCARTD[17], 0);
+
+	RENTCARTD[18] = TextDrawCreate(251.000000, 154.000000, "Faggio");
+	TextDrawFont(RENTCARTD[18], 2);
+	TextDrawLetterSize(RENTCARTD[18], 0.316666, 1.649999);
+	TextDrawTextSize(RENTCARTD[18], 400.000000, 17.000000);
+	TextDrawSetOutline(RENTCARTD[18], 0);
+	TextDrawSetShadow(RENTCARTD[18], 0);
+	TextDrawAlignment(RENTCARTD[18], 2);
+	TextDrawColor(RENTCARTD[18], 255);
+	TextDrawBackgroundColor(RENTCARTD[18], 255);
+	TextDrawBoxColor(RENTCARTD[18], 50);
+	TextDrawUseBox(RENTCARTD[18], 0);
+	TextDrawSetProportional(RENTCARTD[18], 1);
+	TextDrawSetSelectable(RENTCARTD[18], 0);
+
+	RENTCARTD[19] = TextDrawCreate(385.000000, 154.000000, "NGR-500");
+	TextDrawFont(RENTCARTD[19], 2);
+	TextDrawLetterSize(RENTCARTD[19], 0.316666, 1.649999);
+	TextDrawTextSize(RENTCARTD[19], 400.000000, 17.000000);
+	TextDrawSetOutline(RENTCARTD[19], 0);
+	TextDrawSetShadow(RENTCARTD[19], 0);
+	TextDrawAlignment(RENTCARTD[19], 2);
+	TextDrawColor(RENTCARTD[19], 255);
+	TextDrawBackgroundColor(RENTCARTD[19], 255);
+	TextDrawBoxColor(RENTCARTD[19], 50);
+	TextDrawUseBox(RENTCARTD[19], 0);
+	TextDrawSetProportional(RENTCARTD[19], 1);
+	TextDrawSetSelectable(RENTCARTD[19], 0);
+
+	RENTCARTD[20] = TextDrawCreate(202.000000, 150.000000, "Preview_Model");
+	TextDrawFont(RENTCARTD[20], 5);
+	TextDrawLetterSize(RENTCARTD[20], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[20], 107.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[20], 0);
+	TextDrawSetShadow(RENTCARTD[20], 0);
+	TextDrawAlignment(RENTCARTD[20], 1);
+	TextDrawColor(RENTCARTD[20], -1);
+	TextDrawBackgroundColor(RENTCARTD[20], 0);
+	TextDrawBoxColor(RENTCARTD[20], 255);
+	TextDrawUseBox(RENTCARTD[20], 0);
+	TextDrawSetProportional(RENTCARTD[20], 1);
+	TextDrawSetSelectable(RENTCARTD[20], 0);
+	TextDrawSetPreviewModel(RENTCARTD[20], 462);
+	TextDrawSetPreviewRot(RENTCARTD[20], -10.000000, 0.000000, -20.000000, 1.000000);
+	TextDrawSetPreviewVehCol(RENTCARTD[20], 11, 1);
+
+	RENTCARTD[21] = TextDrawCreate(337.000000, 150.000000, "Preview_Model");
+	TextDrawFont(RENTCARTD[21], 5);
+	TextDrawLetterSize(RENTCARTD[21], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[21], 107.500000, 100.000000);
+	TextDrawSetOutline(RENTCARTD[21], 0);
+	TextDrawSetShadow(RENTCARTD[21], 0);
+	TextDrawAlignment(RENTCARTD[21], 1);
+	TextDrawColor(RENTCARTD[21], -1);
+	TextDrawBackgroundColor(RENTCARTD[21], 0);
+	TextDrawBoxColor(RENTCARTD[21], 255);
+	TextDrawUseBox(RENTCARTD[21], 0);
+	TextDrawSetProportional(RENTCARTD[21], 1);
+	TextDrawSetSelectable(RENTCARTD[21], 0);
+	TextDrawSetPreviewModel(RENTCARTD[21], 522);
+	TextDrawSetPreviewRot(RENTCARTD[21], -10.000000, 0.000000, -20.000000, 1.000000);
+	TextDrawSetPreviewVehCol(RENTCARTD[21], 43, 1);
+
+	SEWAFAGGIO = TextDrawCreate(224.000000, 233.000000, "ld_dual:white");
+	TextDrawFont(SEWAFAGGIO, 4);
+	TextDrawLetterSize(SEWAFAGGIO, 0.600000, 2.000000);
+	TextDrawTextSize(SEWAFAGGIO, 54.000000, 20.500000);
+	TextDrawSetOutline(SEWAFAGGIO, 1);
+	TextDrawSetShadow(SEWAFAGGIO, 0);
+	TextDrawAlignment(SEWAFAGGIO, 1);
+	TextDrawColor(SEWAFAGGIO, 16711935);
+	TextDrawBackgroundColor(SEWAFAGGIO, 255);
+	TextDrawBoxColor(SEWAFAGGIO, 50);
+	TextDrawUseBox(SEWAFAGGIO, 1);
+	TextDrawSetProportional(SEWAFAGGIO, 1);
+	TextDrawSetSelectable(SEWAFAGGIO, 1);
+
+	SEWANRG = TextDrawCreate(359.000000, 233.000000, "ld_dual:white");
+	TextDrawFont(SEWANRG, 4);
+	TextDrawLetterSize(SEWANRG, 0.600000, 2.000000);
+	TextDrawTextSize(SEWANRG, 54.000000, 20.500000);
+	TextDrawSetOutline(SEWANRG, 1);
+	TextDrawSetShadow(SEWANRG, 0);
+	TextDrawAlignment(SEWANRG, 1);
+	TextDrawColor(SEWANRG, 16711935);
+	TextDrawBackgroundColor(SEWANRG, 255);
+	TextDrawBoxColor(SEWANRG, 50);
+	TextDrawUseBox(SEWANRG, 1);
+	TextDrawSetProportional(SEWANRG, 1);
+	TextDrawSetSelectable(SEWANRG, 1);
+
+	RENTCARTD[22] = TextDrawCreate(212.000000, 228.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[22], 4);
+	TextDrawLetterSize(RENTCARTD[22], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[22], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[22], 1);
+	TextDrawSetShadow(RENTCARTD[22], 0);
+	TextDrawAlignment(RENTCARTD[22], 1);
+	TextDrawColor(RENTCARTD[22], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[22], 255);
+	TextDrawBoxColor(RENTCARTD[22], 50);
+	TextDrawUseBox(RENTCARTD[22], 1);
+	TextDrawSetProportional(RENTCARTD[22], 1);
+	TextDrawSetSelectable(RENTCARTD[22], 0);
+
+	RENTCARTD[23] = TextDrawCreate(347.000000, 228.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[23], 4);
+	TextDrawLetterSize(RENTCARTD[23], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[23], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[23], 1);
+	TextDrawSetShadow(RENTCARTD[23], 0);
+	TextDrawAlignment(RENTCARTD[23], 1);
+	TextDrawColor(RENTCARTD[23], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[23], 255);
+	TextDrawBoxColor(RENTCARTD[23], 50);
+	TextDrawUseBox(RENTCARTD[23], 1);
+	TextDrawSetProportional(RENTCARTD[23], 1);
+	TextDrawSetSelectable(RENTCARTD[23], 0);
+
+	RENTCARTD[24] = TextDrawCreate(267.000000, 228.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[24], 4);
+	TextDrawLetterSize(RENTCARTD[24], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[24], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[24], 1);
+	TextDrawSetShadow(RENTCARTD[24], 0);
+	TextDrawAlignment(RENTCARTD[24], 1);
+	TextDrawColor(RENTCARTD[24], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[24], 255);
+	TextDrawBoxColor(RENTCARTD[24], 50);
+	TextDrawUseBox(RENTCARTD[24], 1);
+	TextDrawSetProportional(RENTCARTD[24], 1);
+	TextDrawSetSelectable(RENTCARTD[24], 0);
+
+	RENTCARTD[25] = TextDrawCreate(402.000000, 228.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[25], 4);
+	TextDrawLetterSize(RENTCARTD[25], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[25], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[25], 1);
+	TextDrawSetShadow(RENTCARTD[25], 0);
+	TextDrawAlignment(RENTCARTD[25], 1);
+	TextDrawColor(RENTCARTD[25], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[25], 255);
+	TextDrawBoxColor(RENTCARTD[25], 50);
+	TextDrawUseBox(RENTCARTD[25], 1);
+	TextDrawSetProportional(RENTCARTD[25], 1);
+	TextDrawSetSelectable(RENTCARTD[25], 0);
+
+	RENTCARTD[26] = TextDrawCreate(251.000000, 235.000000, "SEWA");
+	TextDrawFont(RENTCARTD[26], 2);
+	TextDrawLetterSize(RENTCARTD[26], 0.316666, 1.649999);
+	TextDrawTextSize(RENTCARTD[26], 400.000000, 17.000000);
+	TextDrawSetOutline(RENTCARTD[26], 0);
+	TextDrawSetShadow(RENTCARTD[26], 0);
+	TextDrawAlignment(RENTCARTD[26], 2);
+	TextDrawColor(RENTCARTD[26], 255);
+	TextDrawBackgroundColor(RENTCARTD[26], 255);
+	TextDrawBoxColor(RENTCARTD[26], 50);
+	TextDrawUseBox(RENTCARTD[26], 0);
+	TextDrawSetProportional(RENTCARTD[26], 1);
+	TextDrawSetSelectable(RENTCARTD[26], 0);
+
+	RENTCARTD[27] = TextDrawCreate(385.000000, 235.000000, "SEWA");
+	TextDrawFont(RENTCARTD[27], 2);
+	TextDrawLetterSize(RENTCARTD[27], 0.316666, 1.649999);
+	TextDrawTextSize(RENTCARTD[27], 400.000000, 17.000000);
+	TextDrawSetOutline(RENTCARTD[27], 0);
+	TextDrawSetShadow(RENTCARTD[27], 0);
+	TextDrawAlignment(RENTCARTD[27], 2);
+	TextDrawColor(RENTCARTD[27], 255);
+	TextDrawBackgroundColor(RENTCARTD[27], 255);
+	TextDrawBoxColor(RENTCARTD[27], 50);
+	TextDrawUseBox(RENTCARTD[27], 0);
+	TextDrawSetProportional(RENTCARTD[27], 1);
+	TextDrawSetSelectable(RENTCARTD[27], 0);
+
+	BATALSEWAKEN = TextDrawCreate(291.000000, 294.000000, "ld_dual:white");
+	TextDrawFont(BATALSEWAKEN, 4);
+	TextDrawLetterSize(BATALSEWAKEN, 0.600000, 2.000000);
+	TextDrawTextSize(BATALSEWAKEN, 54.000000, 20.500000);
+	TextDrawSetOutline(BATALSEWAKEN, 1);
+	TextDrawSetShadow(BATALSEWAKEN, 0);
+	TextDrawAlignment(BATALSEWAKEN, 1);
+	TextDrawColor(BATALSEWAKEN, 16711935);
+	TextDrawBackgroundColor(BATALSEWAKEN, 255);
+	TextDrawBoxColor(BATALSEWAKEN, 50);
+	TextDrawUseBox(BATALSEWAKEN, 1);
+	TextDrawSetProportional(BATALSEWAKEN, 1);
+	TextDrawSetSelectable(BATALSEWAKEN, 1);
+
+	RENTCARTD[28] = TextDrawCreate(280.000000, 289.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[28], 4);
+	TextDrawLetterSize(RENTCARTD[28], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[28], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[28], 1);
+	TextDrawSetShadow(RENTCARTD[28], 0);
+	TextDrawAlignment(RENTCARTD[28], 1);
+	TextDrawColor(RENTCARTD[28], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[28], 255);
+	TextDrawBoxColor(RENTCARTD[28], 50);
+	TextDrawUseBox(RENTCARTD[28], 1);
+	TextDrawSetProportional(RENTCARTD[28], 1);
+	TextDrawSetSelectable(RENTCARTD[28], 0);
+
+	RENTCARTD[29] = TextDrawCreate(334.000000, 289.000000, "ld_beat:chit");
+	TextDrawFont(RENTCARTD[29], 4);
+	TextDrawLetterSize(RENTCARTD[29], 0.600000, 2.000000);
+	TextDrawTextSize(RENTCARTD[29], 23.000000, 30.500000);
+	TextDrawSetOutline(RENTCARTD[29], 1);
+	TextDrawSetShadow(RENTCARTD[29], 0);
+	TextDrawAlignment(RENTCARTD[29], 1);
+	TextDrawColor(RENTCARTD[29], 16711935);
+	TextDrawBackgroundColor(RENTCARTD[29], 255);
+	TextDrawBoxColor(RENTCARTD[29], 50);
+	TextDrawUseBox(RENTCARTD[29], 1);
+	TextDrawSetProportional(RENTCARTD[29], 1);
+	TextDrawSetSelectable(RENTCARTD[29], 0);
+
+	RENTCARTD[30] = TextDrawCreate(319.000000, 296.000000, "BATAL");
+	TextDrawFont(RENTCARTD[30], 2);
+	TextDrawLetterSize(RENTCARTD[30], 0.316666, 1.649999);
+	TextDrawTextSize(RENTCARTD[30], 400.000000, 17.000000);
+	TextDrawSetOutline(RENTCARTD[30], 0);
+	TextDrawSetShadow(RENTCARTD[30], 0);
+	TextDrawAlignment(RENTCARTD[30], 2);
+	TextDrawColor(RENTCARTD[30], 255);
+	TextDrawBackgroundColor(RENTCARTD[30], 255);
+	TextDrawBoxColor(RENTCARTD[30], 50);
+	TextDrawUseBox(RENTCARTD[30], 0);
+	TextDrawSetProportional(RENTCARTD[30], 1);
+	TextDrawSetSelectable(RENTCARTD[30], 0);
+
+______________________________________________________________________________________________
+
+//PASANG DI ONGAMEMODEINIT
+LoadMyRentCar();
+
+______________________________________________________________________________________________
+
+//PASANG DI public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+if(newkeys == KEY_YES)
+	{
+	    for(new i=0; i < MAX_RENTCAR; i++)
+			{
+		    if(IsPlayerInRangeOfPoint(playerid, 1.0, RentCarData[i][RC_POS_X], RentCarData[i][RC_POS_Y], RentCarData[i][RC_POS_Z]))
+		    {
+		        if(rent_vehicle_id[playerid] != INVALID_VEHICLE_ID) return SCM(playerid, COLOR_GREY, "Anda sudah menyewa transportasi.");
+			    if(GetPlayerState(playerid) != PLAYER_STATE_ONFOOT) return 1;
+
+			    PlayerTekanYCar[playerid] = i;
+
+			    TextDrawShowForPlayer(playerid, RENTCARTD[0]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[1]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[2]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[3]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[4]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[5]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[6]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[7]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[8]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[9]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[10]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[11]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[12]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[13]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[14]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[15]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[16]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[17]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[18]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[19]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[20]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[21]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[22]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[23]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[24]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[25]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[26]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[27]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[28]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[29]);
+				TextDrawShowForPlayer(playerid, RENTCARTD[30]);
+				TextDrawShowForPlayer(playerid, SEWAFAGGIO);
+				TextDrawShowForPlayer(playerid, SEWANRG);
+				TextDrawShowForPlayer(playerid, BATALSEWAKEN);
+				SelectTextDraw(playerid, 0xFF0000FF);
+			}
+		}
+	}
+
+______________________________________________________________________________________________
+
+//PASANG DI BAGIAN public OnPlayerClickTextDraw(playerid, Text:clickedid)
+if(clickedid == SEWANRG)
+	{
+		if(rent_vehicle_id[playerid] != INVALID_VEHICLE_ID) return SCM(playerid, COLOR_GREY, "Anda sudah menyewa transportasi.");
+
+		if(PlayerInfo[playerid][pCash] >= 50)
+	 	{
+   			PlayerInfo[playerid][pCash] -= 50;
+      		OnPlayerUpdateAccountsPer(playerid, "pCash", PlayerInfo[playerid][pCash]);
+		}
+		else
+		{
+  			SCM(playerid, COLOR_YELLOW, "[Perhatikan] {FFFFFF}Persewaan Vespa dengan biaya negara.");
+		}
+		new PlayerEnter = PlayerTekanYCar[playerid];
+
+		new KendaraNegaraA = CreateVehicle(522, RentCarData[PlayerEnter][RC_POS_X], RentCarData[PlayerEnter][RC_POS_Y],RentCarData[PlayerEnter][RC_POS_Z], 267.9162, random(128), random(128), 60);
+
+		rent_vehicle_id[playerid] = KendaraNegaraA;
+		vehicle_rent_owner[KendaraNegaraA] = playerid;
+
+		VehInfo[KendaraNegaraA][vFuel] = 0.0;
+		VehInfo[KendaraNegaraA][vSost] = 100;
+
+		VehInfo[KendaraNegaraA][vStatus] = 2;
+		Fuell[KendaraNegaraA] = MAX_VEHICLE_FUEL;
+
+		PutPlayerInVehicle(playerid, KendaraNegaraA, 0);
+		SetVehicleParamsEx(KendaraNegaraA,1,0,0,0,0,0,0);
+		SCM(playerid, COLOR_GREEN, "Anda menyewa Nrg, jika Anda ingin membatalkan, lalu tulis: /rcancel.");
+
+		TextDrawHideForPlayer(playerid, RENTCARTD[0]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[1]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[2]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[3]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[4]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[5]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[6]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[7]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[8]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[9]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[10]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[11]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[12]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[13]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[14]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[15]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[16]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[17]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[18]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[19]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[20]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[21]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[22]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[23]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[24]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[25]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[26]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[27]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[28]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[29]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[30]);
+		TextDrawHideForPlayer(playerid, SEWAFAGGIO);
+		TextDrawHideForPlayer(playerid, SEWANRG);
+		TextDrawHideForPlayer(playerid, BATALSEWAKEN);
+		CancelSelectTextDraw(playerid);
+	}
+	if(clickedid == SEWAFAGGIO)
+	{
+		if(rent_vehicle_id[playerid] != INVALID_VEHICLE_ID) return SCM(playerid, COLOR_GREY, "Anda sudah menyewa transportasi.");
+
+		if(PlayerInfo[playerid][pCash] >= 50)
+	 	{
+   			PlayerInfo[playerid][pCash] -= 50;
+      		OnPlayerUpdateAccountsPer(playerid, "pCash", PlayerInfo[playerid][pCash]);
+		}
+		else
+		{
+  			SCM(playerid, COLOR_YELLOW, "[Perhatikan] {FFFFFF}Persewaan Vespa dengan biaya negara.");
+		}
+		new PlayerEnter = PlayerTekanYCar[playerid];
+
+		new KendaraNegaraA = CreateVehicle(462, RentCarData[PlayerEnter][RC_POS_X], RentCarData[PlayerEnter][RC_POS_Y],RentCarData[PlayerEnter][RC_POS_Z], 267.9162, random(128), random(128), 60);
+
+		rent_vehicle_id[playerid] = KendaraNegaraA;
+		vehicle_rent_owner[KendaraNegaraA] = playerid;
+
+		VehInfo[KendaraNegaraA][vFuel] = 0.0;
+		VehInfo[KendaraNegaraA][vSost] = 100;
+
+		VehInfo[KendaraNegaraA][vStatus] = 2;
+		Fuell[KendaraNegaraA] = MAX_VEHICLE_FUEL;
+
+		PutPlayerInVehicle(playerid, KendaraNegaraA, 0);
+		SetVehicleParamsEx(KendaraNegaraA,1,0,0,0,0,0,0);
+		SCM(playerid, COLOR_GREEN, "Anda menyewa Nrg, jika Anda ingin membatalkan, lalu tulis: /rcancel.");
+
+		TextDrawHideForPlayer(playerid, RENTCARTD[0]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[1]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[2]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[3]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[4]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[5]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[6]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[7]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[8]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[9]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[10]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[11]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[12]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[13]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[14]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[15]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[16]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[17]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[18]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[19]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[20]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[21]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[22]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[23]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[24]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[25]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[26]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[27]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[28]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[29]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[30]);
+		TextDrawHideForPlayer(playerid, SEWAFAGGIO);
+		TextDrawHideForPlayer(playerid, SEWANRG);
+		TextDrawHideForPlayer(playerid, BATALSEWAKEN);
+		CancelSelectTextDraw(playerid);
+	}
+	if(clickedid == BATALSEWAKEN)
+	{
+	    TextDrawHideForPlayer(playerid, RENTCARTD[0]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[1]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[2]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[3]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[4]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[5]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[6]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[7]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[8]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[9]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[10]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[11]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[12]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[13]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[14]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[15]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[16]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[17]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[18]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[19]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[20]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[21]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[22]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[23]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[24]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[25]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[26]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[27]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[28]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[29]);
+		TextDrawHideForPlayer(playerid, RENTCARTD[30]);
+		TextDrawHideForPlayer(playerid, SEWAFAGGIO);
+		TextDrawHideForPlayer(playerid, SEWANRG);
+		TextDrawHideForPlayer(playerid, BATALSEWAKEN);
+		CancelSelectTextDraw(playerid);
+	}
+
+______________________________________________________________________________________________
+
+//PASANG DI stock SaveAllServers()
+SaveMyRentCar();
+
+______________________________________________________________________________________________
+
+//PASANG DI CMD
+CMD:createrent(playerid, params[])
+{
+    if(admin_level[playerid] < 5) return 1;
+	new namanya[512], file[128];
+	if(sscanf(params,"s[50]", namanya)) return ChocoText(playerid, -1, "USAGE: /CreateRent <Name>");
+    new Float:X, Float:Y, Float:Z;
+	GetPlayerPos(playerid, X,Y,Z);
+	for(new i=0;i<MAX_RENTCAR;i++)
+	{
+        format(file,sizeof(file),"Database/RentCar/[%d].ini",i);
+   	    if(!(dini_Exists(file)))
+   	    {
+			format(RentCarData[i][RC_NAME], 512, namanya);
+			RentCarData[i][RC_ID] = i;
+			RentCarData[i][RC_POS_X] = X;
+			RentCarData[i][RC_POS_Y] = Y;
+			RentCarData[i][RC_POS_Z] = Z;
+            dini_Create(file);
+            UpdateRentCar(i);
+            SaveMyCarRent(i);
+			return 1;
+        }
+    }
+	return 1;
+}
+
+CMD:hapusrent(playerid,params[])
+{
+    for(new i=0; i < MAX_RENTCAR; i++)
+	{
+	    if(IsPlayerInRangeOfPoint(playerid, 1.0, RentCarData[i][RC_POS_X], RentCarData[i][RC_POS_Y], RentCarData[i][RC_POS_Z]))
+	    {
+			RentCarData[i][RC_ID] = 0;
+			RentCarData[i][RC_POS_X] = 0;
+			RentCarData[i][RC_POS_Y] = 0;
+			RentCarData[i][RC_POS_Z] = 0;
+			DestroyDynamic3DTextLabel(RC_LABELS[i]);
+			DestroyDynamicPickup(RC_PICKUP[i]);
+			new file[128];
+			format(file,sizeof(file),"Database/RentCar/[%d].ini",i);
+			dini_Remove(file);
+			return 1;
+		}
+	}
+	ChocoText(playerid, -1,"{ff0000}ERROR: {ffffff}Anda tidak berada di dekat RentCar mana pun.");
+	return 1;
+}
+ChocoText(playerid, color, const text[], {Float,_}:...)
+{
+	static args, str[2048];
+	if((args = numargs()) <= 3)
+	{
+	    SendClientMessage(playerid, color, text);
+	}
+	else
+	{
+		while(--args >= 3)
+		{
+			#emit LCTRL 	5
+			#emit LOAD.alt 	args
+			#emit SHL.C.alt 2
+			#emit ADD.C 	12
+			#emit ADD
+			#emit LOAD.I
+			#emit PUSH.pri
+		}
+		#emit PUSH.S 	text
+		#emit PUSH.C 	2048
+		#emit PUSH.C 	str
+		#emit PUSH.S	8
+		#emit SYSREQ.C 	format
+		#emit LCTRL 	5
+		#emit SCTRL 	4
+
+		SendClientMessage(playerid, color, str);
+
+		#emit RETN
+	}
+	return 1;
+}

@@ -1,0 +1,1321 @@
+/*CREDITS : AGUS SAMP
+DI REKAP OPEH : CHOCO SAMP
+NOTE JANGAN DI PERJUAL BELIKAN!!*/
+
+//DEFINE
+#define MAX_FUELBIZ 500
+#define DIALOG_BELI_BAHANBAKAR 556
+
+
+//VARIABEL NEW
+new Text:BELIFUELS[61];
+new PlayerText:BELIFUELSs[MAX_PLAYERS][2];
+new Text:BELIFUEL;
+new Text:TUTUPPOM;
+new Text:JUMLAHBENSING;
+new BeliBahanBakar[MAX_PLAYERS];
+new TypeBahanBakar[MAX_PLAYERS];
+
+
+//ENUM
+enum F_FUEL
+{
+	FE_NAME[512],
+	Float:FE_POS_X,
+	Float:FE_POS_Y,
+	Float:FE_POS_Z,
+    FE_ID
+}
+new FUELBIZDATA[MAX_FUELBIZ][F_FUEL];
+new Text3D:FE_LABELS[MAX_FUELBIZ],
+	FE_PICKUP[MAX_FUELBIZ];
+
+stock LoadFuelBizData()
+{
+	new file[128];
+	for(new i=0; i < MAX_FUELBIZ; i++)
+	{
+	    format(file,sizeof(file),"Database/Fuel/[%d].ini",i);
+	    if(dini_Exists(file))
+	    {
+			format(FUELBIZDATA[i][FE_NAME],24,"%s",dini_Get(file,"Nama"));
+		    FUELBIZDATA[i][FE_POS_X] = dini_Float(file,"PosX");
+		    FUELBIZDATA[i][FE_POS_Y] = dini_Float(file,"PosY");
+		    FUELBIZDATA[i][FE_POS_Z] = dini_Float(file,"PosZ");
+		    FUELBIZDATA[i][FE_ID] = dini_Int(file,"UID");
+		    UpdateFuelBiz(i);
+		}
+	}
+}
+
+stock SaveAllBizFuel()
+{
+	new file[128];
+	for(new i=0; i < MAX_FUELBIZ; i++)
+	{
+	    format(file,sizeof(file),"Database/Fuel/[%d].ini",i);
+	    if(dini_Exists(file))
+	    {
+			dini_Set(file,"Nama",FUELBIZDATA[i][FE_NAME]);
+			dini_FloatSet(file,"PosX",FUELBIZDATA[i][FE_POS_X]);
+			dini_FloatSet(file,"PosY",FUELBIZDATA[i][FE_POS_Y]);
+			dini_FloatSet(file,"PosZ",FUELBIZDATA[i][FE_POS_Z]);
+			dini_IntSet(file,"UID",FUELBIZDATA[i][FE_ID]);
+		}
+	}
+}
+
+stock SaveMyFuelBiz(FE_IDD)
+{
+	new file[128];
+	format(file,sizeof(file),"Database/Fuel/[%d].ini", FE_IDD);
+	if(dini_Exists(file))
+    {
+        dini_Set(file,"Nama",FUELBIZDATA[FE_IDD][FE_NAME]);
+		dini_FloatSet(file,"PosX",FUELBIZDATA[FE_IDD][FE_POS_X]);
+		dini_FloatSet(file,"PosY",FUELBIZDATA[FE_IDD][FE_POS_Y]);
+		dini_FloatSet(file,"PosZ",FUELBIZDATA[FE_IDD][FE_POS_Z]);
+		dini_IntSet(file,"UID",FUELBIZDATA[FE_IDD][FE_ID]);
+	}
+}
+
+stock UpdateFuelBiz(FE_IDD)
+{
+	DestroyDynamic3DTextLabel(FE_LABELS[FE_IDD]);
+	DestroyDynamicPickup(FE_PICKUP[FE_IDD]);
+
+	new string[2048];
+	format(string, sizeof(string), "FUEL BIZ ID [%d] \n TEKAN [Y]\n >> UNTUK MEMBELI BENGSING", FE_IDD);
+	FE_LABELS[FE_IDD] = CreateDynamic3DTextLabel(string, -1, FUELBIZDATA[FE_IDD][FE_POS_X],FUELBIZDATA[FE_IDD][FE_POS_Y],FUELBIZDATA[FE_IDD][FE_POS_Z]+0.1, 10.0);
+	FE_PICKUP[FE_IDD] = CreateDynamicPickup(1650, 1,FUELBIZDATA[FE_IDD][FE_POS_X],FUELBIZDATA[FE_IDD][FE_POS_Y],FUELBIZDATA[FE_IDD][FE_POS_Z]);
+}
+
+//ONGAMEMODEINIT
+BELIFUELS[0] = TextDrawCreate(208.000000, 164.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[0], 4);
+	TextDrawLetterSize(BELIFUELS[0], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[0], 217.000000, 129.500000);
+	TextDrawSetOutline(BELIFUELS[0], 1);
+	TextDrawSetShadow(BELIFUELS[0], 0);
+	TextDrawAlignment(BELIFUELS[0], 1);
+	TextDrawColor(BELIFUELS[0], -1);
+	TextDrawBackgroundColor(BELIFUELS[0], 255);
+	TextDrawBoxColor(BELIFUELS[0], 50);
+	TextDrawUseBox(BELIFUELS[0], 1);
+	TextDrawSetProportional(BELIFUELS[0], 1);
+	TextDrawSetSelectable(BELIFUELS[0], 0);
+
+	BELIFUELS[1] = TextDrawCreate(197.000000, 153.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[1], 4);
+	TextDrawLetterSize(BELIFUELS[1], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[1], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[1], 1);
+	TextDrawSetShadow(BELIFUELS[1], 0);
+	TextDrawAlignment(BELIFUELS[1], 1);
+	TextDrawColor(BELIFUELS[1], -1);
+	TextDrawBackgroundColor(BELIFUELS[1], 255);
+	TextDrawBoxColor(BELIFUELS[1], 50);
+	TextDrawUseBox(BELIFUELS[1], 1);
+	TextDrawSetProportional(BELIFUELS[1], 1);
+	TextDrawSetSelectable(BELIFUELS[1], 0);
+
+	BELIFUELS[2] = TextDrawCreate(197.000000, 282.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[2], 4);
+	TextDrawLetterSize(BELIFUELS[2], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[2], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[2], 1);
+	TextDrawSetShadow(BELIFUELS[2], 0);
+	TextDrawAlignment(BELIFUELS[2], 1);
+	TextDrawColor(BELIFUELS[2], -1);
+	TextDrawBackgroundColor(BELIFUELS[2], 255);
+	TextDrawBoxColor(BELIFUELS[2], 50);
+	TextDrawUseBox(BELIFUELS[2], 1);
+	TextDrawSetProportional(BELIFUELS[2], 1);
+	TextDrawSetSelectable(BELIFUELS[2], 0);
+
+	BELIFUELS[3] = TextDrawCreate(416.000000, 153.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[3], 4);
+	TextDrawLetterSize(BELIFUELS[3], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[3], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[3], 1);
+	TextDrawSetShadow(BELIFUELS[3], 0);
+	TextDrawAlignment(BELIFUELS[3], 1);
+	TextDrawColor(BELIFUELS[3], -1);
+	TextDrawBackgroundColor(BELIFUELS[3], 255);
+	TextDrawBoxColor(BELIFUELS[3], 50);
+	TextDrawUseBox(BELIFUELS[3], 1);
+	TextDrawSetProportional(BELIFUELS[3], 1);
+	TextDrawSetSelectable(BELIFUELS[3], 0);
+
+	BELIFUELS[4] = TextDrawCreate(416.000000, 282.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[4], 4);
+	TextDrawLetterSize(BELIFUELS[4], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[4], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[4], 1);
+	TextDrawSetShadow(BELIFUELS[4], 0);
+	TextDrawAlignment(BELIFUELS[4], 1);
+	TextDrawColor(BELIFUELS[4], -1);
+	TextDrawBackgroundColor(BELIFUELS[4], 255);
+	TextDrawBoxColor(BELIFUELS[4], 50);
+	TextDrawUseBox(BELIFUELS[4], 1);
+	TextDrawSetProportional(BELIFUELS[4], 1);
+	TextDrawSetSelectable(BELIFUELS[4], 0);
+
+	BELIFUELS[5] = TextDrawCreate(208.000000, 156.500000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[5], 4);
+	TextDrawLetterSize(BELIFUELS[5], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[5], 217.000000, 8.000000);
+	TextDrawSetOutline(BELIFUELS[5], 1);
+	TextDrawSetShadow(BELIFUELS[5], 0);
+	TextDrawAlignment(BELIFUELS[5], 1);
+	TextDrawColor(BELIFUELS[5], -1);
+	TextDrawBackgroundColor(BELIFUELS[5], 255);
+	TextDrawBoxColor(BELIFUELS[5], 50);
+	TextDrawUseBox(BELIFUELS[5], 1);
+	TextDrawSetProportional(BELIFUELS[5], 1);
+	TextDrawSetSelectable(BELIFUELS[5], 0);
+
+	BELIFUELS[6] = TextDrawCreate(208.000000, 292.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[6], 4);
+	TextDrawLetterSize(BELIFUELS[6], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[6], 217.000000, 8.000000);
+	TextDrawSetOutline(BELIFUELS[6], 1);
+	TextDrawSetShadow(BELIFUELS[6], 0);
+	TextDrawAlignment(BELIFUELS[6], 1);
+	TextDrawColor(BELIFUELS[6], -1);
+	TextDrawBackgroundColor(BELIFUELS[6], 255);
+	TextDrawBoxColor(BELIFUELS[6], 50);
+	TextDrawUseBox(BELIFUELS[6], 1);
+	TextDrawSetProportional(BELIFUELS[6], 1);
+	TextDrawSetSelectable(BELIFUELS[6], 0);
+
+	BELIFUELS[7] = TextDrawCreate(200.500000, 164.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[7], 4);
+	TextDrawLetterSize(BELIFUELS[7], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[7], 7.500000, 129.500000);
+	TextDrawSetOutline(BELIFUELS[7], 1);
+	TextDrawSetShadow(BELIFUELS[7], 0);
+	TextDrawAlignment(BELIFUELS[7], 1);
+	TextDrawColor(BELIFUELS[7], -1);
+	TextDrawBackgroundColor(BELIFUELS[7], 255);
+	TextDrawBoxColor(BELIFUELS[7], 50);
+	TextDrawUseBox(BELIFUELS[7], 1);
+	TextDrawSetProportional(BELIFUELS[7], 1);
+	TextDrawSetSelectable(BELIFUELS[7], 0);
+
+	BELIFUELS[8] = TextDrawCreate(424.500000, 164.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[8], 4);
+	TextDrawLetterSize(BELIFUELS[8], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[8], 7.500000, 129.500000);
+	TextDrawSetOutline(BELIFUELS[8], 1);
+	TextDrawSetShadow(BELIFUELS[8], 0);
+	TextDrawAlignment(BELIFUELS[8], 1);
+	TextDrawColor(BELIFUELS[8], -1);
+	TextDrawBackgroundColor(BELIFUELS[8], 255);
+	TextDrawBoxColor(BELIFUELS[8], 50);
+	TextDrawUseBox(BELIFUELS[8], 1);
+	TextDrawSetProportional(BELIFUELS[8], 1);
+	TextDrawSetSelectable(BELIFUELS[8], 0);
+
+	BELIFUELS[9] = TextDrawCreate(218.000000, 174.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[9], 4);
+	TextDrawLetterSize(BELIFUELS[9], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[9], 66.000000, 104.500000);
+	TextDrawSetOutline(BELIFUELS[9], 1);
+	TextDrawSetShadow(BELIFUELS[9], 0);
+	TextDrawAlignment(BELIFUELS[9], 1);
+	TextDrawColor(BELIFUELS[9], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[9], 255);
+	TextDrawBoxColor(BELIFUELS[9], 50);
+	TextDrawUseBox(BELIFUELS[9], 1);
+	TextDrawSetProportional(BELIFUELS[9], 1);
+	TextDrawSetSelectable(BELIFUELS[9], 0);
+
+	BELIFUELS[10] = TextDrawCreate(208.000000, 165.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[10], 4);
+	TextDrawLetterSize(BELIFUELS[10], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[10], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[10], 1);
+	TextDrawSetShadow(BELIFUELS[10], 0);
+	TextDrawAlignment(BELIFUELS[10], 1);
+	TextDrawColor(BELIFUELS[10], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[10], 255);
+	TextDrawBoxColor(BELIFUELS[10], 50);
+	TextDrawUseBox(BELIFUELS[10], 1);
+	TextDrawSetProportional(BELIFUELS[10], 1);
+	TextDrawSetSelectable(BELIFUELS[10], 0);
+
+	BELIFUELS[11] = TextDrawCreate(274.000000, 165.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[11], 4);
+	TextDrawLetterSize(BELIFUELS[11], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[11], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[11], 1);
+	TextDrawSetShadow(BELIFUELS[11], 0);
+	TextDrawAlignment(BELIFUELS[11], 1);
+	TextDrawColor(BELIFUELS[11], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[11], 255);
+	TextDrawBoxColor(BELIFUELS[11], 50);
+	TextDrawUseBox(BELIFUELS[11], 1);
+	TextDrawSetProportional(BELIFUELS[11], 1);
+	TextDrawSetSelectable(BELIFUELS[11], 0);
+
+	BELIFUELS[12] = TextDrawCreate(208.000000, 267.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[12], 4);
+	TextDrawLetterSize(BELIFUELS[12], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[12], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[12], 1);
+	TextDrawSetShadow(BELIFUELS[12], 0);
+	TextDrawAlignment(BELIFUELS[12], 1);
+	TextDrawColor(BELIFUELS[12], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[12], 255);
+	TextDrawBoxColor(BELIFUELS[12], 50);
+	TextDrawUseBox(BELIFUELS[12], 1);
+	TextDrawSetProportional(BELIFUELS[12], 1);
+	TextDrawSetSelectable(BELIFUELS[12], 0);
+
+	BELIFUELS[13] = TextDrawCreate(274.000000, 267.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[13], 4);
+	TextDrawLetterSize(BELIFUELS[13], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[13], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[13], 1);
+	TextDrawSetShadow(BELIFUELS[13], 0);
+	TextDrawAlignment(BELIFUELS[13], 1);
+	TextDrawColor(BELIFUELS[13], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[13], 255);
+	TextDrawBoxColor(BELIFUELS[13], 50);
+	TextDrawUseBox(BELIFUELS[13], 1);
+	TextDrawSetProportional(BELIFUELS[13], 1);
+	TextDrawSetSelectable(BELIFUELS[13], 0);
+
+	BELIFUELS[14] = TextDrawCreate(211.000000, 174.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[14], 4);
+	TextDrawLetterSize(BELIFUELS[14], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[14], 7.000000, 104.500000);
+	TextDrawSetOutline(BELIFUELS[14], 1);
+	TextDrawSetShadow(BELIFUELS[14], 0);
+	TextDrawAlignment(BELIFUELS[14], 1);
+	TextDrawColor(BELIFUELS[14], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[14], 255);
+	TextDrawBoxColor(BELIFUELS[14], 50);
+	TextDrawUseBox(BELIFUELS[14], 1);
+	TextDrawSetProportional(BELIFUELS[14], 1);
+	TextDrawSetSelectable(BELIFUELS[14], 0);
+
+	BELIFUELS[15] = TextDrawCreate(276.000000, 176.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[15], 4);
+	TextDrawLetterSize(BELIFUELS[15], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[15], 14.500000, 101.500000);
+	TextDrawSetOutline(BELIFUELS[15], 1);
+	TextDrawSetShadow(BELIFUELS[15], 0);
+	TextDrawAlignment(BELIFUELS[15], 1);
+	TextDrawColor(BELIFUELS[15], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[15], 255);
+	TextDrawBoxColor(BELIFUELS[15], 50);
+	TextDrawUseBox(BELIFUELS[15], 1);
+	TextDrawSetProportional(BELIFUELS[15], 1);
+	TextDrawSetSelectable(BELIFUELS[15], 0);
+
+	BELIFUELS[16] = TextDrawCreate(218.000000, 169.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[16], 4);
+	TextDrawLetterSize(BELIFUELS[16], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[16], 66.000000, 116.500000);
+	TextDrawSetOutline(BELIFUELS[16], 1);
+	TextDrawSetShadow(BELIFUELS[16], 0);
+	TextDrawAlignment(BELIFUELS[16], 1);
+	TextDrawColor(BELIFUELS[16], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[16], 255);
+	TextDrawBoxColor(BELIFUELS[16], 50);
+	TextDrawUseBox(BELIFUELS[16], 1);
+	TextDrawSetProportional(BELIFUELS[16], 1);
+	TextDrawSetSelectable(BELIFUELS[16], 0);
+
+	BELIFUELS[17] = TextDrawCreate(222.000000, 209.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[17], 4);
+	TextDrawLetterSize(BELIFUELS[17], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[17], 56.000000, 66.500000);
+	TextDrawSetOutline(BELIFUELS[17], 1);
+	TextDrawSetShadow(BELIFUELS[17], 0);
+	TextDrawAlignment(BELIFUELS[17], 1);
+	TextDrawColor(BELIFUELS[17], -1);
+	TextDrawBackgroundColor(BELIFUELS[17], 255);
+	TextDrawBoxColor(BELIFUELS[17], 50);
+	TextDrawUseBox(BELIFUELS[17], 1);
+	TextDrawSetProportional(BELIFUELS[17], 1);
+	TextDrawSetSelectable(BELIFUELS[17], 0);
+
+	BELIFUELS[18] = TextDrawCreate(363.000000, 159.000000, "FUEL_STASION");
+	TextDrawFont(BELIFUELS[18], 2);
+	TextDrawLetterSize(BELIFUELS[18], 0.329165, 1.799998);
+	TextDrawTextSize(BELIFUELS[18], 400.000000, 17.000000);
+	TextDrawSetOutline(BELIFUELS[18], 0);
+	TextDrawSetShadow(BELIFUELS[18], 0);
+	TextDrawAlignment(BELIFUELS[18], 2);
+	TextDrawColor(BELIFUELS[18], 255);
+	TextDrawBackgroundColor(BELIFUELS[18], 255);
+	TextDrawBoxColor(BELIFUELS[18], 50);
+	TextDrawUseBox(BELIFUELS[18], 0);
+	TextDrawSetProportional(BELIFUELS[18], 1);
+	TextDrawSetSelectable(BELIFUELS[18], 0);
+
+	BELIFUELS[19] = TextDrawCreate(217.000000, 273.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[19], 4);
+	TextDrawLetterSize(BELIFUELS[19], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[19], 66.500000, 5.500000);
+	TextDrawSetOutline(BELIFUELS[19], 1);
+	TextDrawSetShadow(BELIFUELS[19], 0);
+	TextDrawAlignment(BELIFUELS[19], 1);
+	TextDrawColor(BELIFUELS[19], -1);
+	TextDrawBackgroundColor(BELIFUELS[19], 255);
+	TextDrawBoxColor(BELIFUELS[19], 50);
+	TextDrawUseBox(BELIFUELS[19], 1);
+	TextDrawSetProportional(BELIFUELS[19], 1);
+	TextDrawSetSelectable(BELIFUELS[19], 0);
+
+	BELIFUELS[20] = TextDrawCreate(222.000000, 179.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[20], 4);
+	TextDrawLetterSize(BELIFUELS[20], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[20], 3.500000, 66.500000);
+	TextDrawSetOutline(BELIFUELS[20], 1);
+	TextDrawSetShadow(BELIFUELS[20], 0);
+	TextDrawAlignment(BELIFUELS[20], 1);
+	TextDrawColor(BELIFUELS[20], -1);
+	TextDrawBackgroundColor(BELIFUELS[20], 255);
+	TextDrawBoxColor(BELIFUELS[20], 50);
+	TextDrawUseBox(BELIFUELS[20], 1);
+	TextDrawSetProportional(BELIFUELS[20], 1);
+	TextDrawSetSelectable(BELIFUELS[20], 0);
+
+	BELIFUELS[21] = TextDrawCreate(274.500000, 179.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[21], 4);
+	TextDrawLetterSize(BELIFUELS[21], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[21], 3.500000, 66.500000);
+	TextDrawSetOutline(BELIFUELS[21], 1);
+	TextDrawSetShadow(BELIFUELS[21], 0);
+	TextDrawAlignment(BELIFUELS[21], 1);
+	TextDrawColor(BELIFUELS[21], -1);
+	TextDrawBackgroundColor(BELIFUELS[21], 255);
+	TextDrawBoxColor(BELIFUELS[21], 50);
+	TextDrawUseBox(BELIFUELS[21], 1);
+	TextDrawSetProportional(BELIFUELS[21], 1);
+	TextDrawSetSelectable(BELIFUELS[21], 0);
+
+	BELIFUELS[22] = TextDrawCreate(222.000000, 179.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[22], 4);
+	TextDrawLetterSize(BELIFUELS[22], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[22], 56.000000, 4.500000);
+	TextDrawSetOutline(BELIFUELS[22], 1);
+	TextDrawSetShadow(BELIFUELS[22], 0);
+	TextDrawAlignment(BELIFUELS[22], 1);
+	TextDrawColor(BELIFUELS[22], -1);
+	TextDrawBackgroundColor(BELIFUELS[22], 255);
+	TextDrawBoxColor(BELIFUELS[22], 50);
+	TextDrawUseBox(BELIFUELS[22], 1);
+	TextDrawSetProportional(BELIFUELS[22], 1);
+	TextDrawSetSelectable(BELIFUELS[22], 0);
+
+	BELIFUELS[23] = TextDrawCreate(227.000000, 219.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[23], 4);
+	TextDrawLetterSize(BELIFUELS[23], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[23], 3.000000, 50.500000);
+	TextDrawSetOutline(BELIFUELS[23], 1);
+	TextDrawSetShadow(BELIFUELS[23], 0);
+	TextDrawAlignment(BELIFUELS[23], 1);
+	TextDrawColor(BELIFUELS[23], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[23], 255);
+	TextDrawBoxColor(BELIFUELS[23], 50);
+	TextDrawUseBox(BELIFUELS[23], 1);
+	TextDrawSetProportional(BELIFUELS[23], 1);
+	TextDrawSetSelectable(BELIFUELS[23], 0);
+
+	BELIFUELS[24] = TextDrawCreate(269.000000, 219.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[24], 4);
+	TextDrawLetterSize(BELIFUELS[24], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[24], 3.000000, 50.500000);
+	TextDrawSetOutline(BELIFUELS[24], 1);
+	TextDrawSetShadow(BELIFUELS[24], 0);
+	TextDrawAlignment(BELIFUELS[24], 1);
+	TextDrawColor(BELIFUELS[24], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[24], 255);
+	TextDrawBoxColor(BELIFUELS[24], 50);
+	TextDrawUseBox(BELIFUELS[24], 1);
+	TextDrawSetProportional(BELIFUELS[24], 1);
+	TextDrawSetSelectable(BELIFUELS[24], 0);
+
+	BELIFUEL = TextDrawCreate(309.000000, 254.000000, "ld_dual:white");
+	TextDrawFont(BELIFUEL, 4);
+	TextDrawLetterSize(BELIFUEL, 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUEL, 56.000000, 23.000000);
+	TextDrawSetOutline(BELIFUEL, 1);
+	TextDrawSetShadow(BELIFUEL, 0);
+	TextDrawAlignment(BELIFUEL, 1);
+	TextDrawColor(BELIFUEL, 16711935);
+	TextDrawBackgroundColor(BELIFUEL, 255);
+	TextDrawBoxColor(BELIFUEL, 50);
+	TextDrawUseBox(BELIFUEL, 1);
+	TextDrawSetProportional(BELIFUEL, 1);
+	TextDrawSetSelectable(BELIFUEL, 1);
+
+	BELIFUELS[25] = TextDrawCreate(298.000000, 244.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[25], 4);
+	TextDrawLetterSize(BELIFUELS[25], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[25], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[25], 1);
+	TextDrawSetShadow(BELIFUELS[25], 0);
+	TextDrawAlignment(BELIFUELS[25], 1);
+	TextDrawColor(BELIFUELS[25], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[25], 255);
+	TextDrawBoxColor(BELIFUELS[25], 50);
+	TextDrawUseBox(BELIFUELS[25], 1);
+	TextDrawSetProportional(BELIFUELS[25], 1);
+	TextDrawSetSelectable(BELIFUELS[25], 0);
+
+	BELIFUELS[26] = TextDrawCreate(357.000000, 244.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[26], 4);
+	TextDrawLetterSize(BELIFUELS[26], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[26], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[26], 1);
+	TextDrawSetShadow(BELIFUELS[26], 0);
+	TextDrawAlignment(BELIFUELS[26], 1);
+	TextDrawColor(BELIFUELS[26], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[26], 255);
+	TextDrawBoxColor(BELIFUELS[26], 50);
+	TextDrawUseBox(BELIFUELS[26], 1);
+	TextDrawSetProportional(BELIFUELS[26], 1);
+	TextDrawSetSelectable(BELIFUELS[26], 0);
+
+	TUTUPPOM = TextDrawCreate(281.000000, 321.000000, "ld_dual:white");
+	TextDrawFont(TUTUPPOM, 4);
+	TextDrawLetterSize(TUTUPPOM, 0.600000, 2.000000);
+	TextDrawTextSize(TUTUPPOM, 76.000000, 23.000000);
+	TextDrawSetOutline(TUTUPPOM, 1);
+	TextDrawSetShadow(TUTUPPOM, 0);
+	TextDrawAlignment(TUTUPPOM, 1);
+	TextDrawColor(TUTUPPOM, 16711935);
+	TextDrawBackgroundColor(TUTUPPOM, 255);
+	TextDrawBoxColor(TUTUPPOM, 50);
+	TextDrawUseBox(TUTUPPOM, 1);
+	TextDrawSetProportional(TUTUPPOM, 1);
+	TextDrawSetSelectable(TUTUPPOM, 1);
+
+	BELIFUELS[27] = TextDrawCreate(271.000000, 312.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[27], 4);
+	TextDrawLetterSize(BELIFUELS[27], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[27], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[27], 1);
+	TextDrawSetShadow(BELIFUELS[27], 0);
+	TextDrawAlignment(BELIFUELS[27], 1);
+	TextDrawColor(BELIFUELS[27], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[27], 255);
+	TextDrawBoxColor(BELIFUELS[27], 50);
+	TextDrawUseBox(BELIFUELS[27], 1);
+	TextDrawSetProportional(BELIFUELS[27], 1);
+	TextDrawSetSelectable(BELIFUELS[27], 0);
+
+	BELIFUELS[28] = TextDrawCreate(271.000000, 329.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[28], 4);
+	TextDrawLetterSize(BELIFUELS[28], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[28], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[28], 1);
+	TextDrawSetShadow(BELIFUELS[28], 0);
+	TextDrawAlignment(BELIFUELS[28], 1);
+	TextDrawColor(BELIFUELS[28], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[28], 255);
+	TextDrawBoxColor(BELIFUELS[28], 50);
+	TextDrawUseBox(BELIFUELS[28], 1);
+	TextDrawSetProportional(BELIFUELS[28], 1);
+	TextDrawSetSelectable(BELIFUELS[28], 0);
+
+	BELIFUELS[29] = TextDrawCreate(346.000000, 312.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[29], 4);
+	TextDrawLetterSize(BELIFUELS[29], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[29], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[29], 1);
+	TextDrawSetShadow(BELIFUELS[29], 0);
+	TextDrawAlignment(BELIFUELS[29], 1);
+	TextDrawColor(BELIFUELS[29], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[29], 255);
+	TextDrawBoxColor(BELIFUELS[29], 50);
+	TextDrawUseBox(BELIFUELS[29], 1);
+	TextDrawSetProportional(BELIFUELS[29], 1);
+	TextDrawSetSelectable(BELIFUELS[29], 0);
+
+	BELIFUELS[30] = TextDrawCreate(346.000000, 329.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[30], 4);
+	TextDrawLetterSize(BELIFUELS[30], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[30], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[30], 1);
+	TextDrawSetShadow(BELIFUELS[30], 0);
+	TextDrawAlignment(BELIFUELS[30], 1);
+	TextDrawColor(BELIFUELS[30], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[30], 255);
+	TextDrawBoxColor(BELIFUELS[30], 50);
+	TextDrawUseBox(BELIFUELS[30], 1);
+	TextDrawSetProportional(BELIFUELS[30], 1);
+	TextDrawSetSelectable(BELIFUELS[30], 0);
+
+	BELIFUELS[31] = TextDrawCreate(281.000000, 316.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[31], 4);
+	TextDrawLetterSize(BELIFUELS[31], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[31], 76.000000, 5.000000);
+	TextDrawSetOutline(BELIFUELS[31], 1);
+	TextDrawSetShadow(BELIFUELS[31], 0);
+	TextDrawAlignment(BELIFUELS[31], 1);
+	TextDrawColor(BELIFUELS[31], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[31], 255);
+	TextDrawBoxColor(BELIFUELS[31], 50);
+	TextDrawUseBox(BELIFUELS[31], 1);
+	TextDrawSetProportional(BELIFUELS[31], 1);
+	TextDrawSetSelectable(BELIFUELS[31], 0);
+
+	BELIFUELS[32] = TextDrawCreate(281.000000, 342.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[32], 4);
+	TextDrawLetterSize(BELIFUELS[32], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[32], 76.000000, 5.500000);
+	TextDrawSetOutline(BELIFUELS[32], 1);
+	TextDrawSetShadow(BELIFUELS[32], 0);
+	TextDrawAlignment(BELIFUELS[32], 1);
+	TextDrawColor(BELIFUELS[32], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[32], 255);
+	TextDrawBoxColor(BELIFUELS[32], 50);
+	TextDrawUseBox(BELIFUELS[32], 1);
+	TextDrawSetProportional(BELIFUELS[32], 1);
+	TextDrawSetSelectable(BELIFUELS[32], 0);
+
+	BELIFUELS[33] = TextDrawCreate(274.000000, 322.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[33], 4);
+	TextDrawLetterSize(BELIFUELS[33], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[33], 7.500000, 18.000000);
+	TextDrawSetOutline(BELIFUELS[33], 1);
+	TextDrawSetShadow(BELIFUELS[33], 0);
+	TextDrawAlignment(BELIFUELS[33], 1);
+	TextDrawColor(BELIFUELS[33], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[33], 255);
+	TextDrawBoxColor(BELIFUELS[33], 50);
+	TextDrawUseBox(BELIFUELS[33], 1);
+	TextDrawSetProportional(BELIFUELS[33], 1);
+	TextDrawSetSelectable(BELIFUELS[33], 0);
+
+	BELIFUELS[34] = TextDrawCreate(355.000000, 322.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[34], 4);
+	TextDrawLetterSize(BELIFUELS[34], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[34], 7.500000, 18.000000);
+	TextDrawSetOutline(BELIFUELS[34], 1);
+	TextDrawSetShadow(BELIFUELS[34], 0);
+	TextDrawAlignment(BELIFUELS[34], 1);
+	TextDrawColor(BELIFUELS[34], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[34], 255);
+	TextDrawBoxColor(BELIFUELS[34], 50);
+	TextDrawUseBox(BELIFUELS[34], 1);
+	TextDrawSetProportional(BELIFUELS[34], 1);
+	TextDrawSetSelectable(BELIFUELS[34], 0);
+
+	BELIFUELS[35] = TextDrawCreate(297.000000, 320.000000, "TUTUP");
+	TextDrawFont(BELIFUELS[35], 2);
+	TextDrawLetterSize(BELIFUELS[35], 0.312500, 2.099997);
+	TextDrawTextSize(BELIFUELS[35], 400.000000, 17.000000);
+	TextDrawSetOutline(BELIFUELS[35], 0);
+	TextDrawSetShadow(BELIFUELS[35], 0);
+	TextDrawAlignment(BELIFUELS[35], 1);
+	TextDrawColor(BELIFUELS[35], 255);
+	TextDrawBackgroundColor(BELIFUELS[35], 255);
+	TextDrawBoxColor(BELIFUELS[35], 50);
+	TextDrawUseBox(BELIFUELS[35], 0);
+	TextDrawSetProportional(BELIFUELS[35], 1);
+	TextDrawSetSelectable(BELIFUELS[35], 0);
+
+	BELIFUELS[36] = TextDrawCreate(357.000000, 265.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[36], 4);
+	TextDrawLetterSize(BELIFUELS[36], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[36], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[36], 1);
+	TextDrawSetShadow(BELIFUELS[36], 0);
+	TextDrawAlignment(BELIFUELS[36], 1);
+	TextDrawColor(BELIFUELS[36], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[36], 255);
+	TextDrawBoxColor(BELIFUELS[36], 50);
+	TextDrawUseBox(BELIFUELS[36], 1);
+	TextDrawSetProportional(BELIFUELS[36], 1);
+	TextDrawSetSelectable(BELIFUELS[36], 0);
+
+	BELIFUELS[37] = TextDrawCreate(298.000000, 265.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[37], 4);
+	TextDrawLetterSize(BELIFUELS[37], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[37], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[37], 1);
+	TextDrawSetShadow(BELIFUELS[37], 0);
+	TextDrawAlignment(BELIFUELS[37], 1);
+	TextDrawColor(BELIFUELS[37], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[37], 255);
+	TextDrawBoxColor(BELIFUELS[37], 50);
+	TextDrawUseBox(BELIFUELS[37], 1);
+	TextDrawSetProportional(BELIFUELS[37], 1);
+	TextDrawSetSelectable(BELIFUELS[37], 0);
+
+	BELIFUELS[38] = TextDrawCreate(308.000000, 247.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[38], 4);
+	TextDrawLetterSize(BELIFUELS[38], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[38], 60.000000, 7.000000);
+	TextDrawSetOutline(BELIFUELS[38], 1);
+	TextDrawSetShadow(BELIFUELS[38], 0);
+	TextDrawAlignment(BELIFUELS[38], 1);
+	TextDrawColor(BELIFUELS[38], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[38], 255);
+	TextDrawBoxColor(BELIFUELS[38], 50);
+	TextDrawUseBox(BELIFUELS[38], 1);
+	TextDrawSetProportional(BELIFUELS[38], 1);
+	TextDrawSetSelectable(BELIFUELS[38], 0);
+
+	BELIFUELS[39] = TextDrawCreate(308.000000, 276.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[39], 4);
+	TextDrawLetterSize(BELIFUELS[39], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[39], 60.000000, 7.000000);
+	TextDrawSetOutline(BELIFUELS[39], 1);
+	TextDrawSetShadow(BELIFUELS[39], 0);
+	TextDrawAlignment(BELIFUELS[39], 1);
+	TextDrawColor(BELIFUELS[39], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[39], 255);
+	TextDrawBoxColor(BELIFUELS[39], 50);
+	TextDrawUseBox(BELIFUELS[39], 1);
+	TextDrawSetProportional(BELIFUELS[39], 1);
+	TextDrawSetSelectable(BELIFUELS[39], 0);
+
+	BELIFUELS[40] = TextDrawCreate(301.000000, 255.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[40], 4);
+	TextDrawLetterSize(BELIFUELS[40], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[40], 9.000000, 20.000000);
+	TextDrawSetOutline(BELIFUELS[40], 1);
+	TextDrawSetShadow(BELIFUELS[40], 0);
+	TextDrawAlignment(BELIFUELS[40], 1);
+	TextDrawColor(BELIFUELS[40], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[40], 255);
+	TextDrawBoxColor(BELIFUELS[40], 50);
+	TextDrawUseBox(BELIFUELS[40], 1);
+	TextDrawSetProportional(BELIFUELS[40], 1);
+	TextDrawSetSelectable(BELIFUELS[40], 0);
+
+	BELIFUELS[41] = TextDrawCreate(365.000000, 255.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[41], 4);
+	TextDrawLetterSize(BELIFUELS[41], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[41], 9.000000, 20.000000);
+	TextDrawSetOutline(BELIFUELS[41], 1);
+	TextDrawSetShadow(BELIFUELS[41], 0);
+	TextDrawAlignment(BELIFUELS[41], 1);
+	TextDrawColor(BELIFUELS[41], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[41], 255);
+	TextDrawBoxColor(BELIFUELS[41], 50);
+	TextDrawUseBox(BELIFUELS[41], 1);
+	TextDrawSetProportional(BELIFUELS[41], 1);
+	TextDrawSetSelectable(BELIFUELS[41], 0);
+
+	BELIFUELS[42] = TextDrawCreate(324.000000, 254.000000, "BELI");
+	TextDrawFont(BELIFUELS[42], 2);
+	TextDrawLetterSize(BELIFUELS[42], 0.312500, 2.099997);
+	TextDrawTextSize(BELIFUELS[42], 400.000000, 17.000000);
+	TextDrawSetOutline(BELIFUELS[42], 0);
+	TextDrawSetShadow(BELIFUELS[42], 0);
+	TextDrawAlignment(BELIFUELS[42], 1);
+	TextDrawColor(BELIFUELS[42], 255);
+	TextDrawBackgroundColor(BELIFUELS[42], 255);
+	TextDrawBoxColor(BELIFUELS[42], 50);
+	TextDrawUseBox(BELIFUELS[42], 0);
+	TextDrawSetProportional(BELIFUELS[42], 1);
+	TextDrawSetSelectable(BELIFUELS[42], 0);
+
+	BELIFUELS[43] = TextDrawCreate(309.000000, 189.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[43], 4);
+	TextDrawLetterSize(BELIFUELS[43], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[43], 105.000000, 40.500000);
+	TextDrawSetOutline(BELIFUELS[43], 1);
+	TextDrawSetShadow(BELIFUELS[43], 0);
+	TextDrawAlignment(BELIFUELS[43], 1);
+	TextDrawColor(BELIFUELS[43], 255);
+	TextDrawBackgroundColor(BELIFUELS[43], 255);
+	TextDrawBoxColor(BELIFUELS[43], 50);
+	TextDrawUseBox(BELIFUELS[43], 1);
+	TextDrawSetProportional(BELIFUELS[43], 1);
+	TextDrawSetSelectable(BELIFUELS[43], 0);
+
+	BELIFUELS[44] = TextDrawCreate(298.000000, 179.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[44], 4);
+	TextDrawLetterSize(BELIFUELS[44], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[44], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[44], 1);
+	TextDrawSetShadow(BELIFUELS[44], 0);
+	TextDrawAlignment(BELIFUELS[44], 1);
+	TextDrawColor(BELIFUELS[44], 255);
+	TextDrawBackgroundColor(BELIFUELS[44], 255);
+	TextDrawBoxColor(BELIFUELS[44], 50);
+	TextDrawUseBox(BELIFUELS[44], 1);
+	TextDrawSetProportional(BELIFUELS[44], 1);
+	TextDrawSetSelectable(BELIFUELS[44], 0);
+
+	BELIFUELS[45] = TextDrawCreate(298.000000, 215.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[45], 4);
+	TextDrawLetterSize(BELIFUELS[45], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[45], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[45], 1);
+	TextDrawSetShadow(BELIFUELS[45], 0);
+	TextDrawAlignment(BELIFUELS[45], 1);
+	TextDrawColor(BELIFUELS[45], 255);
+	TextDrawBackgroundColor(BELIFUELS[45], 255);
+	TextDrawBoxColor(BELIFUELS[45], 50);
+	TextDrawUseBox(BELIFUELS[45], 1);
+	TextDrawSetProportional(BELIFUELS[45], 1);
+	TextDrawSetSelectable(BELIFUELS[45], 0);
+
+	BELIFUELS[46] = TextDrawCreate(404.000000, 179.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[46], 4);
+	TextDrawLetterSize(BELIFUELS[46], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[46], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[46], 1);
+	TextDrawSetShadow(BELIFUELS[46], 0);
+	TextDrawAlignment(BELIFUELS[46], 1);
+	TextDrawColor(BELIFUELS[46], 255);
+	TextDrawBackgroundColor(BELIFUELS[46], 255);
+	TextDrawBoxColor(BELIFUELS[46], 50);
+	TextDrawUseBox(BELIFUELS[46], 1);
+	TextDrawSetProportional(BELIFUELS[46], 1);
+	TextDrawSetSelectable(BELIFUELS[46], 0);
+
+	BELIFUELS[47] = TextDrawCreate(404.000000, 215.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[47], 4);
+	TextDrawLetterSize(BELIFUELS[47], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[47], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[47], 1);
+	TextDrawSetShadow(BELIFUELS[47], 0);
+	TextDrawAlignment(BELIFUELS[47], 1);
+	TextDrawColor(BELIFUELS[47], 255);
+	TextDrawBackgroundColor(BELIFUELS[47], 255);
+	TextDrawBoxColor(BELIFUELS[47], 50);
+	TextDrawUseBox(BELIFUELS[47], 1);
+	TextDrawSetProportional(BELIFUELS[47], 1);
+	TextDrawSetSelectable(BELIFUELS[47], 0);
+
+	BELIFUELS[48] = TextDrawCreate(301.000000, 190.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[48], 4);
+	TextDrawLetterSize(BELIFUELS[48], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[48], 8.500000, 35.000000);
+	TextDrawSetOutline(BELIFUELS[48], 1);
+	TextDrawSetShadow(BELIFUELS[48], 0);
+	TextDrawAlignment(BELIFUELS[48], 1);
+	TextDrawColor(BELIFUELS[48], 255);
+	TextDrawBackgroundColor(BELIFUELS[48], 255);
+	TextDrawBoxColor(BELIFUELS[48], 50);
+	TextDrawUseBox(BELIFUELS[48], 1);
+	TextDrawSetProportional(BELIFUELS[48], 1);
+	TextDrawSetSelectable(BELIFUELS[48], 0);
+
+	BELIFUELS[49] = TextDrawCreate(412.000000, 190.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[49], 4);
+	TextDrawLetterSize(BELIFUELS[49], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[49], 8.500000, 35.000000);
+	TextDrawSetOutline(BELIFUELS[49], 1);
+	TextDrawSetShadow(BELIFUELS[49], 0);
+	TextDrawAlignment(BELIFUELS[49], 1);
+	TextDrawColor(BELIFUELS[49], 255);
+	TextDrawBackgroundColor(BELIFUELS[49], 255);
+	TextDrawBoxColor(BELIFUELS[49], 50);
+	TextDrawUseBox(BELIFUELS[49], 1);
+	TextDrawSetProportional(BELIFUELS[49], 1);
+	TextDrawSetSelectable(BELIFUELS[49], 0);
+
+	BELIFUELS[50] = TextDrawCreate(309.000000, 183.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[50], 4);
+	TextDrawLetterSize(BELIFUELS[50], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[50], 105.000000, 7.000000);
+	TextDrawSetOutline(BELIFUELS[50], 1);
+	TextDrawSetShadow(BELIFUELS[50], 0);
+	TextDrawAlignment(BELIFUELS[50], 1);
+	TextDrawColor(BELIFUELS[50], 255);
+	TextDrawBackgroundColor(BELIFUELS[50], 255);
+	TextDrawBoxColor(BELIFUELS[50], 50);
+	TextDrawUseBox(BELIFUELS[50], 1);
+	TextDrawSetProportional(BELIFUELS[50], 1);
+	TextDrawSetSelectable(BELIFUELS[50], 0);
+
+	BELIFUELS[51] = TextDrawCreate(309.000000, 226.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[51], 4);
+	TextDrawLetterSize(BELIFUELS[51], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[51], 105.000000, 7.500000);
+	TextDrawSetOutline(BELIFUELS[51], 1);
+	TextDrawSetShadow(BELIFUELS[51], 0);
+	TextDrawAlignment(BELIFUELS[51], 1);
+	TextDrawColor(BELIFUELS[51], 255);
+	TextDrawBackgroundColor(BELIFUELS[51], 255);
+	TextDrawBoxColor(BELIFUELS[51], 50);
+	TextDrawUseBox(BELIFUELS[51], 1);
+	TextDrawSetProportional(BELIFUELS[51], 1);
+	TextDrawSetSelectable(BELIFUELS[51], 0);
+
+	JUMLAHBENSING = TextDrawCreate(382.000000, 254.000000, "ld_dual:white");
+	TextDrawFont(JUMLAHBENSING, 4);
+	TextDrawLetterSize(JUMLAHBENSING, 0.600000, 2.000000);
+	TextDrawTextSize(JUMLAHBENSING, 39.000000, 23.000000);
+	TextDrawSetOutline(JUMLAHBENSING, 1);
+	TextDrawSetShadow(JUMLAHBENSING, 0);
+	TextDrawAlignment(JUMLAHBENSING, 1);
+	TextDrawColor(JUMLAHBENSING, 16711935);
+	TextDrawBackgroundColor(JUMLAHBENSING, 255);
+	TextDrawBoxColor(JUMLAHBENSING, 50);
+	TextDrawUseBox(JUMLAHBENSING, 1);
+	TextDrawSetProportional(JUMLAHBENSING, 1);
+	TextDrawSetSelectable(JUMLAHBENSING, 1);
+
+	BELIFUELS[52] = TextDrawCreate(375.000000, 244.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[52], 4);
+	TextDrawLetterSize(BELIFUELS[52], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[52], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[52], 1);
+	TextDrawSetShadow(BELIFUELS[52], 0);
+	TextDrawAlignment(BELIFUELS[52], 1);
+	TextDrawColor(BELIFUELS[52], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[52], 255);
+	TextDrawBoxColor(BELIFUELS[52], 50);
+	TextDrawUseBox(BELIFUELS[52], 1);
+	TextDrawSetProportional(BELIFUELS[52], 1);
+	TextDrawSetSelectable(BELIFUELS[52], 0);
+
+	BELIFUELS[53] = TextDrawCreate(408.000000, 244.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[53], 4);
+	TextDrawLetterSize(BELIFUELS[53], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[53], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[53], 1);
+	TextDrawSetShadow(BELIFUELS[53], 0);
+	TextDrawAlignment(BELIFUELS[53], 1);
+	TextDrawColor(BELIFUELS[53], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[53], 255);
+	TextDrawBoxColor(BELIFUELS[53], 50);
+	TextDrawUseBox(BELIFUELS[53], 1);
+	TextDrawSetProportional(BELIFUELS[53], 1);
+	TextDrawSetSelectable(BELIFUELS[53], 0);
+
+	BELIFUELS[54] = TextDrawCreate(375.000000, 265.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[54], 4);
+	TextDrawLetterSize(BELIFUELS[54], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[54], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[54], 1);
+	TextDrawSetShadow(BELIFUELS[54], 0);
+	TextDrawAlignment(BELIFUELS[54], 1);
+	TextDrawColor(BELIFUELS[54], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[54], 255);
+	TextDrawBoxColor(BELIFUELS[54], 50);
+	TextDrawUseBox(BELIFUELS[54], 1);
+	TextDrawSetProportional(BELIFUELS[54], 1);
+	TextDrawSetSelectable(BELIFUELS[54], 0);
+
+	BELIFUELS[55] = TextDrawCreate(408.000000, 265.000000, "ld_beat:chit");
+	TextDrawFont(BELIFUELS[55], 4);
+	TextDrawLetterSize(BELIFUELS[55], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[55], 19.500000, 22.000000);
+	TextDrawSetOutline(BELIFUELS[55], 1);
+	TextDrawSetShadow(BELIFUELS[55], 0);
+	TextDrawAlignment(BELIFUELS[55], 1);
+	TextDrawColor(BELIFUELS[55], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[55], 255);
+	TextDrawBoxColor(BELIFUELS[55], 50);
+	TextDrawUseBox(BELIFUELS[55], 1);
+	TextDrawSetProportional(BELIFUELS[55], 1);
+	TextDrawSetSelectable(BELIFUELS[55], 0);
+
+	BELIFUELS[56] = TextDrawCreate(384.000000, 247.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[56], 4);
+	TextDrawLetterSize(BELIFUELS[56], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[56], 33.000000, 7.500000);
+	TextDrawSetOutline(BELIFUELS[56], 1);
+	TextDrawSetShadow(BELIFUELS[56], 0);
+	TextDrawAlignment(BELIFUELS[56], 1);
+	TextDrawColor(BELIFUELS[56], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[56], 255);
+	TextDrawBoxColor(BELIFUELS[56], 50);
+	TextDrawUseBox(BELIFUELS[56], 1);
+	TextDrawSetProportional(BELIFUELS[56], 1);
+	TextDrawSetSelectable(BELIFUELS[56], 0);
+
+	BELIFUELS[57] = TextDrawCreate(384.000000, 276.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[57], 4);
+	TextDrawLetterSize(BELIFUELS[57], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[57], 33.000000, 7.500000);
+	TextDrawSetOutline(BELIFUELS[57], 1);
+	TextDrawSetShadow(BELIFUELS[57], 0);
+	TextDrawAlignment(BELIFUELS[57], 1);
+	TextDrawColor(BELIFUELS[57], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[57], 255);
+	TextDrawBoxColor(BELIFUELS[57], 50);
+	TextDrawUseBox(BELIFUELS[57], 1);
+	TextDrawSetProportional(BELIFUELS[57], 1);
+	TextDrawSetSelectable(BELIFUELS[57], 0);
+
+	BELIFUELS[58] = TextDrawCreate(378.000000, 254.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[58], 4);
+	TextDrawLetterSize(BELIFUELS[58], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[58], 6.000000, 23.000000);
+	TextDrawSetOutline(BELIFUELS[58], 1);
+	TextDrawSetShadow(BELIFUELS[58], 0);
+	TextDrawAlignment(BELIFUELS[58], 1);
+	TextDrawColor(BELIFUELS[58], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[58], 255);
+	TextDrawBoxColor(BELIFUELS[58], 50);
+	TextDrawUseBox(BELIFUELS[58], 1);
+	TextDrawSetProportional(BELIFUELS[58], 1);
+	TextDrawSetSelectable(BELIFUELS[58], 0);
+
+	BELIFUELS[59] = TextDrawCreate(419.000000, 254.000000, "ld_dual:white");
+	TextDrawFont(BELIFUELS[59], 4);
+	TextDrawLetterSize(BELIFUELS[59], 0.600000, 2.000000);
+	TextDrawTextSize(BELIFUELS[59], 6.000000, 23.000000);
+	TextDrawSetOutline(BELIFUELS[59], 1);
+	TextDrawSetShadow(BELIFUELS[59], 0);
+	TextDrawAlignment(BELIFUELS[59], 1);
+	TextDrawColor(BELIFUELS[59], 16711935);
+	TextDrawBackgroundColor(BELIFUELS[59], 255);
+	TextDrawBoxColor(BELIFUELS[59], 50);
+	TextDrawUseBox(BELIFUELS[59], 1);
+	TextDrawSetProportional(BELIFUELS[59], 1);
+	TextDrawSetSelectable(BELIFUELS[59], 0);
+
+	BELIFUELS[60] = TextDrawCreate(384.000000, 254.000000, "JUMLAH");
+	TextDrawFont(BELIFUELS[60], 2);
+	TextDrawLetterSize(BELIFUELS[60], 0.229166, 2.149996);
+	TextDrawTextSize(BELIFUELS[60], 400.000000, 17.000000);
+	TextDrawSetOutline(BELIFUELS[60], 0);
+	TextDrawSetShadow(BELIFUELS[60], 0);
+	TextDrawAlignment(BELIFUELS[60], 1);
+	TextDrawColor(BELIFUELS[60], 255);
+	TextDrawBackgroundColor(BELIFUELS[60], 255);
+	TextDrawBoxColor(BELIFUELS[60], 50);
+	TextDrawUseBox(BELIFUELS[60], 0);
+	TextDrawSetProportional(BELIFUELS[60], 1);
+	TextDrawSetSelectable(BELIFUELS[60], 0);
+
+//ONGAMEMODEINIT
+LoadFuelBizData();
+
+//PASANG DI DIALOG
+if(dialogid == DIALOG_BELI_BAHANBAKAR)
+	{
+		if(response)
+		{
+			new HargaBahanBakarr = floatround(strval(inputtext));
+			
+			if(HargaBahanBakarr < 0 || HargaBahanBakarr > 100) return SCM(playerid, -1, "amount maximal 0 - 100.");
+			BeliBahanBakar[playerid] = HargaBahanBakarr;
+			
+			new HargaBahanBakar = BeliBahanBakar[playerid] * 500;
+			new HddAndSdd[560];
+			format(HddAndSdd,1000,"%d", BeliBahanBakar[playerid]);
+			PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][0], HddAndSdd);
+
+			format(HddAndSdd,1000,"RP,%d", HargaBahanBakar);
+			PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][1], HddAndSdd);
+		}
+	}
+
+//public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+if(newkeys == KEY_YES)
+	{
+		for(new i=0; i < MAX_FUELBIZ; i++)
+		{
+		    if(IsPlayerInRangeOfPoint(playerid, 5.0, FUELBIZDATA[i][FE_POS_X], FUELBIZDATA[i][FE_POS_Y], FUELBIZDATA[i][FE_POS_Z]))
+		    {
+		        if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return SCM(playerid, -1, "Anda tidak berada di belakang kursi pengemudi.");
+		        TextDrawShowForPlayer(playerid, BELIFUELS[0]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[1]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[2]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[3]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[4]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[5]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[6]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[7]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[8]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[9]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[10]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[11]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[12]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[13]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[14]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[15]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[16]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[17]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[18]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[19]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[20]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[21]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[22]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[23]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[24]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[25]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[26]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[27]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[28]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[29]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[30]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[31]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[32]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[33]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[34]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[35]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[36]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[37]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[38]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[39]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[40]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[41]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[42]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[43]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[44]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[45]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[46]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[47]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[48]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[49]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[50]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[51]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[52]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[53]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[54]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[55]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[56]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[57]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[58]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[59]);
+				TextDrawShowForPlayer(playerid, BELIFUELS[60]);
+				TextDrawShowForPlayer(playerid, BELIFUEL);
+				TextDrawShowForPlayer(playerid, TUTUPPOM);
+				TextDrawShowForPlayer(playerid, JUMLAHBENSING);
+				PlayerTextDrawShow(playerid, BELIFUELSs[playerid][0]);
+				PlayerTextDrawShow(playerid, BELIFUELSs[playerid][1]);
+				SelectTextDraw(playerid, 0xFF0000FF);
+
+				new HargaBahanBakar = BeliBahanBakar[playerid] * 500;
+
+				new HddAndSdd[560];
+			    format(HddAndSdd,1000,"%d", BeliBahanBakar[playerid]);
+			    PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][0], HddAndSdd);
+
+			    format(HddAndSdd,1000,"RP,%d", HargaBahanBakar);
+			    PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][1], HddAndSdd);
+		    }
+	    }
+	}
+
+//PASANG DI OnPlayerClickTextDraw
+if(clickedid == JUMLAHBENSING)
+    {
+        if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return SCM(playerid, -1, "Anda tidak berada di belakang kursi pengemudi.");
+        new mstr[128];
+		format(mstr, sizeof(mstr), ""WHITE_E"Masukan Jumlah\n"WHITE_E"Fuel Harga"GREEN_E"500 / Liter");
+		ShowPlayerDialog(playerid, DIALOG_BELI_BAHANBAKAR, DIALOG_STYLE_INPUT, "Fuel", mstr, "Beli", "Batal");
+		
+        TypeBahanBakar[playerid] = 1;
+	}
+    if(clickedid == BELIFUEL)
+    {
+        if(TypeBahanBakar[playerid] == 1)
+        if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return SCM(playerid, -1, "Anda tidak berada di belakang kursi pengemudi.");
+        {
+            new HargaBahanBakar = BeliBahanBakar[playerid] * 500;
+
+			new HddAndSdd[560];
+			format(HddAndSdd,1000,"%d", BeliBahanBakar[playerid]);
+			PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][0], HddAndSdd);
+
+			format(HddAndSdd,1000,"RP,%d", HargaBahanBakar);
+			PlayerTextDrawSetString(playerid, BELIFUELSs[playerid][1], HddAndSdd);
+			
+			GivePlayerMoneyEx(playerid, -HargaBahanBakar, "Beli Bensing");
+			
+			Fuell[GetPlayerVehicleID(playerid)] = BeliBahanBakar[playerid];
+			VehInfo[GetPlayerVehicleID(playerid)][vFuel] = BeliBahanBakar[playerid];
+			PlayerPlaySound(playerid, 32000, 0.0, 0.0, 0.0);
+        }
+        BeliBahanBakar[playerid] = 0;
+        TypeBahanBakar[playerid] = 0;
+    }
+    if(clickedid == TUTUPPOM)
+    {
+        if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER) return SCM(playerid, -1, "Anda tidak berada di belakang kursi pengemudi.");
+        TextDrawHideForPlayer(playerid, BELIFUELS[0]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[1]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[2]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[3]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[4]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[5]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[6]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[7]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[8]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[9]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[10]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[11]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[12]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[13]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[14]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[15]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[16]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[17]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[18]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[19]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[20]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[21]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[22]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[23]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[24]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[25]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[26]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[27]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[28]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[29]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[30]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[31]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[32]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[33]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[34]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[35]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[36]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[37]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[38]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[39]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[40]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[41]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[42]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[43]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[44]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[45]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[46]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[47]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[48]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[49]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[50]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[51]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[52]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[53]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[54]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[55]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[56]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[57]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[58]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[59]);
+		TextDrawHideForPlayer(playerid, BELIFUELS[60]);
+		TextDrawHideForPlayer(playerid, BELIFUEL);
+		TextDrawHideForPlayer(playerid, TUTUPPOM);
+		TextDrawHideForPlayer(playerid, JUMLAHBENSING);
+		PlayerTextDrawHide(playerid, BELIFUELSs[playerid][0]);
+		PlayerTextDrawHide(playerid, BELIFUELSs[playerid][1]);
+		CancelSelectTextDraw(playerid);
+    }
+
+//PALING BAWAH
+stock LoadPlayerTextDraw(playerid)
+{
+	BELIFUELSs[playerid][0] = CreatePlayerTextDraw(playerid, 306.000000, 187.000000, "LITER:__100_L");
+	PlayerTextDrawFont(playerid, BELIFUELSs[playerid][0], 2);
+	PlayerTextDrawLetterSize(playerid, BELIFUELSs[playerid][0], 0.229166, 2.149996);
+	PlayerTextDrawTextSize(playerid, BELIFUELSs[playerid][0], 400.000000, 17.000000);
+	PlayerTextDrawSetOutline(playerid, BELIFUELSs[playerid][0], 0);
+	PlayerTextDrawSetShadow(playerid, BELIFUELSs[playerid][0], 0);
+	PlayerTextDrawAlignment(playerid, BELIFUELSs[playerid][0], 1);
+	PlayerTextDrawColor(playerid, BELIFUELSs[playerid][0], -16776961);
+	PlayerTextDrawBackgroundColor(playerid, BELIFUELSs[playerid][0], 255);
+	PlayerTextDrawBoxColor(playerid, BELIFUELSs[playerid][0], 50);
+	PlayerTextDrawUseBox(playerid, BELIFUELSs[playerid][0], 0);
+	PlayerTextDrawSetProportional(playerid, BELIFUELSs[playerid][0], 1);
+	PlayerTextDrawSetSelectable(playerid, BELIFUELSs[playerid][0], 0);
+
+	BELIFUELSs[playerid][1] = CreatePlayerTextDraw(playerid, 306.000000, 204.000000, "HARGA:__RP,50.000");
+	PlayerTextDrawFont(playerid, BELIFUELSs[playerid][1], 2);
+	PlayerTextDrawLetterSize(playerid, BELIFUELSs[playerid][1], 0.229166, 2.149996);
+	PlayerTextDrawTextSize(playerid, BELIFUELSs[playerid][1], 400.000000, 17.000000);
+	PlayerTextDrawSetOutline(playerid, BELIFUELSs[playerid][1], 0);
+	PlayerTextDrawSetShadow(playerid, BELIFUELSs[playerid][1], 0);
+	PlayerTextDrawAlignment(playerid, BELIFUELSs[playerid][1], 1);
+	PlayerTextDrawColor(playerid, BELIFUELSs[playerid][1], -16776961);
+	PlayerTextDrawBackgroundColor(playerid, BELIFUELSs[playerid][1], 255);
+	PlayerTextDrawBoxColor(playerid, BELIFUELSs[playerid][1], 50);
+	PlayerTextDrawUseBox(playerid, BELIFUELSs[playerid][1], 0);
+	PlayerTextDrawSetProportional(playerid, BELIFUELSs[playerid][1], 1);
+	PlayerTextDrawSetSelectable(playerid, BELIFUELSs[playerid][1], 0);
+}
+
+//TARUH DI CMD
+CMD:createfuel(playerid, params[])
+{
+    if(PlayerInfo[playerid][pAdminLevel] < 5 || !admin_logged[playerid]) return 1;
+	new namanya[512], file[128];
+	if(sscanf(params,"s[50]", namanya)) return ChocoSa(playerid, -1, "USAGE: /createfuel <Name>");
+    new Float:X, Float:Y, Float:Z;
+	GetPlayerPos(playerid, X,Y,Z);
+	for(new i=0;i<MAX_FUELBIZ;i++)
+	{
+        format(file,sizeof(file),"Database/Fuel/[%d].ini",i);
+   	    if(!(dini_Exists(file)))
+   	    {
+			format(FUELBIZDATA[i][FE_NAME], 512, namanya);
+			FUELBIZDATA[i][FE_ID] = i;
+			FUELBIZDATA[i][FE_POS_X] = X;
+			FUELBIZDATA[i][FE_POS_Y] = Y;
+			FUELBIZDATA[i][FE_POS_Z] = Z;
+            dini_Create(file);
+            UpdateFuelBiz(i);
+            SaveMyFuelBiz(i);
+			return 1;
+        }
+    }
+	return 1;
+}
+
+CMD:removefuel(playerid,params[])
+{
+    if(PlayerInfo[playerid][pAdminLevel] < 5 || !admin_logged[playerid]) return 1;
+    for(new i=0; i < MAX_FUELBIZ; i++)
+	{
+	    if(IsPlayerInRangeOfPoint(playerid, 1.0, FUELBIZDATA[i][FE_POS_X], FUELBIZDATA[i][FE_POS_Y], FUELBIZDATA[i][FE_POS_Z]))
+	    {
+			FUELBIZDATA[i][FE_ID] = 0;
+			FUELBIZDATA[i][FE_POS_X] = 0;
+			FUELBIZDATA[i][FE_POS_Y] = 0;
+			FUELBIZDATA[i][FE_POS_Z] = 0;
+			DestroyDynamic3DTextLabel(FE_LABELS[i]);
+	    	DestroyDynamicPickup(FE_PICKUP[i]);
+			new file[128];
+			format(file,sizeof(file),"Database/Fuel/[%d].ini",i);
+			dini_Remove(file);
+			return 1;
+		}
+	}
+	ChocoSa(playerid, -1,"{ff0000}ERROR: {ffffff}Anda tidak berada di dekat Pom Fuel mana pun.");
+	return 1;
+}
+
+//TARUH DI PALING BAWAH
+ChocoSa(playerid, color, const text[], {Float,_}:...)
+{
+	static args, str[2048];
+	if((args = numargs()) <= 3)
+	{
+	    SendClientMessage(playerid, color, text);
+	}
+	else
+	{
+		while(--args >= 3)
+		{
+			#emit LCTRL 	5
+			#emit LOAD.alt 	args
+			#emit SHL.C.alt 2
+			#emit ADD.C 	12
+			#emit ADD
+			#emit LOAD.I
+			#emit PUSH.pri
+		}
+		#emit PUSH.S 	text
+		#emit PUSH.C 	2048
+		#emit PUSH.C 	str
+		#emit PUSH.S	8
+		#emit SYSREQ.C 	format
+		#emit LCTRL 	5
+		#emit SCTRL 	4
+
+		SendClientMessage(playerid, color, str);
+
+		#emit RETN
+	}
+	return 1;
+}

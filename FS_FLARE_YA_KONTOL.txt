@@ -1,0 +1,34 @@
+CMD:flare(playerid, params[])
+{
+    if(!IsACop(playerid)) return SCM(playerid, COLOR_GREY, "Anda tidak dapat menggunakan perintah ini.");
+
+    new Float:x, Float:y, Float:z, Float:a;
+    GetPlayerPos(playerid, x, y, z);
+    GetPlayerFacingAngle(playerid, a);
+
+    if(IsValidDynamicObject(PlayerInfo[playerid][pFlare]))
+        DestroyDynamicObject(PlayerInfo[playerid][pFlare]);
+
+    PlayerInfo[playerid][pFlare] = CreateDynamicObject(18728, x, y, z-2.8, 0, 0, a-90);
+    ApplyAnimation(playerid,"BOMBER","BOM_Plant",4.1,0,0,0,0,0);
+    SCM(playerid, COLOR_RED, "Flare: request backup is actived! /hapusflare untuk menghapus flare.");
+
+    format(format_string, 152, "[NOTIFIKASI] Petugas %s telah meminta bantuan di dekat (%s)", GetPlayerNameEx(playerid), GetLocation(x, y, z));
+    SendFrac(FRACTION_LSPD, COLOR_YELLOW, format_string);
+     SendFrac(FRACTION_FBI, COLOR_BLUE, format_string);
+      SendFrac(FRACTION_SFPD, COLOR_YELLOW, format_string);
+       SendFrac(FRACTION_LVPD, COLOR_YELLOW, format_string);
+    return 1;
+}
+
+CMD:hapusflare(playerid, params[])
+{
+    if(!IsACop(playerid)) return SCM(playerid, COLOR_GREY, "Anda tidak dapat menggunakan perintah ini.");
+
+    if(IsValidDynamicObject(PlayerInfo[playerid][pFlare]))
+        DestroyDynamicObject(PlayerInfo[playerid][pFlare]);
+
+    ApplyAnimation(playerid,"BOMBER","BOM_Plant",4.1,0,0,0,0,0);
+    SCM(playerid, COLOR_YELLOW, "Server: Your flare is deleted.");
+    return 1;
+}
