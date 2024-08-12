@@ -1,0 +1,146 @@
+new Text: Text_Global[13];
+
+Text_Global[0] = TextDrawCreate(107.000, 345.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[0], 28.000, 38.000);
+TextDrawAlignment(Text_Global[0], 1);
+TextDrawColor(Text_Global[0], -117899265);
+TextDrawSetShadow(Text_Global[0], 0);
+TextDrawSetOutline(Text_Global[0], 0);
+TextDrawBackgroundColor(Text_Global[0], 255);
+TextDrawFont(Text_Global[0], 4);
+TextDrawSetProportional(Text_Global[0], 1);
+
+Text_Global[1] = TextDrawCreate(108.000, 346.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[1], 26.000, 36.000);
+TextDrawAlignment(Text_Global[1], 1);
+TextDrawColor(Text_Global[1], 255);
+TextDrawSetShadow(Text_Global[1], 0);
+TextDrawSetOutline(Text_Global[1], 0);
+TextDrawBackgroundColor(Text_Global[1], 255);
+TextDrawFont(Text_Global[1], 4);
+TextDrawSetProportional(Text_Global[1], 1);
+
+Text_Global[2] = TextDrawCreate(123.000, 359.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[2], 23.000, 32.000);
+TextDrawAlignment(Text_Global[2], 1);
+TextDrawColor(Text_Global[2], -1);
+TextDrawSetShadow(Text_Global[2], 0);
+TextDrawSetOutline(Text_Global[2], 0);
+TextDrawBackgroundColor(Text_Global[2], 255);
+TextDrawFont(Text_Global[2], 4);
+TextDrawSetProportional(Text_Global[2], 1);
+
+Text_Global[3] = TextDrawCreate(124.000, 360.000, "LD_BEAT:chit");
+TextDrawTextSize(Text_Global[3], 21.000, 30.000);
+TextDrawAlignment(Text_Global[3], 1);
+TextDrawColor(Text_Global[3], 255);
+TextDrawSetShadow(Text_Global[3], 0);
+TextDrawSetOutline(Text_Global[3], 0);
+TextDrawBackgroundColor(Text_Global[3], 255);
+TextDrawFont(Text_Global[3], 4);
+TextDrawSetProportional(Text_Global[3], 1);
+
+Text_Global[4] = TextDrawCreate(145.000, 364.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[4], 4.000, 21.000);
+TextDrawAlignment(Text_Global[4], 1);
+TextDrawColor(Text_Global[4], 255);
+TextDrawSetShadow(Text_Global[4], 0);
+TextDrawSetOutline(Text_Global[4], 0);
+TextDrawBackgroundColor(Text_Global[4], 255);
+TextDrawFont(Text_Global[4], 4);
+TextDrawSetProportional(Text_Global[4], 1);
+
+Text_Global[5] = TextDrawCreate(117.000, 355.000, "125");
+TextDrawLetterSize(Text_Global[5], 0.150, 0.899);
+TextDrawAlignment(Text_Global[5], 1);
+TextDrawColor(Text_Global[5], -1);
+TextDrawSetShadow(Text_Global[5], 0);
+TextDrawSetOutline(Text_Global[5], 0);
+TextDrawBackgroundColor(Text_Global[5], 150);
+TextDrawFont(Text_Global[5], 1);
+TextDrawSetProportional(Text_Global[5], 1);
+
+Text_Global[6] = TextDrawCreate(117.000, 361.000, "kmh");
+TextDrawLetterSize(Text_Global[6], 0.150, 0.899);
+TextDrawAlignment(Text_Global[6], 1);
+TextDrawColor(Text_Global[6], -1);
+TextDrawSetShadow(Text_Global[6], 0);
+TextDrawSetOutline(Text_Global[6], 0);
+TextDrawBackgroundColor(Text_Global[6], 150);
+TextDrawFont(Text_Global[6], 1);
+TextDrawSetProportional(Text_Global[6], 1);
+
+Text_Global[7] = TextDrawCreate(146.000, 365.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[7], 2.000, 19.000);
+TextDrawAlignment(Text_Global[7], 1);
+TextDrawColor(Text_Global[7], 6553855);
+TextDrawSetShadow(Text_Global[7], 0);
+TextDrawSetOutline(Text_Global[7], 0);
+TextDrawBackgroundColor(Text_Global[7], 255);
+TextDrawFont(Text_Global[7], 4);
+TextDrawSetProportional(Text_Global[7], 1);
+
+Text_Global[8] = TextDrawCreate(132.000, 374.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[8], 4.000, 6.000);
+TextDrawAlignment(Text_Global[8], 1);
+TextDrawColor(Text_Global[8], -1);
+TextDrawSetShadow(Text_Global[8], 0);
+TextDrawSetOutline(Text_Global[8], 0);
+TextDrawBackgroundColor(Text_Global[8], 255);
+TextDrawFont(Text_Global[8], 4);
+TextDrawSetProportional(Text_Global[8], 1);
+
+Text_Global[9] = TextDrawCreate(132.000, 374.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[9], 1.000, -5.000);
+TextDrawAlignment(Text_Global[9], 1);
+TextDrawColor(Text_Global[9], -1);
+TextDrawSetShadow(Text_Global[9], 0);
+TextDrawSetOutline(Text_Global[9], 0);
+TextDrawBackgroundColor(Text_Global[9], 255);
+TextDrawFont(Text_Global[9], 4);
+TextDrawSetProportional(Text_Global[9], 1);
+
+Text_Global[10] = TextDrawCreate(135.000, 374.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[10], 1.000, -5.000);
+TextDrawAlignment(Text_Global[10], 1);
+TextDrawColor(Text_Global[10], -1);
+TextDrawSetShadow(Text_Global[10], 0);
+TextDrawSetOutline(Text_Global[10], 0);
+TextDrawBackgroundColor(Text_Global[10], 255);
+TextDrawFont(Text_Global[10], 4);
+TextDrawSetProportional(Text_Global[10], 1);
+
+Text_Global[11] = TextDrawCreate(136.000, 371.000, "LD_SPAC:white");
+TextDrawTextSize(Text_Global[11], -4.000, -2.000);
+TextDrawAlignment(Text_Global[11], 1);
+TextDrawColor(Text_Global[11], -1);
+TextDrawSetShadow(Text_Global[11], 0);
+TextDrawSetOutline(Text_Global[11], 0);
+TextDrawBackgroundColor(Text_Global[11], 255);
+TextDrawFont(Text_Global[11], 4);
+TextDrawSetProportional(Text_Global[11], 1);
+
+Text_Global[12] = TextDrawCreate(136.000, 370.000, ")");
+TextDrawLetterSize(Text_Global[12], 0.150, 0.899);
+TextDrawAlignment(Text_Global[12], 1);
+TextDrawColor(Text_Global[12], -1);
+TextDrawSetShadow(Text_Global[12], 0);
+TextDrawSetOutline(Text_Global[12], 0);
+TextDrawBackgroundColor(Text_Global[12], 150);
+TextDrawFont(Text_Global[12], 1);
+TextDrawSetProportional(Text_Global[12], 1);
+
+####################################################################################################
+
+new PlayerText: Text_Player[MAX_PLAYERS][1];
+
+Text_Player[playerid][0] = CreatePlayerTextDraw(playerid, 104.000, 390.000, "Northeast | Come-A-Lot");
+PlayerTextDrawLetterSize(playerid, Text_Player[playerid][0], 0.180, 1.199);
+PlayerTextDrawAlignment(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawColor(playerid, Text_Player[playerid][0], -1);
+PlayerTextDrawSetShadow(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawSetOutline(playerid, Text_Player[playerid][0], 0);
+PlayerTextDrawBackgroundColor(playerid, Text_Player[playerid][0], 150);
+PlayerTextDrawFont(playerid, Text_Player[playerid][0], 1);
+PlayerTextDrawSetProportional(playerid, Text_Player[playerid][0], 1);
+

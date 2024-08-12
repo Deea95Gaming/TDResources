@@ -1,0 +1,75 @@
+//Map Exported with Texture Studio By: [uL]Pottus////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////and Crayder////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Map Information////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+	Exported on "2022-03-20 12:08:19" by "Sharp_Sanjay"
+	Created by "Sharp_Sanjay"
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Remove Buildings///////////////////////////////////////////////////////////////////////////////////////////////
+RemoveBuildingForPlayer(playerid, 5708, 1134.250, -1338.079, 23.156, 0.250);
+RemoveBuildingForPlayer(playerid, 5930, 1134.250, -1338.079, 23.156, 0.250);
+
+//Objects////////////////////////////////////////////////////////////////////////////////////////////////////////
+new tmpobjid;
+tmpobjid = CreateDynamicObject(5708, 1134.250000, -1338.079956, 23.156299, 0.000000, 0.000000, 0.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterial(tmpobjid, 0, -1, "none", "none", 0xFF003300);
+SetDynamicObjectMaterial(tmpobjid, 1, 16640, "a51", "concretegroundl1_256", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 2, 16639, "a51_labs", "ws_trainstationwin1", 0xFF0000CC);
+SetDynamicObjectMaterial(tmpobjid, 3, 16639, "a51_labs", "ws_trainstationwin1", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 5, 10101, "2notherbuildsfe", "ferry_build14", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 6, 14789, "ab_sfgymmain", "gun_ceiling2_128", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 7, 16640, "a51", "concretemanky", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 10, 14789, "ab_sfgymmain", "gun_ceiling2_128", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 11, 16093, "a51_ext", "alleydoor2", 0x00000000);
+SetDynamicObjectMaterial(tmpobjid, 13, 16640, "a51", "plaintarmac1", 0x00000000);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.849609, 13.458317, -10.000000, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "S", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.849609, 13.458317, -10.000000, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "S", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.849609, 13.458317, -10.000000, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "S", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.849609, 13.458317, -10.000000, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "S", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.849609, 13.458317, -10.000000, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "S", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.249755, 13.458317, -10.000002, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "H", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.249755, 13.458317, -10.000002, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "H", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.249755, 13.458317, -10.000002, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "H", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.249755, 13.458317, -10.000002, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "H", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1298.249755, 13.458317, -10.000002, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "H", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1297.649902, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "A", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1297.649902, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "A", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1297.649902, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "A", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1297.649902, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "A", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.950073, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "R", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.950073, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "R", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.950073, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "R", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.950073, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "R", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.350219, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "P", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.350219, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "P", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.350219, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "P", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+tmpobjid = CreateDynamicObject(2691, 1184.982055, -1296.350219, 13.458317, -10.000003, 0.000000, 90.000000, -1, -1, -1, 10000.00, 10000.00); 
+SetDynamicObjectMaterialText(tmpobjid, 0, "P", 10, "Ariel", 15, 0, 0xFF000000, 0x00000000, 0);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
